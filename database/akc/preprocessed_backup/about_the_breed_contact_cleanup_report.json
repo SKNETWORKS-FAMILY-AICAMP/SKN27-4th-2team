@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-06-02T20:03:37",
+  "csv": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_completed.csv",
+  "json": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_vector_documents.json",
+  "source_restored_from": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step2_basic_cleaned.csv",
+  "changed_rows": 41,
+  "removed_count": 41,
+  "removed_items": [
+    {
+      "breed_name": "American Leopard Hound",
+      "removed_text": "Breed Contact: Jackie Carpenter Email: plott_dog@yahoo.com"
+    },
+    {
+      "breed_name": "Australian Stumpy Tail Cattle Dog",
+      "removed_text": "Breed Contact: Australian Stumpy Tail Cattle Dog Society of the United States www.stumpytailcattledogs.org Denyse Adams - chredacds8@gmail.com"
+    },
+    {
+      "breed_name": "Blue Picardy Spaniel",
+      "removed_text": "Name: Janis Debert Email: twotollers@yahoo.com"
+    },
+    {
+      "breed_name": "Bohemian Shepherd",
+      "removed_text": "Club Contact: bscnainfo@gmail.com"
+    },
+    {
+      "breed_name": "Braque du Bourbonnais",
+      "removed_text": "Club Contact Details Club: Braque du Bourbonnais Club of America Cindy Petkwitz villagelock58@comcast.net 572 Hollywood, Grosse Pointe, MI 48236 (313) 881-8603 Pronunciation - Brock do - Boor-bon-nay"
+    },
+    {
+      "breed_name": "Braque Saint-Germain",
+      "removed_text": "Contact: Cindy Email: cp.villagelockgp@gmail.com"
+    },
+    {
+      "breed_name": "Brazilian Terrier",
+      "removed_text": "Name: Livia Krainer Email: legendcrested@gmail.com Phone Number: 517 518-4528"
+    },
+    {
+      "breed_name": "Broholmer",
+      "removed_text": "Club Contact Details Club: Broholmer Club of the USA Kathy Kimmeth amberdogs@new.rr.com (920) 410-0142 (text only) Pronunciation - Bro-hell-mer"
+    },
+    {
+      "breed_name": "Calupoh",
+      "removed_text": "Contact: Marti Johnson Email: marti@sanmateokc.com"
+    },
+    {
+      "breed_name": "Carolina Dog",
+      "removed_text": "Club Contact Details Carolina Dog Fanciers America www.carolinadogfanciers.com contact: wileyestshepherdess@gmail.com"
+    },
+    {
+      "breed_name": "Czechoslovakian Vlciak",
+      "removed_text": "Club Contact Details Czechoslovakian Vlcak Club of America vlcaksusa@gmail.com Pronunciation - Check-slow-vaa-kee-an Vul-Chuck"
+    },
+    {
+      "breed_name": "Danish-Swedish Farmdog",
+      "removed_text": "Club Contact Details Danish/Swedish Farmdog Club of America, Inc Brita Lemmon Puppies@farmdogs.org or cs@dsfca.org"
+    },
+    {
+      "breed_name": "Deutscher Wachtelhund",
+      "removed_text": "Club Contact Details: Bill Wright Boulder Brook Kennel, PO Box 1, Markham, VA 22643 jwwiii@hotmail.com Pronunciation - Doy-cher Walk-tel-hund"
+    },
+    {
+      "breed_name": "Drentsche Patrijshond",
+      "removed_text": "Club Contact Details Drentsche Patrijshond Club of North America www.dpcna.org Email: board@dpcna.org American Drentsche Patrijshond Association https://www.americandrentassociation.org/ Pronunciation - Da-rinse Pah-trice-hoon"
+    },
+    {
+      "breed_name": "Estrela Mountain Dog",
+      "removed_text": "Breed Contact Details Estrela Mountain Dog Association of America; https://emdaa.org/; Email: info@emdaa.org"
+    },
+    {
+      "breed_name": "Eurasier",
+      "removed_text": "Club Contact Details United States Eurasier Club Website: https://www.useurasierclub.org/ Wendy Schuyler Email: USEurasierClub@gmail.com"
+    },
+    {
+      "breed_name": "French Spaniel",
+      "removed_text": "Club Contact Details French Spaniel Club in the USA Elaine McKinney Esspaniel@yahoo.com 6329 Venus Ave, Bartlett, TN 38134 Phone: 901-380-9265"
+    },
+    {
+      "breed_name": "Hamiltonstovare",
+      "removed_text": "Club Contact Details Hamiltonstovare Club of America Ashley Hammock Email: OceaniaHamilton@hotmail.com Address: 2311 Chapel Hill Rd, Goochland, Va 23063 Pronunciation - Ham-mil-ton-stov-vare"
+    },
+    {
+      "breed_name": "Hokkaido",
+      "removed_text": "Club Contact Details Hokkaido Association of North America Lindsay Tompkins info@hokkaidoken.org Pronunciation - Haa-Kai-doe"
+    },
+    {
+      "breed_name": "Hovawart",
+      "removed_text": "Club Contact Details Hovawart Club of North America info@hovawartclub.org Pronunciation - Ho-va-wart"
+    },
+    {
+      "breed_name": "Japanese Terrier",
+      "removed_text": "Contact: Japanese Terrier Club of America Webiste: Japaneseterrier.org Email: Japaneseterriers@gmail.com"
+    },
+    {
+      "breed_name": "Kai Ken",
+      "removed_text": "Club Contact Details Kai Ken Society of America www.kaisociety.com club@kaisociety.com"
+    },
+    {
+      "breed_name": "Karelian Bear Dog",
+      "removed_text": "Club Contact Details American Karelian Bear Dog Alliance Maureen Griffin nytwind@comcast.net Phone: 860-434-9198 Pronunciation - Ka-reel-e-an Bear Dog"
+    },
+    {
+      "breed_name": "Korean Jindo Dog",
+      "removed_text": "Club Contact Details Korean Jindo Association of America Website: www.jindos.org Club Contact Ann Kim Email: jindojunkie@yahoo.com"
+    },
+    {
+      "breed_name": "Kromfohrlander",
+      "removed_text": "Club Contact Details Club Name: Kromfohrlander Club of America Contact: Carolyn Noteman Email: kromiusa@gmail.com Pronunciation - Krom-for-land-dair"
+    },
+    {
+      "breed_name": "Lancashire Heeler",
+      "removed_text": "Club Contact Details Club Name: The United States Lancashire Heeler Club Contact: Sheryl Bradbury Email: sherylbradbury@windstream.net Phone: 816.308.2424 Pronunciation - Lan-cash-shire Heeler"
+    },
+    {
+      "breed_name": "Lapponian Herder",
+      "removed_text": "Breed Contact: Heidi Christenson Address: 519 NW 209th Street, Ridgefield, WA 98642 Email: girln2pooches@yahoo.com Phone: 360-609-2942 Pronunciation - Lap-pon-e-inn Herder"
+    },
+    {
+      "breed_name": "Mountain Cur",
+      "removed_text": "Breed Contact: Mandy Middleton Address: 417 N. Water Street, Georgetown, OH 45121 Phone: 937-378-6900 Email: walnutridgemtncurs@yahoo.com"
+    },
+    {
+      "breed_name": "Portuguese Pointer",
+      "removed_text": "Club Contact Details Club Name: Portuguese Pointer Club of America Contact: Temple DaSilva Email: GreenFallsHollow@comcast.net"
+    },
+    {
+      "breed_name": "Pyrenean Mastiff",
+      "removed_text": "Club Contact Details Club Name: Pyrenean Mastiff Association of America https://www.pyreneanmastiffassociation.org Email: pyreneanmastiffassocation@gmail.com Phone: (972) 302-9410"
+    },
+    {
+      "breed_name": "Slovensky Cuvac",
+      "removed_text": "Club Contact Details Club Name: Slovensky Tchouvatch Dog Club of America Contact: Elisabeth Pisula Address: 3719 Glenwood Street, Richmond, TX 77469 Pronunciation - Slovensky Coo-vac"
+    },
+    {
+      "breed_name": "Slovensky Kopov",
+      "removed_text": "Club Contact Details Contact: Vladimir Skala Address: 3734 N Lockwood Ave, Chicago, IL 60641 Pronunciation - Slovensky Cop-of"
+    },
+    {
+      "breed_name": "Small Munsterlander",
+      "removed_text": "Club Contact Details Small Munsterlander Club of North America Mark Schnubel, President president@smcna.org Phone: 860-416-7991"
+    },
+    {
+      "breed_name": "Spanish Mastiff",
+      "removed_text": "Club Contact Details Contact: Anne Goetz Email: centurianmastini@rocketmail.com Phone: (828) 803-5087"
+    },
+    {
+      "breed_name": "Stabyhoun",
+      "removed_text": "Club Contact Details Ameri-Can Stabyhoun Association Susie Nies AKCrep@stabyhouns.org 0N282 Cumnor Ave, Glen Ellyn, IL 60137 Phone: (630) 632-3443 Pronunciation - Stab-bee-houn"
+    },
+    {
+      "breed_name": "Swedish Lapphund",
+      "removed_text": "Club Contact Details Swedish Lapphund Club of America Contact: Patricia Arfsten Email: swedishlapphundclubofamerica@gmail.com"
+    },
+    {
+      "breed_name": "Taiwan Dog",
+      "removed_text": "Club Contact Details Club Name: Taiwan Dog Club of America PO Box 640, Chino Hills, CA 91709 Email: info@taiwandog.org"
+    },
+    {
+      "breed_name": "Teddy Roosevelt Terrier",
+      "removed_text": "Club Contact Details Club Name: American Teddy Roosevelt Terrier Club - www.teddyrooseveltterrier.org Contact: Deborah Botruff Email: Americantrtclub@gmail.com"
+    },
+    {
+      "breed_name": "Thai Bangkaew",
+      "removed_text": "Contact: https://thaibangkaewclub.com Email: thaibangkaewclubofamerica@gmail.com"
+    },
+    {
+      "breed_name": "Thai Ridgeback",
+      "removed_text": "Club Contact Details Club Name: Association of Thai Ridgeback Owners and Fanciers Contact: Cathleen A. Combs, President Email: bellehoundsk9s@aol.com Address: 1460 Lemon Northcutt Road, Dry Ridge, KY 41035 Phone: 859-445-8739"
+    },
+    {
+      "breed_name": "Volpino Italiano",
+      "removed_text": "Club Contact: Terralea Collins, President Email: info@volpinoclubofamerica.com Pronunciation - Vol-pea-no Italiano"
+    }
+  ],
+  "remaining_label_hits_count": 0,
+  "remaining_label_hits_sample": [],
+  "vector_about_docs_updated": 290,
+  "english_toy_spaniel_preserved_contains_lowercase_name": true
+}

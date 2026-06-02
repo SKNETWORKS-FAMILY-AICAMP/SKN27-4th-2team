@@ -1,0 +1,9 @@
+[2026-06-02T19:21:28] Step 4 trait normalization corrected.
+Source: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step3_ranges_parsed.csv
+Output: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step4_traits_normalized.csv
+Rows: 292
+Columns: 51
+Original score trait columns normalized: 3/5 -> 3
+Not specified normalized to blank CSV cells.
+Choice numeric tokens removed: 12
+Derived tags created: False

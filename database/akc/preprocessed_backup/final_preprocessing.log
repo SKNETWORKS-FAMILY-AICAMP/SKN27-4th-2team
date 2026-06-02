@@ -1,0 +1,72 @@
+[2026-06-02T19:48:27] Final preprocessing completed.
+Source: C:\dev\project\SKN27-4th-2team\database\akc\original\akc_breed_info.csv
+Completed CSV: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step5_completed.csv
+Vector JSON: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_vector_documents.json
+CSV rows: 292
+CSV columns: 25
+Documents: 2878
+Deleted original columns remaining in completed CSV: 0
+Bad array metadata count: 0
+Code/standard hits in structured arrays: 0
+[2026-06-02T19:50:57] Score missing values normalized explicitly.
+Completed CSV score null cells written as string null: 48
+Vector JSON trait score values stored as actual null: 254
+Bad score values after fix: 0
+[2026-06-02T19:55:05] Restored cleaned long-text section columns into completed CSV.
+Completed CSV: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step5_completed.csv
+Rows: 292
+Columns: 32
+Restored columns: about_the_breed, health, grooming, exercise, training, nutrition, history
+Cleaned text source: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step2_basic_cleaned.csv
+Vector text section docs updated: 2006
+Missing vector text section docs: 0
+[2026-06-02T20:02:50] about_the_breed contact/admin text removed.
+Changed rows: 42
+Removed items: 42
+Remaining label hits: 0
+Vector about docs updated: 290
+[2026-06-02T20:03:37] about_the_breed contact/admin cleanup corrected case-sensitive rule.
+Restored source: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step2_basic_cleaned.csv
+Changed rows: 41
+Removed items: 41
+Remaining label hits: 0
+English Toy Spaniel lowercase name preserved: True
+Vector about docs updated: 290
+[2026-06-02T20:21:27] about_the_breed additional cleanup applied.
+Changed rows: 42
+Removed sentence/block items: 42
+Removed char items: 4
+Remaining sentence hits: 0
+Remaining char hits: 0
+Vector about docs updated: 290
+[2026-06-02T20:40:56] Removed inverted question mark from all completed CSV columns and vector JSON strings.
+CSV removed count: 6
+JSON removed count: 6
+Remaining CSV hit count: 0
+Remaining JSON count: 0
+[2026-06-02T20:46:17] Converted Not specified values to empty array representation.
+CSV changed cells: 38
+JSON changed values: 0
+Remaining CSV Not specified: 0
+Remaining JSON Not specified: 0
+[2026-06-02T20:59:07] Refetched and updated Bouvier des Ardennes from AKC breedPage props.
+Source URL: https://www.akc.org/dog-breeds/bouvier-de-ardennes/
+Updated files: 8
+Vector docs for breed: 10
+[2026-06-02T21:06:53] Removed Bouvier Des Ardennes club block from about_the_breed.
+Removed text: Bouvier Des Ardennes Club of America www.bdaclubofamerica.com Email: bdaclubofamerica@outlook.com
+Updated vector docs: 1
+Remaining hits: 0
+[2026-06-02T21:16:59] Refetched and updated Wetterhoun from AKC breedPage props.
+Source URL: https://www.akc.org/dog-breeds/wetterhoun/
+Updated files: 8
+Vector docs for breed: 10
+[2026-06-02T21:18:29] Removed U+00BF from Wetterhoun row/docs after refetch.
+Changed files: 9
+Total removed: 10
+[2026-06-02T21:27:15] Hokkaido training add something cleanup.
+CSV changed files: 7
+Vector training docs removed: 1
+[2026-06-02T21:28:20] Hokkaido training blank corrected to [].
+CSV changed files: 7
+Vector training docs absent: true

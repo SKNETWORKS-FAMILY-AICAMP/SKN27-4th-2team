@@ -1,0 +1,8 @@
+[2026-06-02T19:21:28] Step 5 colors/markings normalization rerun after trait correction.
+Source: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step4_traits_normalized.csv
+CSV output: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step5_colors_markings_normalized.csv
+JSON output: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step5_colors_markings_normalized.json
+Rows: 292
+Columns: 67
+Unparsed colors: 0
+Unparsed markings: 0

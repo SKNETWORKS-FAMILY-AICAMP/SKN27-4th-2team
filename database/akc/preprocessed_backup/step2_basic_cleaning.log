@@ -1,0 +1,7 @@
+[2026-06-02T19:07:01] Step 2 basic cleaning completed.
+Source: C:\dev\project\SKN27-4th-2team\database\akc\akc_breed_info.csv
+Output: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step2_basic_cleaned.csv
+Rows: 292
+Columns: 31
+Changed rows: 126
+Changed cells: 185

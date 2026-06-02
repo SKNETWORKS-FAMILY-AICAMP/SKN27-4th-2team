@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-06-02T21:28:20",
+  "breed_name": "Hokkaido",
+  "training_value_policy": "No useful training text -> CSV value [] and no vector training text document.",
+  "csv_changed_files": [
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\original\\akc_breed_info.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step1_original_copy.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step2_basic_cleaned.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step3_ranges_parsed.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step4_traits_normalized.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_colors_markings_normalized.csv",
+      "before": "",
+      "after": "[]"
+    },
+    {
+      "file": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_completed.csv",
+      "before": "",
+      "after": "[]"
+    }
+  ],
+  "vector_training_docs_removed_or_kept_removed": 0
+}
