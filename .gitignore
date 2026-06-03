@@ -4,5 +4,5 @@
 # 캐시 파일
 *.pyc
 
-# Secret key
+# env 파일
 .env
