@@ -1,0 +1,1126 @@
+{
+  "timestamp": "2026-06-02T20:46:17",
+  "csv": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_completed.csv",
+  "json": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_vector_documents.json",
+  "policy": "Exact Not specified values are converted to empty array representation. CSV stores [], JSON stores actual [].",
+  "csv_changed_count": 38,
+  "csv_changed_cells": [
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "about_the_breed",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "health",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "grooming",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "exercise",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "nutrition",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "history",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 61,
+      "breed_name": "Braque Francais Pyrenean",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 66,
+      "breed_name": "Broholmer",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "health",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "grooming",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 100,
+      "breed_name": "Danish-Swedish Farmdog",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 101,
+      "breed_name": "Deutscher Wachtelhund",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 103,
+      "breed_name": "Dogo Argentino",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 114,
+      "breed_name": "Estrela Mountain Dog",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 121,
+      "breed_name": "French Spaniel",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 132,
+      "breed_name": "Grand Basset Griffon Vendéen",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 151,
+      "breed_name": "Jagdterrier",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 157,
+      "breed_name": "Karelian Bear Dog",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 188,
+      "breed_name": "Norrbottenspets",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 207,
+      "breed_name": "Pont-Audemer Spaniel",
+      "column": "health",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 215,
+      "breed_name": "Portuguese Sheepdog",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 217,
+      "breed_name": "Presa Canario",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 218,
+      "breed_name": "Pudelpointer",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 224,
+      "breed_name": "Rafeiro do Alentejo",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "about_the_breed",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "health",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "grooming",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "exercise",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "nutrition",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "history",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 246,
+      "breed_name": "Shikoku Ken",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 252,
+      "breed_name": "Slovensky Cuvac",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 253,
+      "breed_name": "Slovensky Kopov",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 257,
+      "breed_name": "Spanish Mastiff",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 268,
+      "breed_name": "Thai Bangkaew",
+      "column": "nutrition",
+      "before": "Not specified",
+      "after": "[]"
+    },
+    {
+      "row": 277,
+      "breed_name": "Treeing Tennessee Brindle",
+      "column": "training",
+      "before": "Not specified",
+      "after": "[]"
+    }
+  ],
+  "json_changed_count": 0,
+  "remaining_csv_not_specified_count": 0,
+  "remaining_json_not_specified_count": 0,
+  "csv_empty_array_cells_count": 169,
+  "csv_empty_array_cells": [
+    {
+      "row": 4,
+      "breed_name": "Airedale Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 6,
+      "breed_name": "Alaskan Klee Kai",
+      "column": "markings_array"
+    },
+    {
+      "row": 10,
+      "breed_name": "American Eskimo Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 11,
+      "breed_name": "American Foxhound",
+      "column": "markings_array"
+    },
+    {
+      "row": 15,
+      "breed_name": "American Water Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 17,
+      "breed_name": "Appenzeller Sennenhund",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 17,
+      "breed_name": "Appenzeller Sennenhund",
+      "column": "markings_array"
+    },
+    {
+      "row": 19,
+      "breed_name": "Australian Kelpie",
+      "column": "markings_array"
+    },
+    {
+      "row": 22,
+      "breed_name": "Australian Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 24,
+      "breed_name": "Barbado da Terceira",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 24,
+      "breed_name": "Barbado da Terceira",
+      "column": "colors_array"
+    },
+    {
+      "row": 24,
+      "breed_name": "Barbado da Terceira",
+      "column": "markings_array"
+    },
+    {
+      "row": 27,
+      "breed_name": "Basset Fauve de Bretagne",
+      "column": "markings_array"
+    },
+    {
+      "row": 32,
+      "breed_name": "Beauceron",
+      "column": "markings_array"
+    },
+    {
+      "row": 33,
+      "breed_name": "Bedlington Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 40,
+      "breed_name": "Bernese Mountain Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 41,
+      "breed_name": "Bichon Frise",
+      "column": "markings_array"
+    },
+    {
+      "row": 42,
+      "breed_name": "Biewer Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 43,
+      "breed_name": "Black and Tan Coonhound",
+      "column": "markings_array"
+    },
+    {
+      "row": 45,
+      "breed_name": "Bloodhound",
+      "column": "markings_array"
+    },
+    {
+      "row": 46,
+      "breed_name": "Blue Picardy Spaniel",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 46,
+      "breed_name": "Blue Picardy Spaniel",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 49,
+      "breed_name": "Bohemian Shepherd",
+      "column": "colors_array"
+    },
+    {
+      "row": 49,
+      "breed_name": "Bohemian Shepherd",
+      "column": "markings_array"
+    },
+    {
+      "row": 50,
+      "breed_name": "Bolognese",
+      "column": "markings_array"
+    },
+    {
+      "row": 54,
+      "breed_name": "Boston Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "colors_array"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "markings_array"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "about_the_breed"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "health"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "grooming"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "exercise"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "training"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "nutrition"
+    },
+    {
+      "row": 55,
+      "breed_name": "Bouvier des Ardennes",
+      "column": "history"
+    },
+    {
+      "row": 58,
+      "breed_name": "Boykin Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 61,
+      "breed_name": "Braque Francais Pyrenean",
+      "column": "training"
+    },
+    {
+      "row": 62,
+      "breed_name": "Braque Saint-Germain",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 62,
+      "breed_name": "Braque Saint-Germain",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 63,
+      "breed_name": "Brazilian Terrier",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 63,
+      "breed_name": "Brazilian Terrier",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 66,
+      "breed_name": "Broholmer",
+      "column": "training"
+    },
+    {
+      "row": 67,
+      "breed_name": "Brussels Griffon",
+      "column": "markings_array"
+    },
+    {
+      "row": 68,
+      "breed_name": "Bull Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 72,
+      "breed_name": "Calupoh",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 72,
+      "breed_name": "Calupoh",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "health"
+    },
+    {
+      "row": 74,
+      "breed_name": "Canadian Eskimo Dog",
+      "column": "grooming"
+    },
+    {
+      "row": 88,
+      "breed_name": "Chow Chow",
+      "column": "markings_array"
+    },
+    {
+      "row": 94,
+      "breed_name": "Croatian Sheepdog",
+      "column": "markings_array"
+    },
+    {
+      "row": 95,
+      "breed_name": "Curly-Coated Retriever",
+      "column": "markings_array"
+    },
+    {
+      "row": 96,
+      "breed_name": "Czechoslovakian Vlciak",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 96,
+      "breed_name": "Czechoslovakian Vlciak",
+      "column": "markings_array"
+    },
+    {
+      "row": 98,
+      "breed_name": "Dalmatian",
+      "column": "markings_array"
+    },
+    {
+      "row": 99,
+      "breed_name": "Dandie Dinmont Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 100,
+      "breed_name": "Danish-Swedish Farmdog",
+      "column": "training"
+    },
+    {
+      "row": 101,
+      "breed_name": "Deutscher Wachtelhund",
+      "column": "training"
+    },
+    {
+      "row": 102,
+      "breed_name": "Doberman Pinscher",
+      "column": "markings_array"
+    },
+    {
+      "row": 103,
+      "breed_name": "Dogo Argentino",
+      "column": "markings_array"
+    },
+    {
+      "row": 103,
+      "breed_name": "Dogo Argentino",
+      "column": "training"
+    },
+    {
+      "row": 105,
+      "breed_name": "Drentsche Patrijshond",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 107,
+      "breed_name": "Dutch Shepherd",
+      "column": "markings_array"
+    },
+    {
+      "row": 109,
+      "breed_name": "English Foxhound",
+      "column": "markings_array"
+    },
+    {
+      "row": 110,
+      "breed_name": "English Setter",
+      "column": "markings_array"
+    },
+    {
+      "row": 112,
+      "breed_name": "English Toy Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 114,
+      "breed_name": "Estrela Mountain Dog",
+      "column": "training"
+    },
+    {
+      "row": 119,
+      "breed_name": "Flat-Coated Retriever",
+      "column": "markings_array"
+    },
+    {
+      "row": 121,
+      "breed_name": "French Spaniel",
+      "column": "training"
+    },
+    {
+      "row": 124,
+      "breed_name": "German Shepherd Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 126,
+      "breed_name": "German Spitz",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 126,
+      "breed_name": "German Spitz",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 128,
+      "breed_name": "Giant Schnauzer",
+      "column": "markings_array"
+    },
+    {
+      "row": 129,
+      "breed_name": "Glen of Imaal Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 130,
+      "breed_name": "Golden Retriever",
+      "column": "markings_array"
+    },
+    {
+      "row": 131,
+      "breed_name": "Gordon Setter",
+      "column": "markings_array"
+    },
+    {
+      "row": 132,
+      "breed_name": "Grand Basset Griffon Vendéen",
+      "column": "markings_array"
+    },
+    {
+      "row": 132,
+      "breed_name": "Grand Basset Griffon Vendéen",
+      "column": "training"
+    },
+    {
+      "row": 135,
+      "breed_name": "Greater Swiss Mountain Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 137,
+      "breed_name": "Hamiltonstovare",
+      "column": "markings_array"
+    },
+    {
+      "row": 139,
+      "breed_name": "Harrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 141,
+      "breed_name": "Hokkaido",
+      "column": "markings_array"
+    },
+    {
+      "row": 147,
+      "breed_name": "Irish Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 148,
+      "breed_name": "Irish Water Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 151,
+      "breed_name": "Jagdterrier",
+      "column": "training"
+    },
+    {
+      "row": 154,
+      "breed_name": "Japanese Spitz",
+      "column": "markings_array"
+    },
+    {
+      "row": 155,
+      "breed_name": "Japanese Terrier",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 155,
+      "breed_name": "Japanese Terrier",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 156,
+      "breed_name": "Kai Ken",
+      "column": "markings_array"
+    },
+    {
+      "row": 157,
+      "breed_name": "Karelian Bear Dog",
+      "column": "training"
+    },
+    {
+      "row": 158,
+      "breed_name": "Keeshond",
+      "column": "markings_array"
+    },
+    {
+      "row": 159,
+      "breed_name": "Kerry Blue Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 160,
+      "breed_name": "Kishu Ken",
+      "column": "markings_array"
+    },
+    {
+      "row": 161,
+      "breed_name": "Komondor",
+      "column": "markings_array"
+    },
+    {
+      "row": 162,
+      "breed_name": "Korean Jindo Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 163,
+      "breed_name": "Kromfohrlander",
+      "column": "markings_array"
+    },
+    {
+      "row": 164,
+      "breed_name": "Kuvasz",
+      "column": "markings_array"
+    },
+    {
+      "row": 167,
+      "breed_name": "Lakeland Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 168,
+      "breed_name": "Lancashire Heeler",
+      "column": "markings_array"
+    },
+    {
+      "row": 170,
+      "breed_name": "Large Munsterlander",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 170,
+      "breed_name": "Large Munsterlander",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 179,
+      "breed_name": "Miniature Bull Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 188,
+      "breed_name": "Norrbottenspets",
+      "column": "training"
+    },
+    {
+      "row": 190,
+      "breed_name": "Norwegian Elkhound",
+      "column": "markings_array"
+    },
+    {
+      "row": 192,
+      "breed_name": "Norwich Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 194,
+      "breed_name": "Old English Sheepdog",
+      "column": "markings_array"
+    },
+    {
+      "row": 201,
+      "breed_name": "Petit Basset Griffon Vendéen",
+      "column": "markings_array"
+    },
+    {
+      "row": 207,
+      "breed_name": "Pont-Audemer Spaniel",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 207,
+      "breed_name": "Pont-Audemer Spaniel",
+      "column": "health"
+    },
+    {
+      "row": 215,
+      "breed_name": "Portuguese Sheepdog",
+      "column": "training"
+    },
+    {
+      "row": 217,
+      "breed_name": "Presa Canario",
+      "column": "training"
+    },
+    {
+      "row": 218,
+      "breed_name": "Pudelpointer",
+      "column": "training"
+    },
+    {
+      "row": 223,
+      "breed_name": "Pyrenean Shepherd",
+      "column": "markings_array"
+    },
+    {
+      "row": 224,
+      "breed_name": "Rafeiro do Alentejo",
+      "column": "training"
+    },
+    {
+      "row": 228,
+      "breed_name": "Romanian Carpathian Shepherd",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 228,
+      "breed_name": "Romanian Carpathian Shepherd",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 230,
+      "breed_name": "Rottweiler",
+      "column": "markings_array"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "colors_array"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "markings_array"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "about_the_breed"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "health"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "grooming"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "exercise"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "training"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "nutrition"
+    },
+    {
+      "row": 234,
+      "breed_name": "Saint Bernard",
+      "column": "history"
+    },
+    {
+      "row": 236,
+      "breed_name": "Samoyed",
+      "column": "markings_array"
+    },
+    {
+      "row": 240,
+      "breed_name": "Scottish Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 242,
+      "breed_name": "Segugio Italiano",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 242,
+      "breed_name": "Segugio Italiano",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 242,
+      "breed_name": "Segugio Italiano",
+      "column": "markings_array"
+    },
+    {
+      "row": 243,
+      "breed_name": "Shetland Sheepdog",
+      "column": "markings_array"
+    },
+    {
+      "row": 246,
+      "breed_name": "Shikoku Ken",
+      "column": "training"
+    },
+    {
+      "row": 248,
+      "breed_name": "Silky Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 249,
+      "breed_name": "Skye Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 252,
+      "breed_name": "Slovensky Cuvac",
+      "column": "markings_array"
+    },
+    {
+      "row": 252,
+      "breed_name": "Slovensky Cuvac",
+      "column": "training"
+    },
+    {
+      "row": 253,
+      "breed_name": "Slovensky Kopov",
+      "column": "markings_array"
+    },
+    {
+      "row": 253,
+      "breed_name": "Slovensky Kopov",
+      "column": "training"
+    },
+    {
+      "row": 255,
+      "breed_name": "Smooth Fox Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 256,
+      "breed_name": "Soft Coated Wheaten Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 257,
+      "breed_name": "Spanish Mastiff",
+      "column": "training"
+    },
+    {
+      "row": 262,
+      "breed_name": "Standard Schnauzer",
+      "column": "markings_array"
+    },
+    {
+      "row": 263,
+      "breed_name": "Sussex Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 266,
+      "breed_name": "Taiwan Dog",
+      "column": "markings_array"
+    },
+    {
+      "row": 268,
+      "breed_name": "Thai Bangkaew",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 268,
+      "breed_name": "Thai Bangkaew",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 268,
+      "breed_name": "Thai Bangkaew",
+      "column": "markings_array"
+    },
+    {
+      "row": 268,
+      "breed_name": "Thai Bangkaew",
+      "column": "nutrition"
+    },
+    {
+      "row": 269,
+      "breed_name": "Thai Ridgeback",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 269,
+      "breed_name": "Thai Ridgeback",
+      "column": "coat_length_array"
+    },
+    {
+      "row": 269,
+      "breed_name": "Thai Ridgeback",
+      "column": "markings_array"
+    },
+    {
+      "row": 275,
+      "breed_name": "Toy Fox Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 276,
+      "breed_name": "Transylvanian Hound",
+      "column": "markings_array"
+    },
+    {
+      "row": 277,
+      "breed_name": "Treeing Tennessee Brindle",
+      "column": "training"
+    },
+    {
+      "row": 280,
+      "breed_name": "Volpino Italiano",
+      "column": "coat_type_array"
+    },
+    {
+      "row": 280,
+      "breed_name": "Volpino Italiano",
+      "column": "markings_array"
+    },
+    {
+      "row": 281,
+      "breed_name": "Weimaraner",
+      "column": "markings_array"
+    },
+    {
+      "row": 282,
+      "breed_name": "Welsh Springer Spaniel",
+      "column": "markings_array"
+    },
+    {
+      "row": 283,
+      "breed_name": "Welsh Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 284,
+      "breed_name": "West Highland White Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 285,
+      "breed_name": "Wetterhoun",
+      "column": "markings_array"
+    },
+    {
+      "row": 287,
+      "breed_name": "Wire Fox Terrier",
+      "column": "markings_array"
+    },
+    {
+      "row": 293,
+      "breed_name": "Yorkshire Terrier",
+      "column": "markings_array"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[2026-06-02T19:33:20] Vector documents created and completed CSV pruned.
+Source/Pruned CSV: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step5_completed.csv
+Vector JSON: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_vector_documents.json
+CSV rows: 292
+CSV columns before prune: 67
+CSV columns after prune: 37
+Documents: 2876
+Breeds: 292

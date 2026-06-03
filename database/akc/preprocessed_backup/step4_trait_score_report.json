@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-02T19:21:28",
+  "source": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step3_ranges_parsed.csv",
+  "output": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step4_traits_normalized.csv",
+  "rows": 292,
+  "columns": 51,
+  "normalized_original_trait_columns": true,
+  "score_style_conversion": "3/5 -> 3",
+  "not_specified_conversion": "Not specified -> blank CSV cell / null-equivalent",
+  "choice_numeric_tokens_removed": 12,
+  "score_changed_cells": 4088,
+  "not_specified_to_blank_cells": 72,
+  "derived_tags_created": false
+}

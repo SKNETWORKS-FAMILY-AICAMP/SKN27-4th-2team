@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-06-02T20:40:56",
+  "target_removed": "?",
+  "csv": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_completed.csv",
+  "json": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_vector_documents.json",
+  "csv_removed_locations": [
+    {
+      "row": 68,
+      "breed_name": "Bull Terrier",
+      "column": "training",
+      "count": 1,
+      "before": "Owners should remember that the breed exhibits the tenacity and courage of the Bulldog but is also a member of the Terrier Group. This is an independent free-thinker with a higher commitment to 'fun and games' than to a work ethic. Bull Terriers operate on the principle that if it is fun, they will do it. If not, why bother? Make training fun, and they will excel. Positive reinforcement with food or toys is an excellent place to start. Bull Terriers can excel at a variety of dog sports (including agility, flyball, freestyle, weight pull, and carting) as well as in roles such as bomb detection, search-and-rescue and as service, assistance, health-alert, and therapy dogs. There is no limit to what Bull Terriers can do if trained in a positive manner with patience and humor.",
+      "after": "Owners should remember that the breed exhibits the tenacity and courage of the Bulldog but is also a member of the Terrier Group. This is an independent free-thinker with a higher commitment to 'fun and games' than to a work ethic. Bull Terriers operate on the principle that if it is fun, they will do it. If not, why bother Make training fun, and they will excel. Positive reinforcement with food or toys is an excellent place to start. Bull Terriers can excel at a variety of dog sports (including agility, flyball, freestyle, weight pull, and carting) as well as in roles such as bomb detection, search-and-rescue and as service, assistance, health-alert, and therapy dogs. There is no limit to what Bull Terriers can do if trained in a positive manner with patience and humor."
+    },
+    {
+      "row": 172,
+      "breed_name": "Lhasa Apso",
+      "column": "grooming",
+      "count": 1,
+      "before": "Long hair or puppy cut? Both require regular maintenance, and this is a choice for the owner to make. Lhasas in a puppy cut or other clip still should be brushed regularly and bathed between visits to the groomer. Long hair requires regular brushing, using the right tools and techniques. Expect to bathe a long coat at least every two weeks, and brush at least once between baths. Thorough rinsing is essential, as shampoo residue irritates the skin. Conditioners and finishing sprays make grooming easier. Freshly bathed long or clipped hair should be thoroughly dried and brushed, as damp hair, even when clean, will mat.",
+      "after": "Long hair or puppy cut Both require regular maintenance, and this is a choice for the owner to make. Lhasas in a puppy cut or other clip still should be brushed regularly and bathed between visits to the groomer. Long hair requires regular brushing, using the right tools and techniques. Expect to bathe a long coat at least every two weeks, and brush at least once between baths. Thorough rinsing is essential, as shampoo residue irritates the skin. Conditioners and finishing sprays make grooming easier. Freshly bathed long or clipped hair should be thoroughly dried and brushed, as damp hair, even when clean, will mat."
+    },
+    {
+      "row": 190,
+      "breed_name": "Norwegian Elkhound",
+      "column": "training",
+      "count": 1,
+      "before": "This breed does not tend to be a star performer in the obedience ring. The Elkhound learns very quickly, being highly intelligent, but after this learning process it becomes, 'Didn't we already do this 12 times?' The other difficulty in training this breed for activities is their independent nature, inspired by their hunting traits. As far as simple house manners, they are very clean and quickly respond to correctly managed housebreaking.",
+      "after": "This breed does not tend to be a star performer in the obedience ring. The Elkhound learns very quickly, being highly intelligent, but after this learning process it becomes, 'Didn't we already do this 12 times' The other difficulty in training this breed for activities is their independent nature, inspired by their hunting traits. As far as simple house manners, they are very clean and quickly respond to correctly managed housebreaking."
+    },
+    {
+      "row": 259,
+      "breed_name": "Spinone Italiano",
+      "column": "training",
+      "count": 2,
+      "before": "One experienced breeder shares insight on breed trainability: 'Spinoni are very soft, very stubborn, and very smart. Training is mostly about 'barter.' With many breeds, if you say, 'Jump,' they will ask, 'How high?' as they are jumping, whereas a Spinone will ask, 'Why?' You can teach a Spinone the basics and even train them for competitive obedience'just don't expect them to be 'high and tight' about it every single time. They may tell you, 'No, not today. Maybe later.' They are smart, but a challenge, and they will shut down if training is too hard or harsh. When hunting, they hunt where they want and will put food on your table. Spinoni are not 'robot hunters' who will go where you tell them to. Spinoni teach hunters to trust their dogs in the field.'",
+      "after": "One experienced breeder shares insight on breed trainability: 'Spinoni are very soft, very stubborn, and very smart. Training is mostly about 'barter.' With many breeds, if you say, 'Jump,' they will ask, 'How high' as they are jumping, whereas a Spinone will ask, 'Why' You can teach a Spinone the basics and even train them for competitive obedience'just don't expect them to be 'high and tight' about it every single time. They may tell you, 'No, not today. Maybe later.' They are smart, but a challenge, and they will shut down if training is too hard or harsh. When hunting, they hunt where they want and will put food on your table. Spinoni are not 'robot hunters' who will go where you tell them to. Spinoni teach hunters to trust their dogs in the field.'"
+    },
+    {
+      "row": 281,
+      "breed_name": "Weimaraner",
+      "column": "training",
+      "count": 1,
+      "before": "As one longtime breeder says, 'The good news is that Weimaraners are smart; the bad news is that Weimaraners are smart.' They learn quickly, and that includes both good and bad behaviors. Get to a training class and be consistent with your training methods. Weimaraners operate on the principle of 'What's in it for me?' Be creative in your training by making what you want what they want. Early socialization and puppy training are vital and help to ensure that the Weimaraner grows into a well-adjusted, well-mannered companion.",
+      "after": "As one longtime breeder says, 'The good news is that Weimaraners are smart; the bad news is that Weimaraners are smart.' They learn quickly, and that includes both good and bad behaviors. Get to a training class and be consistent with your training methods. Weimaraners operate on the principle of 'What's in it for me' Be creative in your training by making what you want what they want. Early socialization and puppy training are vital and help to ensure that the Weimaraner grows into a well-adjusted, well-mannered companion."
+    }
+  ],
+  "csv_removed_count": 6,
+  "json_removed_count": 6,
+  "remaining_csv_hit_count": 0,
+  "remaining_json_count": 0
+}

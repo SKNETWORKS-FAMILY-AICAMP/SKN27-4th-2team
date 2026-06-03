@@ -1,0 +1,204 @@
+{
+  "timestamp": "2026-06-02T20:21:27",
+  "csv": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_completed.csv",
+  "json": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_vector_documents.json",
+  "changed_rows": 42,
+  "removed_sentence_count": 42,
+  "removed_sentence_items": [
+    {
+      "breed_name": "Appenzeller Sennenhund",
+      "removed_text": "Pronunciation - Ap-pen-zeller Sen-inn-hund"
+    },
+    {
+      "breed_name": "Azawakh",
+      "removed_text": "Pronunciation - Az-a-walk"
+    },
+    {
+      "breed_name": "Barbado da Terceira",
+      "removed_text": "Pronunciation - Bar-ba-dow da Tera-seat-a Azores with more than 500 years of history as a versatile farm dog managing cattle and protecting property and livestock."
+    },
+    {
+      "breed_name": "Barbet",
+      "removed_text": "Pronunciation - Bar-Bay"
+    },
+    {
+      "breed_name": "Basset Fauve de Bretagne",
+      "removed_text": "Pronunciation - Basset Fauve de Bri-Tonya"
+    },
+    {
+      "breed_name": "Beauceron",
+      "removed_text": "Pronunciation - Bo-sir-ron"
+    },
+    {
+      "breed_name": "Belgian Laekenois",
+      "removed_text": "Pronunciation - Belgian Lak-in-wah"
+    },
+    {
+      "breed_name": "Berger Picard",
+      "removed_text": "Pronunciation - Bare-Zhay Pee-Char"
+    },
+    {
+      "breed_name": "Biewer Terrier",
+      "removed_text": "Pronunciation - Beaver Terrier"
+    },
+    {
+      "breed_name": "Boerboel",
+      "removed_text": "Pronunciation - Bor-Bull"
+    },
+    {
+      "breed_name": "Braque Francais Pyrenean",
+      "removed_text": "Pronunciation - Brock Fran-say Pir-Knee-an"
+    },
+    {
+      "breed_name": "Cane Corso",
+      "removed_text": "Pronunciation - Connie Corso"
+    },
+    {
+      "breed_name": "Catahoula Leopard Dog",
+      "removed_text": "Pronunciation - Cat-a-who-la Leopard Dog"
+    },
+    {
+      "breed_name": "Chinook",
+      "removed_text": "Pronunciation - Sha-Nook"
+    },
+    {
+      "breed_name": "Cirneco dell'Etna",
+      "removed_text": "Pronunciation - Cheer-Nek-o dell-et-na"
+    },
+    {
+      "breed_name": "Coton de Tulear",
+      "removed_text": "Pronunciation - Ko-Ton de Two-lay-air"
+    },
+    {
+      "breed_name": "Dogue de Bordeaux",
+      "removed_text": "Pronunciation - Dog de Bor-doe"
+    },
+    {
+      "breed_name": "German Longhaired Pointer",
+      "removed_text": "German Longhaired Pointer Club of North America Jeff Obrecht (307) 778-7843 obietrio@bresnan.net"
+    },
+    {
+      "breed_name": "Jagdterrier",
+      "removed_text": "Pronunciation - Yahk Terrier"
+    },
+    {
+      "breed_name": "Lagotto Romagnolo",
+      "removed_text": "Pronunciation - Low-got-tow Ro-man-yow-low"
+    },
+    {
+      "breed_name": "Leonberger",
+      "removed_text": "Pronunciation - Lee-uhn-berger"
+    },
+    {
+      "breed_name": "Nederlandse Kooikerhondje",
+      "removed_text": "Pronunciation - Nay-der-lands-say Koi-ker-hond-jay"
+    },
+    {
+      "breed_name": "Norrbottenspets",
+      "removed_text": "Pronunciation - Nor-bot-ten-spitz"
+    },
+    {
+      "breed_name": "Norwegian Lundehund",
+      "removed_text": "Pronunciation - Norwegian Lun-duh-hund"
+    },
+    {
+      "breed_name": "Porcelaine",
+      "removed_text": "Pronunciation - Pour-suh-lein"
+    },
+    {
+      "breed_name": "Presa Canario",
+      "removed_text": "Pronunciation - Press-a Ca-nah-rio"
+    },
+    {
+      "breed_name": "Pudelpointer",
+      "removed_text": "Pronunciation - Puh-dull-pointer"
+    },
+    {
+      "breed_name": "Rafeiro do Alentejo",
+      "removed_text": "Pronunciation - Ra-fear-o do Alen-tay-joe"
+    },
+    {
+      "breed_name": "Romanian Carpathian Shepherd",
+      "removed_text": "Club: Romanian Carpathian Shepherd Club of America Website: www.carpathianshepherd.org"
+    },
+    {
+      "breed_name": "Romanian Carpathian Shepherd",
+      "removed_text": "Pronunciation - Romanian Car-pay-thee-uhn Shepherd"
+    },
+    {
+      "breed_name": "Romanian Mioritic Shepherd Dog",
+      "removed_text": "Pronunciation - Romanian Me-or-it-ick Shepherd Dog"
+    },
+    {
+      "breed_name": "Russian Tsvetnaya Bolonka",
+      "removed_text": "Pronunciation - Russian S-vet-naya Bo-lonk-a"
+    },
+    {
+      "breed_name": "Schapendoes",
+      "removed_text": "Pronunciation - Sha-pen-doe"
+    },
+    {
+      "breed_name": "Segugio Italiano",
+      "removed_text": "Club: Segugio Italiano Club of America - www.segugioitalianoclubofamerica.com Email: secretary@segit.org"
+    },
+    {
+      "breed_name": "Segugio Italiano",
+      "removed_text": "Pronunciation - Say-gu-joe Italiano"
+    },
+    {
+      "breed_name": "Shikoku Ken",
+      "removed_text": "Pronunciation - She-Coe-koo Ken"
+    },
+    {
+      "breed_name": "Sloughi",
+      "removed_text": "Pronunciation - Sloo-ghee"
+    },
+    {
+      "breed_name": "Tornjak",
+      "removed_text": "Pronunciation - Torn-jak"
+    },
+    {
+      "breed_name": "Volpino Italiano",
+      "removed_text": "Club: Volpino Italiano Club of America - https://www.volpinoclubofamerica.com/"
+    },
+    {
+      "breed_name": "Wetterhoun",
+      "removed_text": "Pronunciation - Wet-ter-houn"
+    },
+    {
+      "breed_name": "Yakutian Laika",
+      "removed_text": "YAKUTIAN LAIKA CLUB OF AMERICA https://yakutianlaikaclubofamerica.org/"
+    },
+    {
+      "breed_name": "Yakutian Laika",
+      "removed_text": "Pronunciation - Yak-cue-tan Lie-ka"
+    }
+  ],
+  "removed_char_items": [
+    {
+      "breed_name": "Biewer Terrier",
+      "char": "?",
+      "count": 1
+    },
+    {
+      "breed_name": "Black Russian Terrier",
+      "char": "?",
+      "count": 4
+    },
+    {
+      "breed_name": "Greater Swiss Mountain Dog",
+      "char": "?",
+      "count": 1
+    },
+    {
+      "breed_name": "Tibetan Spaniel",
+      "char": "?",
+      "count": 1
+    }
+  ],
+  "remaining_sentence_hits_count": 0,
+  "remaining_char_hits_count": 0,
+  "remaining_sentence_hits_sample": [],
+  "remaining_char_hits_sample": [],
+  "vector_about_docs_updated": 290
+}
