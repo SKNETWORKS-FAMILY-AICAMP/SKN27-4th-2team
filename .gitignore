@@ -6,3 +6,6 @@
 
 # env 파일
 .env
+
+# db 파일
+.sqlite3

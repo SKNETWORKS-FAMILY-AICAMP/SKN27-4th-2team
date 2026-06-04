@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}마이페이지 | Pet Mate{% endblock %}
+{% block body_class %}profile-page{% endblock %}
+
+{% block content %}
+<main class="profile-layout pet-profile-layout">
+    <section class="profile-summary glass-card">
+        <p class="eyebrow">My Page</p>
+        <h1>내 정보</h1>
+        <div class="profile-avatar">{{ user.username|first|upper }}</div>
+        <dl class="profile-meta">
+            <div>
+                <dt>아이디</dt>
+                <dd>{{ user.username }}</dd>
+            </div>
+            <div>
+                <dt>이메일</dt>
+                <dd>{{ user.email|default:"등록된 이메일이 없습니다." }}</dd>
+            </div>
+        </dl>
+    </section>
+
+    <section class="profile-card glass-card">
+        <div class="card-heading">
+            <p class="eyebrow">Account</p>
+            <h2>회원 정보 수정</h2>
+        </div>
+
+        <form class="auth-form" method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="field-error">{{ field.errors|striptags }}</p>
+                {% endif %}
+            {% endfor %}
+
+            <button class="primary-button full-width" type="submit">저장하기</button>
+        </form>
+
+        <p class="helper-text">아이디는 로그인 식별자로 사용하므로 이 화면에서는 변경하지 않습니다.</p>
+    </section>
+
+    <section class="pet-list-card glass-card">
+        <div class="card-heading">
+            <p class="eyebrow">My Pets</p>
+            <h2>등록한 반려동물</h2>
+        </div>
+
+        <div class="pet-list">
+            {% for pet in pets %}
+                <article class="pet-card">
+                    <div>
+                        <h3>{{ pet.name }}</h3>
+                        <p>
+                            {{ pet.get_species_display }}
+                            {% if pet.breed %} · {{ pet.breed }}{% endif %}
+                            {% if pet.age %} · {{ pet.age }}살{% endif %}
+                            · {{ pet.get_gender_display }}
+                        </p>
+                        {% if pet.memo %}
+                            <p class="pet-memo">{{ pet.memo }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="pet-actions">
+                        <a class="text-button" href="{% url 'user:pet_update' pet.id %}">수정</a>
+                        <form method="post" action="{% url 'user:pet_delete' pet.id %}">
+                            {% csrf_token %}
+                            <button class="text-button" type="submit">삭제</button>
+                        </form>
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-history">아직 등록된 반려동물이 없습니다.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="pet-form-card glass-card">
+        <div class="card-heading">
+            <p class="eyebrow">Add Pet</p>
+            <h2>반려동물 등록</h2>
+        </div>
+
+        <form class="auth-form" method="post" action="{% url 'user:pet_create' %}">
+            {% csrf_token %}
+            {% for field in pet_form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="field-error">{{ field.errors|striptags }}</p>
+                {% endif %}
+            {% endfor %}
+            <button class="primary-button full-width" type="submit">등록하기</button>
+        </form>
+    </section>
+</main>
+{% endblock %}
