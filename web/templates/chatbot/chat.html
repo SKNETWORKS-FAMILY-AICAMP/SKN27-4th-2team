@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}챗봇 | Pet Mate{% endblock %}
+{% block body_class %}chat-page{% endblock %}
+
+{% block content %}
+<main class="chat-layout history-chat-layout">
+    <aside class="chat-history glass-card">
+        <div class="history-head">
+            <div>
+                <p class="eyebrow">History</p>
+                <h2>채팅 내역</h2>
+            </div>
+            <a class="icon-link" href="{% url 'chatbot:chat' %}" aria-label="새 대화">+</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="history-list">
+                {% for session in sessions %}
+                    <a class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}"
+                       href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                        <strong>{{ session.title }}</strong>
+                        <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                    </a>
+                {% empty %}
+                    <p class="empty-history">아직 저장된 대화가 없습니다.</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="history-login">
+                <p>로그인하면 채팅 내역을 저장하고 다시 열 수 있습니다.</p>
+                <a class="secondary-button full-width" href="{% url 'user:login' %}">로그인하기</a>
+            </div>
+        {% endif %}
+    </aside>
+
+    <section class="chat-panel glass-card">
+        <div class="chat-panel-head">
+            <div>
+                <p class="eyebrow">Pet Mate Assistant</p>
+                <h2>반려견 Q&A</h2>
+            </div>
+            <span class="mode-badge">Mock Mode</span>
+        </div>
+
+        <div class="chat-window" aria-live="polite">
+            {% for message in messages %}
+                <article class="chat-message {{ message.role }}">
+                    <div class="message-bubble">
+                        {% if message.intent %}
+                            <span class="intent-label">{{ message.intent }}</span>
+                        {% endif %}
+                        <p>{{ message.content }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+        <form class="chat-form" method="post">
+            {% csrf_token %}
+            {% if active_session %}
+                <input type="hidden" name="session_id" value="{{ active_session.id }}">
+            {% endif %}
+            <label for="message">질문</label>
+            <div class="chat-input-row">
+                <input id="message" name="message" type="text" placeholder="예: 아파트에서 키우기 쉬운 견종 추천해줘" required>
+                <button class="primary-button" type="submit">전송</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}
