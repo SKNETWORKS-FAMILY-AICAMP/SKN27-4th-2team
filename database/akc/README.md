@@ -20,7 +20,7 @@
 - Adaptability Level 적응력
 
 4) Personality (성격)
-- Trainability Level 훈련 용이성
+- Trainability Level 훈련 용이성 (Self-Willed -> Eager to Please (5점에 가까울수록 훈련 용이함함))
 - Energy Level 에너지 수준
 - Barking Level 짖음 정도
 - Mental Stimulation Needs 정신적 자극 필요도
