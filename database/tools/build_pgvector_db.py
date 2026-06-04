@@ -309,11 +309,11 @@ def upsert_qna(cur: psycopg.Cursor, row: dict[str, Any], metadata: dict[str, Any
         INSERT INTO qna_items (doc_id, qna_source, question, answer, source_file, metadata)
         VALUES (%s, %s, %s, %s, %s, %s)
         ON CONFLICT (doc_id) DO UPDATE SET
-            qna_source = EXCLUDED.qna_source,
-            question = EXCLUDED.question,
-            answer = EXCLUDED.answer,
-            source_file = EXCLUDED.source_file,
-            metadata = EXCLUDED.metadata
+            qna_source = COALESCE(EXCLUDED.qna_source, qna_items.qna_source),
+            question = COALESCE(EXCLUDED.question, qna_items.question),
+            answer = COALESCE(EXCLUDED.answer, qna_items.answer),
+            source_file = COALESCE(EXCLUDED.source_file, qna_items.source_file),
+            metadata = qna_items.metadata || EXCLUDED.metadata
         RETURNING id
         """,
         (row["doc_id"], metadata.get("qna_source"), question, answer, metadata.get("source_file"), Jsonb(metadata)),
