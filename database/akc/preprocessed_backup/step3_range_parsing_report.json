@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-06-02T19:07:01",
+  "source": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step2_basic_cleaned.csv",
+  "output": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step3_ranges_parsed.csv",
+  "rows": 292,
+  "columns": 37,
+  "range_fields": [
+    "height",
+    "weight",
+    "life_expectancy"
+  ],
+  "parsed_counts": {
+    "height": 290,
+    "weight": 288,
+    "life_expectancy": 289
+  },
+  "added_columns": [
+    "height_min",
+    "height_max",
+    "weight_min",
+    "weight_max",
+    "life_expectancy_min",
+    "life_expectancy_max"
+  ]
+}

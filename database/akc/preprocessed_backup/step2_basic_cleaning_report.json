@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-06-02T19:07:01",
+  "source": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\akc_breed_info.csv",
+  "output": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step2_basic_cleaned.csv",
+  "rows": 292,
+  "columns": 31,
+  "changed_rows": 126,
+  "changed_cells": 185,
+  "boilerplate_removed": [
+    "Stay Up-To-Date About Dog Health",
+    "Stay Up-To-Date About Dog Grooming",
+    "Stay Up-To-Date About Dog Exercise and Activities",
+    "Stay Up-To-Date About Dog Training",
+    "Stay Up-To-Date About Dog Nutrition",
+    "Get dog health information conveniently delivered to your inbox each week",
+    "EMAIL ADDRESS",
+    "SIGN UP",
+    "VIEW ALL THE CHOICES FOR AKC NEWSLETTERS TO RECEIVE THE CONTENT YOU WANT >",
+    "AKC Privacy Policy",
+    "ADVERTISEMENT",
+    "Different breeds have different needs.",
+    "Protect their health and get your free quote through AKC Pet Insurance.",
+    "Read the Official Breed Club Health Club Statement",
+    "Alaskan Klee Kai Club of America",
+    "www.akkcoa.org"
+  ],
+  "changed_by_column": {
+    "about_the_breed": 63,
+    "health": 5,
+    "grooming": 31,
+    "exercise": 19,
+    "training": 21,
+    "nutrition": 8,
+    "history": 38
+  }
+}

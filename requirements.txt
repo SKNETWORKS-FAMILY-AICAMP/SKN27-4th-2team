@@ -1,0 +1,8 @@
+jupyter
+pandas
+python-dotenv
+langchain-openai==1.0.3
+langchain==1.2.0 # LangChain 메인 패키지
+langchain-core==1.2.3 # LangChain 코어 기능
+playwright
+beautifulsoup4
