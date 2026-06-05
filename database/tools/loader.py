@@ -43,3 +43,25 @@ def get_article_loader(filepath):
     )
     return loader
 
+def youtube_metadata_func(record: dict, metadata: dict) -> dict:
+    metadata['doc_id'] = record.get('id')
+    metadata['doc_type'] = record.get('metadata').get('doc_type')
+    metadata['channel'] = record.get('metadata').get('channel')
+    metadata['title'] = record.get('metadata').get('title')
+    metadata['url'] = record.get('metadata').get('video_url')
+    metadata['expert'] = record.get('metadata').get('expert')
+    metadata['source'] = 'YouTube'
+    return metadata
+
+def get_youtube_loader(filepath):
+    """
+    filepath example: '../../docs/youtube_basic_instruction.json'
+    """
+    loader = JSONLoader(
+        filepath=filepath,
+        jq_schema = r'.[]', 
+        content_key='content', 
+        metadata_func=youtube_metadata_func,
+        text_content=False
+    )
+    return loader
