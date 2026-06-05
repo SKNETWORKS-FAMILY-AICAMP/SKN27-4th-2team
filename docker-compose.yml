@@ -1,14 +1,19 @@
 ﻿services:
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: database
-    restart: always
-    env_file:
-      - .env
+    container_name: pet_dog
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: pet_dog
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin1234
+
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "5432:5432"
+
     volumes:
-      - pgvector_data:/var/lib/postgresql/data
+      - pet_dog_postgres_data:/var/lib/postgresql/data
 
 volumes:
-  pgvector_data:
+  pet_dog_postgres_data:
