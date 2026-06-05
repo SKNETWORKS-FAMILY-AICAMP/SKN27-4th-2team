@@ -1,5 +1,6 @@
 from backend.agents.rag_workflow import run_rag_workflow
 from backend.integrations.rag.interface import RAGClient
+from backend.integrations.rag.pgvector_client import PGVectorRAGClient
 from backend.schemas.chat import ChatResponse
 
 
@@ -13,7 +14,9 @@ def handle_chat_message(
     # conversation_id is reserved for the later memory layer.
     _ = conversation_id
 
+    client = rag_client or PGVectorRAGClient()
+
     return run_rag_workflow(
         question=message,
-        rag_client=rag_client,
+        rag_client=client,
     )

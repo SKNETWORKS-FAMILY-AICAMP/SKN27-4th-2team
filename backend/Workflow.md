@@ -2,7 +2,7 @@
 
 현재 backend는 LangGraph 기반 RAG workflow로 구성한다.
 
-케어 질문, 특정 견종 질문, 견종 추천 요청을 아직 분기하지 않고, 모든 사용자 메시지를 하나의 RAG 흐름으로 처리한다. RAG와 Vector DB는 다른 브랜치에서 작업 중이므로 현재는 `FakeRAGClient`를 통해 workflow 실행 구조를 먼저 검증한다.
+케어 질문, 특정 견종 질문, 견종 추천 요청을 아직 분기하지 않고, 모든 사용자 메시지를 하나의 RAG 흐름으로 처리한다. 기본 서비스 흐름은 PostgreSQL + pgvector 기반 `PGVectorRAGClient`를 사용한다. `FakeRAGClient`는 테스트 또는 임시 실행용으로만 사용한다.
 
 ## Workflow
 
@@ -39,7 +39,7 @@ app = workflow.compile()
 2. `backend.agents.rag_workflow.run_rag_workflow()`를 실행한다.
 3. `create_rag_workflow()`가 `retrieve`, `evaluate_relevance`, `generate` 노드를 가진 LangGraph를 컴파일한다.
 4. `retrieve` 노드가 사용자 질문을 분석하고 RAG 검색 요청을 만든다.
-5. 현재는 `FakeRAGClient`가 임시 검색 문서를 반환한다.
+5. 기본적으로 `PGVectorRAGClient`가 PostgreSQL `rag_chunks` 테이블에서 pgvector 검색을 수행한다.
 6. `evaluate_relevance` 노드가 검색 문서 중 질문과 관련 있는 문서를 선별한다.
 7. `generate` 노드가 관련 문서를 바탕으로 답변을 생성하고 기본 검증 문구를 보강한다.
 8. 최종적으로 `ChatResponse`를 반환한다.
@@ -65,7 +65,8 @@ backend/
 │       ├── __init__.py
 │       ├── interface.py
 │       ├── schemas.py
-│       └── fake_client.py
+│       ├── fake_client.py
+│       └── pgvector_client.py
 │
 ├── schemas/
 │   ├── __init__.py
@@ -85,6 +86,8 @@ backend/
 Django view 또는 API에서 추후 호출할 서비스 진입점이다.
 
 현재는 web과 연결하지 않았으며, 나중에 `web/chatbot/views.py`에서 `handle_chat_message()`를 호출하면 된다.
+
+기본 RAG client는 `PGVectorRAGClient`다. 테스트가 필요할 때는 `handle_chat_message(..., rag_client=FakeRAGClient())`처럼 별도 client를 주입할 수 있다.
 
 ### `agents/rag_workflow.py`
 
@@ -157,9 +160,21 @@ search_documents(
 
 ### `integrations/rag/fake_client.py`
 
-실제 Vector DB가 연결되기 전까지 사용하는 임시 RAG client다.
+테스트 또는 임시 실행에 사용하는 fake RAG client다.
 
 현재는 테스트용 문서 하나를 반환한다.
+
+### `integrations/rag/pgvector_client.py`
+
+실제 PostgreSQL + pgvector 검색을 수행하는 RAG client다.
+
+역할은 다음과 같다.
+
+- `.env`에서 OpenAI API key, embedding model, PostgreSQL 접속 정보를 읽는다.
+- 사용자 query를 embedding vector로 변환한다.
+- `rag_chunks` 테이블에서 cosine similarity 검색을 수행한다.
+- source별 원천 테이블을 join해 title, breed, section, url metadata를 함께 반환한다.
+- 검색 결과를 `RetrievedDocument` 목록으로 변환한다.
 
 ### `agents/response_generator.py`
 
