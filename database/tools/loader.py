@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 
 from langchain_community.document_loaders import JSONLoader
 
@@ -28,7 +28,7 @@ def dog_info_metadata_func(record: dict, metadata: dict) -> dict:
 
 
 def get_dog_info_loader(
-    filepath="../contents/dog_info/preprocessed/akc_breed_info_vector_documents.json",
+    filepath="../akc/preprocessed/akc_breed_info_vector_documents.json",
 ):
     return JSONLoader(
         file_path=filepath,
@@ -134,3 +134,4 @@ def get_qna_loader(filepath, qna_source):
         text_content=False,
         json_lines=True,
     )
+
