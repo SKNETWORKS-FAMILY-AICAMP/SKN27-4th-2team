@@ -28,7 +28,7 @@ def generate_answer(
         )
 
     return (
-        "Basic Workflow로 질문을 처리했습니다.\n\n"
+        "RAG Workflow로 질문을 처리했습니다.\n\n"
         f"- 질문 요약: {analysis.summary}\n"
         f"- 감지된 주제: {topic_text}\n"
         f"- 감지된 견종: {breed_text}\n\n"
