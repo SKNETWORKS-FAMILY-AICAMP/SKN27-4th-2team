@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # 직접 만든 앱입니다.
     'user',
     'chatbot',
+    'dog',
+    'test',
 ]
 
 MIDDLEWARE = [

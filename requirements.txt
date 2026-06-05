@@ -18,3 +18,12 @@ beautifulsoup4
 # 웹 개발
 django==6.0.5
 psycopg[binary]
+
+# Vector DB
+chromadb
+langchain-chroma
+langchain-text-splitters
+
+# PGVector
+langchain-postgres
+pgvector
