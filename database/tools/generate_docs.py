@@ -83,7 +83,7 @@ def process_article_csv(file_path):
             doc_id = f"akc_{category}_{title_slug}_intro"
             
             # RAG 임베딩에 최적화된 통합 텍스트 구성 (기사 제목 + 서론)
-            rag_full_text = f"Article Title: {title}\nCategory: {category}\nContext: Introduction\n\n" + clean_text(intro)
+            rag_full_text = f"Title: {title}\nContext: Introduction\n\n" + clean_text(intro)
             
             doc = {
                 "id": doc_id,
@@ -119,10 +119,7 @@ def process_article_csv(file_path):
             
             # RAG 임베딩에 최적화된 통합 텍스트 구성 (기사 제목 + 소제목 + 문맥 정보)
             # 이 텍스트는 벡터 임베딩(Vector Embedding) 시 높은 검색 정확도를 보장합니다.
-            rag_full_text = f"Article Title: {title}\nCategory: {category}\nSection: {sec_title_cleaned}\n\n"
-            if intro:
-                rag_full_text += f"Context: {intro}\n\n"
-            rag_full_text += f"Content:\n{sec_content_cleaned}"
+            rag_full_text = f"Title: {title}\nSection: {sec_title_cleaned}\nContent:\n{sec_content_cleaned}"
             
             doc = {
                 "id": doc_id,
@@ -153,8 +150,7 @@ def process_article_csv(file_path):
             faq_id = f"akc_{category}_{title_slug}_faq_{question[:20]}"
             
             # RAG 임베딩에 최적화된 통합 텍스트 구성
-            rag_full_text = f"Article Title: {title}\nCategory: {category}\nType: FAQ\n\n"
-            rag_full_text += f"Question: {question}\nAnswer: {answer}"
+            rag_full_text = f"Title: {title}\nFAQ\nQuestion: {question}\nAnswer: {answer}"
             
             doc = {
                 "id": faq_id,
