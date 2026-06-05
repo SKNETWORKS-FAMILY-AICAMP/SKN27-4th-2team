@@ -3,6 +3,7 @@
 
 # 캐시 파일
 *.pyc
+.DS_Store
 
 # env 파일
 .env

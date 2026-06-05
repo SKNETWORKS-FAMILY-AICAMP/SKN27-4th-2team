@@ -1,9 +1,16 @@
+# 개발환경
 jupyter
 pandas
+
+# LLM
 python-dotenv
 langchain-openai==1.0.3
 langchain==1.2.0 # LangChain 메인 패키지
 langchain-core==1.2.3 # LangChain 코어 기능
+
+# 데이터 수집
 playwright
 beautifulsoup4
+
+# 웹 개발
 django==6.0.5
