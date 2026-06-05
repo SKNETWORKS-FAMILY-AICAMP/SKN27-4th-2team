@@ -1,21 +1,19 @@
 ﻿services:
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: dog_rag_pgvector
+    container_name: pet_dog
     restart: unless-stopped
+
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-dog_rag}
-      POSTGRES_USER: ${POSTGRES_USER:-dog_user}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dog_password}
+      POSTGRES_DB: pet_dog
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin1234
+
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      - "5432:5432"
+
     volumes:
-      - pgvector_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dog_user} -d ${POSTGRES_DB:-dog_rag}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      - pet_dog_postgres_data:/var/lib/postgresql/data
 
 volumes:
-  pgvector_data:
+  pet_dog_postgres_data:
