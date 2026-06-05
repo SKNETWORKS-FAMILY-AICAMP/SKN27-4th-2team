@@ -1,37 +1,48 @@
-# Backend Basic Workflow
+# Backend LangGraph RAG Workflow
 
-현재 단계에서는 케어 질문, 특정 견종 질문, 견종 추천 요청을 분기하지 않고 하나의 일자형 workflow로 처리한다.
+현재 backend는 LangGraph 기반 RAG workflow로 구성한다.
 
-RAG와 Vector DB는 다른 브랜치에서 작업 중이므로, 현재 backend 코드는 `FakeRAGClient`를 사용해 챗봇 처리 흐름만 먼저 검증한다. 추후 실제 RAG 구현체가 준비되면 `backend.integrations.rag.interface.RAGClient` 규격에 맞춰 교체한다.
+케어 질문, 특정 견종 질문, 견종 추천 요청을 아직 분기하지 않고, 모든 사용자 메시지를 하나의 RAG 흐름으로 처리한다. RAG와 Vector DB는 다른 브랜치에서 작업 중이므로 현재는 `FakeRAGClient`를 통해 workflow 실행 구조를 먼저 검증한다.
 
 ## Workflow
 
 ```mermaid
 flowchart TD
-    A["사용자 메시지"] --> B["Chat Service"]
-    B --> C["Basic Workflow"]
-    C --> D["User Analysis Agent<br/>질문 요약·키워드·견종명·주제 추출"]
-    D --> E["RAG Search Request Builder<br/>검색 쿼리·카테고리·섹션 구성"]
-    E --> F["RAG Client<br/>현재는 FakeRAGClient 사용"]
-    F --> G["Response Generator<br/>검색 문서 기반 답변 초안 생성"]
-    G --> H["Response Validator<br/>답변 품질·근거·안전 문구 검증"]
-    H --> I{"검증 통과?"}
-    I -->|"아니오<br/>최대 1회 재생성"| G
-    I -->|"예"| J["Chat Response<br/>answer·sources·analysis 반환"]
+    A["START"] --> B["retrieve<br/>문서 검색 노드"]
+    B --> C["evaluate_relevance<br/>관련 문서 평가"]
+    C --> D["generate<br/>답변 생성 노드"]
+    D --> E["END"]
+```
+
+## LangGraph 구성
+
+`backend.agents.rag_workflow.create_rag_workflow()`에서 LangGraph를 생성한다.
+
+```python
+workflow = StateGraph(RAGState)
+
+workflow.add_node("retrieve", retrieve)
+workflow.add_node("evaluate_relevance", evaluate_relevance)
+workflow.add_node("generate", generate)
+
+workflow.add_edge(START, "retrieve")
+workflow.add_edge("retrieve", "evaluate_relevance")
+workflow.add_edge("evaluate_relevance", "generate")
+workflow.add_edge("generate", END)
+
+app = workflow.compile()
 ```
 
 ## 처리 순서
 
 1. `backend.services.chat_service.handle_chat_message()`가 사용자 메시지를 받는다.
-2. `backend.agents.basic_workflow.run_basic_chat_workflow()`를 실행한다.
-3. `User Analysis Agent`가 질문 요약, 키워드, 견종명, 주제를 추출한다.
-4. 분석 결과를 바탕으로 RAG 검색 요청을 만든다.
+2. `backend.agents.rag_workflow.run_rag_workflow()`를 실행한다.
+3. `create_rag_workflow()`가 `retrieve`, `evaluate_relevance`, `generate` 노드를 가진 LangGraph를 컴파일한다.
+4. `retrieve` 노드가 사용자 질문을 분석하고 RAG 검색 요청을 만든다.
 5. 현재는 `FakeRAGClient`가 임시 검색 문서를 반환한다.
-6. `Response Generator`가 사용자 질문과 검색 문서를 바탕으로 답변 초안을 만든다.
-7. `Response Validator`가 답변이 비어 있거나 근거 문서가 부족한지 검증한다.
-8. 검증에 실패하면 발견된 문제를 `Response Generator`에 전달해 최대 1회 답변을 다시 생성한다.
-9. 검증을 통과하거나 재시도 한도에 도달하면 건강 관련 주의 문구, 견종 추천 관련 안내 문구를 보강한다.
-10. 최종적으로 `ChatResponse`를 반환한다.
+6. `evaluate_relevance` 노드가 검색 문서 중 질문과 관련 있는 문서를 선별한다.
+7. `generate` 노드가 관련 문서를 바탕으로 답변을 생성하고 기본 검증 문구를 보강한다.
+8. 최종적으로 `ChatResponse`를 반환한다.
 
 ## 현재 파일 구성
 
@@ -42,7 +53,8 @@ backend/
 │
 ├── agents/
 │   ├── __init__.py
-│   ├── basic_workflow.py
+│   ├── rag_workflow.py
+│   ├── rag_query_builder.py
 │   ├── user_analysis_agent.py
 │   ├── response_generator.py
 │   └── response_validator.py
@@ -58,7 +70,8 @@ backend/
 ├── schemas/
 │   ├── __init__.py
 │   ├── analysis.py
-│   └── chat.py
+│   ├── chat.py
+│   └── rag.py
 │
 └── services/
     ├── __init__.py
@@ -71,27 +84,53 @@ backend/
 
 Django view 또는 API에서 추후 호출할 서비스 진입점이다.
 
-현재는 web과 연결하지 않았으며, 나중에 `web/chatbot/views.py`에서 이 파일의 `handle_chat_message()`를 호출하면 된다.
+현재는 web과 연결하지 않았으며, 나중에 `web/chatbot/views.py`에서 `handle_chat_message()`를 호출하면 된다.
 
-### `agents/basic_workflow.py`
+### `agents/rag_workflow.py`
 
-Basic Workflow의 중심 파일이다.
+LangGraph 기반 RAG workflow의 중심 파일이다.
 
-다음 흐름을 한 번에 실행한다.
+다음 노드를 정의한다.
 
-```text
-질문 분석
-→ RAG 검색 요청 생성
-→ RAG client 호출
-→ 답변 생성
-→ 답변 검증
-→ 검증 실패 시 최대 1회 답변 재생성
-→ ChatResponse 반환
-```
+- `retrieve`
+- `evaluate_relevance`
+- `generate`
+
+현재는 `run_rag_workflow()`가 workflow를 실행하고 `ChatResponse`로 변환해 반환한다.
+
+### `agents/rag_query_builder.py`
+
+`retrieve` 노드 안에서 사용한다.
+
+사용자 질문 분석 결과를 실제 RAG 검색 요청으로 변환한다.
+
+현재 생성하는 값은 다음과 같다.
+
+- `query`
+- `categories`
+- `breed_names`
+- `sections`
+- `top_k`
+
+### `schemas/rag.py`
+
+LangGraph 노드 사이에서 공유되는 `RAGState`를 정의한다.
+
+주요 상태 값은 다음과 같다.
+
+- `question`
+- `analysis`
+- `retrieved_docs`
+- `relevant_docs`
+- `context`
+- `answer`
+- `sources`
+- `relevance_issues`
+- `validation_issues`
 
 ### `agents/user_analysis_agent.py`
 
-사용자 메시지에서 검색에 필요한 기본 정보를 추출한다.
+`retrieve` 노드 안에서 사용자 메시지를 분석할 때 사용한다.
 
 현재 추출 항목은 다음과 같다.
 
@@ -104,7 +143,7 @@ Basic Workflow의 중심 파일이다.
 
 실제 RAG 구현체가 따라야 할 인터페이스를 정의한다.
 
-RAG 담당 브랜치와 연결할 때 이 함수 규격을 맞추면 된다.
+RAG 담당 브랜치와 연결할 때 이 함수 규격을 맞춘다.
 
 ```python
 search_documents(
@@ -124,29 +163,41 @@ search_documents(
 
 ### `agents/response_generator.py`
 
-검색된 문서와 사용자 질문을 바탕으로 답변 초안을 만든다.
+`generate` 노드에서 사용한다.
 
-현재는 LLM 연결 전 단계이므로 Basic Workflow 테스트용 응답 문구를 생성한다.
+검색된 관련 문서와 사용자 질문을 바탕으로 답변 초안을 만든다.
+
+현재는 LLM 연결 전 단계이므로 RAG 워크플로우 테스트용 응답 문구를 생성한다.
 
 ### `agents/response_validator.py`
+
+`generate` 노드에서 사용한다.
 
 답변 반환 전에 기본 안내 문구를 보강한다.
 
 현재 적용되는 규칙은 다음과 같다.
 
 - 답변이 비어 있으면 검증 실패로 처리
-- 검색 문서가 없으면 검증 실패로 처리하고 재생성 요청
+- 검색 문서가 없으면 근거 부족 안내 추가
 - 건강·응급 관련 키워드가 있으면 수의사 또는 동물병원 상담 안내 추가
 - 견종 추천 관련 키워드가 있으면 실제 개체별 차이가 있을 수 있다는 안내 추가
-- 재생성은 현재 Basic Workflow에서 최대 1회 수행
+
+## Requirements
+
+LangGraph workflow를 사용하므로 `requirements.txt`에 다음 패키지가 필요하다.
+
+```text
+langgraph
+```
+
+현재 `requirements.txt`에는 `langgraph`가 포함되어 있다.
 
 ## 추후 고도화 방향
 
-Basic Workflow가 web 챗봇과 연결된 뒤 다음 순서로 고도화한다.
-
 1. `FakeRAGClient`를 실제 RAG client로 교체
-2. LLM 기반 답변 생성 연결
-3. 대화 이력 저장 및 사용자 조건 누적
-4. Supervisor Router 추가
-5. 케어 상담, 견종 정보, 견종 추천 Agent 분리
-6. AKC Trait 점수 기반 견종 추천 로직 추가
+2. `evaluate_relevance` 노드를 LLM 기반 YES/NO 평가 방식으로 교체
+3. `generate` 노드를 LLM 기반 답변 생성 방식으로 교체
+4. 대화 이력 저장 및 사용자 조건 누적
+5. Supervisor Router 추가
+6. 케어 상담, 견종 정보, 견종 추천 Agent 분리
+7. AKC Trait 점수 기반 견종 추천 로직 추가
