@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ breed.breed_name_ko }} - 견종도감</title>
+</head>
+<body>
+    <a href="{% url 'dog:search' %}">목록으로</a>
+
+    <h1>{{ breed.breed_name_ko }}</h1>
+    <p>{{ breed.breed_name_en }}</p>
+
+    {% if breed.image_url %}
+        <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="320">
+    {% endif %}
+
+    <h2>기본 정보</h2>
+    <ul>
+        <li>그룹: {{ breed.breed_group }}</li>
+        <li>출신: {{ breed.origin }}</li>
+        <li>수명: {{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</li>
+        <li>체중: {{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg</li>
+        <li>키: {{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm</li>
+    </ul>
+
+    <h2>성격</h2>
+    <p>{{ breed.temperament }}</p>
+
+    {% if breed.about %}
+        <h2>견종 소개</h2>
+        <p>{{ breed.about }}</p>
+    {% endif %}
+
+    {% if breed.health %}
+        <h2>건강</h2>
+        <p>{{ breed.health }}</p>
+    {% endif %}
+
+    {% if breed.grooming %}
+        <h2>미용</h2>
+        <p>{{ breed.grooming }}</p>
+    {% endif %}
+
+    {% if breed.exercise %}
+        <h2>운동</h2>
+        <p>{{ breed.exercise }}</p>
+    {% endif %}
+
+    {% if breed.training %}
+        <h2>훈련</h2>
+        <p>{{ breed.training }}</p>
+    {% endif %}
+
+    {% if breed.nutrition %}
+        <h2>영양</h2>
+        <p>{{ breed.nutrition }}</p>
+    {% endif %}
+
+    {% if breed.history %}
+        <h2>역사</h2>
+        <p>{{ breed.history }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>견종도감</title>
+</head>
+<body>
+    <h1>견종도감</h1>
+
+    <form method="get">
+        <input type="search" name="q" value="{{ keyword }}" placeholder="견종명 검색">
+
+        <select name="group">
+            <option value="">전체 그룹</option>
+            {% for group in groups %}
+                <option value="{{ group }}" {% if group == selected_group %}selected{% endif %}>
+                    {{ group }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <select name="origin">
+            <option value="">전체 출신</option>
+            {% for origin in origins %}
+                <option value="{{ origin }}" {% if origin == selected_origin %}selected{% endif %}>
+                    {{ origin }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">검색</button>
+        <a href="{% url 'dog:search' %}">초기화</a>
+    </form>
+
+    <p>검색 결과: {{ breeds|length }}개</p>
+
+    <ul>
+        {% for breed in breeds %}
+            <li>
+                <a href="{% url 'dog:detail' breed.id %}">
+                    {% if breed.image_url %}
+                        <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="120">
+                    {% endif %}
+                    <strong>{{ breed.breed_name_ko }}</strong>
+                    <span>({{ breed.breed_name_en }})</span>
+                    <div>
+                        {{ breed.breed_group }} · {{ breed.origin }}
+                    </div>
+                    <div>
+                        수명 {{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년 /
+                        체중 {{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg /
+                        키 {{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm
+                    </div>
+                </a>
+            </li>
+        {% empty %}
+            <li>검색 결과가 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
