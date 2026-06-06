@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import json
 import re
 from pathlib import Path
 from typing import Any
@@ -47,6 +48,10 @@ class PGVectorRAGClient:
     ) -> list[RetrievedDocument]:
         if not query.strip():
             return []
+
+        if _is_apartment_recommendation_query(query, categories):
+            with psycopg.connect(**_db_config()) as conn:
+                return _search_apartment_recommendation_documents(conn=conn, top_k=top_k)
 
         query_vector = _vector_literal(self._embedding_model().embed_query(query))
 
@@ -105,6 +110,9 @@ def _source_filter_from_categories(
     if not categories or breed_names:
         return None
 
+    if "breed_recommendation" in categories:
+        return "akc_breed"
+
     category_sources = {
         "breed_recommendation": "akc_breed",
         "health": "youtube_vet",
@@ -123,6 +131,172 @@ def _source_filter_from_categories(
         return matched_sources[0]
 
     return None
+
+
+def _is_apartment_recommendation_query(
+    query: str,
+    categories: list[str] | None,
+) -> bool:
+    if not categories or "breed_recommendation" not in categories:
+        return False
+
+    apartment_keywords = ["아파트", "원룸", "실내", "작은 집", "공동주택", "소형"]
+    return any(keyword in query for keyword in apartment_keywords)
+
+
+def _search_apartment_recommendation_documents(
+    conn: psycopg.Connection,
+    top_k: int,
+) -> list[RetrievedDocument]:
+    sql = """
+        SELECT
+            b.breed_name,
+            bs.doc_id,
+            bs.metadata
+        FROM breed_sections bs
+        JOIN breeds b ON bs.breed_id = b.id
+        WHERE bs.section = 'basic_profile'
+          AND bs.metadata ? 'profile'
+          AND bs.metadata ? 'trait_scores'
+    """
+
+    with conn.cursor() as cur:
+        cur.execute(sql)
+        rows = cur.fetchall()
+
+    candidates: list[dict[str, Any]] = []
+    for breed_name, doc_id, metadata in rows:
+        metadata = metadata if isinstance(metadata, dict) else {}
+        profile = _json_metadata_value(metadata.get("profile"))
+        traits = _json_metadata_value(metadata.get("trait_scores"))
+        score = _score_apartment_fit(profile=profile, traits=traits)
+        if score is None:
+            continue
+
+        candidates.append(
+            {
+                "breed_name": breed_name,
+                "doc_id": doc_id,
+                "profile": profile,
+                "traits": traits,
+                "score": score,
+            }
+        )
+
+    candidates.sort(key=lambda item: (-item["score"], item["breed_name"]))
+    selected = candidates[:top_k]
+
+    documents: list[RetrievedDocument] = []
+    for rank, candidate in enumerate(selected, start=1):
+        breed_name = candidate["breed_name"]
+        content = _build_apartment_recommendation_content(candidate)
+        documents.append(
+            RetrievedDocument(
+                document_id=f"structured_apartment_recommendation_{rank}_{_slugify(breed_name)}",
+                content=content,
+                score=round(float(candidate["score"]), 4),
+                metadata={
+                    "rank": rank,
+                    "source": "akc_breed",
+                    "doc_id": candidate["doc_id"],
+                    "chunk_id": f"structured_apartment_recommendation_{rank}_{_slugify(breed_name)}",
+                    "breed_name": breed_name,
+                    "section": "apartment_recommendation",
+                    "section_title": "Apartment Recommendation",
+                    "title": "Apartment Recommendation",
+                },
+            )
+        )
+
+    return documents
+
+
+def _json_metadata_value(value: Any) -> dict[str, Any]:
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError:
+            return {}
+        return parsed if isinstance(parsed, dict) else {}
+    return {}
+
+
+def _score_apartment_fit(
+    *,
+    profile: dict[str, Any],
+    traits: dict[str, Any],
+) -> float | None:
+    weight_max = _as_float(profile.get("weight_max"))
+    adaptability = _as_float(traits.get("adaptability_level"))
+    energy = _as_float(traits.get("energy_level"))
+    barking = _as_float(traits.get("barking_level"))
+    trainability = _as_float(traits.get("trainability_level"))
+    mental = _as_float(traits.get("mental_stimulation_needs"))
+
+    if weight_max is None or adaptability is None or energy is None:
+        return None
+
+    score = 0.0
+
+    if weight_max <= 12:
+        score += 4.0
+    elif weight_max <= 20:
+        score += 3.0
+    elif weight_max <= 30:
+        score += 1.5
+    elif weight_max <= 45:
+        score += 0.5
+    else:
+        score -= 2.0
+
+    score += adaptability * 1.0
+    score += (6 - energy) * 0.9
+
+    if barking is not None:
+        score += (6 - barking) * 0.8
+
+    if trainability is not None:
+        score += trainability * 0.3
+
+    if mental is not None:
+        score += (6 - mental) * 0.3
+
+    return score
+
+
+def _as_float(value: Any) -> float | None:
+    try:
+        if value is None:
+            return None
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _build_apartment_recommendation_content(candidate: dict[str, Any]) -> str:
+    profile = candidate["profile"]
+    traits = candidate["traits"]
+    return (
+        f"Breed: {candidate['breed_name']}\n"
+        "Section: Apartment Recommendation\n"
+        f"Apartment fit score: {round(float(candidate['score']), 2)}\n"
+        f"Weight range: {profile.get('weight_min')} - {profile.get('weight_max')} pounds\n"
+        f"Height range: {profile.get('height_min')} - {profile.get('height_max')} inches\n"
+        f"Life expectancy: {profile.get('life_expectancy_min')} - {profile.get('life_expectancy_max')} years\n"
+        f"Adaptability Level: {traits.get('adaptability_level')}\n"
+        f"Energy Level: {traits.get('energy_level')}\n"
+        f"Barking Level: {traits.get('barking_level')}\n"
+        f"Trainability Level: {traits.get('trainability_level')}\n"
+        f"Mental Stimulation Needs: {traits.get('mental_stimulation_needs')}\n"
+        "Recommendation basis: smaller body size, adaptability, moderate or low energy, barking level, "
+        "trainability, and mental stimulation needs from AKC breed data."
+    )
+
+
+def _slugify(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
 
 def _search_chunks(

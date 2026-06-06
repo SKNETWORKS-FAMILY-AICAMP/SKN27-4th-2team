@@ -28,7 +28,7 @@
             </div>
         {% else %}
             <div class="history-login">
-                <p>로그인하면 채팅 내역을 저장하고 다시 열 수 있습니다.</p>
+                <p>현재 대화는 이 브라우저 세션에 임시로 이어집니다. 로그인하면 채팅 내역을 저장하고 다시 볼 수 있습니다.</p>
                 <a class="secondary-button full-width" href="{% url 'user:login' %}">로그인하기</a>
             </div>
         {% endif %}
@@ -40,7 +40,7 @@
                 <p class="eyebrow">Pet Mate Assistant</p>
                 <h2>반려견 Q&A</h2>
             </div>
-            <span class="mode-badge">Mock Mode</span>
+            <span class="mode-badge">Q&A</span>
         </div>
 
         <div class="chat-window" aria-live="polite">
@@ -50,7 +50,26 @@
                         {% if message.intent %}
                             <span class="intent-label">{{ message.intent }}</span>
                         {% endif %}
-                        <p>{{ message.content }}</p>
+                        <p>{{ message.content|linebreaksbr }}</p>
+
+                        {% if message.sources %}
+                            <div class="message-sources">
+                                <strong>참고한 정보</strong>
+                                <ul>
+                                    {% for source in message.sources %}
+                                        <li>
+                                            {% if source.url %}
+                                                <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">
+                                                    {{ source.display_title|default:source.title|default:source.source }}
+                                                </a>
+                                            {% else %}
+                                                <span>{{ source.display_title|default:source.title|default:source.source }}</span>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
                     </div>
                 </article>
             {% endfor %}
