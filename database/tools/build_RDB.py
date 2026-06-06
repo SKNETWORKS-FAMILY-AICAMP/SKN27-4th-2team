@@ -28,7 +28,7 @@ DEFAULT_JSON_PATH = (
     / "database"
     / "contents"
     / "dog_api"
-    / "dogapi_akc_matched_breeds_ko.json"
+    / "dogapi_akc_matched_breeds_ko_kc10groups.json"
 )
 
 
@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS dog_breed_dictionary_ko (
     breed_name_ko VARCHAR(150) NOT NULL,
     dogapi_id INTEGER,
     breed_group VARCHAR(100),
+    breed_group_number INTEGER,
+    breed_group_description TEXT,
     temperament TEXT,
     origin VARCHAR(200),
     image_url TEXT,
@@ -92,6 +94,8 @@ INSERT INTO dog_breed_dictionary_ko (
     breed_name_ko,
     dogapi_id,
     breed_group,
+    breed_group_number,
+    breed_group_description,
     temperament,
     origin,
     image_url,
@@ -132,6 +136,8 @@ INSERT INTO dog_breed_dictionary_ko (
     %(breed_name_ko)s,
     %(dogapi_id)s,
     %(breed_group)s,
+    %(breed_group_number)s,
+    %(breed_group_description)s,
     %(temperament)s,
     %(origin)s,
     %(image_url)s,
@@ -173,6 +179,8 @@ DO UPDATE SET
     breed_name_ko = EXCLUDED.breed_name_ko,
     dogapi_id = EXCLUDED.dogapi_id,
     breed_group = EXCLUDED.breed_group,
+    breed_group_number = EXCLUDED.breed_group_number,
+    breed_group_description = EXCLUDED.breed_group_description,
     temperament = EXCLUDED.temperament,
     origin = EXCLUDED.origin,
     image_url = EXCLUDED.image_url,
@@ -267,7 +275,9 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
         "breed_name_en": clean_str(row.get("견종명_영문")),
         "breed_name_ko": clean_str(row.get("견종명_한글")),
         "dogapi_id": clean_int(row.get("dogapi_id")),
-        "breed_group": clean_str(row.get("견종그룹")),
+        "breed_group": clean_str(row.get("견종그룹명")),
+        "breed_group_number": clean_int(row.get("견종그룹번호")),
+        "breed_group_description": clean_str(row.get("견종그룹설명")),
         "temperament": clean_str(row.get("성격")),
         "origin": clean_str(row.get("출신")),
         "image_url": clean_str(row.get("이미지URL")),
@@ -304,7 +314,6 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
         "history": clean_str(row.get("역사")),
         "raw_data": json.dumps(row, ensure_ascii=False),
     }
-
 
 def load_rows(json_path: Path) -> list[dict[str, Any]]:
     if not json_path.exists():
