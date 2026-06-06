@@ -56,7 +56,7 @@ class PGVectorRAGClient:
                 table=self.table,
                 query_vector=query_vector,
                 k=top_k,
-                source_filter=_source_filter_from_categories(categories),
+                source_filter=_source_filter_from_categories(categories, breed_names),
                 breed_names=breed_names,
                 sections=sections,
             )
@@ -98,8 +98,11 @@ def _vector_literal(values: list[float]) -> str:
     return "[" + ",".join(str(float(value)) for value in values) + "]"
 
 
-def _source_filter_from_categories(categories: list[str] | None) -> str | None:
-    if not categories:
+def _source_filter_from_categories(
+    categories: list[str] | None,
+    breed_names: list[str] | None,
+) -> str | None:
+    if not categories or breed_names:
         return None
 
     category_sources = {
@@ -110,7 +113,6 @@ def _source_filter_from_categories(categories: list[str] | None) -> str | None:
         "walking": "youtube_training",
         "grooming": "article",
     }
-
     matched_sources = [
         category_sources[category]
         for category in categories
@@ -140,11 +142,11 @@ def _search_chunks(
         params.append(source_filter)
 
     if breed_names:
-        where_clauses.append("b.breed_name = ANY(%s)")
-        params.append(breed_names)
+        where_clauses.append("b.breed_name ILIKE ANY(%s)")
+        params.append([f"%{breed_name}%" for breed_name in breed_names])
 
     if sections:
-        where_clauses.append("bs.section = ANY(%s)")
+        where_clauses.append("(bs.section = ANY(%s) OR bs.section IS NULL)")
         params.append(sections)
 
     where_sql = f"WHERE {' AND '.join(where_clauses)}" if where_clauses else ""
@@ -159,17 +161,10 @@ def _search_chunks(
             1 - (r.embedding <=> %s::vector) AS similarity,
             b.breed_name,
             bs.section AS breed_section,
-            bs.section_title AS breed_section_title,
-            q.question AS qna_question,
-            yd.title AS youtube_title,
-            ad.title AS article_title,
-            ad.url AS article_url
+            bs.section_title AS breed_section_title
         FROM {table} r
         LEFT JOIN breed_sections bs ON r.breed_section_id = bs.id
         LEFT JOIN breeds b ON bs.breed_id = b.id
-        LEFT JOIN qna_items q ON r.qna_id = q.id
-        LEFT JOIN youtube_docs yd ON r.youtube_doc_id = yd.id
-        LEFT JOIN article_docs ad ON r.article_doc_id = ad.id
         {where_sql}
         ORDER BY r.embedding <=> %s::vector
         LIMIT %s
@@ -192,26 +187,27 @@ def _search_chunks(
             breed_name,
             breed_section,
             breed_section_title,
-            qna_question,
-            youtube_title,
-            article_title,
-            article_url,
         ) = row
-        title = article_title or youtube_title or breed_section_title or qna_question
+        row_metadata = metadata if isinstance(metadata, dict) else {}
+        title = (
+            row_metadata.get("title")
+            or row_metadata.get("question")
+            or breed_section_title
+        )
         results.append(
             {
                 "rank": rank,
                 "chunk_id": chunk_id,
                 "doc_id": doc_id,
                 "source": row_source,
-                "metadata": metadata if isinstance(metadata, dict) else {},
+                "metadata": row_metadata,
                 "text": text,
                 "similarity": float(similarity),
                 "breed_name": breed_name,
                 "breed_section": breed_section,
                 "breed_section_title": breed_section_title,
                 "title": title,
-                "article_url": article_url,
+                "article_url": row_metadata.get("url"),
             }
         )
 
@@ -240,4 +236,3 @@ def _row_to_document(row: dict[str, Any]) -> RetrievedDocument:
         score=row.get("similarity"),
         metadata={key: value for key, value in metadata.items() if value is not None},
     )
-
