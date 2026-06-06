@@ -1,7 +1,10 @@
+import os
 import json
 import re
 import ast
 import pandas as pd
+
+from dotenv import load_dotenv
 
 def scrap_article(soup, url):
     # 1) 제목
@@ -162,3 +165,21 @@ def get_slug(text):
     text = re.sub(r'[^a-zA-Z0-9\s-]', '', text)
     text = re.sub(r'\s+', '-', text)
     return text
+
+def get_db_connection_string() -> str:
+    """LangChain PGVector가 사용할 PostgreSQL 연결 문자열을 만든다.
+
+    - docker-compose.yml 기본값과 맞춘다.
+    - 팀 Docker 설정 기본값:
+      - DB: pet_dog
+      - USER: admin
+      - PASSWORD: admin1234
+    """
+    load_dotenv()
+    
+    host = os.getenv("POSTGRES_HOST", "localhost")
+    port = os.getenv("POSTGRES_PORT", "5432")
+    db = os.getenv("POSTGRES_DB", "pet_dog")
+    user = os.getenv("POSTGRES_USER", "admin")
+    password = os.getenv("POSTGRES_PASSWORD", "admin1234")
+    return f"postgresql+psycopg://{user}:{password}@{host}:{port}/{db}"
