@@ -32,6 +32,7 @@ from loader import (
     get_qna_loader,
     get_youtube_loader,
 )
+from utils import get_db_connection_string
 
 # - DATABASE_DIR: database 폴더 경로
 # - PROJECT_DIR: 프로젝트 루트 경로
@@ -55,7 +56,7 @@ def load_documents(limit: int | None = None) -> list[Document]:
     """
     loaders = [
         get_dog_info_loader(
-            str(DATABASE_DIR / "akc" / "preprocessed" / "akc_breed_info_vector_documents.json")
+            str(DATABASE_DIR / "docs" / "akc_dog_info" / "akc_breed_info_vector_documents.json")
         ),
     ]
 
@@ -68,16 +69,10 @@ def load_documents(limit: int | None = None) -> list[Document]:
     # - QnA는 qna_source 값으로 설채현/강형욱 metadata를 구분한다.
     loaders.extend(
         [
-            get_youtube_loader(str(DATABASE_DIR / "docs" / "youtube_basic_instruction.json")),
-            get_youtube_loader(str(DATABASE_DIR / "docs" / "youtube_vet_knowledge.json")),
-            get_qna_loader(
-                str(DATABASE_DIR / "youtube" / "processed" / "final_seol_qna.jsonl"),
-                "final_seol_qna",
-            ),
-            get_qna_loader(
-                str(DATABASE_DIR / "youtube" / "processed" / "kang_qna.jsonl"),
-                "kang_qna",
-            ),
+            get_youtube_loader(str(DATABASE_DIR / "docs" / "youtube" / "youtube_basic_instruction.json")),
+            get_youtube_loader(str(DATABASE_DIR / "docs" / "youtube" / "youtube_vet_knowledge.json")),
+            get_qna_loader(str(DATABASE_DIR / "docs" / "youtube_qna" / "final_seol_qna.jsonl"), "final_seol_qna"),
+            get_qna_loader(str(DATABASE_DIR / "docs" / "youtube_qna" / "kang_qna.jsonl"), "kang_qna"),
         ]
     )
 
@@ -125,23 +120,6 @@ def create_embedding_model(model_name: str, api_key: str) -> OpenAIEmbeddings:
     - 실제 embedding 생성은 PGVector.from_documents() 호출 시 일어난다.
     """
     return OpenAIEmbeddings(model=model_name, api_key=api_key)
-
-
-def get_connection_string() -> str:
-    """LangChain PGVector가 사용할 PostgreSQL 연결 문자열을 만든다.
-
-    - docker-compose.yml 기본값과 맞춘다.
-    - 팀 Docker 설정 기본값:
-      - DB: pet_dog
-      - USER: admin
-      - PASSWORD: admin1234
-    """
-    host = os.getenv("POSTGRES_HOST", "localhost")
-    port = os.getenv("POSTGRES_PORT", "5432")
-    db = os.getenv("POSTGRES_DB", "pet_dog")
-    user = os.getenv("POSTGRES_USER", "admin")
-    password = os.getenv("POSTGRES_PASSWORD", "admin1234")
-    return f"postgresql+psycopg://{user}:{password}@{host}:{port}/{db}"
 
 
 def ensure_pgvector_extension() -> None:
@@ -229,7 +207,7 @@ def build_vectorstore(args: argparse.Namespace) -> None:
     print(f"total chunks: {len(chunks)}")
 
     embedding_model = create_embedding_model(args.embedding_model, api_key=api_key)
-    connection_string = get_connection_string()
+    connection_string = get_db_connection_string()
 
     ensure_pgvector_extension()
 

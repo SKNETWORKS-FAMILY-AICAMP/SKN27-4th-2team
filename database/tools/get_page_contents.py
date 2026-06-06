@@ -1,3 +1,7 @@
+"""
+akc 페이지에서 expert advices 기사 크롤링
+"""
+
 import re
 import os
 import logging
