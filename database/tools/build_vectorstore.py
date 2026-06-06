@@ -32,7 +32,8 @@ from loader import (
     get_qna_loader,
     get_youtube_loader,
 )
-from utils import get_db_connection_string
+from _utils.argparser import get_vectorstore_args
+from _utils.db import get_db_connection_string
 
 # - DATABASE_DIR: database 폴더 경로
 # - PROJECT_DIR: 프로젝트 루트 경로
@@ -232,25 +233,25 @@ def build_vectorstore(args: argparse.Namespace) -> None:
     )
 
 
-def parse_args() -> argparse.Namespace:
-    """명령행 옵션을 정의한다.
+# def parse_args() -> argparse.Namespace:
+#     """명령행 옵션을 정의한다.
 
-    - --reset: 기존 collection 삭제 후 재생성
-    - --limit: 테스트용으로 일부 문서만 적재
-    - --collection-name: PGVector collection 이름
-    - --chunk-size: chunk 크기 조정
-    - --chunk-overlap: chunk 겹침 크기 조정
-    """
-    parser = argparse.ArgumentParser(description="Build LangChain PGVector store for dog RAG documents.")
-    parser.add_argument("--collection-name", default=os.getenv("PGVECTOR_COLLECTION", DEFAULT_COLLECTION_NAME))
-    parser.add_argument("--embedding-model", default=os.getenv("OPENAI_EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL))
-    parser.add_argument("--chunk-size", type=int, default=DEFAULT_CHUNK_SIZE)
-    parser.add_argument("--chunk-overlap", type=int, default=DEFAULT_CHUNK_OVERLAP)
-    parser.add_argument("--limit", type=int, default=None, help="테스트용으로 앞 N개 원본 문서만 로드한다.")
-    parser.add_argument("--reset", action="store_true", help="기존 PGVector collection을 삭제하고 다시 만든다.")
-    parser.add_argument("--batch-size", type=int, default=50, help="한 번에 저장할 문서 수")
-    return parser.parse_args()
+#     - --reset: 기존 collection 삭제 후 재생성
+#     - --limit: 테스트용으로 일부 문서만 적재
+#     - --collection-name: PGVector collection 이름
+#     - --chunk-size: chunk 크기 조정
+#     - --chunk-overlap: chunk 겹침 크기 조정
+#     """
+#     parser = argparse.ArgumentParser(description="Build LangChain PGVector store for dog RAG documents.")
+#     parser.add_argument("--collection-name", default=os.getenv("PGVECTOR_COLLECTION", DEFAULT_COLLECTION_NAME))
+#     parser.add_argument("--embedding-model", default=os.getenv("OPENAI_EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL))
+#     parser.add_argument("--chunk-size", type=int, default=DEFAULT_CHUNK_SIZE)
+#     parser.add_argument("--chunk-overlap", type=int, default=DEFAULT_CHUNK_OVERLAP)
+#     parser.add_argument("--limit", type=int, default=None, help="테스트용으로 앞 N개 원본 문서만 로드한다.")
+#     parser.add_argument("--reset", action="store_true", help="기존 PGVector collection을 삭제하고 다시 만든다.")
+#     parser.add_argument("--batch-size", type=int, default=50, help="한 번에 저장할 문서 수")
+#     return parser.parse_args()
 
 
 if __name__ == "__main__":
-    build_vectorstore(parse_args())
+    build_vectorstore(get_vectorstore_args())

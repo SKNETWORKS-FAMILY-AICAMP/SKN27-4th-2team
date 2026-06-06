@@ -15,6 +15,7 @@ API_BASE_URL = "https://api.thedogapi.com/v1"
 
 
 def load_env_value(key, env_files=ENV_FILES):
+    # .env 파일에서 dog-api 키를 읽는 함수
     if key in os.environ:
         return os.environ[key]
 
