@@ -1,6 +1,6 @@
 """Load Korean dog breed dictionary JSON into PostgreSQL.
 
-This loader uses database/contents/dog_api/dogapi_akc_matched_breeds_ko.json
+This loader uses database/contents/dog_api/dog_images_110.json
 as the source for the dog-breed encyclopedia page.
 """
 
@@ -28,7 +28,7 @@ DEFAULT_JSON_PATH = (
     / "database"
     / "contents"
     / "dog_api"
-    / "dogapi_akc_matched_breeds_ko_kc10groups.json"
+    / "dog_images_110.json"
 )
 
 

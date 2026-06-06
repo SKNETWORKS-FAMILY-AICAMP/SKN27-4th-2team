@@ -1,121 +1,31 @@
-# 한글 견종도감 CSV 전처리 기록
+# 견종도감 데이터 전처리 기록
 
-## 결과 파일
+Dog API와 AKC 데이터를 기반으로 견종도감 화면에서 사용할 한글 데이터를 만든 과정이다.
 
-```text
-database/contents/dog_api/dogapi_akc_matched_breeds_ko.csv
-```
+## 최종 공유 파일
 
-## 한국애견연맹 기준 10그룹 재분류
-
-견종도감 화면에서 AKC 기준 그룹명을 그대로 사용하면 국내 사용자가 이해하기 어렵기 때문에,
-한국애견연맹에서 사용하는 10그룹 체계에 맞춰 견종그룹을 다시 분류한 CSV를 별도로 생성했다.
-
-기존 한글 전처리 CSV는 그대로 유지하고, 아래 파일을 새로 생성했다.
+현재 팀 공유 및 DB 적재 기준 최종 파일은 아래 2개다.
 
 ```text
-database/contents/dog_api/dogapi_akc_matched_breeds_ko_kc10groups.csv
+database/contents/dog_api/dog_images_110.csv
+database/contents/dog_api/dog_images_110.json
 ```
 
-생성 스크립트:
+상태:
 
 ```text
-database/contents/dog_api/build_korean_10group_csv.py
+전체 견종 수: 110
+이미지URL 있음: 110
+이미지URL 없음: 0
 ```
 
-참고한 견종그룹 설명 출처:
+이미지 URL이 없는 견종은 최종 공유 파일에서 제외했다.
 
-```text
-한국애견연맹 견종그룹 설명
-https://www.thekkf.or.kr/new_home/07_dogshow/01_about_dogshow_3.php
+DB 적재는 JSON 파일을 사용한다.
+
+```powershell
+python database\tools\build_RDB.py --json database\contents\dog_api\dog_images_110.json --truncate
 ```
-
-### 컬럼 변경
-
-기존 `견종그룹` 컬럼은 AKC 기준 값이므로 새 CSV에서는 삭제했다.
-중간 작업용으로 사용했던 `기존견종그룹` 컬럼도 최종 CSV에서는 삭제했다.
-
-대신 아래 컬럼을 추가했다.
-
-```text
-견종그룹번호
-견종그룹명
-견종그룹설명
-```
-
-`견종그룹번호`는 1부터 10까지의 한국애견연맹식 그룹 번호를 담는다.
-`견종그룹명`은 화면에 표시하기 쉽도록 짧고 깔끔한 한글 그룹명을 담는다.
-`견종그룹설명`은 `견종그룹번호`와 일치하는 한국애견연맹 설명문을 담는다.
-
-### 10그룹 명칭
-
-```text
-1, 쉽독·캐틀독
-2, 핀셔·슈나우저·몰로시안·스위스 캐틀독
-3, 테리어
-4, 닥스훈트
-5, 스피츠·프리미티브
-6, 센트하운드
-7, 포인팅 독
-8, 리트리버·플러싱독·워터독
-9, 컴패니언·토이 독
-10, 사이트하운드
-```
-
-### 분류 기준
-
-원본 데이터에는 AKC 기준 그룹이 들어있기 때문에, 이를 그대로 번역하지 않고
-견종의 용도와 형태가 가장 가까운 한국애견연맹 10그룹으로 매핑했다.
-
-AKC와 한국애견연맹/FCI식 그룹 체계가 완전히 일치하지 않는 견종은
-가장 가까운 기능적 그룹에 배치했다.
-
-예시:
-
-```text
-Border Collie -> 1 / 쉽독·캐틀독
-Bulldog -> 2 / 핀셔·슈나우저·몰로시안·스위스 캐틀독
-Yorkshire Terrier -> 3 / 테리어
-Dachshund -> 4 / 닥스훈트
-Akita -> 5 / 스피츠·프리미티브
-Beagle -> 6 / 센트하운드
-German Shorthaired Pointer -> 7 / 포인팅 독
-Golden Retriever -> 8 / 리트리버·플러싱독·워터독
-Maltese -> 9 / 컴패니언·토이 독
-Afghan Hound -> 10 / 사이트하운드
-```
-
-### 검증 결과
-
-최종 CSV 기준:
-
-```text
-전체 행 수: 256
-견종그룹 컬럼 삭제 완료
-기존견종그룹 컬럼 삭제 완료
-견종그룹번호 컬럼 생성 완료
-견종그룹명 컬럼 생성 완료
-견종그룹설명 컬럼 생성 완료
-견종그룹설명 빈 값: 0건
-각 견종그룹번호별 설명문 1개씩 매칭 확인
-```
-
-그룹별 분포:
-
-```text
-1그룹: 32건
-2그룹: 44건
-3그룹: 35건
-4그룹: 1건
-5그룹: 44건
-6그룹: 25건
-7그룹: 23건
-8그룹: 20건
-9그룹: 22건
-10그룹: 10건
-```
-
-이 파일은 견종도감 페이지에서 바로 사용할 수 있도록 영문 원본 데이터를 한글화하고, 단위를 한국 서비스 기준으로 변환한 CSV다.
 
 ## 원본 파일
 
@@ -123,13 +33,46 @@ Afghan Hound -> 10 / 사이트하운드
 database/contents/dog_api/dogapi_akc_matched_breeds.csv
 ```
 
-원본은 Dog API 데이터와 AKC 데이터를 견종명 기준으로 매칭한 파일이다.
+원본은 Dog API 데이터와 AKC 데이터를 견종명 기준으로 매칭한 CSV다.
 
-## 전처리 방향
+## 1차 한글 전처리
 
-중복되는 평균수명, 체중, 키 정보는 AKC 기준 컬럼만 사용했다.
+생성 파일:
 
-원본에서 Dog API 쪽 중복 컬럼은 제거했다.
+```text
+database/contents/dog_api/dogapi_akc_matched_breeds_ko.csv
+```
+
+생성 스크립트:
+
+```text
+database/contents/dog_api/build_korean_breed_csv.py
+```
+
+처리 내용:
+
+```text
+1. 영문 텍스트를 OpenAI API로 한글 번역
+2. 컬럼명을 견종도감에서 쓰기 쉬운 한글명으로 변경
+3. AKC 체중 lb 값을 kg으로 변환
+4. AKC 키 inch 값을 cm로 변환
+5. 출신, 성격, 털 타입, 털 길이 등 짧은 값은 매핑 사전으로 정리
+```
+
+단위 변환:
+
+```text
+1 lb = 0.453592 kg
+1 inch = 2.54 cm
+```
+
+중복 컬럼 처리:
+
+```text
+평균수명, 체중, 키는 Dog API 값 대신 AKC 기준 컬럼만 사용
+```
+
+제거한 Dog API 중복 컬럼:
 
 ```text
 dogapi_life_span
@@ -137,7 +80,7 @@ dogapi_weight_metric
 dogapi_height_metric
 ```
 
-AKC 기준 컬럼은 유지했다.
+유지한 AKC 기준 컬럼:
 
 ```text
 akc_life_expectancy_min
@@ -148,133 +91,17 @@ akc_height_min
 akc_height_max
 ```
 
-단, AKC의 체중과 키는 미국 단위 기준이므로 한글 CSV 생성 시 다음처럼 변환했다.
+## 고정 매핑 사전 적용
 
-```text
-weight: lb -> kg
-height: inch -> cm
-```
+AI 번역만 사용하면 짧은 카테고리 값이 어색하게 번역될 수 있어 고정 매핑 사전을 추가 적용했다.
 
-변환식:
-
-```text
-1 lb = 0.453592 kg
-1 inch = 2.54 cm
-```
-
-예:
-
-```text
-7-10 lb -> 3.2-4.5 kg
-9-11.5 inch -> 22.9-29.2 cm
-```
-
-## 생성 스크립트
-
-한글 CSV의 1차 생성은 아래 스크립트로 수행했다.
-
-```text
-database/contents/dog_api/build_korean_breed_csv.py
-```
-
-역할:
-
-```text
-1. dogapi_akc_matched_breeds.csv 읽기
-2. OpenAI API로 텍스트 컬럼 한글 번역
-3. AKC 체중 lb 값을 kg으로 변환
-4. AKC 키 inch 값을 cm로 변환
-5. 화면 표시용 한글 컬럼명으로 새 CSV 생성
-```
-
-생성 결과:
-
-```text
-database/contents/dog_api/dogapi_akc_matched_breeds_ko.csv
-```
-
-## OpenAI API로 번역한 항목
-
-긴 설명문과 일반 텍스트는 OpenAI API를 사용해 한글화했다.
-
-주요 번역 대상:
-
-```text
-matched_breed_name
-dogapi_breed_group
-dogapi_temperament
-dogapi_origin
-akc_coat_type_array
-akc_coat_length_array
-akc_colors_array
-akc_markings_array
-akc_about_the_breed
-akc_health
-akc_grooming
-akc_exercise
-akc_training
-akc_nutrition
-akc_history
-```
-
-긴 설명문은 다음 한글 컬럼으로 저장했다.
-
-```text
-견종소개
-건강
-미용
-운동
-훈련
-영양
-역사
-```
-
-## 단위 변환 컬럼
-
-원본 AKC 컬럼:
-
-```text
-akc_weight_min
-akc_weight_max
-akc_height_min
-akc_height_max
-```
-
-한글 CSV 컬럼:
-
-```text
-체중_최소_kg
-체중_최대_kg
-키_최소_cm
-키_최대_cm
-```
-
-평균수명은 AKC의 최소/최대 값을 그대로 사용했다.
-
-```text
-평균수명_최소_년
-평균수명_최대_년
-```
-
-## 매핑 사전 적용
-
-AI 번역만 사용할 경우 짧은 카테고리 값이 어색하게 번역될 수 있다.
-
-예:
-
-```text
-Toy -> 장난감
-```
-
-이를 방지하기 위해 고정 매핑 사전을 추가 적용했다.
-
-매핑 적용 스크립트:
+사용 스크립트:
 
 ```text
 database/contents/dog_api/apply_korean_mapping_dictionary.py
 ```
 
-매핑 대상:
+주요 대상:
 
 ```text
 견종그룹
@@ -298,45 +125,7 @@ Herding -> 목양견
 Non-Sporting -> 논스포팅
 ```
 
-성격 예:
-
-```text
-Confident -> 자신감 있는
-Alert -> 경계심이 있는
-Playful -> 장난기 많은
-Loyal -> 충성심 강한
-Courageous -> 용감한
-```
-
-털 정보 예:
-
-```text
-Wiry -> 뻣뻣한 털
-Silky -> 비단결 털
-Double -> 이중모
-Short -> 짧은 털
-Medium -> 중간 길이 털
-Long -> 긴 털
-Black -> 검정
-White -> 흰색
-Red -> 붉은색
-Tan -> 탄색
-```
-
-## 출신 컬럼 정리
-
-원본 `dogapi_origin`은 도시, 지역, 국가가 섞여 있었다.
-
-예:
-
-```text
-Yorkshire, England
-Wasilla, Alaska, United States
-Malta, Mediterranean Basin
-West Africa (Sahel region: Mali, Niger, Burkina Faso)
-```
-
-한글 CSV에서는 `출신` 컬럼에 국가명만 남기도록 정리했다.
+출신 컬럼은 국가 이름만 남기도록 정리했다.
 
 예:
 
@@ -344,16 +133,142 @@ West Africa (Sahel region: Mali, Niger, Burkina Faso)
 Yorkshire, England -> 영국
 Wasilla, Alaska, United States -> 미국
 Malta, Mediterranean Basin -> 몰타
-West Africa (Sahel region: Mali, Niger, Burkina Faso) -> 말리, 니제르, 부르키나파소
+```
+
+## 한국 기준 10그룹 재분류
+
+AKC 그룹명은 국내 사용자에게 익숙하지 않아 한국애견연맹/FCI식 10그룹 기준으로 다시 분류했다.
+
+중간 생성 파일:
+
+```text
+database/contents/dog_api/dogapi_akc_matched_breeds_ko_kc10groups.csv
+database/contents/dog_api/dogapi_akc_matched_breeds_ko_kc10groups.json
+```
+
+생성 스크립트:
+
+```text
+database/contents/dog_api/build_korean_10group_csv.py
+```
+
+참고한 견종그룹 설명 출처:
+
+```text
+한국애견연맹 견종그룹 설명
+https://www.thekkf.or.kr/new_home/07_dogshow/01_about_dogshow_3.php
+```
+
+기존 `견종그룹` 컬럼은 AKC 기준 값이므로 최종 10그룹 파일에서는 삭제했다.
+
+추가 컬럼:
+
+```text
+견종그룹번호
+견종그룹명
+견종그룹설명
+```
+
+10그룹 명칭:
+
+```text
+1, 쉽독·캐틀독
+2, 핀셔·슈나우저·몰로시안·스위스 캐틀독
+3, 테리어
+4, 닥스훈트
+5, 스피츠·프리미티브
+6, 센트하운드
+7, 포인팅 독
+8, 리트리버·플러싱독·워터독
+9, 컴패니언·토이 독
+10, 사이트하운드
+```
+
+분류 예:
+
+```text
+Border Collie -> 1 / 쉽독·캐틀독
+Bulldog -> 2 / 핀셔·슈나우저·몰로시안·스위스 캐틀독
+Yorkshire Terrier -> 3 / 테리어
+Dachshund -> 4 / 닥스훈트
+Akita -> 5 / 스피츠·프리미티브
+Beagle -> 6 / 센트하운드
+Golden Retriever -> 8 / 리트리버·플러싱독·워터독
+Maltese -> 9 / 컴패니언·토이 독
+Afghan Hound -> 10 / 사이트하운드
+```
+
+10그룹 파일 검증 결과:
+
+```text
+전체 행 수: 256
+견종그룹번호 생성 완료
+견종그룹명 생성 완료
+견종그룹설명 생성 완료
+견종그룹설명 빈 값: 0건
+```
+
+그룹별 분포:
+
+```text
+1그룹: 32건
+2그룹: 44건
+3그룹: 35건
+4그룹: 1건
+5그룹: 44건
+6그룹: 25건
+7그룹: 23건
+8그룹: 20건
+9그룹: 22건
+10그룹: 10건
+```
+
+## 이미지 URL 검수
+
+기존 Dog API 이미지 중 일부가 견종과 맞지 않아 이미지 URL을 재검토했다.
+
+검토한 이미지 API:
+
+```text
+Dog CEO API
+TheDogAPI
+API Ninjas Dogs API
+```
+
+처리 원칙:
+
+```text
+1. 정확하다고 확인한 이미지 URL만 사용
+2. 확신하기 어려운 이미지는 사용하지 않음
+3. 이미지 URL이 없는 견종은 최종 공유 파일에서 제외
+```
+
+이미지 검토 후 최종 공유 파일:
+
+```text
+database/contents/dog_api/dog_images_110.csv
+database/contents/dog_api/dog_images_110.json
+```
+
+최종 상태:
+
+```text
+전체 견종 수: 110
+이미지URL 있음: 110
+이미지URL 없음: 0
 ```
 
 ## 최종 컬럼
+
+최종 공유 CSV의 주요 컬럼:
 
 ```text
 견종명_영문
 견종명_한글
 dogapi_id
-견종그룹
+견종그룹번호
+견종그룹명
+견종그룹설명
 성격
 출신
 이미지URL
@@ -392,10 +307,12 @@ dogapi_id
 
 ## 재생성 순서
 
-OpenAI API 키가 `.env`에 있어야 한다.
+필요 환경 변수:
 
 ```text
 OPENAI_API_KEY=...
+DOG_API_KEY=...
+API_NINJAS_KEY=...
 ```
 
 1차 한글 CSV 생성:
@@ -410,31 +327,22 @@ python database\contents\dog_api\build_korean_breed_csv.py
 python database\contents\dog_api\apply_korean_mapping_dictionary.py
 ```
 
-JSON 파일이 필요하면 CSV를 JSON으로 변환한다.
+한국 기준 10그룹 CSV 생성:
 
-```text
-database/contents/dog_api/dogapi_akc_matched_breeds_ko.json
+```powershell
+python database\contents\dog_api\build_korean_10group_csv.py
 ```
 
-## 검증 결과
+최종 DB 적재:
 
-최종 CSV 기준:
-
-```text
-행 수: 256
-견종그룹에 '그룹' 포함: 0건
-짧은 표시 컬럼에 '장난감' 표현: 0건
-AKC 체중: kg 변환 완료
-AKC 키: cm 변환 완료
+```powershell
+python database\tools\build_RDB.py --json database\contents\dog_api\dog_images_110.json
 ```
 
-첫 행 예:
+## 참고
+
+DB 적재 및 Django 웹 연결 절차는 아래 문서를 기준으로 한다.
 
 ```text
-견종명_영문: Affenpinscher
-견종명_한글: 아펜핀셔
-견종그룹: 토이
-출신: 독일
-체중: 3.2-4.5kg
-키: 22.9-29.2cm
+database/DOG_BREED_DICTIONARY_KO_README.md
 ```
