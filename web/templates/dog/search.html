@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +12,9 @@
         <input type="search" name="q" value="{{ keyword }}" placeholder="견종명 검색">
 
         <select name="group">
-            <option value="">전체 그룹</option>
+            <option value="">전체 그룹</option>{% if breed.image_url %}
+    <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="120">
+{% endif %}
             {% for group in groups %}
                 <option value="{{ group }}" {% if group == selected_group %}selected{% endif %}>
                     {{ group }}
@@ -40,11 +43,21 @@
                 <a href="{% url 'dog:detail' breed.id %}">
                     {% if breed.image_url %}
                         <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="120">
-                    {% endif %}
+                    {% else %}
+    <div style="width:120px;height:90px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#777;font-size:13px;">
+        이미지 준비 중
+    </div>
+{% endif %}
                     <strong>{{ breed.breed_name_ko }}</strong>
                     <span>({{ breed.breed_name_en }})</span>
                     <div>
-                        {{ breed.breed_group }} · {{ breed.origin }}
+                        {% if breed.breed_group_number %}
+                            {{ breed.breed_group_number }}그룹 ·
+                        {% endif %}
+                        {{ breed.breed_group }}
+                        {% if breed.origin %}
+                            · {{ breed.origin }}
+                        {% endif %}
                     </div>
                     <div>
                         수명 {{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년 /

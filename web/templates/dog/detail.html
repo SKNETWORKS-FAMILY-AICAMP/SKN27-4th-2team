@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,16 +13,36 @@
 
     {% if breed.image_url %}
         <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="320">
+    {% else %}
+        <div style="width:320px;height:220px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#777;font-size:15px;">
+            이미지 준비 중
+        </div>
     {% endif %}
+
 
     <h2>기본 정보</h2>
     <ul>
-        <li>그룹: {{ breed.breed_group }}</li>
+        <li>
+            그룹:
+            {% if breed.breed_group_number %}
+                {{ breed.breed_group_number }}그룹 ·
+            {% endif %}
+            {{ breed.breed_group }}
+        </li>
         <li>출신: {{ breed.origin }}</li>
         <li>수명: {{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</li>
         <li>체중: {{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg</li>
         <li>키: {{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm</li>
     </ul>
+
+    {% if breed.breed_group_description %}
+        <h2>
+            {% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}
+            {% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}
+            설명
+        </h2>
+        <p>{{ breed.breed_group_description }}</p>
+    {% endif %}
 
     <h2>성격</h2>
     <p>{{ breed.temperament }}</p>
