@@ -17,11 +17,21 @@
         {% if user.is_authenticated %}
             <div class="history-list">
                 {% for session in sessions %}
-                    <a class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}"
-                       href="{% url 'chatbot:chat' %}?session={{ session.id }}">
-                        <strong>{{ session.title }}</strong>
-                        <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
-                    </a>
+                    <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
+                        <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                            <strong>{{ session.title }}</strong>
+                            <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                        </a>
+                        <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
                 {% empty %}
                     <p class="empty-history">아직 저장된 대화가 없습니다.</p>
                 {% endfor %}
@@ -40,7 +50,15 @@
                 <p class="eyebrow">Pet Mate Assistant</p>
                 <h2>반려견 Q&A</h2>
             </div>
-            <span class="mode-badge">Q&A</span>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <span class="mode-badge">Q&A</span>
+                {% if not user.is_authenticated %}
+                <form method="post" action="{% url 'chatbot:clear_anonymous_chat' %}" onsubmit="return confirm('대화 내역을 모두 지우시겠습니까?');" style="margin:0;">
+                    {% csrf_token %}
+                    <button type="submit" class="text-button" style="min-height: 28px; padding: 0 10px; font-size: 12px; border-radius: 8px;">대화 초기화</button>
+                </form>
+                {% endif %}
+            </div>
         </div>
 
         <div class="chat-window" aria-live="polite">
@@ -88,4 +106,13 @@
         </form>
     </section>
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const chatWindow = document.querySelector('.chat-window');
+        if (chatWindow) {
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    });
+</script>
 {% endblock %}

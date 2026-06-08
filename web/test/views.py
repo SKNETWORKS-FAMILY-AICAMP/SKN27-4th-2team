@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import random
@@ -89,6 +89,16 @@ def get_page(request):
         correct_count = sum(1 for item in result_items if item["is_correct"])
         wrong_items = [item for item in result_items if not item["is_correct"]]
 
+        # 로그인한 사용자일 경우 DB에 저장
+        if request.user.is_authenticated:
+            from .models import TestResult
+            TestResult.objects.create(
+                user=request.user,
+                total_score=total_score,
+                earned_score=earned_score,
+                result_data=result_items
+            )
+
         return render(
             request,
             "main/test.html",
@@ -116,5 +126,32 @@ def get_page(request):
             "question_count": len(quizzes),
             "quiz_bank_exists": QUIZ_BANK_PATH.exists(),
             "quiz_bank_path": str(QUIZ_BANK_PATH),
+        },
+    )
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def view_saved_result(request, result_id):
+    from .models import TestResult
+    result = get_object_or_404(TestResult, id=result_id, user=request.user)
+    result_items = result.result_data
+    total_score = result.total_score
+    earned_score = result.earned_score
+    correct_count = sum(1 for item in result_items if item["is_correct"])
+    wrong_items = [item for item in result_items if not item["is_correct"]]
+
+    return render(
+        request,
+        "main/test.html",
+        {
+            "mode": "result",
+            "result_items": result_items,
+            "wrong_items": wrong_items,
+            "total_count": len(result_items),
+            "correct_count": correct_count,
+            "wrong_count": len(wrong_items),
+            "total_score": total_score,
+            "earned_score": earned_score,
         },
     )

@@ -96,6 +96,27 @@
             {% endfor %}
             <button class="primary-button full-width" type="submit">등록하기</button>
         </form>
+    <section class="test-result-card glass-card" style="grid-column: 1 / -1;">
+        <div class="card-heading">
+            <p class="eyebrow">Test Results</p>
+            <h2>나의 반려견 양육 지식 테스트 결과</h2>
+        </div>
+
+        <div class="pet-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+            {% for result in test_results %}
+                <article class="pet-card" style="cursor: pointer;" onclick="location.href='{% url 'test:view_saved_result' result.id %}'">
+                    <div>
+                        <h3>{{ result.earned_score }} / {{ result.total_score }} 점</h3>
+                        <p>{{ result.created_at|date:"Y년 m월 d일 H:i" }}</p>
+                    </div>
+                    <div class="pet-actions">
+                        <span class="text-button">결과 보기</span>
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-history">아직 응시한 테스트 내역이 없습니다.</p>
+            {% endfor %}
+        </div>
     </section>
 </main>
 {% endblock %}
