@@ -96,6 +96,18 @@ DATABASES = {
     }
 }
 
+# 현재 PostgreSQL은 RAG/보호소/견종 사전 테이블 중심으로 사용한다.
+# Django 세션 테이블(django_session)을 만들지 않아도 페이지가 렌더링되도록
+# 비로그인 채팅 세션은 서버 메모리 cache에 임시 저장한다.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'pet-mate-session-cache',
+    }
+}
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

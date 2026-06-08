@@ -15,7 +15,29 @@ from backend.integrations.rag.schemas import RetrievedDocument
 
 PROJECT_DIR = Path(__file__).resolve().parents[3]
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
-DEFAULT_TABLE = "rag_chunks"
+DEFAULT_TABLE = "langchain_pg_embedding"
+DEFAULT_COLLECTION_NAME = "dog_rag_documents"
+
+SECTION_TITLES = {
+    "basic_profile": "Basic Profile",
+    "about_the_breed": "About the Breed",
+    "traits": "Breed Traits & Characteristics",
+    "colors_markings": "Breed Colors & Markings",
+    "health": "Health",
+    "grooming": "Grooming",
+    "exercise": "Exercise",
+    "training": "Training",
+    "nutrition": "Nutrition",
+    "history": "History",
+}
+
+TRAIT_LABELS = {
+    "Adaptability Level": "adaptability_level",
+    "Energy Level": "energy_level",
+    "Barking Level": "barking_level",
+    "Trainability Level": "trainability_level",
+    "Mental Stimulation Needs": "mental_stimulation_needs",
+}
 
 
 class PGVectorRAGClient:
@@ -26,11 +48,13 @@ class PGVectorRAGClient:
         project_dir: Path | None = None,
         table: str | None = None,
         embedding_model: str | None = None,
+        collection_name: str | None = None,
     ) -> None:
         self.project_dir = project_dir or PROJECT_DIR
         load_dotenv(self.project_dir / ".env", encoding="utf-8-sig")
 
         self.table = _validate_identifier(table or os.getenv("PGVECTOR_TABLE", DEFAULT_TABLE))
+        self.collection_name = collection_name or os.getenv("PGVECTOR_COLLECTION", DEFAULT_COLLECTION_NAME)
         self.embedding_model_name = (
             embedding_model
             or os.getenv("OPENAI_EMBEDDING_MODEL")
@@ -51,7 +75,12 @@ class PGVectorRAGClient:
 
         if _is_apartment_recommendation_query(query, categories):
             with psycopg.connect(**_db_config()) as conn:
-                return _search_apartment_recommendation_documents(conn=conn, top_k=top_k)
+                return _search_apartment_recommendation_documents(
+                    conn=conn,
+                    table=self.table,
+                    collection_name=self.collection_name,
+                    top_k=top_k,
+                )
 
         query_vector = _vector_literal(self._embedding_model().embed_query(query))
 
@@ -59,9 +88,10 @@ class PGVectorRAGClient:
             rows = _search_chunks(
                 conn=conn,
                 table=self.table,
+                collection_name=self.collection_name,
                 query_vector=query_vector,
                 k=top_k,
-                source_filter=_source_filter_from_categories(categories, breed_names),
+                categories=categories,
                 breed_names=breed_names,
                 sections=sections,
             )
@@ -146,37 +176,53 @@ def _is_apartment_recommendation_query(
 
 def _search_apartment_recommendation_documents(
     conn: psycopg.Connection,
+    table: str,
+    collection_name: str,
     top_k: int,
 ) -> list[RetrievedDocument]:
-    sql = """
+    sql = f"""
         SELECT
-            b.breed_name,
-            bs.doc_id,
-            bs.metadata
-        FROM breed_sections bs
-        JOIN breeds b ON bs.breed_id = b.id
-        WHERE bs.section = 'basic_profile'
-          AND bs.metadata ? 'profile'
-          AND bs.metadata ? 'trait_scores'
+            e.document,
+            e.cmetadata
+        FROM {table} e
+        JOIN langchain_pg_collection c ON e.collection_id = c.uuid
+        WHERE c.name = %s
+          AND e.cmetadata->>'doc_type' = 'breed_section'
+          AND e.cmetadata->>'section' = ANY(%s)
     """
 
     with conn.cursor() as cur:
-        cur.execute(sql)
+        cur.execute(sql, [collection_name, ["basic_profile", "traits"]])
         rows = cur.fetchall()
 
-    candidates: list[dict[str, Any]] = []
-    for breed_name, doc_id, metadata in rows:
+    grouped: dict[str, dict[str, Any]] = {}
+    for document, metadata in rows:
         metadata = metadata if isinstance(metadata, dict) else {}
-        profile = _json_metadata_value(metadata.get("profile"))
-        traits = _json_metadata_value(metadata.get("trait_scores"))
+        doc_id = str(metadata.get("doc_id") or "")
+        slug = _akc_slug_from_doc_id(doc_id)
+        if not slug:
+            continue
+
+        section = metadata.get("section")
+        grouped.setdefault(slug, {"doc_id": doc_id, "sections": {}})
+        grouped[slug]["sections"][section] = str(document or "")
+
+    candidates: list[dict[str, Any]] = []
+    for slug, item in grouped.items():
+        profile = _parse_basic_profile(item["sections"].get("basic_profile", ""))
+        traits = _parse_traits(item["sections"].get("traits", ""))
+        if not profile or not traits:
+            continue
+
         score = _score_apartment_fit(profile=profile, traits=traits)
         if score is None:
             continue
 
+        breed_name = profile.get("breed_name") or _breed_name_from_slug(slug)
         candidates.append(
             {
                 "breed_name": breed_name,
-                "doc_id": doc_id,
+                "doc_id": item["doc_id"],
                 "profile": profile,
                 "traits": traits,
                 "score": score,
@@ -299,48 +345,155 @@ def _slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
 
+def _breed_search_patterns(breed_names: list[str]) -> list[str]:
+    patterns: list[str] = []
+    for breed_name in breed_names:
+        name = breed_name.strip()
+        if not name:
+            continue
+        slug = _slugify(name)
+        patterns.append(f"%{name}%")
+        if slug:
+            patterns.append(f"%{slug}%")
+    return patterns
+
+
+def _normalize_source(metadata: dict[str, Any]) -> str:
+    source = str(metadata.get("source") or "").strip()
+    doc_type = str(metadata.get("doc_type") or "").strip()
+    doc_id = str(metadata.get("doc_id") or "").strip()
+
+    if source == "qna":
+        return "qna"
+    if source == "YouTube":
+        if str(metadata.get("expert_role") or "").strip() == "veterinarian":
+            return "youtube_vet"
+        return "youtube_training"
+    if source == "American Kennel Club":
+        if doc_type == "breed_section" or doc_id.startswith("akc_breed:"):
+            return "akc_breed"
+        return "article"
+    return source or "unknown"
+
+
+def _title_from_metadata_or_text(metadata: dict[str, Any], text: str, section: str) -> str:
+    for key in ("title", "question", "section_title"):
+        value = metadata.get(key)
+        if value:
+            return str(value).strip()
+
+    if metadata.get("source") == "qna":
+        question = _extract_qna_question(text)
+        if question:
+            return question
+
+    return SECTION_TITLES.get(section) or ""
+
+
+def _extract_qna_question(text: str) -> str:
+    match = re.search(r"Question:\s*(.+?)(?:\n\s*\n|Answer:|$)", text, flags=re.DOTALL)
+    if not match:
+        return ""
+    return re.sub(r"\s+", " ", match.group(1)).strip()
+
+
+def _parse_basic_profile(text: str) -> dict[str, Any]:
+    if not text.strip():
+        return {}
+
+    profile = {
+        "breed_name": _line_value(text, "Breed Name"),
+        "height_min": _range_value(_line_value(text, "Height"), minimum=True),
+        "height_max": _range_value(_line_value(text, "Height"), minimum=False),
+        "weight_min": _range_value(_line_value(text, "Weight"), minimum=True),
+        "weight_max": _range_value(_line_value(text, "Weight"), minimum=False),
+        "life_expectancy_min": _range_value(_line_value(text, "Life Expectancy"), minimum=True),
+        "life_expectancy_max": _range_value(_line_value(text, "Life Expectancy"), minimum=False),
+    }
+    return {key: value for key, value in profile.items() if value not in (None, "")}
+
+
+def _parse_traits(text: str) -> dict[str, Any]:
+    traits: dict[str, Any] = {}
+    for label, key in TRAIT_LABELS.items():
+        match = re.search(rf"-\s*{re.escape(label)}:\s*(\d+)", text)
+        if match:
+            traits[key] = float(match.group(1))
+    return traits
+
+
+def _line_value(text: str, label: str) -> str:
+    match = re.search(rf"^{re.escape(label)}:\s*(.+)$", text, flags=re.MULTILINE)
+    return match.group(1).strip() if match else ""
+
+
+def _range_value(text: str, *, minimum: bool) -> float | None:
+    numbers = [float(value) for value in re.findall(r"\d+(?:\.\d+)?", text)]
+    if not numbers:
+        return None
+    return min(numbers) if minimum else max(numbers)
+
+
+def _akc_slug_from_doc_id(doc_id: str) -> str:
+    if not doc_id.startswith("akc_breed:"):
+        return ""
+    parts = doc_id.split(":")
+    return parts[1].strip() if len(parts) >= 2 else ""
+
+
+def _breed_name_from_doc_id(doc_id: str) -> str:
+    slug = _akc_slug_from_doc_id(doc_id)
+    return _breed_name_from_slug(slug) if slug else ""
+
+
+def _breed_name_from_slug(slug: str) -> str:
+    return slug.replace("-", " ").title()
+
+
+def _breed_name_from_text(text: str) -> str:
+    return _line_value(text, "Breed Name")
+
+
 def _search_chunks(
     conn: psycopg.Connection,
     table: str,
+    collection_name: str,
     query_vector: str,
     k: int,
-    source_filter: str | None,
+    categories: list[str] | None,
     breed_names: list[str] | None,
     sections: list[str] | None,
 ) -> list[dict[str, Any]]:
-    where_clauses: list[str] = []
-    params: list[Any] = [query_vector]
+    where_clauses: list[str] = ["c.name = %s"]
+    params: list[Any] = [query_vector, collection_name]
 
-    if source_filter:
-        where_clauses.append("r.source = %s")
-        params.append(source_filter)
+    if categories and "breed_recommendation" in categories and not breed_names:
+        where_clauses.append("e.cmetadata->>'doc_type' = %s")
+        params.append("breed_section")
 
     if breed_names:
-        where_clauses.append("b.breed_name ILIKE ANY(%s)")
-        params.append([f"%{breed_name}%" for breed_name in breed_names])
+        patterns = _breed_search_patterns(breed_names)
+        where_clauses.append("(e.document ILIKE ANY(%s) OR e.cmetadata->>'doc_id' ILIKE ANY(%s))")
+        params.extend([patterns, patterns])
 
     if sections:
-        where_clauses.append("(bs.section = ANY(%s) OR bs.section IS NULL)")
+        where_clauses.append("((e.cmetadata->>'section') = ANY(%s) OR NOT (e.cmetadata ? 'section'))")
         params.append(sections)
 
-    where_sql = f"WHERE {' AND '.join(where_clauses)}" if where_clauses else ""
+    where_sql = f"WHERE {' AND '.join(where_clauses)}"
 
     sql = f"""
         SELECT
-            r.chunk_id,
-            r.doc_id,
-            r.source,
-            r.metadata,
-            r.text,
-            1 - (r.embedding <=> %s::vector) AS similarity,
-            b.breed_name,
-            bs.section AS breed_section,
-            bs.section_title AS breed_section_title
-        FROM {table} r
-        LEFT JOIN breed_sections bs ON r.breed_section_id = bs.id
-        LEFT JOIN breeds b ON bs.breed_id = b.id
+            e.id,
+            COALESCE(e.cmetadata->>'doc_id', e.id),
+            e.cmetadata,
+            e.document,
+            1 - (e.embedding <=> %s::vector) AS similarity,
+            c.name
+        FROM {table} e
+        JOIN langchain_pg_collection c ON e.collection_id = c.uuid
         {where_sql}
-        ORDER BY r.embedding <=> %s::vector
+        ORDER BY e.embedding <=> %s::vector
         LIMIT %s
     """
     params.extend([query_vector, k])
@@ -354,34 +507,21 @@ def _search_chunks(
         (
             chunk_id,
             doc_id,
-            row_source,
             metadata,
             text,
             similarity,
-            breed_name,
-            breed_section,
-            breed_section_title,
+            collection_name,
         ) = row
         row_metadata = metadata if isinstance(metadata, dict) else {}
-        title = (
-            row_metadata.get("title")
-            or row_metadata.get("question")
-            or breed_section_title
-        )
         results.append(
             {
                 "rank": rank,
                 "chunk_id": chunk_id,
                 "doc_id": doc_id,
-                "source": row_source,
                 "metadata": row_metadata,
                 "text": text,
                 "similarity": float(similarity),
-                "breed_name": breed_name,
-                "breed_section": breed_section,
-                "breed_section_title": breed_section_title,
-                "title": title,
-                "article_url": row_metadata.get("url"),
+                "collection_name": collection_name,
             }
         )
 
@@ -390,23 +530,34 @@ def _search_chunks(
 
 def _row_to_document(row: dict[str, Any]) -> RetrievedDocument:
     metadata = dict(row.get("metadata") or {})
+    text = str(row.get("text") or "")
+    doc_id = str(row.get("doc_id") or row.get("chunk_id") or "")
+    section = str(metadata.get("section") or "")
+    title = _title_from_metadata_or_text(metadata, text, section)
+    breed_name = _breed_name_from_doc_id(doc_id) or _breed_name_from_text(text)
+
+    if _normalize_source(metadata) == "qna" and title:
+        metadata["question"] = title
+
     metadata.update(
         {
             "rank": row.get("rank"),
-            "source": row.get("source"),
-            "doc_id": row.get("doc_id"),
+            "source": _normalize_source(metadata),
+            "original_source": metadata.get("source"),
+            "doc_id": doc_id,
             "chunk_id": row.get("chunk_id"),
-            "breed_name": row.get("breed_name"),
-            "section": row.get("breed_section"),
-            "section_title": row.get("breed_section_title"),
-            "title": row.get("title"),
-            "article_url": row.get("article_url"),
+            "breed_name": breed_name,
+            "section": section or None,
+            "section_title": SECTION_TITLES.get(section),
+            "title": title,
+            "article_url": metadata.get("url"),
+            "collection_name": row.get("collection_name"),
         }
     )
 
     return RetrievedDocument(
         document_id=str(row["chunk_id"]),
-        content=str(row.get("text") or ""),
+        content=text,
         score=row.get("similarity"),
-        metadata={key: value for key, value in metadata.items() if value is not None},
+        metadata={key: value for key, value in metadata.items() if value is not None and value != ""},
     )
