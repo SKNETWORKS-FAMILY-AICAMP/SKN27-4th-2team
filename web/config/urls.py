@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView, TemplateView
 
 
 # 프로젝트 전체 URL 연결표입니다.
@@ -11,5 +11,11 @@ urlpatterns = [
     path('chatbot/', include('chatbot.urls')),
     path('users/', include('user.urls')),
     path('dog/', include('dog.urls')),
+    path('shelter/', include('shelter.urls')),
+    path('guide/', include('guide.urls')),
+    path('guides/', RedirectView.as_view(url='/guide/', permanent=False)),
     path('test/', include('test.urls')),
 ]
+
+
+
