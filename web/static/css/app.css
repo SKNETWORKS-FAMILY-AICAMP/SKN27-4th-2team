@@ -1430,10 +1430,53 @@ p {
     gap: 8px;
 }
 
+.breed-title-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 38px;
+    align-items: center;
+    gap: 10px;
+}
+
 .breed-info h3 {
     margin: 0;
+    min-width: 0;
     font-size: 20px;
     font-weight: 700;
+}
+
+.breed-info h3 a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.favorite-button {
+    width: 38px;
+    height: 38px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--muted);
+    background: #f6f6f3;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 140ms ease, border-color 140ms ease, background 140ms ease, transform 140ms ease;
+}
+
+.favorite-button:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+    background: var(--white);
+    transform: translateY(-1px);
+}
+
+.favorite-button.is-active {
+    color: var(--ink);
+    border-color: var(--ink);
+    background: #fff8d8;
 }
 
 .breed-info .en-name {

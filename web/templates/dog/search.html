@@ -41,21 +41,57 @@
 
     <div class="breed-grid">
         {% for breed in breeds %}
-            <a href="{% url 'dog:detail' breed.id %}" class="breed-card">
-                <div class="breed-img-box">
+            <article class="breed-card" data-breed-id="{{ breed.id }}">
+                <a href="{% url 'dog:detail' breed.id %}" class="breed-img-box">
                     {% if breed.image_url %}
                         <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}">
                     {% else %}
                         <div class="no-image">이미지 준비 중</div>
                     {% endif %}
-                </div>
+                </a>
                 <div class="breed-info">
-                    <h3>{{ breed.breed_name_ko }}</h3>
+                    <div class="breed-title-row">
+                        <h3>
+                            <a href="{% url 'dog:detail' breed.id %}">{{ breed.breed_name_ko }}</a>
+                        </h3>
+                        <button
+                            type="button"
+                            class="favorite-button"
+                            data-favorite-id="{{ breed.id }}"
+                            aria-label="{{ breed.breed_name_ko }} 즐겨찾기"
+                            aria-pressed="false"
+                        >
+                            ☆
+                        </button>
+                    </div>
                     <p class="en-name">{{ breed.breed_name_en }}</p>
-                    <div class="breed-tags">
-                        <span class="tag tag-standard">한국 애견 연맹 국제 공인 견종</span>
-                        <span class="tag">{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}{% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}</span>
-                        {% if breed.origin %}<span class="tag">{{ breed.origin }}</span>{% endif %}
+                    <div class="breed-facts" aria-label="견종 기본 정보">
+                        {% if breed.temperament %}
+                            <div class="breed-fact breed-fact-temperament">
+                                <span>성향</span>
+                                <strong>{{ breed.temperament }}</strong>
+                            </div>
+                        {% endif %}
+                        <div class="breed-fact-list">
+                            {% if breed.height_min_cm and breed.height_max_cm %}
+                                <div class="breed-fact">
+                                    <span>체고</span>
+                                    <strong>{{ breed.height_min_cm|floatformat:"-1" }}-{{ breed.height_max_cm|floatformat:"-1" }}cm</strong>
+                                </div>
+                            {% endif %}
+                            {% if breed.weight_min_kg and breed.weight_max_kg %}
+                                <div class="breed-fact">
+                                    <span>중량</span>
+                                    <strong>{{ breed.weight_min_kg|floatformat:"-1" }}-{{ breed.weight_max_kg|floatformat:"-1" }}kg</strong>
+                                </div>
+                            {% endif %}
+                            {% if breed.life_expectancy_min and breed.life_expectancy_max %}
+                                <div class="breed-fact">
+                                    <span>수명</span>
+                                    <strong>{{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</strong>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="breed-score-list" aria-label="견종 척도 정보">
                         {% if breed.affectionate_with_family_score %}
@@ -63,13 +99,6 @@
                                 <span>가족 친화</span>
                                 <i style="--score: {{ breed.affectionate_with_family_score }};"></i>
                                 <b>{{ breed.affectionate_with_family_score }}/5</b>
-                            </div>
-                        {% endif %}
-                        {% if breed.good_with_young_children_score %}
-                            <div class="breed-score-row">
-                                <span>아이 친화</span>
-                                <i style="--score: {{ breed.good_with_young_children_score }};"></i>
-                                <b>{{ breed.good_with_young_children_score }}/5</b>
                             </div>
                         {% endif %}
                         {% if breed.trainability_score %}
@@ -88,7 +117,7 @@
                         {% endif %}
                     </div>
                 </div>
-            </a>
+            </article>
         {% empty %}
             <div class="breed-empty">
                 <p>검색 결과가 없습니다. 다른 검색어나 필터를 시도해보세요.</p>
@@ -166,6 +195,74 @@
     color: var(--muted);
     font-size: 12px;
     font-weight: 800;
+}
+
+.breed-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.breed-title-row h3 {
+    flex: 1;
+    min-width: 0;
+}
+
+.breed-title-row h3 a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breed-title-row .favorite-button {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+}
+
+.breed-facts {
+    display: grid;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.breed-fact-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.breed-fact {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #f4f4f4;
+}
+
+.breed-fact span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.breed-fact strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 750;
+}
+
+.breed-fact-temperament strong {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .breed-score-list {
@@ -267,4 +364,50 @@
     }
 }
 </style>
+
+<script>
+(() => {
+    const storageKey = "petmate.favoriteBreeds";
+    const buttons = document.querySelectorAll(".favorite-button[data-favorite-id]");
+
+    const getFavorites = () => {
+        try {
+            return new Set(JSON.parse(localStorage.getItem(storageKey) || "[]"));
+        } catch {
+            return new Set();
+        }
+    };
+
+    const saveFavorites = (favorites) => {
+        localStorage.setItem(storageKey, JSON.stringify([...favorites]));
+    };
+
+    const renderButton = (button, isActive) => {
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+        button.textContent = isActive ? "★" : "☆";
+    };
+
+    const favorites = getFavorites();
+
+    buttons.forEach((button) => {
+        const breedId = button.dataset.favoriteId;
+        renderButton(button, favorites.has(breedId));
+
+        button.addEventListener("click", () => {
+            const nextFavorites = getFavorites();
+            const nextActive = !nextFavorites.has(breedId);
+
+            if (nextActive) {
+                nextFavorites.add(breedId);
+            } else {
+                nextFavorites.delete(breedId);
+            }
+
+            saveFavorites(nextFavorites);
+            renderButton(button, nextActive);
+        });
+    });
+})();
+</script>
 {% endblock %}
