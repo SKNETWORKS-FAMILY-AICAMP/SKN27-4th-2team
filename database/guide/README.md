@@ -60,6 +60,6 @@ HWP는 실행 환경에 따라 자동 추출 안정성이 낮다. 우선 한글 
 guide_sections.json 또는 raw txt
 → guide chunk 생성
 → embedding 생성
-→ rag_chunks에 source='guide'로 저장
+→ langchain_pg_embedding에 guide 문서로 저장
 → 챗봇에서 가이드 문서 기반 답변
 ```

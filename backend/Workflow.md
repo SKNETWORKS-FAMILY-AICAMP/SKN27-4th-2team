@@ -67,7 +67,7 @@ return workflow.compile()
 3. `backend/services/chat_service.py`에서 기본 client로 `PGVectorRAGClient`를 생성한다.
 4. `backend/agents/rag_workflow.py`의 `run_rag_workflow()`가 LangGraph workflow를 실행한다.
 5. `retrieve` 노드에서 사용자 질문을 분석하고 RAG 검색 요청을 만든다.
-6. `PGVectorRAGClient`가 PostgreSQL `rag_chunks` 테이블에서 pgvector 유사도 검색을 수행한다.
+6. `PGVectorRAGClient`가 PostgreSQL `langchain_pg_embedding` 테이블에서 pgvector 유사도 검색을 수행하고, `langchain_pg_collection`으로 collection을 제한한다.
 7. `evaluate_relevance` 노드가 검색된 문서를 답변 생성에 사용할 문서로 전달한다.
 8. `generate` 노드가 검색 문서와 사용자 질문을 OpenAI Chat 모델에 전달해 답변을 생성한다.
 9. `response_validator`가 기본 안내 문구와 안전성 관련 문구를 보강한다.
@@ -192,8 +192,9 @@ search_documents(
 
 - `.env`에서 OpenAI API key, embedding model, PostgreSQL 접속 정보를 읽는다.
 - 사용자 query를 embedding vector로 변환한다.
-- `rag_chunks` 테이블에서 vector similarity 검색을 수행한다.
-- `breed_sections`, `breeds` 등 source table과 join해서 metadata를 보강한다.
+- `langchain_pg_embedding` 테이블에서 vector similarity 검색을 수행한다.
+- `langchain_pg_collection` 테이블과 join해 `dog_rag_documents` collection만 검색한다.
+- `langchain_pg_embedding.cmetadata`의 문서 metadata를 정규화해서 source, title, breed, section 정보를 보강한다.
 - 검색 결과를 `RetrievedDocument` 목록으로 반환한다.
 
 견종 추천 중 일부 요청은 일반 vector similarity만 사용하지 않고 구조화된 scoring 로직을 사용한다.
