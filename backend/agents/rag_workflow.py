@@ -94,8 +94,9 @@ def _make_retrieve_node(rag_client: RAGClient):
 def evaluate_relevance(state: RAGState) -> RAGState:
     """Evaluate retrieved document relevance.
 
-    This is rule-based for now. The future LLM version can replace this node while
-    keeping the same state contract.
+    For now, trust the vector retriever and pass retrieved documents through.
+    The future LLM version can replace this node while keeping the same state
+    contract.
     """
 
     retrieved_docs = state.get("retrieved_docs", [])
@@ -110,11 +111,7 @@ def evaluate_relevance(state: RAGState) -> RAGState:
             "relevance_issues": ["검색된 문서가 없습니다."],
         }
 
-    relevant_docs = _filter_relevant_documents(
-        question=state["question"],
-        analysis=analysis,
-        documents=retrieved_docs,
-    )
+    relevant_docs = retrieved_docs
     sources = _collect_sources(relevant_docs)
     context = _build_context(relevant_docs)
     issues = [] if relevant_docs else ["질문과 관련성이 충분한 문서를 찾지 못했습니다."]
