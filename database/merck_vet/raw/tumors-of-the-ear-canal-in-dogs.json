@@ -1,0 +1,26 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Tumors of the Ear Canal in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/tumors-of-the-ear-canal-in-dogs",
+  "category": "Ear Disorders of Dogs",
+  "section_slug": "ear-disorders-of-dogs",
+  "reviewed_date": "Apr 2026",
+  "author": "Nick Roman , DVM, MPH , College Station Cat Clinic Reviewed By Laurie Hess , DVM, DABVP , The MSD Veterinary Manual",
+  "language": "en",
+  "content": "## Overview\nTumors can develop from structures lining or supporting the ear canal—skin, earwax and oil glands, bone, connective tissue, muscle, or deeper skin layers. Tumors of the external ear canal and pinna are more common than tumors of the middle or inner ear. Cocker Spaniels appear more likely to develop ear canal tumors. Middle-aged dogs are more likely to have benign (not cancerous) tumors, and dogs older than 11 are at higher risk of malignant (cancerous) tumors.\nChronic inflammation of the ear canal can lead to abnormal growth of skin and underlying structures, followed by tumor formation. Thickened secretions from earwax glands during prolonged inflammation might stimulate cancerous growth. Most ear canal tumors are benign. Signs include discharge (waxy, pus-filled, or bloody) from one ear, foul odor, head shaking, scratching, and swelling or draining pockets of pus near the ear. If the middle or inner ear is involved, the dog might show balance or hearing problems, head tilt, and other signs. Any chronic inflammation in one ear that doesn't respond to treatment should raise suspicion of an ear canal tumor.\nEarwax gland tumors can be benign or malignant and appear as smooth or bumpy stalks of skin or flattened patches rising from the canal lining. Your veterinarian will need to perform a deep biopsy for diagnosis. CT scan or MRI testing might be needed to see if the tumor has reached nearby areas, including the middle ear.\nSurgical removal of benign tumors, including laser surgery, is possible in many cases. Malignant tumors need more extensive surgery. Radiation therapy can help when malignant tumors are not completely removed.\nYour veterinarian can discuss your dog’s specific condition and the likely outcomes for surgery or other treatments.",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Tumors can develop from structures lining or supporting the ear canal—skin, earwax and oil glands, bone, connective tissue, muscle, or deeper skin layers. Tumors of the external ear canal and pinna are more common than tumors of the middle or inner ear. Cocker Spaniels appear more likely to develop ear canal tumors. Middle-aged dogs are more likely to have benign (not cancerous) tumors, and dogs older than 11 are at higher risk of malignant (cancerous) tumors.",
+        "Chronic inflammation of the ear canal can lead to abnormal growth of skin and underlying structures, followed by tumor formation. Thickened secretions from earwax glands during prolonged inflammation might stimulate cancerous growth. Most ear canal tumors are benign. Signs include discharge (waxy, pus-filled, or bloody) from one ear, foul odor, head shaking, scratching, and swelling or draining pockets of pus near the ear. If the middle or inner ear is involved, the dog might show balance or hearing problems, head tilt, and other signs. Any chronic inflammation in one ear that doesn't respond to treatment should raise suspicion of an ear canal tumor.",
+        "Earwax gland tumors can be benign or malignant and appear as smooth or bumpy stalks of skin or flattened patches rising from the canal lining. Your veterinarian will need to perform a deep biopsy for diagnosis. CT scan or MRI testing might be needed to see if the tumor has reached nearby areas, including the middle ear.",
+        "Surgical removal of benign tumors, including laser surgery, is possible in many cases. Malignant tumors need more extensive surgery. Radiation therapy can help when malignant tumors are not completely removed.",
+        "Your veterinarian can discuss your dog’s specific condition and the likely outcomes for surgery or other treatments."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:45:24.115110+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

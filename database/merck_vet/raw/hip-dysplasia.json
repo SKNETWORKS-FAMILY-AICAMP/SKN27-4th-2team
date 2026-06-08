@@ -1,0 +1,32 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Hip Dysplasia",
+  "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/hip-dysplasia",
+  "category": "Bone, Joint, and Muscle Disorders of Dogs",
+  "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+  "reviewed_date": "Mar 2018",
+  "author": "Joseph Harari , MS, DVM, DACVS , Veterinary Surgical Specialists, Spokane, WA",
+  "language": "en",
+  "content": "## Overview\nHip dysplasia is an abnormal development of the hip joint in large dogs. It is characterized by a loose joint and subsequent degenerative joint disease (osteoarthritis). Excessive growth, exercise, nutrition, and hereditary factors affect the occurrence of hip dysplasia.\nThe signs associated with hip dysplasia vary. Lameness may be mild, moderate, or severe, and is worse after exercise. The dog may walk with a “bunny-hopping” gait. A loose joint, reduced range of motion or stiffness of the joint, and a grating sound and pain during full extension and bending of the joint may be present. X-rays are useful in determining the degree of arthritis and planning treatments.\nBoth medical and surgical treatments are available. Dogs that have a mild case of hip dysplasia or that cannot undergo surgery due to health or owner constraints may benefit from other treatments. These include weight reduction, restriction of exercise on hard surfaces, physical therapy, anti-inflammatory drugs, and possibly joint fluid modifiers. Surgical treatments can include a range of procedures to reduce pain and arthritis, including total hip replacement.\nThe outlook for recovery varies greatly and depends on the overall health, degree of dysplasia and joint damage, and environment of the animal. Surgery is generally beneficial if recommended and performed correctly. Dogs that do not undergo surgery may require lifestyle changes in order to be comfortable.\nBecause dogs can pass hip dysplasia to their puppies, at-risk breeds should be evaluated for hip dysplasia prior to breeding. Currently, this is done with specialized x-rays; however, genetic testing may be available in the future.\n\n## For More Information\nAlso see professional content regarding hip dysplasia in small animals .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Hip dysplasia is an abnormal development of the hip joint in large dogs. It is characterized by a loose joint and subsequent degenerative joint disease (osteoarthritis). Excessive growth, exercise, nutrition, and hereditary factors affect the occurrence of hip dysplasia.",
+        "The signs associated with hip dysplasia vary. Lameness may be mild, moderate, or severe, and is worse after exercise. The dog may walk with a “bunny-hopping” gait. A loose joint, reduced range of motion or stiffness of the joint, and a grating sound and pain during full extension and bending of the joint may be present. X-rays are useful in determining the degree of arthritis and planning treatments.",
+        "Both medical and surgical treatments are available. Dogs that have a mild case of hip dysplasia or that cannot undergo surgery due to health or owner constraints may benefit from other treatments. These include weight reduction, restriction of exercise on hard surfaces, physical therapy, anti-inflammatory drugs, and possibly joint fluid modifiers. Surgical treatments can include a range of procedures to reduce pain and arthritis, including total hip replacement.",
+        "The outlook for recovery varies greatly and depends on the overall health, degree of dysplasia and joint damage, and environment of the animal. Surgery is generally beneficial if recommended and performed correctly. Dogs that do not undergo surgery may require lifestyle changes in order to be comfortable.",
+        "Because dogs can pass hip dysplasia to their puppies, at-risk breeds should be evaluated for hip dysplasia prior to breeding. Currently, this is done with specialized x-rays; however, genetic testing may be available in the future."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding hip dysplasia in small animals ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:17:35.372254+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

@@ -1,0 +1,25 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Paralysis of the Larynx in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/paralysis-of-the-larynx-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Maureen H. Kemp , BVMS, PhD , Calcoed Vets Limited, Holywell, UK",
+  "language": "en",
+  "content": "## Overview\nLaryngeal paralysis, a disease of the upper airway, is common in dogs. The condition occurs when the cartilages of the larynx do not open and close normally during respiration. It is an acquired problem in middle-aged to older, large and giant breeds of dogs, such as Labrador Retrievers, Irish Setters, and Great Danes. It is seen less often as a hereditary, congenital (present at birth) disease in Bouvier des Flandres, Leonbergers, Siberian Huskies, Bulldogs, and racing sled dogs.\nSigns include a dry cough, voice changes, and noisy breathing that slowly progresses to obvious difficulty in breathing during stress and exertion, and eventually to collapse. Regurgitation and vomiting may occur. The progression of signs usually takes months or even years before respiratory distress is evident. The veterinarian will generally need to examine the upper airway with an endoscope (laryngoscopy) to confirm the diagnosis. This procedure is done using light anesthesia.\nInitially, treatment is directed at relieving the signs of airway obstruction. Tranquilizers and corticosteroids are temporarily effective in mild cases. Severe obstruction may require the placement of a tube into the trachea (tracheotomy). Surgery to correct the problem is often successful.\nAlso see professional content regarding laryngeal paralysis .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Laryngeal paralysis, a disease of the upper airway, is common in dogs. The condition occurs when the cartilages of the larynx do not open and close normally during respiration. It is an acquired problem in middle-aged to older, large and giant breeds of dogs, such as Labrador Retrievers, Irish Setters, and Great Danes. It is seen less often as a hereditary, congenital (present at birth) disease in Bouvier des Flandres, Leonbergers, Siberian Huskies, Bulldogs, and racing sled dogs.",
+        "Signs include a dry cough, voice changes, and noisy breathing that slowly progresses to obvious difficulty in breathing during stress and exertion, and eventually to collapse. Regurgitation and vomiting may occur. The progression of signs usually takes months or even years before respiratory distress is evident. The veterinarian will generally need to examine the upper airway with an endoscope (laryngoscopy) to confirm the diagnosis. This procedure is done using light anesthesia.",
+        "Initially, treatment is directed at relieving the signs of airway obstruction. Tranquilizers and corticosteroids are temporarily effective in mild cases. Severe obstruction may require the placement of a tube into the trachea (tracheotomy). Surgery to correct the problem is often successful.",
+        "Also see professional content regarding laryngeal paralysis ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:57:39.656396+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Emphysema in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/emphysema-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Laurent L. Couetil , DVM, PhD, DACVIM (Large Animal) , Department of Veterinary Clinical Sciences, Purdue University College of Veterinary Medicine",
+  "language": "en",
+  "content": "## Overview\nEmphysema is an important disease in humans; however, in other animals it typically occurs as a result of another lung disease. The condition leads to difficulty in expelling air from the lungs, making breathing more difficult. Two major forms of emphysema are generally recognized. Alveolar emphysema is abnormal permanent enlargement and destruction of the alveoli, which are small air sacs deep in the lungs. Interstitial emphysema is the presence of air within the supporting connective tissue of the lung. Chronic obstructive pulmonary (lung) disease (COPD) can cause air to get trapped in the alveoli, causing enlargement and destruction of air spaces. Congenital lobar emphysema of dogs (a condition seen in the Pekingese breed) occurs because of incomplete development of the bronchiolar cartilage. Signs vary depending on the cause of disease. The most common sign is labored breathing. Emphysema is permanent lung damage, so treatment is directed at the disease that caused it. Treatments, such as bronchodilators and anti-inflammatory drugs, can significantly improve breathing ability and other respiratory signs.\nAlso see professional content regarding emphysema .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Emphysema is an important disease in humans; however, in other animals it typically occurs as a result of another lung disease. The condition leads to difficulty in expelling air from the lungs, making breathing more difficult. Two major forms of emphysema are generally recognized. Alveolar emphysema is abnormal permanent enlargement and destruction of the alveoli, which are small air sacs deep in the lungs. Interstitial emphysema is the presence of air within the supporting connective tissue of the lung. Chronic obstructive pulmonary (lung) disease (COPD) can cause air to get trapped in the alveoli, causing enlargement and destruction of air spaces. Congenital lobar emphysema of dogs (a condition seen in the Pekingese breed) occurs because of incomplete development of the bronchiolar cartilage. Signs vary depending on the cause of disease. The most common sign is labored breathing. Emphysema is permanent lung damage, so treatment is directed at the disease that caused it. Treatments, such as bronchodilators and anti-inflammatory drugs, can significantly improve breathing ability and other respiratory signs.",
+        "Also see professional content regarding emphysema ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:56:26.483807+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

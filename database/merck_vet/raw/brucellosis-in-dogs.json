@@ -1,0 +1,25 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Brucellosis in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/brucellosis-in-dogs",
+  "category": "Reproductive Disorders of Dogs",
+  "section_slug": "reproductive-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Paul Nicoletti , DVM, MS, DACVPM (Deceased) , College of Veterinary Medicine, University of Florida",
+  "language": "en",
+  "content": "## Overview\nBrucellosis is infection with the bacteria Brucella canis . In dogs, it leads to miscarriage, infection of the sexual organs in males, and infertility. The disease occurs throughout the world, and this species of bacteria primarily affects dogs. It spreads rapidly among closely confined dogs. Infection is transmitted through ingestion of contaminated materials or via sexual transmission. Both sexes appear to be equally susceptible. The primary signs of the infection in females is miscarriage during the last trimester of pregnancy without previous signs of abnormality, stillbirths, and infertility. Female dogs can have vaginal discharge for a prolonged period of time after a miscarriage, which may occur again during subsequent pregnancies. In males, the primary signs of infection are inflammation of the epididymides, testicles, or prostate, and reluctance to mate because of this inflammation. Transmission of brucellosis from dogs to humans occurs, but is quite rare. In humans, the disease, which is usually caused by Brucella melitensis , can be very serious.\nBrucellosis caused by Brucella abortus, B. suis , or B. melitensis is relatively rare in dogs. In cases that do occur, the dogs are usually around livestock, as they are the primary source of those strains of the bacteria.\nThe disease is diagnosed through laboratory tests. Spread of infection is controlled through isolation of infected dogs. Brucellosis is very difficult to treat successfully and may include longterm antibiotics. Neutering of infected dogs is sometimes an alternative to euthanasia. In some states, cases of brucellosis must be reported to the health department. Prevention of brucellosis is done by testing a dog before breeding and before entering breeding facilities. Dogs with a history of brucellosis cannot be bred.\nAlso see professional content regarding brucellosis in dogs .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Brucellosis is infection with the bacteria Brucella canis . In dogs, it leads to miscarriage, infection of the sexual organs in males, and infertility. The disease occurs throughout the world, and this species of bacteria primarily affects dogs. It spreads rapidly among closely confined dogs. Infection is transmitted through ingestion of contaminated materials or via sexual transmission. Both sexes appear to be equally susceptible. The primary signs of the infection in females is miscarriage during the last trimester of pregnancy without previous signs of abnormality, stillbirths, and infertility. Female dogs can have vaginal discharge for a prolonged period of time after a miscarriage, which may occur again during subsequent pregnancies. In males, the primary signs of infection are inflammation of the epididymides, testicles, or prostate, and reluctance to mate because of this inflammation. Transmission of brucellosis from dogs to humans occurs, but is quite rare. In humans, the disease, which is usually caused by Brucella melitensis , can be very serious.",
+        "Brucellosis caused by Brucella abortus, B. suis , or B. melitensis is relatively rare in dogs. In cases that do occur, the dogs are usually around livestock, as they are the primary source of those strains of the bacteria.",
+        "The disease is diagnosed through laboratory tests. Spread of infection is controlled through isolation of infected dogs. Brucellosis is very difficult to treat successfully and may include longterm antibiotics. Neutering of infected dogs is sometimes an alternative to euthanasia. In some states, cases of brucellosis must be reported to the health department. Prevention of brucellosis is done by testing a dog before breeding and before entering breeding facilities. Dogs with a history of brucellosis cannot be bred.",
+        "Also see professional content regarding brucellosis in dogs ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:11:01.428054+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

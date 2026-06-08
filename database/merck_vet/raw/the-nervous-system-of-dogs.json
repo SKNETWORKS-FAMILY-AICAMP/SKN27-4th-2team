@@ -1,0 +1,30 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "The Nervous System of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/the-nervous-system-of-dogs",
+  "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+  "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+  "reviewed_date": "Feb 2018",
+  "author": "Thomas Schubert , DVM, DACVIM, DABVP , Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida",
+  "language": "en",
+  "content": "## Overview\nThe nervous system is made up of the brain, spinal cord, and several different kinds of nerves that are found throughout the body. These create complex circuits through which animals experience and respond to sensations.\nA familiar type of nervous system circuit is a reflex. Reflexes are simple networks found in the nervous system of all animals. For example, when the eyelid is touched, it closes; when the toe is pinched, the foot pulls away “automatically.”\nMany different types of diseases can affect the nervous system, including birth defects, inherited disorders, infections, inflammatory conditions, poisoning, metabolic disorders, nutritional disorders, injuries, degenerative diseases, cancer, or unknown causes. Neurologic diseases are often more common in a particular breed or sex, or tend to occur at a certain age.\n\n## For More Information\nAlso see professional content regarding the nervous system .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The nervous system is made up of the brain, spinal cord, and several different kinds of nerves that are found throughout the body. These create complex circuits through which animals experience and respond to sensations.",
+        "A familiar type of nervous system circuit is a reflex. Reflexes are simple networks found in the nervous system of all animals. For example, when the eyelid is touched, it closes; when the toe is pinched, the foot pulls away “automatically.”",
+        "Many different types of diseases can affect the nervous system, including birth defects, inherited disorders, infections, inflammatory conditions, poisoning, metabolic disorders, nutritional disorders, injuries, degenerative diseases, cancer, or unknown causes. Neurologic diseases are often more common in a particular breed or sex, or tend to occur at a certain age."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding the nervous system ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:34:51.278831+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

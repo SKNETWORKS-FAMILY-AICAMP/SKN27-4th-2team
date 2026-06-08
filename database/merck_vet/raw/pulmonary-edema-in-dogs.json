@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Pulmonary Edema in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pulmonary-edema-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ned F. Kuehn , DVM, MS, DACVIM , Michigan Veterinary Specialists",
+  "language": "en",
+  "content": "## Overview\nPulmonary edema, the abnormal accumulation of fluid in the tissue, airways, or air sacs (alveoli) of the lungs, may occur along with circulatory disorders or in some allergic reactions or infectious diseases. Head trauma can cause pulmonary edema in dogs. Labored breathing, with an increased rate, and open-mouth breathing may occur. Animals stand or sit rather than lie down, or lie only on their breast bone. The veterinarian may be able to hear crackling noises, normal sounds, or a complete lack of breathing sounds in the chest. Oxygen supplementation can provide short-term relief, but treatment of the primary cause is also necessary. Medications called diuretics are typically used to remove excessive fluid from the lungs.\nAlso see professional content regarding pulmonary edema .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Pulmonary edema, the abnormal accumulation of fluid in the tissue, airways, or air sacs (alveoli) of the lungs, may occur along with circulatory disorders or in some allergic reactions or infectious diseases. Head trauma can cause pulmonary edema in dogs. Labored breathing, with an increased rate, and open-mouth breathing may occur. Animals stand or sit rather than lie down, or lie only on their breast bone. The veterinarian may be able to hear crackling noises, normal sounds, or a complete lack of breathing sounds in the chest. Oxygen supplementation can provide short-term relief, but treatment of the primary cause is also necessary. Medications called diuretics are typically used to remove excessive fluid from the lungs.",
+        "Also see professional content regarding pulmonary edema ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:08:36.853096+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

@@ -1,0 +1,57 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Disorders of the Optic Nerve in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-optic-nerve-in-dogs",
+  "category": "Eye Disorders of Dogs",
+  "section_slug": "eye-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Kirk N. Gelatt , VMD, DACVO , Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida",
+  "language": "en",
+  "content": "## Overview\nOptic Neuritis |\nOptic Nerve Hypoplasia |\nPapilledema |\nOptic Atrophy |\nFor More Information |\nThe optic nerve carries the electrical impulses from the eye to the area in the back of the brain where vision is sensed and interpreted. Injury to the optic nerve usually leads to partial or complete loss of sight.\n\n## Optic Neuritis\nThe most frequent optic nerve disease is optic neuritis, which is inflammation of the optic nerve. When it affects both eyes, signs include dilated pupils that do not respond to light and also sudden blindness that is not due to another eye disease. Your veterinarian will diagnose the condition by examining your dog's eyes with an ophthalmoscope, performing visual reflex tests, and completing a neurologic examination. In addition, a blood test, x-rays, and other tests may also be necessary to identify the cause. Optic neuritis can occur due to inflammation of the brain; viral, fungal, protozoan or parasitic infections; poisons; trauma; and other causes. Treatment is directed at managing the underlying disease and usually includes the use of medications to decrease inflammation and damage. If treatment is successful, pupils will return to normal size and respond to light within several days, followed by a return of vision a few days later.\n\n## Optic Nerve Hypoplasia\nOptic nerve hypoplasia is a failure of the optic nerve to develop fully. It may be inherited in Miniature Poodles. The condition may occur in only one eye or both, and it can occur with or without other eye abnormalities. If the optic nerves of both eyes fail to develop, the newborn will be blind. Involvement of only one of the optic nerves often goes undetected or may be discovered later in life if the other eye acquires a blinding disease.\n\n## Papilledema\nPapilledema is swelling and protrusion of the optic disk caused by fluid buildup. It is uncommon in most animals. The condition is often associated with tumors of the orbit. The optic disk appears raised above the surface of the nearby retina, and veins appear swollen. Vision and the light reflexes of the pupil are not usually affected unless the optic disk degenerates.\n\n## Optic Atrophy\nOptic degeneration or atrophy may occur after glaucoma, trauma, advanced degeneration of the retina, prolonged low blood pressure within the eye, or inflammation. The optic disk appears flattened and smaller than normal; it is darkly colored, with very noticeable reduction in the optic nerve and blood vessels of the retina. Pupillary reflexes to light and vision are absent. There is no treatment.\n\n## For More Information\nAlso see professional content regarding the optic nerve .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Optic Neuritis |",
+        "Optic Nerve Hypoplasia |",
+        "Papilledema |",
+        "Optic Atrophy |",
+        "For More Information |",
+        "The optic nerve carries the electrical impulses from the eye to the area in the back of the brain where vision is sensed and interpreted. Injury to the optic nerve usually leads to partial or complete loss of sight."
+      ]
+    },
+    {
+      "heading": "Optic Neuritis",
+      "paragraphs": [
+        "The most frequent optic nerve disease is optic neuritis, which is inflammation of the optic nerve. When it affects both eyes, signs include dilated pupils that do not respond to light and also sudden blindness that is not due to another eye disease. Your veterinarian will diagnose the condition by examining your dog's eyes with an ophthalmoscope, performing visual reflex tests, and completing a neurologic examination. In addition, a blood test, x-rays, and other tests may also be necessary to identify the cause. Optic neuritis can occur due to inflammation of the brain; viral, fungal, protozoan or parasitic infections; poisons; trauma; and other causes. Treatment is directed at managing the underlying disease and usually includes the use of medications to decrease inflammation and damage. If treatment is successful, pupils will return to normal size and respond to light within several days, followed by a return of vision a few days later."
+      ]
+    },
+    {
+      "heading": "Optic Nerve Hypoplasia",
+      "paragraphs": [
+        "Optic nerve hypoplasia is a failure of the optic nerve to develop fully. It may be inherited in Miniature Poodles. The condition may occur in only one eye or both, and it can occur with or without other eye abnormalities. If the optic nerves of both eyes fail to develop, the newborn will be blind. Involvement of only one of the optic nerves often goes undetected or may be discovered later in life if the other eye acquires a blinding disease."
+      ]
+    },
+    {
+      "heading": "Papilledema",
+      "paragraphs": [
+        "Papilledema is swelling and protrusion of the optic disk caused by fluid buildup. It is uncommon in most animals. The condition is often associated with tumors of the orbit. The optic disk appears raised above the surface of the nearby retina, and veins appear swollen. Vision and the light reflexes of the pupil are not usually affected unless the optic disk degenerates."
+      ]
+    },
+    {
+      "heading": "Optic Atrophy",
+      "paragraphs": [
+        "Optic degeneration or atrophy may occur after glaucoma, trauma, advanced degeneration of the retina, prolonged low blood pressure within the eye, or inflammation. The optic disk appears flattened and smaller than normal; it is darkly colored, with very noticeable reduction in the optic nerve and blood vessels of the retina. Pupillary reflexes to light and vision are absent. There is no treatment."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding the optic nerve ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:47:04.800622+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

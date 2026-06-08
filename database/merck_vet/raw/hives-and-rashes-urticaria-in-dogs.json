@@ -1,0 +1,25 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Hives and Rashes (Urticaria) in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hives-and-rashes-urticaria-in-dogs",
+  "category": "Skin Disorders of Dogs",
+  "section_slug": "skin-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Stephen D. White , DVM, DACVD , University of California, Davis",
+  "language": "en",
+  "content": "## Overview\nHives or skin rashes (urticaria) are localized patches of red, swollen, usually itchy, skin. They often develop and disappear suddenly. Hives are relatively uncommon in dogs. The most frequent causes are insect bites or stings, shampoos, and medications. Other causes include contact with toxic plants or chemicals. Friction, sunlight, heat, exercise, stress, and genetic abnormalities may cause or intensify the rash. Hives may develop after inhaling or consuming allergens. Hives can be seen while a dog is in estrus (\"in heat\") or seen in puppies with intestinal parasites (\"worms\").\nThe wheals (eruptions) appear within a few minutes or hours of exposure to the causative agent. In severe cases, the skin eruptions are preceded by fever, poor appetite, or dullness. They can develop on any part of the body but occur mainly on the back, flanks, neck, eyelids, and legs. In advanced cases, they may be found on the mucous membranes of the mouth, nose, lining of the eyes, rectum, and vagina.\nOften, hives disappear as rapidly as they arise, usually within a few hours. Treatment may not be required. They may return rapidly if exposure to the cause is not eliminated, however. Also, if your dog develops hives after receiving a vaccination or medication, contact your veterinarian immediately to see if treatment is needed. Treatment may include rapid-acting corticosteroids. If hives are chronic, environmental or food allergens should be considered as potential causes. Death does not commonly occur, unless anaphylaxis (a severe allergic event) or swelling of the respiratory tract is present.\nAlso see professional content regarding urticaria .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Hives or skin rashes (urticaria) are localized patches of red, swollen, usually itchy, skin. They often develop and disappear suddenly. Hives are relatively uncommon in dogs. The most frequent causes are insect bites or stings, shampoos, and medications. Other causes include contact with toxic plants or chemicals. Friction, sunlight, heat, exercise, stress, and genetic abnormalities may cause or intensify the rash. Hives may develop after inhaling or consuming allergens. Hives can be seen while a dog is in estrus (\"in heat\") or seen in puppies with intestinal parasites (\"worms\").",
+        "The wheals (eruptions) appear within a few minutes or hours of exposure to the causative agent. In severe cases, the skin eruptions are preceded by fever, poor appetite, or dullness. They can develop on any part of the body but occur mainly on the back, flanks, neck, eyelids, and legs. In advanced cases, they may be found on the mucous membranes of the mouth, nose, lining of the eyes, rectum, and vagina.",
+        "Often, hives disappear as rapidly as they arise, usually within a few hours. Treatment may not be required. They may return rapidly if exposure to the cause is not eliminated, however. Also, if your dog develops hives after receiving a vaccination or medication, contact your veterinarian immediately to see if treatment is needed. Treatment may include rapid-acting corticosteroids. If hives are chronic, environmental or food allergens should be considered as potential causes. Death does not commonly occur, unless anaphylaxis (a severe allergic event) or swelling of the respiratory tract is present.",
+        "Also see professional content regarding urticaria ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:15:42.455974+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

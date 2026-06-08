@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "The Immune System of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/the-immune-system-of-dogs",
+  "category": "Immune Disorders of Dogs",
+  "section_slug": "immune-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ian Rodney Tizard , BVMS, BSc, PhD, DSc (Hons), DACVM , Department of Veterinary Pathobiology, College of Veterinary and Biomedical Sciences, Texas A&M University",
+  "language": "en",
+  "content": "## Overview\nThe immune system consists of a network of white blood cells, antibodies, and other substances that fight off infections and reject foreign proteins (see table: Specialized Cells and Molecules of the Immune System ). In addition, the immune system includes several organs. Some, such as the thymus gland and the bone marrow, are the sites where white blood cells are produced. Others, including the spleen and lymph nodes, trap microorganisms and foreign substances and provide a place for immune system cells to collect, interact with each other and with foreign substances, and generate an immune response.\nAlso see professional content regarding the immune system .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The immune system consists of a network of white blood cells, antibodies, and other substances that fight off infections and reject foreign proteins (see table: Specialized Cells and Molecules of the Immune System ). In addition, the immune system includes several organs. Some, such as the thymus gland and the bone marrow, are the sites where white blood cells are produced. Others, including the spleen and lymph nodes, trap microorganisms and foreign substances and provide a place for immune system cells to collect, interact with each other and with foreign substances, and generate an immune response.",
+        "Also see professional content regarding the immune system ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:53:35.169276+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

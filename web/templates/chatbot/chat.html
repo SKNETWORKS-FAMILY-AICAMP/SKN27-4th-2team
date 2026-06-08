@@ -68,7 +68,7 @@
                         {% if message.intent %}
                             <span class="intent-label">{{ message.intent }}</span>
                         {% endif %}
-                        <p>{{ message.content|linebreaksbr }}</p>
+                        <p>{{ message.content|urlize|linebreaksbr }}</p>
 
                         {% if message.sources %}
                             <div class="message-sources">

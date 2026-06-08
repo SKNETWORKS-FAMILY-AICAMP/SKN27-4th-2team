@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 from langchain_community.document_loaders import JSONLoader
 
@@ -93,7 +93,33 @@ def get_youtube_loader(filepath):
         text_content=False,
     )
 
+def merck_metadata_func(record: dict, metadata: dict) -> dict:
+    metadata["source"] = record.get("source") or "merck_vet_manual"
+    metadata["doc_type"] = "medical_reference"
+    metadata["scope"] = record.get("scope")
+    metadata["title"] = record.get("title")
+    metadata["url"] = record.get("url")
+    metadata["category"] = record.get("category")
+    metadata["section_slug"] = record.get("section_slug")
+    metadata["reviewed_date"] = record.get("reviewed_date")
+    metadata["author"] = record.get("author")
+    metadata["language"] = record.get("language") or "en"
+    metadata["crawled_at"] = record.get("crawled_at")
+    metadata["medical_disclaimer_required"] = True
+    return metadata
 
+
+def get_merck_loader(filepath):
+    """
+    filepath example: '../../merck_vet/raw/routine-health-care-of-dogs.json'
+    """
+    return JSONLoader(
+        file_path=filepath,
+        jq_schema=r".",
+        content_key="content",
+        metadata_func=merck_metadata_func,
+        text_content=False,
+    )
 def qna_metadata_func(qna_source: str, source_file: str):
     source_metadata = QNA_SOURCE_METADATA.get(qna_source, {})
 

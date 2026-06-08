@@ -1,0 +1,32 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Components of the Musculoskeletal System in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/components-of-the-musculoskeletal-system-in-dogs",
+  "category": "Bone, Joint, and Muscle Disorders of Dogs",
+  "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+  "reviewed_date": "Mar 2018",
+  "author": "Stephen B. Adams , DVM, DACVS , Department of Veterinary Clinical Sciences, College of Veterinary Medicine, Purdue University",
+  "language": "en",
+  "content": "## Overview\nMultimedia |\nBones provide rigid structure to the body and shield internal organs from damage. They also house bone marrow, where blood cells are formed, and they maintain the body’s reservoirs of calcium and phosphorus. Old bone tissue is constantly replaced with new bone tissue in a process called remodeling. This helps keep the bones healthy.\nBones come together to form joints . The type of joint formed determines the degree and direction of motion. For example, joints with a ball-and-socket formation allow for rotation, while hinge joints only allow bending and straightening. Some joints do not move at all. In a joint, the ends of the bones are covered with cartilage , which is a smooth protective tissue that helps reduce friction as joints move.\nSkeletal muscles are responsible for posture and movement. They are attached to bones and arranged around the joints.\nTendons are tough bands of connective tissue made up mostly of a protein called collagen. They do not stretch. Tendons attach each end of a muscle to a bone. They are located within sheaths that allow them to move easily. Ligaments are also tough cords formed of connective tissue. Ligaments surround joints and help to support and stabilize them. They also connect one bone to another.\n\n## Stifle joint, dog\nStifle joint, dog",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Multimedia |",
+        "Bones provide rigid structure to the body and shield internal organs from damage. They also house bone marrow, where blood cells are formed, and they maintain the body’s reservoirs of calcium and phosphorus. Old bone tissue is constantly replaced with new bone tissue in a process called remodeling. This helps keep the bones healthy.",
+        "Bones come together to form joints . The type of joint formed determines the degree and direction of motion. For example, joints with a ball-and-socket formation allow for rotation, while hinge joints only allow bending and straightening. Some joints do not move at all. In a joint, the ends of the bones are covered with cartilage , which is a smooth protective tissue that helps reduce friction as joints move.",
+        "Skeletal muscles are responsible for posture and movement. They are attached to bones and arranged around the joints.",
+        "Tendons are tough bands of connective tissue made up mostly of a protein called collagen. They do not stretch. Tendons attach each end of a muscle to a bone. They are located within sheaths that allow them to move easily. Ligaments are also tough cords formed of connective tissue. Ligaments surround joints and help to support and stabilize them. They also connect one bone to another."
+      ]
+    },
+    {
+      "heading": "Stifle joint, dog",
+      "paragraphs": [
+        "Stifle joint, dog"
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T06:24:55.860127+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

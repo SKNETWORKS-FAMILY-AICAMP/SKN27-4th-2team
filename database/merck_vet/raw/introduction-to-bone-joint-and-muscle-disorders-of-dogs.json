@@ -1,0 +1,22 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Introduction to Bone, Joint, and Muscle Disorders of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/introduction-to-bone-joint-and-muscle-disorders-of-dogs",
+  "category": "Bone, Joint, and Muscle Disorders of Dogs",
+  "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+  "reviewed_date": "Mar 2018",
+  "author": "Stephen B. Adams , DVM, DACVS , Department of Veterinary Clinical Sciences, College of Veterinary Medicine, Purdue University",
+  "language": "en",
+  "content": "## Overview\nThe musculoskeletal system includes the bones, cartilage, muscles, ligaments, joints, tendons, and other connective tissue. It supports the body, permits movement, and protects the vital organs. Because many other body systems (including the nervous system, blood vessels, and skin) are interrelated, disorders of one of these systems may also affect the musculoskeletal system.",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The musculoskeletal system includes the bones, cartilage, muscles, ligaments, joints, tendons, and other connective tissue. It supports the body, permits movement, and protects the vital organs. Because many other body systems (including the nervous system, blood vessels, and skin) are interrelated, disorders of one of these systems may also affect the musculoskeletal system."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:17:48.722918+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}
