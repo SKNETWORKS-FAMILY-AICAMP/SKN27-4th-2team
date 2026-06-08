@@ -1,85 +1,121 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ breed.breed_name_ko }} - 견종도감</title>
-</head>
-<body>
-    <a href="{% url 'dog:search' %}">목록으로</a>
+{% extends "base.html" %}
 
-    <h1>{{ breed.breed_name_ko }}</h1>
-    <p>{{ breed.breed_name_en }}</p>
+{% block title %}{{ breed.breed_name_ko }} - 견종도감 | Pet Mate{% endblock %}
+{% block body_class %}breed-page{% endblock %}
 
-    {% if breed.image_url %}
-        <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}" width="320">
-    {% else %}
-        <div style="width:320px;height:220px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;color:#777;font-size:15px;">
-            이미지 준비 중
-        </div>
-    {% endif %}
+{% block content %}
+<main class="quiz-layout" style="display: block; width: 100%; max-width: 1200px; padding: 40px 20px;">
+    <a href="{% url 'dog:search' %}" style="display: inline-flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; margin-bottom: 24px; font-weight: 600;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        목록으로 돌아가기
+    </a>
 
-
-    <h2>기본 정보</h2>
-    <ul>
-        <li>
-            그룹:
-            {% if breed.breed_group_number %}
-                {{ breed.breed_group_number }}그룹 ·
+    <div class="breed-detail-layout">
+        <div class="breed-detail-img">
+            {% if breed.image_url %}
+                <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}">
+            {% else %}
+                <div style="width:100%; aspect-ratio: 4/3; background:#f2f2f2; display:flex; align-items:center; justify-content:center; color:var(--muted);">
+                    이미지 준비 중
+                </div>
             {% endif %}
-            {{ breed.breed_group }}
-        </li>
-        <li>출신: {{ breed.origin }}</li>
-        <li>수명: {{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</li>
-        <li>체중: {{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg</li>
-        <li>키: {{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm</li>
-    </ul>
+        </div>
 
-    {% if breed.breed_group_description %}
-        <h2>
-            {% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}
-            {% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}
-            설명
-        </h2>
-        <p>{{ breed.breed_group_description }}</p>
-    {% endif %}
+        <div class="breed-detail-content">
+            <div class="breed-detail-header">
+                <h1>{{ breed.breed_name_ko }}</h1>
+                <p>{{ breed.breed_name_en }}</p>
+            </div>
 
-    <h2>성격</h2>
-    <p>{{ breed.temperament }}</p>
+            <div class="breed-stat-grid">
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">그룹</span>
+                    <span class="breed-stat-value">{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹 · {% endif %}{{ breed.breed_group }}</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">출신</span>
+                    <span class="breed-stat-value">{{ breed.origin|default:"-" }}</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">수명</span>
+                    <span class="breed-stat-value">{{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">체중</span>
+                    <span class="breed-stat-value">{{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">키</span>
+                    <span class="breed-stat-value">{{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm</span>
+                </div>
+            </div>
 
-    {% if breed.about %}
-        <h2>견종 소개</h2>
-        <p>{{ breed.about }}</p>
-    {% endif %}
+            {% if breed.about %}
+                <div class="breed-section" style="border-top: none; padding-top: 0;">
+                    <h2>견종 소개</h2>
+                    <p>{{ breed.about }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.health %}
-        <h2>건강</h2>
-        <p>{{ breed.health }}</p>
-    {% endif %}
+            {% if breed.temperament %}
+                <div class="breed-section">
+                    <h2>성격</h2>
+                    <p>{{ breed.temperament }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.grooming %}
-        <h2>미용</h2>
-        <p>{{ breed.grooming }}</p>
-    {% endif %}
+            {% if breed.breed_group_description %}
+                <div class="breed-section">
+                    <h2>{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %} {% if breed.breed_group %}· {{ breed.breed_group }}{% endif %} 특성</h2>
+                    <p>{{ breed.breed_group_description }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.exercise %}
-        <h2>운동</h2>
-        <p>{{ breed.exercise }}</p>
-    {% endif %}
+            {% if breed.health %}
+                <div class="breed-section">
+                    <h2>건강</h2>
+                    <p>{{ breed.health }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.training %}
-        <h2>훈련</h2>
-        <p>{{ breed.training }}</p>
-    {% endif %}
+            {% if breed.grooming %}
+                <div class="breed-section">
+                    <h2>미용</h2>
+                    <p>{{ breed.grooming }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.nutrition %}
-        <h2>영양</h2>
-        <p>{{ breed.nutrition }}</p>
-    {% endif %}
+            {% if breed.exercise %}
+                <div class="breed-section">
+                    <h2>운동</h2>
+                    <p>{{ breed.exercise }}</p>
+                </div>
+            {% endif %}
 
-    {% if breed.history %}
-        <h2>역사</h2>
-        <p>{{ breed.history }}</p>
-    {% endif %}
-</body>
-</html>
+            {% if breed.training %}
+                <div class="breed-section">
+                    <h2>훈련</h2>
+                    <p>{{ breed.training }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.nutrition %}
+                <div class="breed-section">
+                    <h2>영양</h2>
+                    <p>{{ breed.nutrition }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.history %}
+                <div class="breed-section">
+                    <h2>역사</h2>
+                    <p>{{ breed.history }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

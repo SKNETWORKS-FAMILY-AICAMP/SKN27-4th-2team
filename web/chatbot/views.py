@@ -143,3 +143,20 @@ def chat(request):
             'active_session': active_session,
         },
     )
+
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+
+@require_POST
+@login_required
+def delete_session(request, session_id):
+    session = get_object_or_404(ChatSession, id=session_id, user=request.user)
+    session.delete()
+    return redirect('chatbot:chat')
+
+@require_POST
+def clear_anonymous_chat(request):
+    if 'anonymous_chat_messages' in request.session:
+        del request.session['anonymous_chat_messages']
+        request.session.modified = True
+    return redirect('chatbot:chat')

@@ -58,6 +58,8 @@ class UserProfileView(UpdateView):
         context = super().get_context_data(**kwargs)
         context['pet_form'] = PetForm()
         context['pets'] = self.request.user.pets.all()
+        # 과거 퀴즈(테스트) 결과 목록 전달
+        context['test_results'] = self.request.user.test_results.all()
         return context
 
 
