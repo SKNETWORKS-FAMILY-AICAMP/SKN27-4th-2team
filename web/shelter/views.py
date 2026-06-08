@@ -1,10 +1,13 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import DatabaseError, ProgrammingError
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 from .models import ShelterAnimal
+from user.models import ShelterFavorite
 
 
 DEFAULT_STATUS = "보호중"
@@ -14,7 +17,8 @@ OPTION_LIMIT = 300
 
 def _animal_to_card(animal: ShelterAnimal) -> dict[str, str]:
     return {
-        "id": animal.desertion_no,
+        "id": animal.id,
+        "desertion_no": animal.desertion_no,
         "breed": animal.kind_nm or animal.kind_full_nm or "품종 미상",
         "age": animal.age or "나이 미상",
         "sex": animal.sex_label,
@@ -100,6 +104,10 @@ def shelter_animals_page(request):
             f"({exc})"
         )
 
+    favorited_ids = set()
+    if request.user.is_authenticated:
+        favorited_ids = set(request.user.shelter_favorites.values_list("shelter_animal_id", flat=True))
+
     return render(
         request,
         "shelter/list.html",
@@ -118,8 +126,26 @@ def shelter_animals_page(request):
             "breed_options": breed_options,
             "region_options": region_options,
             "status_options": status_options,
+            "favorited_ids": favorited_ids,
         },
     )
+
+
+@login_required
+def toggle_favorite(request, pk):
+    if request.method == "POST":
+        animal = get_object_or_404(ShelterAnimal, pk=pk)
+        favorite, created = ShelterFavorite.objects.get_or_create(user=request.user, shelter_animal=animal)
+        
+        if not created:
+            favorite.delete()
+            is_favorited = False
+        else:
+            is_favorited = True
+            
+        return JsonResponse({"status": "success", "is_favorited": is_favorited})
+    return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+
 
 
 

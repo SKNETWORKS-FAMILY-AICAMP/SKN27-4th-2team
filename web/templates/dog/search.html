@@ -51,17 +51,20 @@
                 </a>
                 <div class="breed-info">
                     <div class="breed-title-row">
-                        <h3>
-                            <a href="{% url 'dog:detail' breed.id %}">{{ breed.breed_name_ko }}</a>
-                        </h3>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <h3>
+                                <a href="{% url 'dog:detail' breed.id %}">{{ breed.breed_name_ko }}</a>
+                            </h3>
+                            <span style="font-size: 11px; padding: 2px 6px; background: #eee; border-radius: 4px; color: #555;">{{ breed.size_category }}</span>
+                        </div>
                         <button
                             type="button"
-                            class="favorite-button"
+                            class="favorite-button{% if breed.id in favorited_ids %} is-active{% endif %}"
                             data-favorite-id="{{ breed.id }}"
                             aria-label="{{ breed.breed_name_ko }} 즐겨찾기"
-                            aria-pressed="false"
+                            aria-pressed="{% if breed.id in favorited_ids %}true{% else %}false{% endif %}"
                         >
-                            ☆
+                            {% if breed.id in favorited_ids %}★{% else %}☆{% endif %}
                         </button>
                     </div>
                     <p class="en-name">{{ breed.breed_name_en }}</p>
@@ -263,6 +266,7 @@
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .breed-score-list {
@@ -365,8 +369,10 @@
 }
 </style>
 
+{{ user.is_authenticated|json_script:"user-auth-state" }}
 <script>
 (() => {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
     const storageKey = "petmate.favoriteBreeds";
     const buttons = document.querySelectorAll(".favorite-button[data-favorite-id]");
 
@@ -388,24 +394,46 @@
         button.textContent = isActive ? "★" : "☆";
     };
 
+    // Initialize state
+    // We would need the initial states from the server if logged in, but for now we just use localStorage as fallback or wait for server click response.
+    // Ideally, the server should render the initial state for logged-in users.
     const favorites = getFavorites();
-
     buttons.forEach((button) => {
         const breedId = button.dataset.favoriteId;
-        renderButton(button, favorites.has(breedId));
+        // If the button already has is-active class from server rendering, use that
+        if (button.classList.contains('is-active')) {
+            renderButton(button, true);
+        } else if (!isAuthenticated) {
+            renderButton(button, favorites.has(breedId));
+        }
 
         button.addEventListener("click", () => {
-            const nextFavorites = getFavorites();
-            const nextActive = !nextFavorites.has(breedId);
-
-            if (nextActive) {
-                nextFavorites.add(breedId);
+            if (isAuthenticated) {
+                // Call API
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+                fetch(`/dog/breeds/${breedId}/favorite/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken,
+                    }
+                }).then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        renderButton(button, data.is_favorited);
+                    }
+                });
             } else {
-                nextFavorites.delete(breedId);
+                // LocalStorage
+                const nextFavorites = getFavorites();
+                const nextActive = !nextFavorites.has(breedId);
+                if (nextActive) {
+                    nextFavorites.add(breedId);
+                } else {
+                    nextFavorites.delete(breedId);
+                }
+                saveFavorites(nextFavorites);
+                renderButton(button, nextActive);
             }
-
-            saveFavorites(nextFavorites);
-            renderButton(button, nextActive);
         });
     });
 })();

@@ -4,107 +4,171 @@
 {% block body_class %}profile-page{% endblock %}
 
 {% block content %}
-<main class="profile-layout pet-profile-layout">
-    <section class="profile-summary glass-card">
-        <p class="eyebrow">My Page</p>
-        <h1>내 정보</h1>
-        <div class="profile-avatar">{{ user.username|first|upper }}</div>
-        <dl class="profile-meta">
-            <div>
-                <dt>아이디</dt>
-                <dd>{{ user.username }}</dd>
-            </div>
-            <div>
-                <dt>이메일</dt>
-                <dd>{{ user.email|default:"등록된 이메일이 없습니다." }}</dd>
-            </div>
-        </dl>
-    </section>
+<main class="profile-layout pet-profile-layout" style="align-items: start;">
+    <!-- Left Column: User Summary & Registered Pets -->
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0;">
+        <section class="profile-summary glass-card">
+            <p class="eyebrow">My Page</p>
+            <h1>내 정보</h1>
+            <div class="profile-avatar">{{ user.username|first|upper }}</div>
+            <dl class="profile-meta">
+                <div>
+                    <dt>아이디</dt>
+                    <dd>{{ user.username }}</dd>
+                </div>
+                <div>
+                    <dt>이메일</dt>
+                    <dd>{{ user.email|default:"등록된 이메일이 없습니다." }}</dd>
+                </div>
+            </dl>
+        </section>
 
-    <section class="profile-card glass-card">
-        <div class="card-heading">
-            <p class="eyebrow">Account</p>
-            <h2>회원 정보 수정</h2>
+        <section class="pet-list-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">My Pets</p>
+                <h2>등록한 반려동물</h2>
+            </div>
+
+            <div class="pet-list">
+                {% for pet in pets %}
+                    <article class="pet-card">
+                        <div>
+                            <h3>{{ pet.name }}</h3>
+                            <p>
+                                {{ pet.get_species_display }}
+                                {% if pet.breed %} · {{ pet.breed }}{% endif %}
+                                {% if pet.age %} · {{ pet.age }}살{% endif %}
+                                · {{ pet.get_gender_display }}
+                            </p>
+                            {% if pet.memo %}
+                                <p class="pet-memo">{{ pet.memo }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="pet-actions">
+                            <a class="text-button" href="{% url 'user:pet_update' pet.id %}">수정</a>
+                            <form method="post" action="{% url 'user:pet_delete' pet.id %}">
+                                {% csrf_token %}
+                                <button class="text-button" type="submit">삭제</button>
+                            </form>
+                        </div>
+                    </article>
+                {% empty %}
+                    <p class="empty-history">아직 등록된 반려동물이 없습니다.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Right Column: Account Settings & Add Pet Form -->
+    <div style="display: flex; flex-direction: column; gap: 24px; min-width: 0;">
+        <section class="profile-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">Account</p>
+                <h2>회원 정보 수정</h2>
+            </div>
+
+            <form class="auth-form" method="post">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <p class="field-error">{{ field.errors|striptags }}</p>
+                    {% endif %}
+                {% endfor %}
+
+                <button class="primary-button full-width" type="submit">저장하기</button>
+            </form>
+
+            <p class="helper-text">아이디는 로그인 식별자로 사용하므로 이 화면에서는 변경하지 않습니다.</p>
+        </section>
+
+        <section class="pet-form-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">Add Pet</p>
+                <h2>반려동물 등록</h2>
+            </div>
+
+            <form class="auth-form" method="post" action="{% url 'user:pet_create' %}">
+                {% csrf_token %}
+                {% for field in pet_form %}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <p class="field-error">{{ field.errors|striptags }}</p>
+                    {% endif %}
+                {% endfor %}
+                <button class="primary-button full-width" type="submit">등록하기</button>
+            </form>
+        </section>
+    </div>
+
+    <section class="favorite-dogs-card glass-card" style="grid-column: 1 / -1; padding: 24px;">
+        <div class="card-heading" style="margin-bottom: 18px;">
+            <p class="eyebrow" style="font-size: 11px; margin-bottom: 6px;">Favorites</p>
+            <h2 style="font-size: 22px;">관심 견종</h2>
         </div>
 
-        <form class="auth-form" method="post">
-            {% csrf_token %}
-
-            {% for field in form %}
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
-                {% if field.errors %}
-                    <p class="field-error">{{ field.errors|striptags }}</p>
-                {% endif %}
-            {% endfor %}
-
-            <button class="primary-button full-width" type="submit">저장하기</button>
-        </form>
-
-        <p class="helper-text">아이디는 로그인 식별자로 사용하므로 이 화면에서는 변경하지 않습니다.</p>
-    </section>
-
-    <section class="pet-list-card glass-card">
-        <div class="card-heading">
-            <p class="eyebrow">My Pets</p>
-            <h2>등록한 반려동물</h2>
-        </div>
-
-        <div class="pet-list">
-            {% for pet in pets %}
-                <article class="pet-card">
-                    <div>
-                        <h3>{{ pet.name }}</h3>
-                        <p>
-                            {{ pet.get_species_display }}
-                            {% if pet.breed %} · {{ pet.breed }}{% endif %}
-                            {% if pet.age %} · {{ pet.age }}살{% endif %}
-                            · {{ pet.get_gender_display }}
-                        </p>
-                        {% if pet.memo %}
-                            <p class="pet-memo">{{ pet.memo }}</p>
-                        {% endif %}
-                    </div>
+        <div class="pet-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+            {% for fav in dog_favorites %}
+                <article class="pet-card" style="display: flex; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 255, 255, 0.72);">
+                    {% if fav.dog.image_url %}
+                        <img src="{{ fav.dog.image_url }}" alt="{{ fav.dog.breed_name_ko }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line);">
+                    {% else %}
+                        <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #aaa;">No Image</div>
+                    {% endif %}
+                    <a href="{% url 'dog:detail' fav.dog.id %}" style="flex: 1; min-width: 0; text-decoration: none; color: inherit; display: block;">
+                        <h3 style="margin: 0 0 4px; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fav.dog.breed_name_ko }}</h3>
+                        <p style="margin: 0; color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fav.dog.breed_group|default:"그룹 미상" }}</p>
+                    </a>
                     <div class="pet-actions">
-                        <a class="text-button" href="{% url 'user:pet_update' pet.id %}">수정</a>
-                        <form method="post" action="{% url 'user:pet_delete' pet.id %}">
-                            {% csrf_token %}
-                            <button class="text-button" type="submit">삭제</button>
-                        </form>
+                        <button type="button" class="text-button remove-dog-fav" data-dog-id="{{ fav.dog.id }}" style="color: #ff5a5f; border-color: #ff5a5f; min-height: 34px;">제거</button>
                     </div>
                 </article>
             {% empty %}
-                <p class="empty-history">아직 등록된 반려동물이 없습니다.</p>
+                <p class="empty-history">아직 즐겨찾기한 견종이 없습니다.</p>
             {% endfor %}
         </div>
     </section>
 
-    <section class="pet-form-card glass-card">
-        <div class="card-heading">
-            <p class="eyebrow">Add Pet</p>
-            <h2>반려동물 등록</h2>
+    <section class="favorite-shelters-card glass-card" style="grid-column: 1 / -1; padding: 24px;">
+        <div class="card-heading" style="margin-bottom: 18px;">
+            <p class="eyebrow" style="font-size: 11px; margin-bottom: 6px;">Favorites</p>
+            <h2 style="font-size: 22px;">관심 유기견</h2>
         </div>
 
-        <form class="auth-form" method="post" action="{% url 'user:pet_create' %}">
-            {% csrf_token %}
-            {% for field in pet_form %}
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
-                {% if field.errors %}
-                    <p class="field-error">{{ field.errors|striptags }}</p>
-                {% endif %}
+        <div class="pet-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+            {% for fav in shelter_favorites %}
+                <article class="pet-card" style="display: flex; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 255, 255, 0.72);">
+                    {% if fav.shelter_animal.popfile1 %}
+                        <img src="{{ fav.shelter_animal.popfile1 }}" alt="{{ fav.shelter_animal.kind_nm }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line);">
+                    {% else %}
+                        <div style="width: 60px; height: 60px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #aaa;">No Image</div>
+                    {% endif %}
+                    <div style="flex: 1; min-width: 0;">
+                        <h3 style="margin: 0 0 4px; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fav.shelter_animal.kind_nm|default:"품종 미상" }}</h3>
+                        <p style="margin: 0; color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ fav.shelter_animal.care_nm|default:"보호소 정보 없음" }}</p>
+                    </div>
+                    <div class="pet-actions">
+                        <button type="button" class="text-button remove-shelter-fav" data-shelter-id="{{ fav.shelter_animal.id }}" style="color: #ff5a5f; border-color: #ff5a5f; min-height: 34px;">제거</button>
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-history">아직 즐겨찾기한 유기견이 없습니다.</p>
             {% endfor %}
-            <button class="primary-button full-width" type="submit">등록하기</button>
-        </form>
-    <section class="test-result-card glass-card" style="grid-column: 1 / -1;">
-        <div class="card-heading">
-            <p class="eyebrow">Test Results</p>
-            <h2>나의 반려견 양육 지식 테스트 결과</h2>
+        </div>
+    </section>
+
+    <section class="test-result-card glass-card" style="grid-column: 1 / -1; padding: 24px;">
+        <div class="card-heading" style="margin-bottom: 18px;">
+            <p class="eyebrow" style="font-size: 11px; margin-bottom: 6px;">Test Results</p>
+            <h2 style="font-size: 22px;">나의 반려견 양육 지식 테스트 결과</h2>
         </div>
 
         <div class="pet-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
             {% for result in test_results %}
-                <article class="pet-card" style="cursor: pointer;" onclick="location.href='{% url 'test:view_saved_result' result.id %}'">
+                <a href="{% url 'test:view_saved_result' result.id %}" class="pet-card" style="text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <div>
                         <h3>{{ result.earned_score }} / {{ result.total_score }} 점</h3>
                         <p>{{ result.created_at|date:"Y년 m월 d일 H:i" }}</p>
@@ -112,11 +176,61 @@
                     <div class="pet-actions">
                         <span class="text-button">결과 보기</span>
                     </div>
-                </article>
+                </a>
             {% empty %}
                 <p class="empty-history">아직 응시한 테스트 내역이 없습니다.</p>
             {% endfor %}
         </div>
     </section>
 </main>
+
+<script>
+(function() {
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+
+    // Dog favorite remove
+    document.querySelectorAll(".remove-dog-fav").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const dogId = button.dataset.dogId;
+            fetch(`/dog/breeds/${dogId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove card from list
+                    button.closest("article").remove();
+                }
+            });
+        });
+    });
+
+    // Shelter favorite remove
+    document.querySelectorAll(".remove-shelter-fav").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const shelterId = button.dataset.shelterId;
+            fetch(`/shelter/${shelterId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove card from list
+                    button.closest("article").remove();
+                }
+            });
+        });
+    });
+})();
+</script>
 {% endblock %}

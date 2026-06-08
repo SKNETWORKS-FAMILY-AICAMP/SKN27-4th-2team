@@ -1,4 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
 from .conversation_state import filter_display_sources, serialize_sources, update_session_state
 from .models import ChatMessage, ChatSession
@@ -149,10 +152,6 @@ def chat(request):
             'active_session': active_session,
         },
     )
-
-from django.views.decorators.http import require_POST
-from django.contrib.auth.decorators import login_required
-
 @require_POST
 @login_required
 def delete_session(request, session_id):
@@ -165,4 +164,12 @@ def clear_anonymous_chat(request):
     if 'anonymous_chat_messages' in request.session:
         del request.session['anonymous_chat_messages']
         request.session.modified = True
+    return redirect('chatbot:chat')
+
+@require_POST
+@login_required
+def toggle_pin(request, session_id):
+    session = get_object_or_404(ChatSession, id=session_id, user=request.user)
+    session.is_pinned = not session.is_pinned
+    session.save(update_fields=['is_pinned'])
     return redirect('chatbot:chat')

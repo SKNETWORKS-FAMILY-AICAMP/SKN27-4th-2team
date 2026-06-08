@@ -60,6 +60,9 @@ class UserProfileView(UpdateView):
         context['pets'] = self.request.user.pets.all()
         # 과거 퀴즈(테스트) 결과 목록 전달
         context['test_results'] = self.request.user.test_results.all()
+        # 견종 및 유기견 즐겨찾기 목록 전달
+        context['dog_favorites'] = self.request.user.dog_favorites.all()
+        context['shelter_favorites'] = self.request.user.shelter_favorites.all()
         return context
 
 

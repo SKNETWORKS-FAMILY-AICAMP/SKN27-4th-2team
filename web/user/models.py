@@ -37,3 +37,29 @@ class Pet(models.Model):
     def __str__(self):
         # Django 관리자 화면이나 shell에서 객체를 볼 때 표시되는 이름입니다.
         return f'{self.name} ({self.user})'
+
+
+class DogFavorite(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='dog_favorites')
+    dog = models.ForeignKey('dog.DogBreedDictionaryKo', on_delete=models.CASCADE, related_name='favorited_by')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ('user', 'dog')
+
+    def __str__(self):
+        return f"{self.user} - {self.dog}"
+
+
+class ShelterFavorite(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='shelter_favorites')
+    shelter_animal = models.ForeignKey('shelter.ShelterAnimal', on_delete=models.CASCADE, related_name='favorited_by')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ('user', 'shelter_animal')
+
+    def __str__(self):
+        return f"{self.user} - {self.shelter_animal}"

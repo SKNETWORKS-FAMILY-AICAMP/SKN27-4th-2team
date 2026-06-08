@@ -47,3 +47,14 @@ class DogBreedDictionaryKo(models.Model):
 
     def __str__(self):
         return self.breed_name_ko or self.breed_name_en
+
+    @property
+    def size_category(self):
+        if self.weight_max_kg is None:
+            return "크기 미상"
+        elif self.weight_max_kg < 10:
+            return "소형견"
+        elif self.weight_max_kg < 25:
+            return "중형견"
+        else:
+            return "대형견"
