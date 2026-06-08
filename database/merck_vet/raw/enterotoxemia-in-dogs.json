@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Enterotoxemia in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/enterotoxemia-in-dogs",
+  "category": "Disorders Affecting Multiple Body Systems of Dogs",
+  "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Henry R. Stämpfli , DMV, Dr Med Vet, DACVIM-LAIM , Department of Clinical Studies, Ontario Veterinary College, University of Guelph",
+  "language": "en",
+  "content": "## Overview\nClostridium perfringens is a bacterium that is widely distributed in the soil and the gastrointestinal tract of animals. It has the ability to produce poisonous substances (toxins) outside of the bacterial cell. Inflammation of the intestines (enteritis) and absorption of toxins (known as enterotoxemia) occur when these poisonous substances are released. Five types of Clostridium perfringens have been identified, but only one, Type A, causes enterotoxemia in dogs. Type A is also associated with diarrhea in dogs. The diarrhea can be bloody, sudden and severe, or longterm and intermittent.\nAlso see professional content regarding enterotoxemia .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Clostridium perfringens is a bacterium that is widely distributed in the soil and the gastrointestinal tract of animals. It has the ability to produce poisonous substances (toxins) outside of the bacterial cell. Inflammation of the intestines (enteritis) and absorption of toxins (known as enterotoxemia) occur when these poisonous substances are released. Five types of Clostridium perfringens have been identified, but only one, Type A, causes enterotoxemia in dogs. Type A is also associated with diarrhea in dogs. The diarrhea can be bloody, sudden and severe, or longterm and intermittent.",
+        "Also see professional content regarding enterotoxemia ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:40:14.716595+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

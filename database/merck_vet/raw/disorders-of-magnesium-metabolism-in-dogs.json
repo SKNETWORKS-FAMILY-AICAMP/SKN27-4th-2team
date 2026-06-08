@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Disorders of Magnesium Metabolism in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/disorders-of-magnesium-metabolism-in-dogs",
+  "category": "Metabolic Disorders of Dogs",
+  "section_slug": "metabolic-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Allison J. Stewart , BVSc (Hons), PhD, DACVIM-LAIM, DACVECC , School of Veterinary Science, University of Queensland",
+  "language": "en",
+  "content": "## Overview\nMost disorders of magnesium metabolism are due to problems associated with absorption of the mineral from the digestive tract. The anatomical differences in the digestive tract between species are associated with the importance of disorders of magnesium occurring in a particular species. Disorders of magnesium metabolism are less common in dogs than in cattle and sheep. Too much magnesium in the blood ( hypermagnesemia ) is rare but has been reported in dogs after ingestion of ice melts and in animals with kidney failure that were receiving intravenous fluids. Cardiac arrest can occur with very high blood magnesium levels. Too little magnesium in the blood (hypomagnesemia) is common in critically ill dogs. Although it usually does not cause any signs, hypomagnesemia can worsen other conditions and lead to low blood levels of other important electrolytes, such as potassium and calcium.\nAlso see professional content regarding disorders of magnesium metabolism .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Most disorders of magnesium metabolism are due to problems associated with absorption of the mineral from the digestive tract. The anatomical differences in the digestive tract between species are associated with the importance of disorders of magnesium occurring in a particular species. Disorders of magnesium metabolism are less common in dogs than in cattle and sheep. Too much magnesium in the blood ( hypermagnesemia ) is rare but has been reported in dogs after ingestion of ice melts and in animals with kidney failure that were receiving intravenous fluids. Cardiac arrest can occur with very high blood magnesium levels. Too little magnesium in the blood (hypomagnesemia) is common in critically ill dogs. Although it usually does not cause any signs, hypomagnesemia can worsen other conditions and lead to low blood levels of other important electrolytes, such as potassium and calcium.",
+        "Also see professional content regarding disorders of magnesium metabolism ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:10:02.762231+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

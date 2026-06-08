@@ -1,0 +1,37 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Dental Development of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-development-of-dogs",
+  "category": "Digestive Disorders of Dogs",
+  "section_slug": "digestive-disorders-of-dogs",
+  "reviewed_date": "May 2018",
+  "author": "Sofie Muylle , DVM, PhD , Department of Morphology, Ghent University",
+  "language": "en",
+  "content": "## Overview\nEstimation of Age by Examination of the Teeth |\nFor More Information |\nEach species of animal has its own unique type of teeth, depending on what type of food the animal normally eats. For example, a meat-eating animal, such as a cat, has quite different teeth than a grass-eating animal, such as a horse. However, all domestic animals have 2 sets of teeth during their lives, as humans do: a set of deciduous (“baby”) teeth that fall out, and a set of permanent teeth that develop later.\nMost dogs have 28 deciduous teeth and 42 permanent teeth. The deciduous teeth begin to erupt at 3 to 5 weeks of age, while permanent teeth usually begin to appear at around 4 to 5 months. All permanent teeth are present by the time the dog reaches 7 months of age (Canine Adult Dentition).\n\n## Estimation of Age by Examination of the Teeth\nIn species with relatively short incisors, such as dogs, age determination of young animals using the teeth is only somewhat accurate and is mostly based on the time at which each tooth erupts. For the majority of large adult dogs with normal teeth and jaws, veterinarians can examine wear patterns on the teeth and give an estimate of age. Determining the age of small and toy breeds by examining the teeth is more difficult.\n\n## For More Information\nAlso see professional content regarding dental development .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Estimation of Age by Examination of the Teeth |",
+        "For More Information |",
+        "Each species of animal has its own unique type of teeth, depending on what type of food the animal normally eats. For example, a meat-eating animal, such as a cat, has quite different teeth than a grass-eating animal, such as a horse. However, all domestic animals have 2 sets of teeth during their lives, as humans do: a set of deciduous (“baby”) teeth that fall out, and a set of permanent teeth that develop later.",
+        "Most dogs have 28 deciduous teeth and 42 permanent teeth. The deciduous teeth begin to erupt at 3 to 5 weeks of age, while permanent teeth usually begin to appear at around 4 to 5 months. All permanent teeth are present by the time the dog reaches 7 months of age (Canine Adult Dentition)."
+      ]
+    },
+    {
+      "heading": "Estimation of Age by Examination of the Teeth",
+      "paragraphs": [
+        "In species with relatively short incisors, such as dogs, age determination of young animals using the teeth is only somewhat accurate and is mostly based on the time at which each tooth erupts. For the majority of large adult dogs with normal teeth and jaws, veterinarians can examine wear patterns on the teeth and give an estimate of age. Determining the age of small and toy breeds by examining the teeth is more difficult."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding dental development ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:35:38.677032+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

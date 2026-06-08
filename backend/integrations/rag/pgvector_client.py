@@ -96,6 +96,26 @@ class PGVectorRAGClient:
                 sections=sections,
             )
 
+            if _is_medical_query(query, categories):
+                merck_query = _expand_medical_query_for_merck(query)
+                merck_query_vector = _vector_literal(self._embedding_model().embed_query(merck_query))
+                merck_rows = _search_chunks(
+                    conn=conn,
+                    table=self.table,
+                    collection_name=self.collection_name,
+                    query_vector=merck_query_vector,
+                    k=3,
+                    categories=None,
+                    breed_names=None,
+                    sections=None,
+                    source_filter="merck_vet_manual",
+                )
+                rows = _merge_medical_search_rows(
+                    base_rows=rows,
+                    merck_rows=merck_rows,
+                    limit=max(top_k, 7),
+                )
+
         return [_row_to_document(row) for row in rows]
 
     def _embedding_model(self) -> OpenAIEmbeddings:
@@ -173,6 +193,119 @@ def _is_apartment_recommendation_query(
     apartment_keywords = ["아파트", "원룸", "실내", "작은 집", "공동주택", "소형"]
     return any(keyword in query for keyword in apartment_keywords)
 
+
+
+def _is_medical_query(query: str, categories: list[str] | None) -> bool:
+    if categories and any(category in categories for category in ("health", "medical")):
+        return True
+
+    lowered = query.lower()
+    medical_keywords = [
+        "질병", "증상", "치료", "약", "복용", "구토", "설사", "피부", "눈", "귀",
+        "심장", "호흡", "기침", "예방접종", "백신", "염증", "통증", "수술", "감염",
+        "알레르기", "사상충", "종양", "암", "관절", "파행", "마비", "발작", "경련",
+        "nsaid", "nsaids", "vaccine", "heartworm", "infection", "disease", "symptom",
+        "vomit", "diarrhea", "cough", "pain", "inflammation", "tumor", "cancer",
+    ]
+    return any(keyword in lowered for keyword in medical_keywords)
+
+
+
+def _expand_medical_query_for_merck(query: str) -> str:
+    keyword_map = {
+        "구토": ["vomiting", "vomit"],
+        "토": ["vomiting"],
+        "설사": ["diarrhea"],
+        "피부": ["skin", "dermatitis"],
+        "가려움": ["itching", "pruritus"],
+        "알레르기": ["allergy", "allergic"],
+        "귀": ["ear", "otitis", "ear infection"],
+        "눈": ["eye", "ocular"],
+        "심장": ["heart", "cardiac"],
+        "심장사상충": ["heartworm disease", "heartworm"],
+        "사상충": ["heartworm disease", "heartworm"],
+        "호흡": ["respiratory", "breathing"],
+        "기침": ["cough"],
+        "폐": ["lung", "pulmonary"],
+        "예방접종": ["vaccination", "vaccine"],
+        "백신": ["vaccine", "vaccination"],
+        "질병": ["disease", "disorder"],
+        "증상": ["symptom", "clinical signs"],
+        "치료": ["treatment", "therapy"],
+        "약": ["medication", "drug"],
+        "복용": ["medication", "dosage"],
+        "염증": ["inflammation", "inflammatory"],
+        "통증": ["pain"],
+        "감염": ["infection", "infectious"],
+        "종양": ["tumor", "neoplasm"],
+        "암": ["cancer", "tumor"],
+        "관절": ["joint", "arthritis"],
+        "슬개골": ["patella", "patellar luxation"],
+        "파행": ["lameness"],
+        "마비": ["paralysis"],
+        "발작": ["seizure"],
+        "경련": ["seizure", "convulsion"],
+        "빈혈": ["anemia"],
+        "중독": ["poisoning", "toxicity"],
+        "응급": ["emergency"],
+        "nsaids": ["NSAIDs", "nonsteroidal anti-inflammatory drugs"],
+        "nsaid": ["NSAIDs", "nonsteroidal anti-inflammatory drugs"],
+    }
+
+    lowered = query.lower()
+    terms: list[str] = []
+    seen: set[str] = set()
+
+    for korean, english_terms in keyword_map.items():
+        if korean.lower() not in lowered:
+            continue
+        for term in english_terms:
+            normalized = term.lower()
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            terms.append(term)
+
+    if not terms:
+        return f"{query} dog veterinary health disease symptoms treatment"
+
+    return f"{query} dog veterinary {' '.join(terms)}"
+
+
+def _merge_medical_search_rows(
+    *,
+    base_rows: list[dict[str, Any]],
+    merck_rows: list[dict[str, Any]],
+    limit: int,
+) -> list[dict[str, Any]]:
+    selected: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    def add(row: dict[str, Any]) -> None:
+        chunk_id = str(row.get("chunk_id") or "")
+        if not chunk_id or chunk_id in seen:
+            return
+        seen.add(chunk_id)
+        selected.append(row)
+
+    merck_sorted = sorted(merck_rows, key=lambda item: item.get("similarity") or 0, reverse=True)
+    base_sorted = sorted(base_rows, key=lambda item: item.get("similarity") or 0, reverse=True)
+
+    for row in merck_sorted[:2]:
+        add(row)
+
+    for row in base_sorted:
+        if len(selected) >= limit:
+            break
+        add(row)
+
+    for row in merck_sorted:
+        if len(selected) >= limit:
+            break
+        add(row)
+
+    selected.sort(key=lambda item: item.get("similarity") or 0, reverse=True)
+    return selected[:limit]
 
 def _search_apartment_recommendation_documents(
     conn: psycopg.Connection,
@@ -463,9 +596,14 @@ def _search_chunks(
     categories: list[str] | None,
     breed_names: list[str] | None,
     sections: list[str] | None,
+    source_filter: str | None = None,
 ) -> list[dict[str, Any]]:
     where_clauses: list[str] = ["c.name = %s"]
     params: list[Any] = [query_vector, collection_name]
+
+    if source_filter:
+        where_clauses.append("e.cmetadata->>'source' = %s")
+        params.append(source_filter)
 
     if categories and "breed_recommendation" in categories and not breed_names:
         where_clauses.append("e.cmetadata->>'doc_type' = %s")

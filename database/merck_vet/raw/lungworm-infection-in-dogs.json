@@ -1,0 +1,40 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Lungworm Infection in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lungworm-infection-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Lora Rickard Ballweber , DVM, DACVM, DEVPC , Department of Microbiology, Immunology, and Pathology, College of Veterinary Medicine and Biomedical Sciences, Colorado State University",
+  "language": "en",
+  "content": "## Overview\nOther Lungworms |\nFor More Information |\nLungworm infections in dogs are usually caused by the tracheal worm Oslerus osleri . They have been found in the United States, South Africa, New Zealand, India, Great Britain, France, and Australia. Adult lungworms live in nodules in the trachea of dogs, and larvated eggs laid by adults hatch there. Pups become infected from the feces or saliva of an infected dog (for example, when an infected mother licks her pups). Infection is infrequent in dogs.\nSigns of lungworm infection range from moderate, dry coughing with slightly increased respiratory rates to severe, persistent coughing and respiratory distress or even failure. Infections with no visible signs can also occur. Death is relatively uncommon in dogs infected with these lungworms. However, some nematodes that inhabit the right ventricle of the heart, such as Angiostrongylus vasorum and Dirofilaria immitis (see Heartworm ), both found in dogs in certain areas of the world, may be associated with lung disease. Signs relating to a heart or a lung syndrome, or to a combination of both, may occur.\nDiagnosis of lungworm infection is based on signs, known transmission patterns, and presence of larvae in feces. Examination of the airways with an endoscope (bronchoscopy) and x-rays can be helpful tools. It can be a challenge for the veterinarian to diagnose lungworm because infected animals do not always pass the larvae in their feces, and when they do, they may be few in number. Bronchoscopy can be used to collect washings from the trachea to examine for eggs, larvae, and white blood cells.\nLungworm infection in dogs can be difficult to treat, but there is evidence that appropriate antiparasitic drugs are effective, particularly when combined with surgical removal of the nodules in the trachea. It may be necessary to continue antiparasitic treatment for up to 2 months.\n\n## Other Lungworms\nCapillaria aerophila are parasites that are usually found in the frontal sinuses, trachea, bronchi, and nasal cavities of foxes, but they can also be found in dogs and other carnivores. Female worms produce eggs in the lungs that are coughed up and swallowed, and then passed in the feces. Dogs become infected by eating food or drinking water that is contaminated with larvated eggs. After being eaten, the eggs hatch in the intestine and then travel to the lungs through the circulatory system. Larvae mature about 40 days after infection. Clinical signs include coughing, persistent sneezing, and nasal discharge. Treatment with appropriate antiparasitic drugs is usually effective.\nOther lungworms that can infect dogs include Crenosoma vulpis , Eucoleus aerophilus , and Filaroides hirthi . F hirthi is similar to Oslerus osleri except that the worms live within the lung tissue.\n\n## For More Information\nAlso see professional content regarding lungworm infection .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Other Lungworms |",
+        "For More Information |",
+        "Lungworm infections in dogs are usually caused by the tracheal worm Oslerus osleri . They have been found in the United States, South Africa, New Zealand, India, Great Britain, France, and Australia. Adult lungworms live in nodules in the trachea of dogs, and larvated eggs laid by adults hatch there. Pups become infected from the feces or saliva of an infected dog (for example, when an infected mother licks her pups). Infection is infrequent in dogs.",
+        "Signs of lungworm infection range from moderate, dry coughing with slightly increased respiratory rates to severe, persistent coughing and respiratory distress or even failure. Infections with no visible signs can also occur. Death is relatively uncommon in dogs infected with these lungworms. However, some nematodes that inhabit the right ventricle of the heart, such as Angiostrongylus vasorum and Dirofilaria immitis (see Heartworm ), both found in dogs in certain areas of the world, may be associated with lung disease. Signs relating to a heart or a lung syndrome, or to a combination of both, may occur.",
+        "Diagnosis of lungworm infection is based on signs, known transmission patterns, and presence of larvae in feces. Examination of the airways with an endoscope (bronchoscopy) and x-rays can be helpful tools. It can be a challenge for the veterinarian to diagnose lungworm because infected animals do not always pass the larvae in their feces, and when they do, they may be few in number. Bronchoscopy can be used to collect washings from the trachea to examine for eggs, larvae, and white blood cells.",
+        "Lungworm infection in dogs can be difficult to treat, but there is evidence that appropriate antiparasitic drugs are effective, particularly when combined with surgical removal of the nodules in the trachea. It may be necessary to continue antiparasitic treatment for up to 2 months."
+      ]
+    },
+    {
+      "heading": "Other Lungworms",
+      "paragraphs": [
+        "Capillaria aerophila are parasites that are usually found in the frontal sinuses, trachea, bronchi, and nasal cavities of foxes, but they can also be found in dogs and other carnivores. Female worms produce eggs in the lungs that are coughed up and swallowed, and then passed in the feces. Dogs become infected by eating food or drinking water that is contaminated with larvated eggs. After being eaten, the eggs hatch in the intestine and then travel to the lungs through the circulatory system. Larvae mature about 40 days after infection. Clinical signs include coughing, persistent sneezing, and nasal discharge. Treatment with appropriate antiparasitic drugs is usually effective.",
+        "Other lungworms that can infect dogs include Crenosoma vulpis , Eucoleus aerophilus , and Filaroides hirthi . F hirthi is similar to Oslerus osleri except that the worms live within the lung tissue."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding lungworm infection ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:57:27.227588+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

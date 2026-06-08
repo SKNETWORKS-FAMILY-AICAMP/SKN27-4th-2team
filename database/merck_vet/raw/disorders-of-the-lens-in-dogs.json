@@ -1,0 +1,104 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Disorders of the Lens in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-lens-in-dogs",
+  "category": "Eye Disorders of Dogs",
+  "section_slug": "eye-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Kirk N. Gelatt , VMD, DACVO , Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida",
+  "language": "en",
+  "content": "## Overview\nCataracts |\nLens Displacement |\nFor More Information |\nMultimedia |\nThe lens is a soft, transparent tissue that sits behind the iris. It helps focus incoming light onto the retina. Common disorders of the lens include those that affect its transparency (such as cataracts), and those that affect the position of the lens.\n\n## Cataracts\nA cataract occurs when the lens becomes cloudy or opaque, which effectively blocks light from reaching the retina. This causes a loss of eyesight that can range from mild vision problems to blindness. Cataracts should not be confused with the minor lens imperfections in young dogs or with the normal increase in the thickening and hardening of central lens tissue that occurs in older animals. Cataracts are often inherited in dogs (see table: Inherited Cataracts in Dogs ). Other causes include diabetes, malnutrition, radiation, inflammation, and trauma. In some cases, sight may be regained in young dogs, cats, or horses when cataracts disappear on their own.\n\n## Lens with cataract, dog\nLens with cataract, dog\nCataracts that are present at birth in young animals may reduce in size as the lens grows, allowing for some restoration of vision as the animal matures. Animals with immature and incomplete cataracts may benefit from topical medication (eye drops) 2 to 3 times per week.\n\n## Inherited Cataracts in Dogs\nInherited Cataracts in Dogs\nBreed\nAge of Onset\nAfghan Hound\n6 –12 months\nAmerican Cocker Spaniel\n1–6 years\nAustralian Shepherd\n2–4 years\nBichon Frise\n2–6 years\nBoston Terrier\nPresent at birth, juvenile, or late onset\nChesapeake Bay Retriever\n1 year or older\nEntelbucher Mountain Dog\n1–2 years\nGerman Shepherd\n8 weeks or older\nGolden Retriever\n6 months or older\nHavanese\n2–6 years\nLabrador Retriever\n6 months or older\nMiniature Schnauzer\nPresent at birth, 6 months, or older\nNorwegian Buhund\n1 year or older\nOld English Sheepdog\nPresent at birth\nRottweiler\n10 months or older\nSiberian Husky\n6 months or older\nStaffordshire Bull Terrier\n6 months or older\nStandard Poodle\n1 year or older\nWelsh Springer Spaniel\nPresent at birth\nWest Highland White Terrier\nPresent at birth\nBecause dogs can often use their keen senses of hearing and smell to compensate for loss of vision, it can be difficult for a pet owner to detect cataracts at an early stage. Some owners report that their dogs have more difficulty in bright light, while others report the opposite. Dogs with vision loss may appear more cautious in their movements and tend to stay closer than usual to their owner.\nIn general, treatment for cataracts involves surgery to remove the affected lens or lenses. In dogs, removal of the cataract is most likely to be successful when performed before cataract maturation is complete and before inflammation in the front chamber of the eye occurs due to leakage of lens material. Advances have been made in this procedure, but complications are possible. In animals in which cataract surgery is not performed, continued monitoring is very important because complications, such as glaucoma, can occur. Follow your veterinarian’s recommendations for treatment of cataracts.\n\n## Lens Displacement\nLens displacement can occur in any dog but is common as a primary inherited defect in several Terrier breeds. Lens displacements also can be produced by trauma, enlargement of the eyeball due to glaucoma, and degenerative changes that occur as a result of long-standing cataracts.\nComplete displacement of the lens into the front chamber of the eye produces sudden, severe signs and frequently is accompanied by glaucoma and swelling of the cornea. The only effective treatment is surgical removal of the lens.\nDisplacement backward into the main eye chamber (called the vitreous cavity) may cause no signs or be associated with inflammation of the eye or glaucoma. Partially dislocated lenses are recognized by a trembling of the iris and lens. The decision to remove partially dislocated lenses is based on the severity of the signs.\nProcedures to remove the lens because of lens displacement are associated with higher levels of postoperative complications of glaucoma and detachment of the retina. Your veterinarian will carefully evaluate your pet’s condition and recommend a program to provide your pet with the best possible outcome.\n\n## For More Information\nAlso see professional content regarding lens disorders .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Cataracts |",
+        "Lens Displacement |",
+        "For More Information |",
+        "Multimedia |",
+        "The lens is a soft, transparent tissue that sits behind the iris. It helps focus incoming light onto the retina. Common disorders of the lens include those that affect its transparency (such as cataracts), and those that affect the position of the lens."
+      ]
+    },
+    {
+      "heading": "Cataracts",
+      "paragraphs": [
+        "A cataract occurs when the lens becomes cloudy or opaque, which effectively blocks light from reaching the retina. This causes a loss of eyesight that can range from mild vision problems to blindness. Cataracts should not be confused with the minor lens imperfections in young dogs or with the normal increase in the thickening and hardening of central lens tissue that occurs in older animals. Cataracts are often inherited in dogs (see table: Inherited Cataracts in Dogs ). Other causes include diabetes, malnutrition, radiation, inflammation, and trauma. In some cases, sight may be regained in young dogs, cats, or horses when cataracts disappear on their own."
+      ]
+    },
+    {
+      "heading": "Lens with cataract, dog",
+      "paragraphs": [
+        "Lens with cataract, dog",
+        "Cataracts that are present at birth in young animals may reduce in size as the lens grows, allowing for some restoration of vision as the animal matures. Animals with immature and incomplete cataracts may benefit from topical medication (eye drops) 2 to 3 times per week."
+      ]
+    },
+    {
+      "heading": "Inherited Cataracts in Dogs",
+      "paragraphs": [
+        "Inherited Cataracts in Dogs",
+        "Breed",
+        "Age of Onset",
+        "Afghan Hound",
+        "6 –12 months",
+        "American Cocker Spaniel",
+        "1–6 years",
+        "Australian Shepherd",
+        "2–4 years",
+        "Bichon Frise",
+        "2–6 years",
+        "Boston Terrier",
+        "Present at birth, juvenile, or late onset",
+        "Chesapeake Bay Retriever",
+        "1 year or older",
+        "Entelbucher Mountain Dog",
+        "1–2 years",
+        "German Shepherd",
+        "8 weeks or older",
+        "Golden Retriever",
+        "6 months or older",
+        "Havanese",
+        "2–6 years",
+        "Labrador Retriever",
+        "6 months or older",
+        "Miniature Schnauzer",
+        "Present at birth, 6 months, or older",
+        "Norwegian Buhund",
+        "1 year or older",
+        "Old English Sheepdog",
+        "Present at birth",
+        "Rottweiler",
+        "10 months or older",
+        "Siberian Husky",
+        "6 months or older",
+        "Staffordshire Bull Terrier",
+        "6 months or older",
+        "Standard Poodle",
+        "1 year or older",
+        "Welsh Springer Spaniel",
+        "Present at birth",
+        "West Highland White Terrier",
+        "Present at birth",
+        "Because dogs can often use their keen senses of hearing and smell to compensate for loss of vision, it can be difficult for a pet owner to detect cataracts at an early stage. Some owners report that their dogs have more difficulty in bright light, while others report the opposite. Dogs with vision loss may appear more cautious in their movements and tend to stay closer than usual to their owner.",
+        "In general, treatment for cataracts involves surgery to remove the affected lens or lenses. In dogs, removal of the cataract is most likely to be successful when performed before cataract maturation is complete and before inflammation in the front chamber of the eye occurs due to leakage of lens material. Advances have been made in this procedure, but complications are possible. In animals in which cataract surgery is not performed, continued monitoring is very important because complications, such as glaucoma, can occur. Follow your veterinarian’s recommendations for treatment of cataracts."
+      ]
+    },
+    {
+      "heading": "Lens Displacement",
+      "paragraphs": [
+        "Lens displacement can occur in any dog but is common as a primary inherited defect in several Terrier breeds. Lens displacements also can be produced by trauma, enlargement of the eyeball due to glaucoma, and degenerative changes that occur as a result of long-standing cataracts.",
+        "Complete displacement of the lens into the front chamber of the eye produces sudden, severe signs and frequently is accompanied by glaucoma and swelling of the cornea. The only effective treatment is surgical removal of the lens.",
+        "Displacement backward into the main eye chamber (called the vitreous cavity) may cause no signs or be associated with inflammation of the eye or glaucoma. Partially dislocated lenses are recognized by a trembling of the iris and lens. The decision to remove partially dislocated lenses is based on the severity of the signs.",
+        "Procedures to remove the lens because of lens displacement are associated with higher levels of postoperative complications of glaucoma and detachment of the retina. Your veterinarian will carefully evaluate your pet’s condition and recommend a program to provide your pet with the best possible outcome."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding lens disorders ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:46:40.776269+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

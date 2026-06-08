@@ -1,0 +1,31 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Platelets of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/platelets-of-dogs",
+  "category": "Blood Disorders of Dogs",
+  "section_slug": "blood-disorders-of-dogs",
+  "reviewed_date": "Dec 2017",
+  "author": "Susan M. Cotter , DVM, DACVIM , Cummings School of Veterinary Medicine, Tufts University",
+  "language": "en",
+  "content": "## Overview\nPlatelets are small, cell-like particles produced in the bone marrow and then released into the blood. They function to start the formation of blood clots. Platelets gather where bleeding occurs and clump together to form the initial plug that stops or slows the flow of blood. Platelets also release substances that are needed to complete the clotting process.\nPlatelet disorders can result from having too few or too many platelets or from impaired platelet function. In general, when platelet counts fall very low there is an increased risk of bleeding. Decreases in platelets may be caused by anti-platelet antibodies, drugs, toxins, or disorders of the bone marrow. Conditions that consume a large number of platelets (such as massive bleeding or severe clotting disorders) can also deplete platelet numbers. Finally, large numbers of platelets can become trapped in an enlarged spleen, decreasing the number of platelets in the blood.\nAn abnormal increase in the number of platelets is rare and often the cause is not known. It may be associated with bone marrow disease or with long-term blood loss and iron deficiency.\nThere are also disorders in which platelets do not function properly. Von Willebrand disease is one example. Other hereditary disorders of platelet function have been described but are rare. Probably the most common platelet function defect in animals is a side effect of aspirin. Do not give your dog aspirin—or any other medication—unless it is prescribed by your veterinarian.\n\n## For More Information\nAlso see professional content regarding platelets .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Platelets are small, cell-like particles produced in the bone marrow and then released into the blood. They function to start the formation of blood clots. Platelets gather where bleeding occurs and clump together to form the initial plug that stops or slows the flow of blood. Platelets also release substances that are needed to complete the clotting process.",
+        "Platelet disorders can result from having too few or too many platelets or from impaired platelet function. In general, when platelet counts fall very low there is an increased risk of bleeding. Decreases in platelets may be caused by anti-platelet antibodies, drugs, toxins, or disorders of the bone marrow. Conditions that consume a large number of platelets (such as massive bleeding or severe clotting disorders) can also deplete platelet numbers. Finally, large numbers of platelets can become trapped in an enlarged spleen, decreasing the number of platelets in the blood.",
+        "An abnormal increase in the number of platelets is rare and often the cause is not known. It may be associated with bone marrow disease or with long-term blood loss and iron deficiency.",
+        "There are also disorders in which platelets do not function properly. Von Willebrand disease is one example. Other hereditary disorders of platelet function have been described but are rare. Probably the most common platelet function defect in animals is a side effect of aspirin. Do not give your dog aspirin—or any other medication—unless it is prescribed by your veterinarian."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding platelets ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T06:23:54.313520+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

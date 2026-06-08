@@ -1,4 +1,4 @@
-﻿"""Build PostgreSQL PGVector vector store for RAG.
+"""Build PostgreSQL PGVector vector store for RAG.
 
 실행 흐름:
 1. 문서 로드(loader.py)
@@ -29,6 +29,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from loader import (
     get_article_loader,
     get_dog_info_loader,
+    get_merck_loader,
     get_qna_loader,
     get_youtube_loader,
 )
@@ -76,6 +77,10 @@ def load_documents(limit: int | None = None) -> list[Document]:
         ]
     )
 
+    # Load Merck Veterinary Manual Dog Owners raw JSON documents.
+    # They are split by split_documents() below, like the YouTube documents.
+    for merck_path in sorted((DATABASE_DIR / "merck_vet" / "raw").glob("*.json")):
+        loaders.append(get_merck_loader(str(merck_path)))
     documents: list[Document] = []
     for loader in loaders:
         loaded = loader.load()

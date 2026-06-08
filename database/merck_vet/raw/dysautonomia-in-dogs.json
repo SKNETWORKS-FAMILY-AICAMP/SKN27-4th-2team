@@ -1,0 +1,22 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Dysautonomia in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/dysautonomia-in-dogs",
+  "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+  "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+  "reviewed_date": "Feb 2018",
+  "author": "Caroline N. Hahn , DVM, PhD, DECEIM, DECVN , Royal (Dick) School of Veterinary Studies, University of Edinburgh",
+  "language": "en",
+  "content": "## Overview\nCanine dysautonomia is a disorder of the autonomic nervous system, which controls many reflexes and other neurologic functions that the animal does not consciously control. Other components of the nervous system, including central, peripheral, skeletal, and digestive nerves, are also affected. Cases have been reported from both Europe and the United States, where canine dysautonomia has been seen primarily in the Midwest. Signs often include a loss of the pupillary light reflexes, with otherwise normal vision. The eyelid may droop or protrude abnormally, and the position of the eyeball may be abnormal. The dog may experience painful or difficult urination and lose anal sphincter control. Secondary signs such as pneumonia and lethargic behavior may develop. Weight loss may be dramatic. There is no treatment and the condition is ultimately fatal.",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Canine dysautonomia is a disorder of the autonomic nervous system, which controls many reflexes and other neurologic functions that the animal does not consciously control. Other components of the nervous system, including central, peripheral, skeletal, and digestive nerves, are also affected. Cases have been reported from both Europe and the United States, where canine dysautonomia has been seen primarily in the Midwest. Signs often include a loss of the pupillary light reflexes, with otherwise normal vision. The eyelid may droop or protrude abnormally, and the position of the eyeball may be abnormal. The dog may experience painful or difficult urination and lose anal sphincter control. Secondary signs such as pneumonia and lethargic behavior may develop. Weight loss may be dramatic. There is no treatment and the condition is ultimately fatal."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:32:59.511120+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

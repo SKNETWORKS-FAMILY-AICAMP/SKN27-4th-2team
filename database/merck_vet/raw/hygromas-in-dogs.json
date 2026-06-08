@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Hygromas in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hygromas-in-dogs",
+  "category": "Skin Disorders of Dogs",
+  "section_slug": "skin-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Karen A. Moriello , DVM, DACVD , Department of Medical Sciences, School of Veterinary Medicine, University of Wisconsin-Madison",
+  "language": "en",
+  "content": "## Overview\nA hygroma is a fluid-filled sac that develops over bony prominences and pressure points, especially in large breeds of dogs. Repeated trauma from lying on hard surfaces leads to inflammation. This results in a dense-walled, fluid-filled cavity. A soft, flexible, fluid-filled, painless swelling develops over pressure points, especially the elbow. If long lasting, severe inflammation may develop, with ulcers, infection, abscesses, granulomas (masses of inflamed tissue with sand-like deposits), and tissue erosion. The sac contains a clear fluid, yellow to red in color. If diagnosed early while they are still small, hygromas can be drained and then bandaged. Soft bedding and padding over pressure points is important to prevent further trauma. In cases of chronic hygromas, surgical drainage and flushing are critical for relief. Areas with severe skin ulcers may require extensive drainage, surgical removal, or skin grafting.\nAlso see professional content regarding hygroma .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "A hygroma is a fluid-filled sac that develops over bony prominences and pressure points, especially in large breeds of dogs. Repeated trauma from lying on hard surfaces leads to inflammation. This results in a dense-walled, fluid-filled cavity. A soft, flexible, fluid-filled, painless swelling develops over pressure points, especially the elbow. If long lasting, severe inflammation may develop, with ulcers, infection, abscesses, granulomas (masses of inflamed tissue with sand-like deposits), and tissue erosion. The sac contains a clear fluid, yellow to red in color. If diagnosed early while they are still small, hygromas can be drained and then bandaged. Soft bedding and padding over pressure points is important to prevent further trauma. In cases of chronic hygromas, surgical drainage and flushing are critical for relief. Areas with severe skin ulcers may require extensive drainage, surgical removal, or skin grafting.",
+        "Also see professional content regarding hygroma ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:15:55.362667+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

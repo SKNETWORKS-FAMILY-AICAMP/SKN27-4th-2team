@@ -1,0 +1,22 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Tracheal Collapse in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tracheal-collapse-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ned F. Kuehn , DVM, MS, DACVIM , Michigan Veterinary Specialists",
+  "language": "en",
+  "content": "## Overview\nTracheal collapse is most common in toy and miniature breeds of dogs, although it may occasionally occur in large-breed dogs. The cause is unknown. Affected dogs have a dry, honking, chronic cough, and labored breathing. They can have trouble breathing during inspiration or expiration. The condition occurs more frequently in dogs that are obese and in those with heart disease or another lung disease (especially chronic bronchitis). Weight loss for obese or overweight dogs is critical in the management of tracheal collapse. Other measures include exercise restriction, reduction of excitement and stress, and appropriate medications such as cough suppressants, antibiotics, bronchodilators, and corticosteroids.",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Tracheal collapse is most common in toy and miniature breeds of dogs, although it may occasionally occur in large-breed dogs. The cause is unknown. Affected dogs have a dry, honking, chronic cough, and labored breathing. They can have trouble breathing during inspiration or expiration. The condition occurs more frequently in dogs that are obese and in those with heart disease or another lung disease (especially chronic bronchitis). Weight loss for obese or overweight dogs is critical in the management of tracheal collapse. Other measures include exercise restriction, reduction of excitement and stress, and appropriate medications such as cough suppressants, antibiotics, bronchodilators, and corticosteroids."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:09:25.215200+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

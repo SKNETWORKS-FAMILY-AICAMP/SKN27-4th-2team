@@ -31,9 +31,9 @@
             </div>
 
             <div class="breed-stat-grid">
-                <div class="breed-stat-item">
-                    <span class="breed-stat-label">그룹</span>
-                    <span class="breed-stat-value">{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹 · {% endif %}{{ breed.breed_group }}</span>
+                <div class="breed-stat-item breed-group-stat">
+                    <span class="breed-stat-label">한국 애견 연맹 국제 공인 견종</span>
+                    <span class="breed-stat-value">{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}{% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}</span>
                 </div>
                 <div class="breed-stat-item">
                     <span class="breed-stat-label">출신</span>
@@ -68,8 +68,9 @@
             {% endif %}
 
             {% if breed.breed_group_description %}
-                <div class="breed-section">
-                    <h2>{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %} {% if breed.breed_group %}· {{ breed.breed_group }}{% endif %} 특성</h2>
+                <div class="breed-section breed-group-section">
+                    <h2>한국 애견 연맹 국제 공인 견종</h2>
+                    <h3>{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}{% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}</h3>
                     <p>{{ breed.breed_group_description }}</p>
                 </div>
             {% endif %}
@@ -118,4 +119,36 @@
         </div>
     </div>
 </main>
+
+<style>
+
+.breed-group-stat .breed-stat-label {
+    display: block;
+    max-width: 220px;
+    line-height: 1.35;
+}
+
+.breed-group-stat .breed-stat-value {
+    display: block;
+    margin-top: 6px;
+    line-height: 1.35;
+}
+
+.breed-group-section h2 {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 1.25;
+}
+
+.breed-group-section h3 {
+    margin: 0 0 14px;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 800;
+}
+
+.breed-group-section p {
+    margin-top: 0;
+}
+</style>
 {% endblock %}

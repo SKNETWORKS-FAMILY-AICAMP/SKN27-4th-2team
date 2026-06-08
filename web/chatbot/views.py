@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .conversation_state import filter_display_sources, serialize_sources, update_session_state
 from .models import ChatMessage, ChatSession
 from .rag_adapter import get_rag_response
+from .shelter_recommendation import append_shelter_links_for_recommendation
 
 
 WELCOME_MESSAGE = '안녕하세요. 반려견 케어, 견종 검색, 견종 추천에 대해 질문해 주세요.'
@@ -49,9 +50,14 @@ def build_reply(message):
         analysis=analysis,
     )
     sources = serialize_sources(display_sources)
+    answer = append_shelter_links_for_recommendation(
+        question=message,
+        answer=rag_response.answer,
+        analysis=analysis,
+    )
 
     return {
-        'answer': rag_response.answer,
+        'answer': answer,
         'intent': _intent_from_analysis(analysis),
         'analysis': analysis,
         'sources': sources,

@@ -1,0 +1,30 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Motion Sickness in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/motion-sickness-in-dogs",
+  "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+  "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+  "reviewed_date": "Feb 2018",
+  "author": "T. Mark Neer , DVM, DACVIM , Center for Veterinary Health Sciences, Oklahoma State University",
+  "language": "en",
+  "content": "## Overview\nMotion sickness results in nausea, excessive drooling, vomiting, and occasionally other signs, such as poor appetite for several hours after the motion sickness event. Animals may yawn, whine, show signs of uneasiness or apprehension, or have diarrhea. Motion sickness is usually seen during travel by land, sea, or air, and signs usually disappear when the motion of the vehicle ceases.\nThe principal cause of motion sickness is due to stimulation of the sensory organ in the inner ear, which has connections to the vomiting center in the brain stem. Fear of the vehicle may be a contributing factor in dogs and cats, and signs may occur even in a vehicle that is not moving. This occurs if a dog has become preconditioned to illness associated with travel in a vehicle.\nIn some cases, motion sickness can be overcome by conditioning the animal to travel . In others, drug treatment can help prevent motion sickness, provide sedation, and decrease drooling. These medications can be obtained from your veterinarian and include tranquilizers, sedatives, and products to decrease nausea and/or vomiting.\n\n## For More Information\nAlso see professional content regarding motion sickness .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Motion sickness results in nausea, excessive drooling, vomiting, and occasionally other signs, such as poor appetite for several hours after the motion sickness event. Animals may yawn, whine, show signs of uneasiness or apprehension, or have diarrhea. Motion sickness is usually seen during travel by land, sea, or air, and signs usually disappear when the motion of the vehicle ceases.",
+        "The principal cause of motion sickness is due to stimulation of the sensory organ in the inner ear, which has connections to the vomiting center in the brain stem. Fear of the vehicle may be a contributing factor in dogs and cats, and signs may occur even in a vehicle that is not moving. This occurs if a dog has become preconditioned to illness associated with travel in a vehicle.",
+        "In some cases, motion sickness can be overcome by conditioning the animal to travel . In others, drug treatment can help prevent motion sickness, provide sedation, and decrease drooling. These medications can be obtained from your veterinarian and include tranquilizers, sedatives, and products to decrease nausea and/or vomiting."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding motion sickness ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:33:49.197962+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}
