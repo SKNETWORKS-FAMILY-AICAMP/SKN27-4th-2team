@@ -4,8 +4,10 @@ import json
 import random
 from pathlib import Path
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+from .models import TestResult
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[2]
@@ -91,7 +93,6 @@ def get_page(request):
 
         # 로그인한 사용자일 경우 DB에 저장
         if request.user.is_authenticated:
-            from .models import TestResult
             TestResult.objects.create(
                 user=request.user,
                 total_score=total_score,
@@ -128,12 +129,8 @@ def get_page(request):
             "quiz_bank_path": str(QUIZ_BANK_PATH),
         },
     )
-
-from django.contrib.auth.decorators import login_required
-
 @login_required
 def view_saved_result(request, result_id):
-    from .models import TestResult
     result = get_object_or_404(TestResult, id=result_id, user=request.user)
     result_items = result.result_data
     total_score = result.total_score

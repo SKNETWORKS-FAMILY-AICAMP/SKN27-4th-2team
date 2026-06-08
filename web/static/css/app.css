@@ -1474,7 +1474,7 @@ p {
 }
 
 .favorite-button.is-active {
-    color: var(--ink);
+    color: #ffb020;
     border-color: var(--ink);
     background: #fff8d8;
 }

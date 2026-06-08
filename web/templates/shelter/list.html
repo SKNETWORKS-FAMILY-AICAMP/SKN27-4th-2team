@@ -65,9 +65,20 @@
                             {% endif %}
                         </div>
                         <div class="shelter-card-body">
-                            <div class="shelter-card-title">
-                                <h3>{{ animal.breed }}</h3>
-                                <span>{{ animal.status }}</span>
+                            <div class="shelter-card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <h3 style="margin: 0;">{{ animal.breed }}</h3>
+                                    <span>{{ animal.status }}</span>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="favorite-button{% if animal.id in favorited_ids %} is-active{% endif %}"
+                                    data-favorite-id="{{ animal.id }}"
+                                    aria-label="{{ animal.breed }} 즐겨찾기"
+                                    aria-pressed="{% if animal.id in favorited_ids %}true{% else %}false{% endif %}"
+                                >
+                                    {% if animal.id in favorited_ids %}★{% else %}☆{% endif %}
+                                </button>
                             </div>
                             <p>{{ animal.sex }} · {{ animal.age }} · 중성화 {{ animal.neutered }}</p>
                             <p>{{ animal.region }}</p>
@@ -240,8 +251,18 @@
 .shelter-card {
     overflow: hidden;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.78);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 8px 30px rgba(17, 17, 17, 0.04);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.shelter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.08);
+    border-color: var(--ink);
 }
 
 .shelter-photo {
@@ -393,6 +414,48 @@
     }
 }
 </style>
+
+{% csrf_token %}
+{{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" style="display: none;"></div>
+<script>
+(function() {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
+    const buttons = document.querySelectorAll(".favorite-button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
+            }
+
+            const animalId = button.dataset.favoriteId;
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+            fetch(`/shelter/${animalId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const isActive = data.is_favorited;
+                    button.setAttribute("aria-pressed", String(isActive));
+                    button.textContent = isActive ? "★" : "☆";
+                    button.classList.toggle("is-active", isActive);
+                }
+            })
+            .catch(err => console.error(err));
+        });
+    });
+})();
+</script>
 {% endblock %}
 
 

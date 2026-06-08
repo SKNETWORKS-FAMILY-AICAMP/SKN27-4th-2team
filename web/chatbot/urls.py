@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import chat, clear_anonymous_chat, delete_session
+from .views import chat, clear_anonymous_chat, delete_session, toggle_pin
 
 app_name = 'chatbot'
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('', chat, name='chat'),
     path('delete/<int:session_id>/', delete_session, name='delete_session'),
     path('clear/', clear_anonymous_chat, name='clear_anonymous_chat'),
+    path('pin/<int:session_id>/', toggle_pin, name='toggle_pin'),
 ]

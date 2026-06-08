@@ -16,25 +16,71 @@
 
         {% if user.is_authenticated %}
             <div class="history-list">
-                {% for session in sessions %}
-                    <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
-                        <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
-                            <strong>{{ session.title }}</strong>
-                            <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
-                        </a>
-                        <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
-                            {% csrf_token %}
-                            <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                {% empty %}
+                {% if sessions %}
+                    <p class="history-group-title" style="font-size:0.8rem; color:#666; padding:0 12px; margin-bottom:4px; margin-top:8px;">고정된 채팅</p>
+                    {% for session in sessions %}
+                        {% if session.is_pinned %}
+                        <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
+                            <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                                <strong>{{ session.title }}</strong>
+                                <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                            </a>
+                            <div style="display: flex; gap: 4px;">
+                                <form method="post" action="{% url 'chatbot:toggle_pin' session.id %}" style="margin:0;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="pin-history-btn" aria-label="고정/해제" title="고정/해제" style="background:none; border:none; cursor:pointer; color: #000;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M16 4v6l4 2v2H13v7l-1 1-1-1v-7H4v-2l4-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2z"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <p class="history-group-title" style="font-size:0.8rem; color:#666; padding:0 12px; margin-bottom:4px; margin-top:16px;">최근 채팅</p>
+                    {% for session in sessions %}
+                        {% if not session.is_pinned %}
+                        <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
+                            <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                                <strong>{{ session.title }}</strong>
+                                <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                            </a>
+                            <div style="display: flex; gap: 4px;">
+                                <form method="post" action="{% url 'chatbot:toggle_pin' session.id %}" style="margin:0;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="pin-history-btn" aria-label="고정/해제" title="고정/해제" style="background:none; border:none; cursor:pointer; color: #ccc;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M16 4v6l4 2v2H13v7l-1 1-1-1v-7H4v-2l4-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2z"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
                     <p class="empty-history">아직 저장된 대화가 없습니다.</p>
-                {% endfor %}
+                {% endif %}
             </div>
         {% else %}
             <div class="history-login">

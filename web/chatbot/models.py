@@ -10,6 +10,7 @@ class ChatSession(models.Model):
     context_summary = models.TextField(blank=True)
     last_user_preferences = models.JSONField(default=dict, blank=True)
     last_recommended_breeds = models.JSONField(default=list, blank=True)
+    is_pinned = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
