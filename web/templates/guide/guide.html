@@ -55,7 +55,13 @@
             <strong>출처</strong>
             <ul>
                 {% for source in selected_guide.sources %}
-                    <li>{{ source }}</li>
+                    <li>
+                        {% if source.pdf_url %}
+                            <a href="{{ source.pdf_url }}" download>{{ source.label }} PDF 다운로드</a>
+                        {% else %}
+                            {{ source.label }}
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         </footer>
