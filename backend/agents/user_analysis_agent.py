@@ -13,8 +13,40 @@ TOPIC_KEYWORDS: dict[str, list[str]] = {
     'training': ['훈련', '교육', '초보'],
     'nutrition': ['사료', '영양', '밥', '간식'],
     'health': ['아프', '아픈', '아파요', '통증', '구토', '설사', '혈변', '출혈', '발작', '응급', '질병', '병원'],
-    'breed_recommendation': ['추천', '견종', '품종', '키우기 좋은', '어울리는'],
+    'breed_recommendation': ['추천', '키우기 좋은', '키우기 쉬운', '어울리는', '나에게 맞는', '적합한'],
 }
+
+BREED_RECOMMENDATION_PATTERNS = (
+    '추천',
+    '키우기 좋은',
+    '키우기 쉬운',
+    '어울리는',
+    '나에게 맞는',
+    '우리에게 맞는',
+    '적합한',
+    '입문용',
+    '좋은 견종',
+    '좋은 품종',
+    '어떤 견종이 좋',
+    '어떤 품종이 좋',
+    '어떤 강아지가 좋',
+    '아파트에서 키우기',
+    '원룸에서 키우기',
+)
+
+EXPLICIT_RECOMMENDATION_PATTERNS = (
+    '추천',
+    '나에게 맞는',
+    '우리에게 맞는',
+    '어울리는',
+    '적합한',
+    '입문용',
+    '좋은 견종',
+    '좋은 품종',
+    '어떤 견종이 좋',
+    '어떤 품종이 좋',
+    '어떤 강아지가 좋',
+)
 
 
 BREED_ALIASES: dict[str, str] = {
@@ -53,8 +85,8 @@ def analyze_user_message(user_message: str) -> UserAnalysisResult:
 
     normalized_message = user_message.strip()
     keywords = _extract_keywords(normalized_message)
-    topics = _detect_topics(normalized_message)
     breed_names = _detect_breed_names(normalized_message)
+    topics = _detect_topics(normalized_message, breed_names)
 
     return UserAnalysisResult(
         summary=normalized_message[:120],
@@ -81,14 +113,26 @@ def _extract_keywords(message: str) -> list[str]:
     return keywords[:12]
 
 
-def _detect_topics(message: str) -> list[str]:
+def _detect_topics(message: str, breed_names: list[str] | None = None) -> list[str]:
     detected: list[str] = []
 
     for topic, keywords in TOPIC_KEYWORDS.items():
+        if topic == 'breed_recommendation':
+            if _is_breed_recommendation_intent(message, breed_names or []):
+                detected.append(topic)
+            continue
+
         if any(keyword in message for keyword in keywords):
             detected.append(topic)
 
     return detected
+
+
+def _is_breed_recommendation_intent(message: str, breed_names: list[str]) -> bool:
+    normalized_message = re.sub(r'\s+', ' ', message.strip())
+    if breed_names and not any(pattern in normalized_message for pattern in EXPLICIT_RECOMMENDATION_PATTERNS):
+        return False
+    return any(pattern in normalized_message for pattern in BREED_RECOMMENDATION_PATTERNS)
 
 
 def _detect_breed_names(message: str) -> list[str]:

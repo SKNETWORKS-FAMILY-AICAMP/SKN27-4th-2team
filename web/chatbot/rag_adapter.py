@@ -13,11 +13,20 @@ def _ensure_project_root_on_path() -> None:
         sys.path.insert(0, project_root)
 
 
-def get_rag_response(message: str):
+def get_rag_response(
+    message: str,
+    *,
+    conversation_id: str | None = None,
+    memory_context: dict | None = None,
+):
     """Call the backend RAG service from the Django chatbot app."""
 
     _ensure_project_root_on_path()
 
     from backend.services.chat_service import handle_chat_message
 
-    return handle_chat_message(message)
+    return handle_chat_message(
+        message,
+        conversation_id=conversation_id,
+        memory_context=memory_context,
+    )

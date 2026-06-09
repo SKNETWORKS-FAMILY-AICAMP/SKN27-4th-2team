@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 
+from .conversation_memory import build_memory_context
 from .conversation_state import filter_display_sources, serialize_sources, update_session_state
 from .models import ChatMessage, ChatSession
 from .rag_adapter import get_rag_response
@@ -20,8 +21,6 @@ def _intent_from_analysis(analysis):
     topics = list(getattr(analysis, 'topics', []) or [])
     if 'breed_recommendation' in topics:
         return '견종 추천'
-    if topics:
-        return ', '.join(topics)
     return '일반 상담'
 
 
@@ -38,11 +37,15 @@ def _build_fallback_reply(error):
     }
 
 
-def build_reply(message):
+def build_reply(message, request=None, memory_context=None):
     """Generate a chatbot reply through the backend RAG workflow."""
 
     try:
-        rag_response = get_rag_response(message)
+        rag_response = get_rag_response(
+            message,
+            conversation_id=(memory_context or {}).get('conversation_id'),
+            memory_context=memory_context,
+        )
     except Exception as error:
         return _build_fallback_reply(error)
 
@@ -57,6 +60,7 @@ def build_reply(message):
         question=message,
         answer=rag_response.answer,
         analysis=analysis,
+        base_url=request.build_absolute_uri('/') if request else None,
     )
 
     return {
@@ -87,13 +91,14 @@ def chat(request):
         posted_session_id = request.POST.get('session_id')
 
         if question:
-            reply = build_reply(question)
-
             if request.user.is_authenticated:
                 if posted_session_id:
                     active_session = get_object_or_404(ChatSession, id=posted_session_id, user=request.user)
                 else:
                     active_session = ChatSession.objects.create(user=request.user, title=_session_title(question))
+
+                memory_context = build_memory_context(active_session)
+                reply = build_reply(question, request=request, memory_context=memory_context)
 
                 if active_session.title == '새 대화':
                     active_session.title = _session_title(question)
@@ -117,6 +122,7 @@ def chat(request):
                 )
                 return redirect(f'{request.path}?session={active_session.id}')
 
+            reply = build_reply(question, request=request)
             anonymous_messages = request.session.get(
                 'anonymous_chat_messages',
                 [{'role': 'assistant', 'content': WELCOME_MESSAGE, 'sources': []}],
@@ -189,14 +195,15 @@ def api_chat(request):
     
     if not question:
         return JsonResponse({"status": "error", "message": "Message is empty"}, status=400)
-        
-    reply = build_reply(question)
     
     if request.user.is_authenticated:
         if posted_session_id:
             active_session = get_object_or_404(ChatSession, id=posted_session_id, user=request.user)
         else:
             active_session = ChatSession.objects.create(user=request.user, title=_session_title(question))
+
+        memory_context = build_memory_context(active_session)
+        reply = build_reply(question, request=request, memory_context=memory_context)
             
         if active_session.title == '새 대화':
             active_session.title = _session_title(question)
@@ -227,6 +234,7 @@ def api_chat(request):
             "sources": reply['sources'],
         })
     else:
+        reply = build_reply(question, request=request)
         anonymous_messages = request.session.get(
             'anonymous_chat_messages',
             [{'role': 'assistant', 'content': WELCOME_MESSAGE, 'sources': []}],

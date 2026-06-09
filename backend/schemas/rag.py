@@ -8,6 +8,8 @@ class RAGState(TypedDict, total=False):
     """State passed between LangGraph RAG workflow nodes."""
 
     question: str
+    conversation_id: str | None
+    memory_context: dict | None
     analysis: UserAnalysisResult | None
     search_query: str
     categories: list[str] | None
@@ -20,4 +22,3 @@ class RAGState(TypedDict, total=False):
     sources: list[str]
     relevance_issues: list[str]
     validation_issues: list[str]
-

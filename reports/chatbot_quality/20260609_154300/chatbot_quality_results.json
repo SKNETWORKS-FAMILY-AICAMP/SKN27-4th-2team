@@ -1,0 +1,457 @@
+[
+  {
+    "index": 1,
+    "name": "second_dog_with_pomeranian",
+    "question": "내가 포메라니언을 키우는 중인데, 한마리 강아지를 더 분양받으려고 해. 어떤 점을 고려해야 해?",
+    "expected_intent": "일반 상담",
+    "intent": "일반 상담",
+    "answer": "포메라니언을 키우고 계시고, 한 마리 강아지를 더 분양받으려는 계획이시군요! 추가로 강아지를 맞이할 때 고려해야 할 몇 가지 중요한 점을 알려드릴게요.\n\n1. 사회화와 적응: 새로운 강아지가 기존의 포메라니언과 잘 어울릴 수 있도록 충분한 사회화가 필요합니다. 처음에는 서로의 공간을 존중하게 하고, 점차적으로 함께 시간을 보내도록 하세요.\n\n2. 운동과 활동량: 포메라니언은 활동적인 성격을 가지고 있으므로, 두 마리 모두에게 충분한 운동과 놀이 시간을 제공해야 합니다. 외출 시에는 작은 틈새로 빠져나가지 않도록 주의하세요.\n\n3. 훈련: 두 강아지 모두 기본적인 훈련이 필요합니다. 특히, 리드에 잘 따라오고, 부르면 오는 훈련을 일찍 시작하는 것이 좋습니다. 일관된 훈련이 중요합니다.\n\n4. 건강 관리: 새로운 강아지를 분양받기 전에 부모의 건강 상태를 확인하는 것이 좋습니다. 포메라니언은 특정 건강 문제에 취약할 수 있으니, 신뢰할 수 있는 브리더에게 건강 검진 결과를 요청하세요.\n\n5. 영양 관리: 두 강아지 모두 적절한 영양을 공급받아야 합니다. 고품질의 사료를 선택하고, 체중 관리에 유의하세요.\n\n이 외에도 각 강아지의 성격이나 필요에 따라 추가적인 고려사항이 있을 수 있습니다. 두 마리 모두 행복하게 지낼 수 있도록 잘 준비하시길 바랍니다!",
+    "sources": [
+      {
+        "chunk_id": "479a422d-121b-476c-9624-f62ecb712274",
+        "source": "akc_breed",
+        "breed_name": "Pomeranian",
+        "section": "grooming",
+        "title": "Grooming",
+        "display_title": "AKC - Pomeranian / Grooming",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pomeranian/",
+        "score": 0.2471
+      },
+      {
+        "chunk_id": "d138dcd8-33a3-41e4-9220-4163d105bb0f",
+        "source": "akc_breed",
+        "breed_name": "Pomeranian",
+        "section": "exercise",
+        "title": "Exercise",
+        "display_title": "AKC - Pomeranian / Exercise",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pomeranian/",
+        "score": 0.2319
+      },
+      {
+        "chunk_id": "c4d87739-db0c-40cb-a74f-49624cdd071b",
+        "source": "akc_breed",
+        "breed_name": "Pomeranian",
+        "section": "training",
+        "title": "Training",
+        "display_title": "AKC - Pomeranian / Training",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pomeranian/",
+        "score": 0.1954
+      },
+      {
+        "chunk_id": "01fd2f9e-ec94-4eb3-821d-691350d51e12",
+        "source": "akc_breed",
+        "breed_name": "Pomeranian",
+        "section": "health",
+        "title": "Health",
+        "display_title": "AKC - Pomeranian / Health",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pomeranian/",
+        "score": 0.1875
+      },
+      {
+        "chunk_id": "c0d8444a-957f-480c-9ba3-31e7b80393a9",
+        "source": "akc_breed",
+        "breed_name": "Pomeranian",
+        "section": "nutrition",
+        "title": "Nutrition",
+        "display_title": "AKC - Pomeranian / Nutrition",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pomeranian/",
+        "score": 0.1816
+      }
+    ],
+    "checks": [
+      {
+        "name": "intent",
+        "passed": true,
+        "detail": "expected=일반 상담, actual=일반 상담"
+      },
+      {
+        "name": "answer_length",
+        "passed": true,
+        "detail": "length=652"
+      },
+      {
+        "name": "no_uuid_in_answer",
+        "passed": true,
+        "detail": "answer contains UUID"
+      },
+      {
+        "name": "no_uuid_in_visible_sources",
+        "passed": true,
+        "detail": "visible source title/url contains UUID"
+      },
+      {
+        "name": "no_duplicate_qna_label",
+        "passed": true,
+        "detail": "visible source contains duplicated YouTube Q&A label"
+      },
+      {
+        "name": "answer_keyword",
+        "passed": true,
+        "detail": "one of=['포메라니언', '사회화', '성격', '합사', '천천히', '적응']"
+      },
+      {
+        "name": "not_include:오류",
+        "passed": true,
+        "detail": "오류"
+      },
+      {
+        "name": "not_include:UUID",
+        "passed": true,
+        "detail": "UUID"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "index": 2,
+    "name": "apartment_breed_recommendation",
+    "question": "아파트에서 키우기 쉬운 견종 추천해줘",
+    "expected_intent": "견종 추천",
+    "intent": "견종 추천",
+    "answer": "아파트에서 키우기 쉬운 견종으로는 다음과 같은 개들이 있습니다:\n\n1. 볼로네제 (Bolognese)\n   - 체중: 6.0 - 10.0 파운드\n   - 높이: 10.0 - 12.0 인치\n   - 적응력: 매우 높음 (5.0)\n   - 에너지 수준: 낮음 (1.0)\n   - 짖는 수준: 낮음 (1.0)\n   - 훈련 용이성: 높음 (5.0)\n\n2. 러시안 츠베타나야 볼론카 (Russian Tsvetnaya Bolonka)\n   - 체중: 6.0 - 9.0 파운드\n   - 높이: 11.0 인치\n   - 적응력: 매우 높음 (5.0)\n   - 에너지 수준: 중간 (3.0)\n   - 짖는 수준: 낮음 (1.0)\n   - 훈련 용이성: 높음 (5.0)\n\n3. 일본 테리어 (Japanese Terrier)\n   - 체중: 10.0 - 12.0 파운드\n   - 높이: 10.0 - 13.0 인치\n   - 적응력: 매우 높음 (5.0)\n   - 에너지 수준: 중간 (3.0)\n   - 짖는 수준: 낮음 (1.0)\n   - 훈련 용이성: 낮음 (1.0)\n\n4. 퍼그 (Pug)\n   - 체중: 14.0 - 18.0 파운드\n   - 높이: 10.0 - 13.0 인치\n   - 적응력: 매우 높음 (5.0)\n   - 에너지 수준: 중간 (3.0)\n   - 짖는 수준: 낮음 (1.0)\n   - 훈련 용이성: 높음 (4.0)\n\n5. 코통 드 튈레아 (Coton de Tulear)\n   - 체중: 8.0 - 15.0 파운드\n   - 높이: 9.0 - 11.0 인치\n   - 적응력: 높음 (4.0)\n   - 에너지 수준: 중간 (3.0)\n   - 짖는 수준: 낮음 (1.0)\n   - 훈련 용이성: 높음 (4.0)\n\n이 견종들은 일반적으로 아파트 생활에 잘 적응하며, 에너지 수준이 낮거나 중간으로 관리하기 수월합니다. 하지만 각 개체마다 성격이나 필요가 다를 수 있으니, 개인의 상황에 맞는 선택이 중요합니다.\n\n- 참고: 견종 특성은 일반적인 경향이며 실제 개체의 성격과 생활 환경에 따라 달라질 수 있습니다.\n\n유기견 입양도 함께 고민하고 있다면, 보호 중인 아이들을 입양 페이지에서 확인해볼 수 있어요.\n- 유기견 입양 페이지 바로가기 http://127.0.0.1:8000/shelter/",
+    "sources": [
+      {
+        "chunk_id": "structured_apartment_recommendation_1_bolognese",
+        "source": "akc_breed",
+        "breed_name": "Bolognese",
+        "section": "apartment_recommendation",
+        "title": "Apartment Recommendation",
+        "display_title": "AKC - Bolognese / Apartment Recommendation",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/bolognese/",
+        "score": 20.5
+      },
+      {
+        "chunk_id": "structured_apartment_recommendation_2_russian-tsvetnaya-bolonka",
+        "source": "akc_breed",
+        "breed_name": "Russian Tsvetnaya Bolonka",
+        "section": "apartment_recommendation",
+        "title": "Apartment Recommendation",
+        "display_title": "AKC - Russian Tsvetnaya Bolonka / Apartment Recommendation",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/russian-tsvetnaya-bolonka/",
+        "score": 18.7
+      },
+      {
+        "chunk_id": "structured_apartment_recommendation_3_japanese-terrier",
+        "source": "akc_breed",
+        "breed_name": "Japanese Terrier",
+        "section": "apartment_recommendation",
+        "title": "Apartment Recommendation",
+        "display_title": "AKC - Japanese Terrier / Apartment Recommendation",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/japanese-terrier/",
+        "score": 16.9
+      },
+      {
+        "chunk_id": "structured_apartment_recommendation_4_pug",
+        "source": "akc_breed",
+        "breed_name": "Pug",
+        "section": "apartment_recommendation",
+        "title": "Apartment Recommendation",
+        "display_title": "AKC - Pug / Apartment Recommendation",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/pug/",
+        "score": 16.8
+      },
+      {
+        "chunk_id": "structured_apartment_recommendation_5_coton-de-tulear",
+        "source": "akc_breed",
+        "breed_name": "Coton de Tulear",
+        "section": "apartment_recommendation",
+        "title": "Apartment Recommendation",
+        "display_title": "AKC - Coton de Tulear / Apartment Recommendation",
+        "source_label": "AKC",
+        "url": "https://www.akc.org/dog-breeds/coton-de-tulear/",
+        "score": 15.8
+      }
+    ],
+    "checks": [
+      {
+        "name": "intent",
+        "passed": true,
+        "detail": "expected=견종 추천, actual=견종 추천"
+      },
+      {
+        "name": "answer_length",
+        "passed": true,
+        "detail": "length=1112"
+      },
+      {
+        "name": "no_uuid_in_answer",
+        "passed": true,
+        "detail": "answer contains UUID"
+      },
+      {
+        "name": "no_uuid_in_visible_sources",
+        "passed": true,
+        "detail": "visible source title/url contains UUID"
+      },
+      {
+        "name": "no_duplicate_qna_label",
+        "passed": true,
+        "detail": "visible source contains duplicated YouTube Q&A label"
+      },
+      {
+        "name": "answer_keyword",
+        "passed": true,
+        "detail": "one of=['아파트', '견종', '적응', '에너지', '짖']"
+      },
+      {
+        "name": "not_include:/shelter/?breed=",
+        "passed": true,
+        "detail": "/shelter/?breed="
+      },
+      {
+        "name": "not_include:Q&A 참고 문서",
+        "passed": true,
+        "detail": "Q&A 참고 문서"
+      },
+      {
+        "name": "source_keyword",
+        "passed": true,
+        "detail": "one of=['AKC', 'Apartment Recommendation']"
+      }
+    ],
+    "passed": true
+  },
+  {
+    "index": 3,
+    "name": "shelter_adoption_process",
+    "question": "유기견 입양 절차를 알고 싶어",
+    "expected_intent": "일반 상담",
+    "intent": "일반 상담",
+    "answer": "유기견 입양 절차는 다음과 같은 단계로 진행됩니다:\n\n1. 입양 준비: 입양을 고려하기 전에 가족관계, 경제적 여건, 반려견을 돌볼 시간 등을 먼저 생각해보세요. 이러한 요소들이 충족되어야 반려견과의 생활이 원활합니다.\n\n2. 입양처 선택: 유기견을 입양할 곳을 선택해야 합니다. 유기견 보호소나 입양 센터에서 입양할 수 있으며, 이곳에서는 다양한 유기견들이 새로운 가족을 기다리고 있습니다.\n\n3. 신청 및 면접: 입양을 원할 경우, 보호소에 신청서를 제출하고 면접을 진행할 수 있습니다. 이 과정에서 보호소 직원이 귀하의 생활 환경과 반려견을 돌볼 준비가 되어 있는지를 평가합니다.\n\n4. 입양 계약: 면접이 통과되면 입양 계약서를 작성하게 됩니다. 이 계약서에는 입양 후의 책임과 의무가 포함되어 있습니다.\n\n5. 입양 후 적응: 유기견은 새로운 환경에 적응하는 시간이 필요합니다. 초기에는 불안해할 수 있으니, 꾸준한 훈련과 관리가 중요합니다.\n\n6. 전문가 상담: 입양 후 문제가 발생할 경우, 전문 훈련사나 수의사와 상담하여 행동 교정 계획을 세우는 것이 좋습니다.\n\n유기견 입양은 좋은 일이지만, 책임감 있는 결정을 내리는 것이 중요합니다. 입양 후 적응이 잘 되지 않으면 다시 버려지는 경우도 많으니, 신중하게 생각해 주세요.",
+    "sources": [
+      {
+        "chunk_id": "cfde89c8-7291-410c-b8c0-17662028bb34",
+        "source": "qna",
+        "breed_name": null,
+        "section": null,
+        "title": null,
+        "display_title": "YouTube - 설채현의 놀로와 / 강아지에게도 중2병 같은 증상이 있나요?",
+        "source_label": "설채현의 놀로와",
+        "url": null,
+        "score": 0.446
+      },
+      {
+        "chunk_id": "49f880a4-be9d-4993-bd83-fe60b14c49bc",
+        "source": "youtube_training",
+        "breed_name": null,
+        "section": null,
+        "title": "슬기로운 입양생활 1편: 강아지는 어디서 입양해야 할까요?",
+        "display_title": "YouTube - 설채현의 놀로와 / 슬기로운 입양생활 1편: 강아지는 어디서 입양해야 할까요?",
+        "source_label": "YouTube",
+        "url": "https://www.youtube.com/watch?v=Efwze07CYv0",
+        "score": 0.3974
+      },
+      {
+        "chunk_id": "e0fa8ba0-a650-4db5-80cb-4d033616512c",
+        "source": "youtube_training",
+        "breed_name": null,
+        "section": null,
+        "title": "진돗개는 절름발이일까? 강 훈련사가 처음으로 추가 촬영을 요청한 이유",
+        "display_title": "YouTube - 강형욱의 보듬TV / 진돗개는 절름발이일까? 강 훈련사가 처음으로 추가 촬영을 요청한 이유",
+        "source_label": "YouTube",
+        "url": "https://www.youtube.com/watch?v=xl6E2beOjxE",
+        "score": 0.3805
+      }
+    ],
+    "checks": [
+      {
+        "name": "intent",
+        "passed": true,
+        "detail": "expected=일반 상담, actual=일반 상담"
+      },
+      {
+        "name": "answer_length",
+        "passed": true,
+        "detail": "length=638"
+      },
+      {
+        "name": "no_uuid_in_answer",
+        "passed": true,
+        "detail": "answer contains UUID"
+      },
+      {
+        "name": "no_uuid_in_visible_sources",
+        "passed": true,
+        "detail": "visible source title/url contains UUID"
+      },
+      {
+        "name": "no_duplicate_qna_label",
+        "passed": true,
+        "detail": "visible source contains duplicated YouTube Q&A label"
+      },
+      {
+        "name": "answer_keyword",
+        "passed": true,
+        "detail": "one of=['입양', '보호소', '신청', '준비', '적응']"
+      },
+      {
+        "name": "not_include:YouTube Q&A - YouTube Q&A",
+        "passed": true,
+        "detail": "YouTube Q&A - YouTube Q&A"
+      },
+      {
+        "name": "not_include:Q&A 참고 문서",
+        "passed": true,
+        "detail": "Q&A 참고 문서"
+      },
+      {
+        "name": "source_keyword",
+        "passed": true,
+        "detail": "one of=['YouTube', '강형욱', '설채현']"
+      },
+      {
+        "name": "top_source_relevance",
+        "passed": false,
+        "detail": "top_source=YouTube - 설채현의 놀로와 / 강아지에게도 중2병 같은 증상이 있나요?, expected one of=['입양', '보호소', '분양']"
+      }
+    ],
+    "passed": false
+  },
+  {
+    "index": 4,
+    "name": "food_amount_calculation",
+    "question": "강아지 사료 급여량은 어떻게 계산해?",
+    "expected_intent": "일반 상담",
+    "intent": "일반 상담",
+    "answer": "강아지 사료의 급여량은 여러 요소에 따라 달라질 수 있습니다. 일반적으로는 강아지의 체중, 나이, 활동량, 그리고 사료의 종류에 따라 적절한 양을 계산해야 합니다. 다음은 사료 급여량을 계산할 때 고려해야 할 주요 포인트입니다:\n\n1. 체중: 강아지의 현재 체중을 기준으로 사료의 급여량을 결정합니다. 대부분의 사료 포장지에는 체중에 따른 급여량이 안내되어 있습니다.\n\n2. 나이: 강아지의 나이에 따라 성장기 강아지와 성견의 사료 요구량이 다릅니다. 성장기 강아지는 더 많은 영양소가 필요합니다.\n\n3. 활동량: 활동적인 강아지는 더 많은 칼로리를 필요로 하므로, 활동량에 따라 사료의 양을 조절해야 합니다.\n\n4. 사료의 종류: 사료마다 칼로리 밀도가 다르기 때문에, 사료의 성분과 영양 정보를 확인하고 급여량을 조정해야 합니다.\n\n사료 급여량을 정확히 계산하기 위해서는 사료 포장지에 기재된 급여 가이드를 참고하는 것이 좋습니다. 또한, 강아지의 체중 변화나 건강 상태를 주의 깊게 관찰하여 필요에 따라 급여량을 조절하는 것이 중요합니다. \n\n사료 급여량에 대한 구체적인 수치는 사료의 브랜드와 종류에 따라 다르므로, 사용 중인 사료의 포장지에 있는 정보를 꼭 확인하세요. \n\n강아지의 건강 상태나 특별한 요구 사항이 있을 경우, 수의사와 상담하는 것이 좋습니다.",
+    "sources": [
+      {
+        "chunk_id": "2654ece0-df55-433d-a433-01e4f17aee75",
+        "source": "youtube_training",
+        "breed_name": null,
+        "section": null,
+        "title": "여름철 음수량, 이렇게만 챙겨주세요! - 반려동물 음수량 - 설채현 행동학 수의사",
+        "display_title": "YouTube - 설채현의 놀로와 / 여름철 음수량, 이렇게만 챙겨주세요! - 반려동물 음수량 - 설채현 행동학 수의사",
+        "source_label": "YouTube",
+        "url": "https://www.youtube.com/watch?v=Id_g9MpRU6o",
+        "score": 0.5125
+      }
+    ],
+    "checks": [
+      {
+        "name": "intent",
+        "passed": true,
+        "detail": "expected=일반 상담, actual=일반 상담"
+      },
+      {
+        "name": "answer_length",
+        "passed": true,
+        "detail": "length=654"
+      },
+      {
+        "name": "no_uuid_in_answer",
+        "passed": true,
+        "detail": "answer contains UUID"
+      },
+      {
+        "name": "no_uuid_in_visible_sources",
+        "passed": true,
+        "detail": "visible source title/url contains UUID"
+      },
+      {
+        "name": "no_duplicate_qna_label",
+        "passed": true,
+        "detail": "visible source contains duplicated YouTube Q&A label"
+      },
+      {
+        "name": "answer_keyword",
+        "passed": true,
+        "detail": "one of=['체중', '칼로리', '사료', '급여', '활동량']"
+      },
+      {
+        "name": "not_include:오류",
+        "passed": true,
+        "detail": "오류"
+      },
+      {
+        "name": "not_include:Q&A 참고 문서",
+        "passed": true,
+        "detail": "Q&A 참고 문서"
+      },
+      {
+        "name": "top_source_relevance",
+        "passed": false,
+        "detail": "top_source=YouTube - 설채현의 놀로와 / 여름철 음수량, 이렇게만 챙겨주세요! - 반려동물 음수량 - 설채현 행동학 수의사, expected one of=['사료', '급여', '영양', '칼로리', '다이어트']"
+      }
+    ],
+    "passed": false
+  },
+  {
+    "index": 5,
+    "name": "training_priority",
+    "question": "강아지 훈련할 때 가장 중요한 게 뭐야?",
+    "expected_intent": "일반 상담",
+    "intent": "일반 상담",
+    "answer": "강아지 훈련에서 가장 중요한 것은 다음과 같습니다:\n\n1. 긍정적인 보상: 강아지가 훈련을 통해 성취감을 느낄 수 있도록 간식이나 칭찬을 통해 보상하는 것이 중요합니다. 이렇게 하면 강아지가 훈련에 대한 긍정적인 경험을 쌓게 됩니다.\n\n2. 기본 명령어 교육: '기다려', '앉아', '엎드려', '와'와 같은 기본 명령어를 꾸준히 가르치는 것이 필요합니다. 특히 '기다려'는 강아지가 다양한 상황에서 안정감을 유지하는 데 도움이 됩니다.\n\n3. 주인과의 집중: '터치(코 터치)'와 같은 훈련은 강아지가 주인에게 집중하도록 도와줍니다. 이는 나중에 콜백 훈련에도 유용합니다.\n\n4. 인내와 이해: 강아지는 기계가 아니기 때문에 즉각적으로 행동을 바꾸지 않습니다. 보호자가 강아지를 이해하고 함께 노력하는 것이 중요합니다.\n\n5. 사회화와 교육: 강아지가 다양한 환경과 사람들에 적응할 수 있도록 사회화 교육도 중요합니다. \n\n훈련은 강아지와 보호자 모두에게 즐거운 경험이 되어야 하며, 서로의 신뢰를 쌓는 과정이기도 합니다.",
+    "sources": [
+      {
+        "chunk_id": "e3ab8304-43bd-43f8-a965-3f9f0f18a472",
+        "source": "youtube_training",
+        "breed_name": null,
+        "section": null,
+        "title": "강아지 입양할 때 준비해야 할 11가지",
+        "display_title": "YouTube - 설채현의 놀로와 / 강아지 입양할 때 준비해야 할 11가지",
+        "source_label": "YouTube",
+        "url": "https://www.youtube.com/watch?v=bl4yx6Hkcvc",
+        "score": 0.6224
+      }
+    ],
+    "checks": [
+      {
+        "name": "intent",
+        "passed": true,
+        "detail": "expected=일반 상담, actual=일반 상담"
+      },
+      {
+        "name": "answer_length",
+        "passed": true,
+        "detail": "length=518"
+      },
+      {
+        "name": "no_uuid_in_answer",
+        "passed": true,
+        "detail": "answer contains UUID"
+      },
+      {
+        "name": "no_uuid_in_visible_sources",
+        "passed": true,
+        "detail": "visible source title/url contains UUID"
+      },
+      {
+        "name": "no_duplicate_qna_label",
+        "passed": true,
+        "detail": "visible source contains duplicated YouTube Q&A label"
+      },
+      {
+        "name": "answer_keyword",
+        "passed": true,
+        "detail": "one of=['훈련', '일관', '보상', '칭찬', '반복']"
+      },
+      {
+        "name": "not_include:오류",
+        "passed": true,
+        "detail": "오류"
+      },
+      {
+        "name": "not_include:Q&A 참고 문서",
+        "passed": true,
+        "detail": "Q&A 참고 문서"
+      },
+      {
+        "name": "top_source_relevance",
+        "passed": false,
+        "detail": "top_source=YouTube - 설채현의 놀로와 / 강아지 입양할 때 준비해야 할 11가지, expected one of=['훈련', '교육', '기다려', '보상']"
+      }
+    ],
+    "passed": false
+  }
+]

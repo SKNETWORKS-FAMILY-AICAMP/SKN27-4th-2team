@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Pet Mate Chatbot Quality Report</title>
+  <style>
+    body { margin: 0; padding: 32px; font-family: Arial, 'Noto Sans KR', sans-serif; background: #f6f6f3; color: #151515; }
+    header { margin-bottom: 24px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .summary { color: #555; }
+    .card { margin: 0 0 24px; padding: 24px; border: 1px solid #ddd; border-radius: 16px; background: white; page-break-after: always; }
+    .case-head { display: flex; gap: 10px; align-items: center; font-weight: 700; }
+    .status { padding: 4px 8px; border-radius: 999px; font-size: 12px; color: white; }
+    .status.ok { background: #0a7a30; }
+    .status.bad { background: #b42318; }
+    h2 { font-size: 20px; }
+    .intent { font-weight: 700; }
+    pre { white-space: pre-wrap; line-height: 1.55; padding: 16px; border-radius: 12px; background: #fafafa; }
+    li { margin: 4px 0; }
+    li.ok { color: #0a7a30; }
+    li.bad { color: #b42318; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pet Mate Chatbot Quality Report</h1>
+    <div class="summary">Passed: 1 / Failed: 4 / Total: 5</div>
+  </header>
+  
+            <section class="card" id="case-1">
+              <div class="case-head">
+                <span class="status bad">FAIL</span>
+                <span>Case 1: second_dog_with_pomeranian</span>
+              </div>
+              <h2>내가 포메라니언을 키우는 중인데, 한마리 강아지를 더 분양받으려고 해. 어떤 점을 고려해야 해?</h2>
+              <p class="intent">Intent: 일반 상담</p>
+              <pre>포메라니언을 키우고 계시고, 한 마리 더 분양받으려는 경우 고려해야 할 몇 가지 중요한 점이 있습니다:
+
+1. 사회화와 훈련: 포메라니언은 똑똑하고 경계심이 강한 개입니다. 새로운 강아지를 데려올 때, 두 강아지가 잘 어울릴 수 있도록 초기 사회화와 훈련이 중요합니다. 특히, 리드에 대한 훈련과 부르면 오는 훈련을 일찍 시작하는 것이 좋습니다.
+
+2. 운동 필요: 포메라니언은 활동적인 성격을 가지고 있어 적절한 운동이 필요합니다. 새로운 강아지와 함께 놀거나 산책하는 시간을 마련해 주세요. 하지만 외부에서 놀 때는 안전에 유의해야 합니다.
+
+3. 건강 관리: 포메라니언은 일반적으로 건강하지만, 특정 건강 문제(예: 무릎 탈구, 갑상선 문제 등)에 주의해야 합니다. 분양받을 강아지의 부모의 건강 검진 결과를 확인하는 것이 좋습니다.
+
+4. 그루밍: 포메라니언은 두꺼운 이중모를 가지고 있어 정기적인 브러싱이 필요합니다. 새로운 강아지의 털 관리도 고려해야 하며, 전문 그루머를 이용하는 것도 좋은 방법입니다.
+
+5. 영양 관리: 고품질의 사료를 제공하고, 강아지의 나이에 맞는 식단을 유지하는 것이 중요합니다. 두 마리의 강아지가 함께 있을 경우, 식사량을 조절하여 비만을 예방해야 합니다.
+
+이러한 점들을 고려하여 새로운 강아지를 맞이하면, 두 강아지가 행복하게 지낼 수 있을 것입니다.</pre>
+              <h3>참고한 정보</h3>
+              <ul><li>AKC - Pomeranian / Grooming</li><li>AKC - Pomeranian / Exercise</li><li>AKC - Pomeranian / Training</li><li>AKC - Pomeranian / Health</li><li>AKC - Pomeranian / Nutrition</li></ul>
+              <h3>Checks</h3>
+              <ul><li class="ok">intent: PASS - expected=일반 상담, actual=일반 상담</li><li class="ok">answer_length: PASS - length=669</li><li class="ok">no_uuid_in_answer: PASS - answer contains UUID</li><li class="bad">no_uuid_in_sources: FAIL - source metadata/display contains UUID</li><li class="ok">answer_keyword: PASS - one of=[&#x27;포메라니언&#x27;, &#x27;사회화&#x27;, &#x27;성격&#x27;, &#x27;합사&#x27;, &#x27;천천히&#x27;, &#x27;적응&#x27;]</li><li class="ok">not_include:오류: PASS - 오류</li><li class="ok">not_include:UUID: PASS - UUID</li></ul>
+            </section>
+            
+            <section class="card" id="case-2">
+              <div class="case-head">
+                <span class="status ok">PASS</span>
+                <span>Case 2: apartment_breed_recommendation</span>
+              </div>
+              <h2>아파트에서 키우기 쉬운 견종 추천해줘</h2>
+              <p class="intent">Intent: 견종 추천</p>
+              <pre>아파트에서 키우기 쉬운 견종으로는 다음과 같은 개들이 있습니다:
+
+1. 볼로네즈 (Bolognese)
+   - 체중: 6.0 - 10.0 파운드
+   - 높이: 10.0 - 12.0 인치
+   - 적응력: 매우 높음
+   - 에너지 수준: 낮음
+   - 짖는 수준: 낮음
+   - 훈련 가능성: 매우 높음
+
+2. 러시안 츠베타나야 볼론카 (Russian Tsvetnaya Bolonka)
+   - 체중: 6.0 - 9.0 파운드
+   - 높이: 11.0 인치
+   - 적응력: 매우 높음
+   - 에너지 수준: 중간
+   - 짖는 수준: 낮음
+   - 훈련 가능성: 매우 높음
+
+3. 일본 테리어 (Japanese Terrier)
+   - 체중: 10.0 - 12.0 파운드
+   - 높이: 10.0 - 13.0 인치
+   - 적응력: 매우 높음
+   - 에너지 수준: 중간
+   - 짖는 수준: 낮음
+   - 훈련 가능성: 낮음
+
+4. 퍼그 (Pug)
+   - 체중: 14.0 - 18.0 파운드
+   - 높이: 10.0 - 13.0 인치
+   - 적응력: 매우 높음
+   - 에너지 수준: 중간
+   - 짖는 수준: 낮음
+   - 훈련 가능성: 높음
+
+5. 코통 드 튈레아 (Coton de Tulear)
+   - 체중: 8.0 - 15.0 파운드
+   - 높이: 9.0 - 11.0 인치
+   - 적응력: 높음
+   - 에너지 수준: 중간
+   - 짖는 수준: 낮음
+   - 훈련 가능성: 높음
+
+이 견종들은 일반적으로 아파트 생활에 잘 적응하며, 체구가 작고 에너지 수준이 낮거나 중간인 경우가 많아 공간 제약이 있는 환경에서도 잘 지낼 수 있습니다. 하지만 각 개체마다 성격이나 필요가 다를 수 있으니, 개인의 상황에 맞는 선택이 중요합니다.
+
+- 참고: 견종 특성은 일반적인 경향이며 실제 개체의 성격과 생활 환경에 따라 달라질 수 있습니다.
+
+유기견 입양도 함께 고민하고 있다면, 보호 중인 아이들을 입양 페이지에서 확인해볼 수 있어요.
+- 유기견 입양 페이지 바로가기 http://127.0.0.1:8000/shelter/</pre>
+              <h3>참고한 정보</h3>
+              <ul><li>AKC - Bolognese / Apartment Recommendation</li><li>AKC - Russian Tsvetnaya Bolonka / Apartment Recommendation</li><li>AKC - Japanese Terrier / Apartment Recommendation</li><li>AKC - Pug / Apartment Recommendation</li><li>AKC - Coton de Tulear / Apartment Recommendation</li></ul>
+              <h3>Checks</h3>
+              <ul><li class="ok">intent: PASS - expected=견종 추천, actual=견종 추천</li><li class="ok">answer_length: PASS - length=1028</li><li class="ok">no_uuid_in_answer: PASS - answer contains UUID</li><li class="ok">no_uuid_in_sources: PASS - source metadata/display contains UUID</li><li class="ok">answer_keyword: PASS - one of=[&#x27;아파트&#x27;, &#x27;견종&#x27;, &#x27;적응&#x27;, &#x27;에너지&#x27;, &#x27;짖&#x27;]</li><li class="ok">not_include:/shelter/?breed=: PASS - /shelter/?breed=</li><li class="ok">not_include:Q&amp;A 참고 문서: PASS - Q&amp;A 참고 문서</li><li class="ok">source_keyword: PASS - one of=[&#x27;AKC&#x27;, &#x27;Apartment Recommendation&#x27;]</li></ul>
+            </section>
+            
+            <section class="card" id="case-3">
+              <div class="case-head">
+                <span class="status bad">FAIL</span>
+                <span>Case 3: shelter_adoption_process</span>
+              </div>
+              <h2>유기견 입양 절차를 알고 싶어</h2>
+              <p class="intent">Intent: 일반 상담</p>
+              <pre>유기견 입양 절차는 다음과 같은 단계로 진행됩니다:
+
+1. 사전 준비: 입양을 고려하기 전에 가족 관계, 경제적 여건, 반려견을 돌볼 시간 등을 먼저 고려해야 합니다. 이러한 요소들이 충족된 후에 입양을 결정하는 것이 중요합니다.
+
+2. 입양처 선택: 유기견을 입양할 곳은 주로 유기견 보호소나 구조 단체입니다. 이곳에서 유기견의 기질을 확인하고, 자신과 잘 맞는 반려견을 선택할 수 있습니다.
+
+3. 신청서 작성: 입양을 원할 경우, 보호소에서 제공하는 입양 신청서를 작성해야 합니다. 이 과정에서 보호소는 신청자의 정보와 반려견을 기르는 환경을 평가합니다.
+
+4. 면담 및 상담: 신청서가 승인되면, 보호소 직원과의 면담이 진행됩니다. 이때 반려견에 대한 정보와 입양 후 관리 방법에 대한 상담이 이루어집니다.
+
+5. 입양 결정: 면담 후, 적합하다고 판단되면 입양이 결정됩니다. 이때 입양 계약서를 작성하고, 필요한 경우 입양비를 지불해야 합니다.
+
+6. 반려견 데려오기: 입양이 완료되면, 반려견을 집으로 데려오게 됩니다. 새로운 환경에 적응할 시간을 주고, 꾸준한 훈련과 관리가 필요합니다.
+
+유기견 입양은 좋은 일이지만, 책임감 있는 결정이 필요합니다. 입양 후 적응이 잘 되지 않으면 다시 버려지는 안타까운 사례가 많으니, 충분한 준비와 고민이 필요합니다.</pre>
+              <h3>참고한 정보</h3>
+              <ul><li>YouTube - 설채현의 놀로와 / 강아지에게도 중2병 같은 증상이 있나요?</li><li>YouTube - 설채현의 놀로와 / 슬기로운 입양생활 1편: 강아지는 어디서 입양해야 할까요?</li><li>YouTube - 강형욱의 보듬TV / 진돗개는 절름발이일까? 강 훈련사가 처음으로 추가 촬영을 요청한 이유</li></ul>
+              <h3>Checks</h3>
+              <ul><li class="ok">intent: PASS - expected=일반 상담, actual=일반 상담</li><li class="ok">answer_length: PASS - length=654</li><li class="ok">no_uuid_in_answer: PASS - answer contains UUID</li><li class="bad">no_uuid_in_sources: FAIL - source metadata/display contains UUID</li><li class="ok">answer_keyword: PASS - one of=[&#x27;입양&#x27;, &#x27;보호소&#x27;, &#x27;신청&#x27;, &#x27;준비&#x27;, &#x27;적응&#x27;]</li><li class="ok">not_include:YouTube Q&amp;A - YouTube Q&amp;A: PASS - YouTube Q&amp;A - YouTube Q&amp;A</li><li class="ok">not_include:Q&amp;A 참고 문서: PASS - Q&amp;A 참고 문서</li><li class="ok">source_keyword: PASS - one of=[&#x27;YouTube&#x27;, &#x27;강형욱&#x27;, &#x27;설채현&#x27;]</li></ul>
+            </section>
+            
+            <section class="card" id="case-4">
+              <div class="case-head">
+                <span class="status bad">FAIL</span>
+                <span>Case 4: food_amount_calculation</span>
+              </div>
+              <h2>강아지 사료 급여량은 어떻게 계산해?</h2>
+              <p class="intent">Intent: 일반 상담</p>
+              <pre>강아지 사료의 급여량은 여러 요소에 따라 달라지지만, 일반적으로는 강아지의 체중, 나이, 활동량, 그리고 사료의 종류에 따라 결정됩니다. 다음은 급여량을 계산할 때 고려해야 할 주요 포인트입니다:
+
+1. 체중 기준: 대부분의 사료 패키지에는 체중에 따른 권장 급여량이 명시되어 있습니다. 예를 들어, 5kg 강아지의 경우 하루에 필요한 사료량이 약 100~200g일 수 있습니다. 하지만 이는 사료의 칼로리 밀도에 따라 달라질 수 있습니다.
+
+2. 나이와 활동량: 강아지가 어리거나 활동량이 많을수록 더 많은 사료가 필요합니다. 반면, 나이가 많거나 활동량이 적은 강아지는 적은 양을 급여해야 합니다.
+
+3. 사료 종류: 사료의 성분과 칼로리 밀도에 따라 급여량이 달라질 수 있습니다. 고칼로리 사료는 적은 양으로도 충분한 영양을 제공할 수 있습니다.
+
+4. 체중 관리: 강아지가 비만이거나 너무 마른 경우, 급여량을 조절하여 체중을 관리하는 것이 중요합니다. 정기적으로 체중을 체크하고 필요시 수의사와 상담하는 것이 좋습니다.
+
+이러한 요소들을 종합적으로 고려하여 적절한 급여량을 결정하는 것이 중요합니다. 만약 구체적인 수치나 조언이 필요하다면, 수의사와 상담하는 것이 가장 좋습니다.</pre>
+              <h3>참고한 정보</h3>
+              <ul><li>YouTube - 설채현의 놀로와 / 여름철 음수량, 이렇게만 챙겨주세요! - 반려동물 음수량 - 설채현 행동학 수의사</li></ul>
+              <h3>Checks</h3>
+              <ul><li class="ok">intent: PASS - expected=일반 상담, actual=일반 상담</li><li class="ok">answer_length: PASS - length=609</li><li class="ok">no_uuid_in_answer: PASS - answer contains UUID</li><li class="bad">no_uuid_in_sources: FAIL - source metadata/display contains UUID</li><li class="ok">answer_keyword: PASS - one of=[&#x27;체중&#x27;, &#x27;칼로리&#x27;, &#x27;사료&#x27;, &#x27;급여&#x27;, &#x27;활동량&#x27;]</li><li class="ok">not_include:오류: PASS - 오류</li><li class="ok">not_include:Q&amp;A 참고 문서: PASS - Q&amp;A 참고 문서</li></ul>
+            </section>
+            
+            <section class="card" id="case-5">
+              <div class="case-head">
+                <span class="status bad">FAIL</span>
+                <span>Case 5: training_priority</span>
+              </div>
+              <h2>강아지 훈련할 때 가장 중요한 게 뭐야?</h2>
+              <p class="intent">Intent: 일반 상담</p>
+              <pre>강아지 훈련에서 가장 중요한 것은 다음과 같습니다:
+
+1. 긍정적인 보상: 훈련은 강아지가 성취감을 느끼도록 하는 과정입니다. 간단한 미션을 성공했을 때 보상을 주면 강아지가 기분이 좋아지고, 이는 훈련 효과를 높입니다. 칭찬과 간식 같은 보상을 활용하세요.
+
+2. 기본 명령어 교육: &#x27;기다려&#x27;, &#x27;앉아&#x27;, &#x27;엎드려&#x27;, &#x27;와&#x27; 같은 기본 명령어를 꾸준히 가르치는 것이 중요합니다. 특히 &#x27;기다려&#x27;는 강아지가 외부 자극에 반응하지 않도록 도와줍니다.
+
+3. 강아지 이해하기: 강아지는 기계가 아니기 때문에 행동을 즉시 바꿀 수는 없습니다. 보호자가 강아지를 이해하고 타협하며 함께 살아가려는 노력이 필요합니다.
+
+4. 사회적 인식과 교육: 강아지 훈련은 단순히 명령어를 가르치는 것뿐만 아니라, 사회적 인식과 교육도 중요합니다. 다양한 교육 기회를 활용하세요.
+
+이러한 요소들을 잘 조합하면 강아지와의 훈련이 더욱 효과적이고 즐거운 경험이 될 것입니다.</pre>
+              <h3>참고한 정보</h3>
+              <ul><li>YouTube - 설채현의 놀로와 / 강아지 입양할 때 준비해야 할 11가지</li></ul>
+              <h3>Checks</h3>
+              <ul><li class="ok">intent: PASS - expected=일반 상담, actual=일반 상담</li><li class="ok">answer_length: PASS - length=477</li><li class="ok">no_uuid_in_answer: PASS - answer contains UUID</li><li class="bad">no_uuid_in_sources: FAIL - source metadata/display contains UUID</li><li class="ok">answer_keyword: PASS - one of=[&#x27;훈련&#x27;, &#x27;일관&#x27;, &#x27;보상&#x27;, &#x27;칭찬&#x27;, &#x27;반복&#x27;]</li><li class="ok">not_include:오류: PASS - 오류</li><li class="ok">not_include:Q&amp;A 참고 문서: PASS - Q&amp;A 참고 문서</li></ul>
+            </section>
+            
+</body>
+</html>
