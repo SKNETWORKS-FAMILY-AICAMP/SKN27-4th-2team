@@ -1950,14 +1950,13 @@ p {
 }
 
 .breed-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.breed-card:hover .breed-img-box img {
-    transform: scale(1.05);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
 }
 
 .no-image {
@@ -2084,6 +2083,7 @@ p {
 .breed-detail-layout {
     display: grid;
     grid-template-columns: minmax(300px, 400px) 1fr;
+    align-items: start;
     gap: 40px;
     max-width: 1000px;
     margin: 40px auto;
@@ -2091,14 +2091,19 @@ p {
 
 .breed-detail-img {
     width: 100%;
+    aspect-ratio: 4 / 3;
     border-radius: 24px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: #f6f5f0;
 }
 
 .breed-detail-img img {
     width: 100%;
+    height: 100%;
     display: block;
+    object-fit: contain;
+    object-position: center;
 }
 
 .breed-detail-image-placeholder {
