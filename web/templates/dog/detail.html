@@ -30,7 +30,6 @@
                     <h1>{{ breed.breed_name_ko }}</h1>
                     <p>{{ breed.breed_name_en }}</p>
                 </div>
-                {% if user.is_authenticated %}
                 <button
                     type="button"
                     class="favorite-button{% if is_favorited %} is-active{% endif %}"
@@ -40,7 +39,6 @@
                 >
                     {% if is_favorited %}★{% else %}☆{% endif %}
                 </button>
-                {% endif %}
             </div>
 
             <div class="breed-stat-grid">
@@ -134,11 +132,21 @@
 </main>
 
 {% csrf_token %}
+{{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" hidden></div>
 <script>
 (() => {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
     const favoriteBtn = document.querySelector('.favorite-button');
     if (favoriteBtn) {
         favoriteBtn.addEventListener('click', () => {
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
+            }
+
             const breedId = favoriteBtn.dataset.favoriteId;
             const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
             fetch(`/dog/breeds/${breedId}/favorite/`, {
