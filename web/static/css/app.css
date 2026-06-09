@@ -2744,13 +2744,14 @@ p {
     width: min(1280px, 100%);
     min-height: calc(100vh - 122px);
     display: grid;
-    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
     gap: 24px;
     margin: 0 auto;
     padding: clamp(34px, 5vh, 58px) 0 clamp(20px, 3vh, 32px);
 }
 
-.shelter-aside,
+.shelter-filter-card,
+.shelter-stats-card,
 .shelter-panel {
     padding: 28px;
 }
@@ -2759,9 +2760,15 @@ p {
     align-self: start;
 }
 
+.shelter-content {
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+}
+
 .shelter-aside h1 {
     margin: 0;
-    font-size: clamp(34px, 5vw, 52px);
+    font-size: clamp(38px, 4vw, 52px);
     line-height: 1.08;
     font-weight: 720;
 }
@@ -2774,6 +2781,70 @@ p {
 
 .shelter-subcopy {
     margin: 8px 0 0;
+}
+
+.shelter-stats-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.shelter-stats-head h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 26px;
+    font-weight: 760;
+}
+
+.shelter-stats-head p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.shelter-stats-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid #d8d2c9;
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.shelter-stats-table th,
+.shelter-stats-table td {
+    padding: 15px 16px;
+    text-align: center;
+    white-space: nowrap;
+    border-right: 1px solid #d8d2c9;
+}
+
+.shelter-stats-table thead th {
+    color: var(--white);
+    background: var(--ink);
+    font-size: 14px;
+    font-weight: 800;
+    border-bottom: 1px solid var(--ink);
+}
+
+.shelter-stats-table th:last-child,
+.shelter-stats-table td:last-child {
+    border-right: 0;
+}
+
+.shelter-stats-table tbody tr {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.shelter-stats-table td {
+    color: var(--ink);
+    font-size: 18px;
+    font-weight: 850;
 }
 
 .shelter-filter {
@@ -3099,6 +3170,89 @@ p {
     .shelter-layout,
     .shelter-grid {
         grid-template-columns: 1fr;
+    }
+
+    .shelter-layout {
+        width: min(100%, 420px);
+        gap: 16px;
+        padding-top: 24px;
+    }
+
+    .shelter-filter-card,
+    .shelter-stats-card,
+    .shelter-panel {
+        padding: 24px;
+    }
+
+    .shelter-aside h1 {
+        font-size: clamp(38px, 13vw, 58px);
+    }
+
+    .shelter-panel-head {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shelter-stats-head h2 {
+        font-size: 22px;
+    }
+
+    .shelter-stats-table {
+        table-layout: auto;
+    }
+
+    .shelter-stats-table thead {
+        display: none;
+    }
+
+    .shelter-stats-table,
+    .shelter-stats-table tbody,
+    .shelter-stats-table tr,
+    .shelter-stats-table td {
+        display: block;
+    }
+
+    .shelter-stats-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .shelter-stats-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        padding: 12px 14px;
+        border-right: 0;
+        border-bottom: 1px solid #d8d2c9;
+        text-align: right;
+        font-size: 16px;
+    }
+
+    .shelter-stats-table td:last-child {
+        border-bottom: 0;
+    }
+
+    .shelter-stats-table td::before {
+        color: var(--ink-soft);
+        font-size: 14px;
+        font-weight: 760;
+    }
+
+    .shelter-stats-table td:nth-child(1)::before {
+        content: "전체";
+    }
+
+    .shelter-stats-table td:nth-child(2)::before {
+        content: "보호중";
+    }
+
+    .shelter-stats-table td:nth-child(3)::before {
+        content: "입양 완료";
+    }
+
+    .shelter-stats-table td:nth-child(4)::before {
+        content: "기타 상태";
     }
 }
 
