@@ -1,12 +1,20 @@
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 from typing import Any
 
 from .models import ChatMessage, ChatSession, RecommendationResult
 
 
 AKC_BREED_BASE_URL = 'https://www.akc.org/dog-breeds/'
+PROJECT_DIR = Path(__file__).resolve().parents[2]
+UUID_PATTERN = re.compile(
+    r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$',
+    re.IGNORECASE,
+)
+QNA_TITLE_CACHE: dict[tuple[str, int], str] = {}
 
 SECTION_LABELS = {
     'basic_profile': 'Basic Profile',
@@ -163,6 +171,8 @@ def _build_source_display(*, metadata: dict[str, Any], chunk_id: str) -> dict[st
         metadata.get('question'),
         metadata.get('doc_title'),
     )
+    if _looks_like_uuid(title):
+        title = ''
 
     if source == 'akc_breed':
         breed_name = _first_text(metadata.get('breed_name'), _breed_name_from_doc_id(doc_id))
@@ -186,9 +196,25 @@ def _build_source_display(*, metadata: dict[str, Any], chunk_id: str) -> dict[st
         }
 
     if source == 'qna':
-        source_label = _qna_source_label(doc_id)
-        question = _first_text(metadata.get('question'), title, doc_id)
-        display_title = _join_title_parts('YouTube Q&A', source_label, question)
+        source_label = _first_non_uuid_text(
+            metadata.get('channel'),
+            metadata.get('expert'),
+            _qna_source_label(doc_id),
+        )
+        question = _first_non_uuid_text(
+            metadata.get('video_title'),
+            metadata.get('youtube_title'),
+            metadata.get('doc_title'),
+            metadata.get('title'),
+            metadata.get('question'),
+            title,
+            _qna_title_from_source_file(metadata),
+        ) or 'Q&A'
+        display_title = _join_title_parts(
+            'YouTube',
+            source_label,
+            question,
+        )
         return {
             'display_title': display_title,
             'source_label': source_label,
@@ -220,6 +246,62 @@ def _first_text(*values: Any) -> str:
         text = str(value).strip()
         if text:
             return text
+    return ''
+
+
+def _first_non_uuid_text(*values: Any) -> str:
+    for value in values:
+        text = _first_text(value)
+        if text and not _looks_like_uuid(text):
+            return text
+    return ''
+
+
+def _looks_like_uuid(value: Any) -> bool:
+    if value is None:
+        return False
+    return UUID_PATTERN.fullmatch(str(value).strip()) is not None
+
+
+def _qna_title_from_source_file(metadata: dict[str, Any]) -> str:
+    source_file = str(metadata.get('source_file') or '').strip()
+    if not source_file:
+        return ''
+
+    try:
+        seq_num = int(metadata.get('seq_num') or 0)
+    except (TypeError, ValueError):
+        return ''
+    if seq_num <= 0:
+        return ''
+
+    cache_key = (source_file, seq_num)
+    if cache_key in QNA_TITLE_CACHE:
+        return QNA_TITLE_CACHE[cache_key]
+
+    for base_dir in (
+        PROJECT_DIR / 'database' / 'docs' / 'youtube_qna',
+        PROJECT_DIR / 'database' / 'youtube' / 'processed',
+    ):
+        path = base_dir / source_file
+        if not path.exists():
+            continue
+        try:
+            line = path.read_text(encoding='utf-8').splitlines()[seq_num - 1]
+            data = json.loads(line)
+        except (IndexError, OSError, json.JSONDecodeError):
+            continue
+
+        title = _first_non_uuid_text(
+            data.get('video_title'),
+            data.get('youtube_title'),
+            data.get('title'),
+            data.get('question'),
+        )
+        QNA_TITLE_CACHE[cache_key] = title
+        return title
+
+    QNA_TITLE_CACHE[cache_key] = ''
     return ''
 
 

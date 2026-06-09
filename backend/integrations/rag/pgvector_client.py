@@ -39,6 +39,11 @@ TRAIT_LABELS = {
     "Mental Stimulation Needs": "mental_stimulation_needs",
 }
 
+UUID_PATTERN = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+    re.IGNORECASE,
+)
+
 
 class PGVectorRAGClient:
     """RAG client backed by PostgreSQL + pgvector."""
@@ -510,15 +515,15 @@ def _normalize_source(metadata: dict[str, Any]) -> str:
 
 
 def _title_from_metadata_or_text(metadata: dict[str, Any], text: str, section: str) -> str:
-    for key in ("title", "question", "section_title"):
-        value = metadata.get(key)
-        if value:
-            return str(value).strip()
-
     if metadata.get("source") == "qna":
         question = _extract_qna_question(text)
         if question:
             return question
+
+    for key in ("title", "question", "doc_title", "section_title"):
+        value = metadata.get(key)
+        if _is_display_title(value):
+            return str(value).strip()
 
     return SECTION_TITLES.get(section) or ""
 
@@ -528,6 +533,15 @@ def _extract_qna_question(text: str) -> str:
     if not match:
         return ""
     return re.sub(r"\s+", " ", match.group(1)).strip()
+
+
+def _is_display_title(value: Any) -> bool:
+    if value is None:
+        return False
+    text = str(value).strip()
+    if not text:
+        return False
+    return UUID_PATTERN.fullmatch(text) is None
 
 
 def _parse_basic_profile(text: str) -> dict[str, Any]:

@@ -1,0 +1,19 @@
+{
+  "passed": 7,
+  "failed": 3,
+  "json": "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\chatbot_quality_results.json",
+  "html": "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\chatbot_quality_report.html",
+  "screenshots": [
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\full_report.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_01.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_02.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_03.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_04.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_05.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_06.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_07.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_08.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_09.png",
+    "C:\\dev\\project\\SKN27-4th-2team\\reports\\chatbot_quality\\diverse_20260609_160607\\screenshots\\case_10.png"
+  ]
+}

@@ -36,7 +36,7 @@ def _build_fallback_reply(error):
     }
 
 
-def build_reply(message):
+def build_reply(message, request=None):
     """Generate a chatbot reply through the backend RAG workflow."""
 
     try:
@@ -55,6 +55,7 @@ def build_reply(message):
         question=message,
         answer=rag_response.answer,
         analysis=analysis,
+        base_url=request.build_absolute_uri('/') if request else None,
     )
 
     return {
@@ -85,7 +86,7 @@ def chat(request):
         posted_session_id = request.POST.get('session_id')
 
         if question:
-            reply = build_reply(question)
+            reply = build_reply(question, request=request)
 
             if request.user.is_authenticated:
                 if posted_session_id:
