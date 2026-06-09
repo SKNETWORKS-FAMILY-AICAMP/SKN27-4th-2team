@@ -7,30 +7,66 @@
 <main class="home-hero">
     <section class="hero-card">
         <div class="hero-copy">
-            <h1>반려견 케어를 더 쉽게 시작하세요.</h1>
+            <p class="eyebrow">Pet Mate Care Guide</p>
+            <h1>반려견과의 시작을 더 쉽게.</h1>
             <p>
-                Pet Mate는 초보 보호자가 반려견 케어 정보를 찾고,
-                챗봇 상담과 견종 검색, 추천, 입양 준비도 점검까지 이어갈 수 있도록 돕는 서비스입니다.
+                초보 보호자가 견종 선택, 입양 준비, 일상 케어 질문을
+                한곳에서 이어갈 수 있도록 돕는 반려견 케어 가이드입니다.
             </p>
             <div class="hero-actions">
-                <a class="primary-button" href="{% url 'chatbot:chat' %}">챗봇 시작하기</a>
-                {% if not user.is_authenticated %}
-                    <a class="secondary-button" href="{% url 'user:login' %}">로그인</a>
-                {% endif %}
+                <a class="primary-button" href="{% url 'chatbot:chat' %}">내 상황 물어보기</a>
+                <a class="secondary-button" href="{% url 'dog:search' %}">견종도감 보기</a>
+            </div>
+
+            <div class="hero-signals" aria-label="Pet Mate 주요 도움">
+                <span><b>01</b> 입양 전 준비</span>
+                <span><b>02</b> 견종 탐색</span>
+                <span><b>03</b> 생활 케어 상담</span>
             </div>
         </div>
 
         <div class="hero-preview" aria-label="Pet Mate 서비스 미리보기">
-            <div class="preview-top">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="preview-top" aria-hidden="true">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <strong>맞춤 안내 준비 중</strong>
             </div>
-            <div class="preview-message assistant">무엇이 궁금한가요?</div>
-            <div class="preview-message user">처음 키우기 좋은 견종을 알려줘</div>
+            <div class="preview-context">
+                <span>보호자 상황</span>
+                <strong>첫 반려견 · 아파트 · 산책 하루 1시간</strong>
+                <div class="preview-tags" aria-label="상황 키워드">
+                    <em>초보 보호자</em>
+                    <em>실내 생활</em>
+                    <em>중간 활동량</em>
+                </div>
+            </div>
+            <div class="preview-meter" aria-label="입양 준비도 요약">
+                <div>
+                    <span>입양 준비도</span>
+                    <strong>68%</strong>
+                </div>
+                <i></i>
+            </div>
+            <div class="preview-flow">
+                <div>
+                    <span>01</span>
+                    <p><strong>견종 후보 정리</strong> 생활환경에 맞는 후보를 좁혀봅니다.</p>
+                </div>
+                <div>
+                    <span>02</span>
+                    <p><strong>준비 체크</strong> 입양 전 필요한 항목을 확인합니다.</p>
+                </div>
+                <div>
+                    <span>03</span>
+                    <p><strong>케어 상담</strong> 함께 지내며 생기는 질문을 이어갑니다.</p>
+                </div>
+            </div>
             <div class="preview-answer">
-                <strong>견종 추천</strong>
-                <p>생활환경, 활동량, 양육 경험을 바탕으로 답변을 준비합니다.</p>
+                <strong>다음 단계</strong>
+                <p>내 상황을 먼저 알려주면 더 맞는 답변으로 시작할 수 있어요.</p>
             </div>
         </div>
     </section>

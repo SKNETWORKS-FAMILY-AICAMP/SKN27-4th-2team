@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 from .models import DogBreedDictionaryKo
 from user.models import DogFavorite
@@ -13,6 +14,24 @@ def get_page(request):
 
 def search(request):
     context = search_breeds(request.GET)
+    paginator = Paginator(context["breeds"], 8)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    query_params = request.GET.copy()
+    query_params.pop("page", None)
+
+    context["breeds"] = page_obj.object_list
+    context["page_obj"] = page_obj
+    context["paginator"] = paginator
+    context["page_range"] = paginator.get_elided_page_range(
+        number=page_obj.number,
+        on_each_side=1,
+        on_ends=1,
+    )
+    context["query_string"] = query_params.urlencode()
+    context["total_count"] = paginator.count
+    context["visible_start"] = page_obj.start_index() if paginator.count else 0
+    context["visible_end"] = page_obj.end_index() if paginator.count else 0
+
     if request.user.is_authenticated:
         context["favorited_ids"] = set(DogFavorite.objects.filter(user=request.user).values_list("dog_id", flat=True))
     return render(request, "dog/search.html", context)
