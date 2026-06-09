@@ -20,8 +20,6 @@ def _intent_from_analysis(analysis):
     topics = list(getattr(analysis, 'topics', []) or [])
     if 'breed_recommendation' in topics:
         return '견종 추천'
-    if topics:
-        return ', '.join(topics)
     return '일반 상담'
 
 
