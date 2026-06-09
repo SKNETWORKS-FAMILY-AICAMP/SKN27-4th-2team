@@ -47,7 +47,12 @@
             <article class="breed-card" data-breed-id="{{ breed.id }}">
                 <a href="{% url 'dog:detail' breed.id %}" class="breed-img-box">
                     {% if breed.image_url %}
-                        <img src="{{ breed.image_url }}" alt="{{ breed.breed_name_ko }}">
+                        <img
+                            src="{{ breed.image_url }}"
+                            alt="{{ breed.breed_name_ko }}"
+                            class="{% if breed.rotate_image_90 %}is-rotated-90{% endif %}"
+                            {% if breed.rotate_image_90 %}style="transform: rotate(90deg) scale(0.75);"{% endif %}
+                        >
                     {% else %}
                         <div class="no-image">이미지 준비 중</div>
                     {% endif %}
