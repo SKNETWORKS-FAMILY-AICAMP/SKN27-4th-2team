@@ -1,20 +1,20 @@
-﻿# 가상환경
-.venv
+# 가상환경
+.venv/
 
 # 캐시 파일
-*.pyc
+*.py[cod]
+*.pyo
 .DS_Store
+Thumbs.db
 __pycache__/
 
 # env 파일
 .env
 
-# db 파일
-.sqlite3
-
-# Django local migration files
-**/migrations/[0-9][0-9][0-9][0-9]_*.py
-!**/migrations/__init__.py
+# db / runtime 파일
+*.sqlite3
+*.log
+*.tmp
 
 # 로컬 벡터DB 산출물
 # PostgreSQL/pgvector는 Docker volume에 저장되고, 예전 Chroma 산출물은 git에 올리지 않는다.
@@ -22,3 +22,6 @@ database/vector_db/
 
 # ipynb
 *.ipynb
+
+# Django migrations
+**/migrations/

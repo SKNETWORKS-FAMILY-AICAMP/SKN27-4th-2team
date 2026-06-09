@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'user',
     'chatbot',
     'dog',
+    'guide',
     'test',
     'shelter',
 ]
