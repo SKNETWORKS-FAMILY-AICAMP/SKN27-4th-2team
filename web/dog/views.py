@@ -8,10 +8,6 @@ from user.models import DogFavorite
 from .services import search_breeds
 
 
-def get_page(request):
-    return render(request, "main/dog.html")
-
-
 def search(request):
     context = search_breeds(request.GET)
     paginator = Paginator(context["breeds"], 8)

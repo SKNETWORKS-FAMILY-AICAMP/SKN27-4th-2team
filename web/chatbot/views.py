@@ -70,11 +70,14 @@ def build_reply(message):
 def chat(request):
     """Render the chatbot page and persist chat messages."""
 
-    sessions = ChatSession.objects.none()
+    pinned_sessions = ChatSession.objects.none()
+    unpinned_sessions = ChatSession.objects.none()
     active_session = None
 
     if request.user.is_authenticated:
-        sessions = ChatSession.objects.filter(user=request.user)
+        all_sessions = ChatSession.objects.filter(user=request.user)
+        pinned_sessions = all_sessions.filter(is_pinned=True)
+        unpinned_sessions = all_sessions.filter(is_pinned=False)
         session_id = request.GET.get('session')
         if session_id:
             active_session = get_object_or_404(ChatSession, id=session_id, user=request.user)
@@ -148,7 +151,8 @@ def chat(request):
         'chatbot/chat.html',
         {
             'messages': messages,
-            'sessions': sessions,
+            'pinned_sessions': pinned_sessions,
+            'unpinned_sessions': unpinned_sessions,
             'active_session': active_session,
         },
     )
@@ -172,4 +176,76 @@ def toggle_pin(request, session_id):
     session = get_object_or_404(ChatSession, id=session_id, user=request.user)
     session.is_pinned = not session.is_pinned
     session.save(update_fields=['is_pinned'])
-    return redirect('chatbot:chat')
+    
+    active_session_id = request.GET.get('active_session')
+    if active_session_id:
+        return redirect(f"/chatbot/?session={active_session_id}")
+    return redirect(f"/chatbot/?session={session.id}")
+
+@require_POST
+def api_chat(request):
+    question = request.POST.get('message', '').strip()
+    posted_session_id = request.POST.get('session_id')
+    
+    if not question:
+        return JsonResponse({"status": "error", "message": "Message is empty"}, status=400)
+        
+    reply = build_reply(question)
+    
+    if request.user.is_authenticated:
+        if posted_session_id:
+            active_session = get_object_or_404(ChatSession, id=posted_session_id, user=request.user)
+        else:
+            active_session = ChatSession.objects.create(user=request.user, title=_session_title(question))
+            
+        if active_session.title == '새 대화':
+            active_session.title = _session_title(question)
+            active_session.save(update_fields=['title', 'updated_at'])
+            
+        ChatMessage.objects.create(session=active_session, role='user', content=question)
+        assistant_message = ChatMessage.objects.create(
+            session=active_session,
+            role='assistant',
+            content=reply['answer'],
+            intent=reply['intent'],
+            sources=reply['sources'],
+        )
+        update_session_state(
+            session=active_session,
+            question=question,
+            answer=reply['answer'],
+            analysis=reply['analysis'],
+            assistant_message=assistant_message,
+            sources=reply['sources'],
+        )
+        return JsonResponse({
+            "status": "success",
+            "session_id": active_session.id,
+            "session_title": active_session.title,
+            "answer": reply['answer'],
+            "intent": reply['intent'],
+            "sources": reply['sources'],
+        })
+    else:
+        anonymous_messages = request.session.get(
+            'anonymous_chat_messages',
+            [{'role': 'assistant', 'content': WELCOME_MESSAGE, 'sources': []}],
+        )
+        anonymous_messages.extend([
+            {'role': 'user', 'content': question, 'sources': []},
+            {
+                'role': 'assistant',
+                'content': reply['answer'],
+                'intent': reply['intent'],
+                'sources': reply['sources'],
+            },
+        ])
+        request.session['anonymous_chat_messages'] = anonymous_messages
+        request.session.modified = True
+        return JsonResponse({
+            "status": "success",
+            "session_id": None,
+            "answer": reply['answer'],
+            "intent": reply['intent'],
+            "sources": reply['sources'],
+        })
