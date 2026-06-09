@@ -1959,6 +1959,11 @@ p {
     object-position: center;
 }
 
+.breed-img-box img.is-rotated-90 {
+    max-width: 75%;
+    transform: rotate(90deg) scale(0.75);
+}
+
 .no-image {
     color: var(--muted);
     font-size: 14px;
@@ -2104,6 +2109,15 @@ p {
     display: block;
     object-fit: contain;
     object-position: center;
+}
+
+.breed-detail-img img.is-rotated-90 {
+    width: auto;
+    height: auto;
+    max-width: 75%;
+    max-height: 100%;
+    margin: auto;
+    transform: rotate(90deg) scale(0.75);
 }
 
 .breed-detail-image-placeholder {
