@@ -10,8 +10,8 @@ from .services import search_breeds
 
 def _should_rotate_breed_image(breed):
     return (
-        breed.breed_name_ko in {"시추", "시츄"}
-        or breed.breed_name_en == "Shih Tzu"
+        breed.breed_name_ko in {"시추", "시츄", "플롯 하운드"}
+        or breed.breed_name_en in {"Shih Tzu", "Plott Hound"}
     )
 
 
