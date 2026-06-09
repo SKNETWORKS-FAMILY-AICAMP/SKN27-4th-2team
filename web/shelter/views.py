@@ -108,26 +108,39 @@ def shelter_animals_page(request):
     if request.user.is_authenticated:
         favorited_ids = set(request.user.shelter_favorites.values_list("shelter_animal_id", flat=True))
 
+    context = {
+        "breed": breed,
+        "region": region,
+        "status": status,
+        "animals": animals,
+        "animal_count": animal_count,
+        "visible_count": len(animals),
+        "page_size": PAGE_SIZE,
+        "page_obj": page_obj,
+        "page_range": page_range,
+        "query_string": query_string,
+        "error_message": error_message,
+        "breed_options": breed_options,
+        "region_options": region_options,
+        "status_options": status_options,
+        "favorited_ids": favorited_ids,
+    }
+
+    if request.GET.get("ajax") == "true":
+        from django.template.loader import render_to_string
+        html = render_to_string("shelter/_animal_list.html", context, request=request)
+        return JsonResponse({
+            "status": "success",
+            "html": html,
+            "animal_count": animal_count,
+            "visible_count": len(animals),
+            "breed": breed,
+        })
+
     return render(
         request,
         "shelter/list.html",
-        {
-            "breed": breed,
-            "region": region,
-            "status": status,
-            "animals": animals,
-            "animal_count": animal_count,
-            "visible_count": len(animals),
-            "page_size": PAGE_SIZE,
-            "page_obj": page_obj,
-            "page_range": page_range,
-            "query_string": query_string,
-            "error_message": error_message,
-            "breed_options": breed_options,
-            "region_options": region_options,
-            "status_options": status_options,
-            "favorited_ids": favorited_ids,
-        },
+        context,
     )
 
 

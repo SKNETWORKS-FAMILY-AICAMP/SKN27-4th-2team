@@ -50,111 +50,9 @@
             </div>
             <span class="shelter-count">{{ animal_count }}건</span>
         </div>
-
-        {% if error_message %}
-            <div class="form-alert">{{ error_message }}</div>
-        {% elif animals %}
-            <div class="shelter-grid">
-                {% for animal in animals %}
-                    <article class="shelter-card" style="cursor: pointer;"
-                             data-id="{{ animal.id }}"
-                             data-breed="{{ animal.breed }}"
-                             data-sex="{{ animal.sex }}"
-                             data-age="{{ animal.age }}"
-                             data-neutered="{{ animal.neutered }}"
-                             data-status="{{ animal.status }}"
-                             data-image="{{ animal.image_url }}"
-                             data-shelter-name="{{ animal.shelter_name }}"
-                             data-shelter-tel="{{ animal.shelter_tel }}"
-                             data-shelter-addr="{{ animal.shelter_address }}"
-                             data-happen-place="{{ animal.happen_place|default:'-' }}"
-                             data-special-mark="{{ animal.special_mark|default:'-' }}"
-                             data-notice-start="{{ animal.notice_start_date|default:'' }}"
-                             data-notice-end="{{ animal.notice_end_date|default:'' }}">
-                        <div class="shelter-photo">
-                            {% if animal.image_url %}
-                                <img src="{{ animal.image_url }}" alt="{{ animal.breed }} 보호동물 사진">
-                            {% else %}
-                                <span>이미지 준비중</span>
-                            {% endif %}
-                        </div>
-                        <div class="shelter-card-body">
-                            <div class="shelter-card-title">
-                                <div class="shelter-card-name-row">
-                                    <h3>{{ animal.breed }}</h3>
-                                    <span>{{ animal.status }}</span>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="favorite-button{% if animal.id in favorited_ids %} is-active{% endif %}"
-                                    data-favorite-id="{{ animal.id }}"
-                                    aria-label="{{ animal.breed }} 즐겨찾기"
-                                    aria-pressed="{% if animal.id in favorited_ids %}true{% else %}false{% endif %}"
-                                >
-                                    {% if animal.id in favorited_ids %}★{% else %}☆{% endif %}
-                                </button>
-                            </div>
-                            <p>{{ animal.sex }} · {{ animal.age }} · 중성화 {{ animal.neutered }}</p>
-                            <p>{{ animal.region }}</p>
-                            <p>{{ animal.shelter_name }}</p>
-                            {% if animal.shelter_tel %}
-                                <a class="shelter-call-link" href="tel:{{ animal.shelter_tel }}" aria-label="{{ animal.shelter_name }}에 전화하기">
-                                    보호소 연락하기 {{ animal.shelter_tel }}
-                                </a>
-                            {% else %}
-                                <p>보호소 연락처 정보 없음</p>
-                            {% endif %}
-                            {% if animal.notice_start_date or animal.notice_end_date %}
-                                <p>{{ animal.notice_start_date }} ~ {{ animal.notice_end_date }}</p>
-                            {% endif %}
-                        </div>
-                    </article>
-                {% endfor %}
-            </div>
-
-            {% if page_obj and page_obj.paginator.num_pages > 1 %}
-                <nav class="shelter-pagination" aria-label="보호동물 목록 페이지">
-                    {% if page_obj.has_previous %}
-                        <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}">이전</a>
-                    {% else %}
-                        <span class="is-disabled">이전</span>
-                    {% endif %}
-
-                    {% if page_obj.number > 3 %}
-                        <a href="?{% if query_string %}{{ query_string }}&{% endif %}page=1">1</a>
-                        {% if page_obj.number > 4 %}
-                            <span class="pagination-gap">…</span>
-                        {% endif %}
-                    {% endif %}
-
-                    {% for page_number in page_range %}
-                        {% if page_number == page_obj.number %}
-                            <span class="is-current">{{ page_number }}</span>
-                        {% else %}
-                            <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_number }}">{{ page_number }}</a>
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if page_obj.number < page_obj.paginator.num_pages|add:"-2" %}
-                        {% if page_obj.number < page_obj.paginator.num_pages|add:"-3" %}
-                            <span class="pagination-gap">…</span>
-                        {% endif %}
-                        <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
-                    {% endif %}
-
-                    {% if page_obj.has_next %}
-                        <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}">다음</a>
-                    {% else %}
-                        <span class="is-disabled">다음</span>
-                    {% endif %}
-                </nav>
-            {% endif %}
-        {% else %}
-            <div class="empty-quiz-state">
-                <h3>조건에 맞는 보호동물을 찾지 못했어요.</h3>
-                <p>지역, 견종, 상태 조건을 조금 넓혀 다시 조회해보세요.</p>
-            </div>
-        {% endif %}
+        <div id="animal-list-container">
+            {% include "shelter/_animal_list.html" %}
+        </div>
     </section>
 
     <!-- Modal for Shelter Animal Details (Same Glassmorphism design as profile page) -->
@@ -215,11 +113,102 @@
 (function() {
     const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
     const loginUrl = document.getElementById('login-url-config').dataset.url;
-    
-    // Favorite toggle
-    const buttons = document.querySelectorAll(".favorite-button");
-    buttons.forEach((button) => {
-        button.addEventListener("click", (e) => {
+    const filterForm = document.querySelector(".shelter-filter");
+    const listContainer = document.getElementById("animal-list-container");
+
+    // Fetch and render animals via AJAX
+    function fetchAnimals(urlOrPage, shouldPushState = true) {
+        let url = window.location.pathname;
+        const params = new URLSearchParams(new FormData(filterForm));
+        params.set('ajax', 'true');
+
+        if (typeof urlOrPage === 'string') {
+            const parsedUrl = new URL(urlOrPage, window.location.origin);
+            parsedUrl.searchParams.forEach((value, key) => {
+                if (key !== 'ajax') {
+                    params.set(key, value);
+                }
+            });
+        } else if (typeof urlOrPage === 'number') {
+            params.set('page', urlOrPage);
+        }
+
+        const fetchUrl = `${url}?${params.toString()}`;
+
+        fetch(fetchUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    listContainer.innerHTML = data.html;
+
+                    // Update counts
+                    const countElements = document.querySelectorAll('.shelter-count');
+                    countElements.forEach(el => el.textContent = `${data.animal_count}건`);
+
+                    const subcopyEl = document.querySelector('.shelter-subcopy');
+                    if (subcopyEl) {
+                        subcopyEl.textContent = `총 ${data.animal_count}건 중 ${data.visible_count}건을 보여주고 있습니다.`;
+                    }
+
+                    const headerH2 = document.querySelector('.shelter-panel-head h2');
+                    if (headerH2) {
+                        if (data.breed) {
+                            headerH2.textContent = `현재 보호자를 기다리는 ${data.breed} 아이들이 있어요`;
+                        } else {
+                            headerH2.textContent = `현재 보호자를 기다리는 아이들이 있어요`;
+                        }
+                    }
+
+                    // Update URL bar without reloading
+                    if (shouldPushState) {
+                        params.delete('ajax');
+                        const newUrl = `${window.location.pathname}?${params.toString()}`;
+                        window.history.pushState({ path: newUrl }, '', newUrl);
+                    }
+                }
+            })
+            .catch(err => console.error(err));
+    }
+
+    // Auto submit filters on change
+    filterForm.querySelectorAll("select").forEach(select => {
+        select.addEventListener("change", () => {
+            fetchAnimals(1);
+        });
+    });
+
+    filterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetchAnimals(1);
+    });
+
+    // Browser history popstate handler
+    window.addEventListener("popstate", () => {
+        const params = new URLSearchParams(window.location.search);
+        const breedSelect = document.getElementById("breed");
+        const regionSelect = document.getElementById("region");
+        const statusSelect = document.getElementById("status");
+
+        if (breedSelect) breedSelect.value = params.get("breed") || "";
+        if (regionSelect) regionSelect.value = params.get("region") || "";
+        if (statusSelect) statusSelect.value = params.get("status") || "보호중";
+
+        fetchAnimals(window.location.href, false);
+    });
+
+    // Intercept pagination clicks
+    listContainer.addEventListener("click", (e) => {
+        const paginationLink = e.target.closest('.shelter-pagination a');
+        if (paginationLink) {
+            e.preventDefault();
+            fetchAnimals(paginationLink.getAttribute('href'));
+        }
+    });
+
+    // Favorite toggle (Delegated)
+    listContainer.addEventListener("click", (e) => {
+        const button = e.target.closest(".favorite-button");
+        if (button) {
             e.preventDefault();
             e.stopPropagation();
             if (!isAuthenticated) {
@@ -246,7 +235,7 @@
                 }
             })
             .catch(err => console.error(err));
-        });
+        }
     });
 
     // Detail Modal logic
@@ -293,8 +282,10 @@
         document.body.style.overflow = "";
     }
 
-    document.querySelectorAll(".shelter-card").forEach(card => {
-        card.addEventListener("click", (e) => {
+    // Modal click (Delegated)
+    listContainer.addEventListener("click", (e) => {
+        const card = e.target.closest(".shelter-card");
+        if (card) {
             // Prevent modal if user clicked favorite star or phone links
             if (e.target.closest(".favorite-button") || e.target.closest(".shelter-call-link")) {
                 return;
@@ -315,7 +306,7 @@
                 shelterTel: card.dataset.shelterTel
             };
             openModal(data);
-        });
+        }
     });
 
     closeBtn.addEventListener("click", closeModal);

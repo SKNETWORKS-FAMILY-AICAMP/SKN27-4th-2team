@@ -41,5 +41,19 @@
 
         {% block content %}{% endblock %}
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll(".primary-nav a");
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                if (href === "/" && currentPath === "/") {
+                    link.classList.add("is-active");
+                } else if (href !== "/" && (currentPath === href || currentPath.startsWith(href + "/"))) {
+                    link.classList.add("is-active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
