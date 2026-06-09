@@ -1,0 +1,104 @@
+{% if error_message %}
+    <div class="form-alert">{{ error_message }}</div>
+{% elif animals %}
+    <div class="shelter-grid">
+        {% for animal in animals %}
+            <article class="shelter-card" style="cursor: pointer;"
+                     data-id="{{ animal.id }}"
+                     data-breed="{{ animal.breed }}"
+                     data-sex="{{ animal.sex }}"
+                     data-age="{{ animal.age }}"
+                     data-neutered="{{ animal.neutered }}"
+                     data-status="{{ animal.status }}"
+                     data-image="{{ animal.image_url }}"
+                     data-shelter-name="{{ animal.shelter_name }}"
+                     data-shelter-tel="{{ animal.shelter_tel }}"
+                     data-shelter-addr="{{ animal.shelter_address }}"
+                     data-happen-place="{{ animal.happen_place|default:'-' }}"
+                     data-special-mark="{{ animal.special_mark|default:'-' }}"
+                     data-notice-start="{{ animal.notice_start_date|default:'' }}"
+                     data-notice-end="{{ animal.notice_end_date|default:'' }}">
+                <div class="shelter-photo">
+                    {% if animal.image_url %}
+                        <img src="{{ animal.image_url }}" alt="{{ animal.breed }} 보호동물 사진">
+                    {% else %}
+                        <span>이미지 준비중</span>
+                    {% endif %}
+                </div>
+                <div class="shelter-card-body">
+                    <div class="shelter-card-title">
+                        <div class="shelter-card-name-row">
+                            <h3>{{ animal.breed }}</h3>
+                            <span>{{ animal.status }}</span>
+                        </div>
+                        <button
+                            type="button"
+                            class="favorite-button{% if animal.id in favorited_ids %} is-active{% endif %}"
+                            data-favorite-id="{{ animal.id }}"
+                            aria-label="{{ animal.breed }} 즐겨찾기"
+                            aria-pressed="{% if animal.id in favorited_ids %}true{% else %}false{% endif %}"
+                        >
+                            {% if animal.id in favorited_ids %}★{% else %}☆{% endif %}
+                        </button>
+                    </div>
+                    <p>{{ animal.sex }} · {{ animal.age }} · 중성화 {{ animal.neutered }}</p>
+                    <p>{{ animal.region }}</p>
+                    <p>{{ animal.shelter_name }}</p>
+                    {% if animal.shelter_tel %}
+                        <a class="shelter-call-link" href="tel:{{ animal.shelter_tel }}" aria-label="{{ animal.shelter_name }}에 전화하기">
+                            보호소 연락하기 {{ animal.shelter_tel }}
+                        </a>
+                    {% else %}
+                        <p>보호소 연락처 정보 없음</p>
+                    {% endif %}
+                    {% if animal.notice_start_date or animal.notice_end_date %}
+                        <p>{{ animal.notice_start_date }} ~ {{ animal.notice_end_date }}</p>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+
+    {% if page_obj and page_obj.paginator.num_pages > 1 %}
+        <nav class="shelter-pagination" aria-label="보호동물 목록 페이지">
+            {% if page_obj.has_previous %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}">이전</a>
+            {% else %}
+                <span class="is-disabled">이전</span>
+            {% endif %}
+
+            {% if page_obj.number > 3 %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page=1">1</a>
+                {% if page_obj.number > 4 %}
+                    <span class="pagination-gap">…</span>
+                {% endif %}
+            {% endif %}
+
+            {% for page_number in page_range %}
+                {% if page_number == page_obj.number %}
+                    <span class="is-current">{{ page_number }}</span>
+                {% else %}
+                    <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_number }}">{{ page_number }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.number < page_obj.paginator.num_pages|add:"-2" %}
+                {% if page_obj.number < page_obj.paginator.num_pages|add:"-3" %}
+                    <span class="pagination-gap">…</span>
+                {% endif %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}">다음</a>
+            {% else %}
+                <span class="is-disabled">다음</span>
+            {% endif %}
+        </nav>
+    {% endif %}
+{% else %}
+    <div class="empty-quiz-state">
+        <h3>조건에 맞는 보호동물을 찾지 못했어요.</h3>
+        <p>지역, 견종, 상태 조건을 조금 넓혀 다시 조회해보세요.</p>
+    </div>
+{% endif %}
