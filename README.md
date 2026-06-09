@@ -9,9 +9,39 @@
 
 ## **1. 팀 소개**
 
+### **팀명**: 뉴진스(NewJeans)
 
-## 팀원 역할
-
+### **팀원 소개**
+<table align="center" width="100%">
+  <tr>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTk3/MDAxNzgwOTg3NzA4NTE1.jArqE2CKKQN-d2tdVpssrd8F1g64dWmI3k7LSppzL7Mg.J07ASomAPh6TzCAr7MBT1xcMbUEqpwmYJRhKlj074Lgg.PNG/%EC%A3%BC%EC%98%81.png?type=w966" width="120" height="120" alt="김주영" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTc3/MDAxNzgwOTg3NzA4NTEy.1VneL8J-6Epqh2neG8bz0zM2wjfXNdie3B3lOujcmkcg.15FPyFOhyA2WZrNM8Edlr9EO4Anmp_mXv0o-Evq06Nsg.PNG/%EC%9E%AC%EA%B2%BD.png?type=w966" width="120" height="120" alt="문재경" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNzcg/MDAxNzgwOTg3NzYyOTU3.Fy8Aah8ioa3BlUrXs8kUYsTNmyvBV3WhKGso2bBHsRgg.O_ArPGjIIQ2ILrXlN-9sEqbOge5Y5c6_1wiY5Fk9vHIg.PNG/%EC%A4%80%ED%9D%AC.png?type=w966" width="120" height="120" alt="박준희" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMjQw/MDAxNzgwOTg3NzA4NTIy.2bCCMI-7N0r2YrV97IaQ-NnR5MN-Lc9pXSr58E3uprMg.8uGM2iLfZjKuEP7qjBBhqBgQCb5ZdgUCCANT37PWIhcg.PNG/%EB%8F%99%ED%98%81.png?type=w966" width="120" height="120" alt="신동혁" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNDkg/MDAxNzgwOTg3NzA4NTIy.tUmhBTl0HIbIZjK-MqmmXIdHH0yAmHLRuf_kcWh5vtAg.Xu7utC824enN6OJZ19RW67kxzvuKEMrFLyWmLUnUoU4g.PNG/%EC%A3%BC%ED%9D%AC.png?type=w966" width="120" height="120" alt="오주희" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>김주영</b></td>
+    <td align="center"><b>문재경</b></td>
+    <td align="center"><b>박준희</b></td>
+    <td align="center"><b>신동혁</b></td>
+    <td align="center"><b>오주희</b></td>
+  </tr>
+  <tr>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+  </tr>
+    <tr>
+    <td align="center">데이터 수집 및 전처리, 발표</td>
+    <td align="center">데이터 전처리 및 감독</td>
+    <td align="center">데이터 수집 및 전처리, 에이전트, 시퀀스다이어그램</td>
+    <td align="center">Django 구현, README 작성</td>
+    <td align="center">데이터 수집 및 RAG, 발표</td>
+  </tr>
+</table>
 
 ---
 
@@ -32,6 +62,7 @@
 13. [한계 및 향후 개선 방향](#13-한계-및-향후-개선-방향)
 14. [실행 방법](#14-실행-방법)
 15. [참고 문서](#15-참고-문서)
+16. [팀원 회고](#16-팀원-회고)
 
 ---
 
@@ -317,3 +348,64 @@ Q&A 기반 랜덤 퀴즈를 통해 입양 준비도를 점검하고, 로그인 �
 | 입양 신청 단계까지 직접 연결되지는 않음 | 보호소 상세 정보, 입양 신청서, 상담 절차 연결 |
 
 ---
+
+## **14. 실행 방법**
+
+### **환경 변수**
+
+프로젝트 루트에 `.env` 파일을 생성하고 다음 값을 설정한다.
+
+```env
+OPENAI_API_KEY=
+ANIMAL_API_SERVICE_KEY=
+POSTGRES_DB=pet_dog
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+```
+
+### **데이터베이스 실행**
+
+```bash
+docker compose up -d
+```
+
+### **데이터 적재**
+
+```bash
+python database/tools/build_RDB.py
+python database/tools/build_vectorstore.py --reset
+python database/tools/build_shelter_animals_db.py --reset
+```
+
+### **웹 서버 실행**
+
+```bash
+python web/manage.py runserver
+```
+
+---
+
+## **15. 참고 문서**
+
+- **AKC Dog Breeds**: https://www.akc.org/dog-breeds/
+- **한국애견연맹**: https://www.thekkf.or.kr/
+- **TheDogAPI**: https://www.thedogapi.com/
+- **API Ninjas Dogs API**: https://api-ninjas.com/api/dogs
+- **동물보호 공공데이터 API**: https://www.data.go.kr/
+- **Merck Veterinary Manual**: https://www.merckvetmanual.com/
+- **LangChain**: https://www.langchain.com/
+- **PGVector**: https://github.com/pgvector/pgvector
+
+---
+
+## **16. 팀원 회고**
+
+| 팀원 | 회고 |
+|---|---|
+| 문재경 | |
+| 박준희 | |
+| 오주희 | |
+| 신동혁 | |
+| 김주영 | |
