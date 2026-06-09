@@ -16,6 +16,15 @@ PAGE_SIZE = 9
 OPTION_LIMIT = 300
 
 
+def _care_region(care_addr: str | None) -> str:
+    if not care_addr:
+        return ""
+    parts = care_addr.split()
+    if len(parts) >= 2:
+        return " ".join(parts[:2])
+    return parts[0] if parts else ""
+
+
 def _animal_to_card(animal: ShelterAnimal) -> dict[str, str]:
     return {
         "id": animal.id,
@@ -28,7 +37,7 @@ def _animal_to_card(animal: ShelterAnimal) -> dict[str, str]:
         "shelter_name": animal.care_nm or "보호소 정보 없음",
         "shelter_tel": animal.care_tel or "",
         "shelter_address": animal.care_addr or "",
-        "region": animal.org_nm or "",
+        "region": _care_region(animal.care_addr),
         "notice_start_date": animal.notice_sdt.strftime("%Y.%m.%d") if animal.notice_sdt else "",
         "notice_end_date": animal.notice_edt.strftime("%Y.%m.%d") if animal.notice_edt else "",
         "status": animal.process_state or "상태 미상",
@@ -48,13 +57,22 @@ def _option_values(field_name: str) -> list[str]:
     return list(values)
 
 
+def _care_region_options() -> list[str]:
+    addresses = (
+        ShelterAnimal.objects.exclude(care_addr__isnull=True)
+        .exclude(care_addr="")
+        .values_list("care_addr", flat=True)
+    )
+    return sorted({region for address in addresses if (region := _care_region(address))})
+
+
 def _filtered_base_queryset(breed: str, region: str):
     queryset = ShelterAnimal.objects.all()
 
     if breed:
         queryset = queryset.filter(kind_nm=breed)
     if region:
-        queryset = queryset.filter(org_nm=region)
+        queryset = queryset.filter(care_addr__startswith=region)
 
     return queryset
 
@@ -80,7 +98,7 @@ def shelter_animals_page(request):
 
     try:
         breed_options = _option_values("kind_nm")
-        region_options = _option_values("org_nm")
+        region_options = _care_region_options()
         status_options = _option_values("process_state")
 
         base_queryset = _filtered_base_queryset(breed, region)

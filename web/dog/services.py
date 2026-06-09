@@ -42,7 +42,13 @@ def search_breeds(params):
     if origin:
         breeds = breeds.filter(origin=origin)
 
-    breeds = breeds.order_by("breed_name_ko", "breed_name_en")
+    breeds = sorted(
+        breeds,
+        key=lambda breed: (
+            breed.breed_name_ko or "",
+            breed.breed_name_en or "",
+        ),
+    )
 
     return {
         "breeds": breeds,
