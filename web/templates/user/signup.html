@@ -37,4 +37,43 @@
         </p>
     </section>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const p1 = document.getElementById("id_password1");
+    const p2 = document.getElementById("id_password2");
+    const form = document.querySelector(".auth-form");
+
+    if (p1 && p2) {
+        // Create live error message container
+        const matchError = document.createElement("p");
+        matchError.className = "field-error live-error";
+        matchError.style.display = "none";
+        p2.parentNode.insertBefore(matchError, p2.nextSibling);
+
+        const validatePasswords = () => {
+            if (p2.value && p1.value !== p2.value) {
+                matchError.textContent = "비밀번호가 일치하지 않습니다.";
+                matchError.style.display = "block";
+                p2.classList.add("is-invalid");
+                return false;
+            } else {
+                matchError.style.display = "none";
+                p2.classList.remove("is-invalid");
+                return true;
+            }
+        };
+
+        p1.addEventListener("input", validatePasswords);
+        p2.addEventListener("input", validatePasswords);
+
+        form.addEventListener("submit", (e) => {
+            if (!validatePasswords()) {
+                e.preventDefault();
+                alert("비밀번호가 서로 일치하는지 확인해 주세요.");
+            }
+        });
+    }
+});
+</script>
 {% endblock %}

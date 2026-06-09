@@ -41,6 +41,15 @@ def pick_random_quizzes(quiz_bank: list[dict], count: int = QUESTION_COUNT) -> l
     return random.sample(quiz_bank, count)
 
 
+def quiz_stats_context(quiz_bank: list[dict], question_count: int | None = None) -> dict[str, int | bool | str]:
+    return {
+        "quiz_bank_count": len(quiz_bank),
+        "question_count": question_count if question_count is not None else min(len(quiz_bank), QUESTION_COUNT),
+        "quiz_bank_exists": QUIZ_BANK_PATH.exists(),
+        "quiz_bank_path": str(QUIZ_BANK_PATH),
+    }
+
+
 def build_result_items(quiz_bank: list[dict], selected_ids: list[str], submitted_answers: dict) -> list[dict]:
     """사용자 제출 답안을 채점 가능한 결과 목록으로 바꾼다."""
     quiz_by_id = {item["id"]: item for item in quiz_bank}
@@ -112,6 +121,7 @@ def get_page(request):
                 "wrong_count": len(wrong_items),
                 "total_score": total_score,
                 "earned_score": earned_score,
+                **quiz_stats_context(quiz_bank, question_count=len(result_items)),
             },
         )
 
@@ -123,15 +133,13 @@ def get_page(request):
             "mode": "quiz",
             "quizzes": quizzes,
             "quiz_ids": ",".join(item["id"] for item in quizzes),
-            "quiz_bank_count": len(quiz_bank),
-            "question_count": len(quizzes),
-            "quiz_bank_exists": QUIZ_BANK_PATH.exists(),
-            "quiz_bank_path": str(QUIZ_BANK_PATH),
+            **quiz_stats_context(quiz_bank, question_count=len(quizzes)),
         },
     )
 @login_required
 def view_saved_result(request, result_id):
     result = get_object_or_404(TestResult, id=result_id, user=request.user)
+    quiz_bank = load_quiz_bank()
     result_items = result.result_data
     total_score = result.total_score
     earned_score = result.earned_score
@@ -150,5 +158,6 @@ def view_saved_result(request, result_id):
             "wrong_count": len(wrong_items),
             "total_score": total_score,
             "earned_score": earned_score,
+            **quiz_stats_context(quiz_bank, question_count=len(result_items)),
         },
     )

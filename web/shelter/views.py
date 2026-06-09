@@ -11,6 +11,7 @@ from user.models import ShelterFavorite
 
 
 DEFAULT_STATUS = "보호중"
+ADOPTED_STATUS = "종료(입양)"
 PAGE_SIZE = 9
 OPTION_LIMIT = 300
 
@@ -47,6 +48,17 @@ def _option_values(field_name: str) -> list[str]:
     return list(values)
 
 
+def _filtered_base_queryset(breed: str, region: str):
+    queryset = ShelterAnimal.objects.all()
+
+    if breed:
+        queryset = queryset.filter(kind_nm=breed)
+    if region:
+        queryset = queryset.filter(org_nm=region)
+
+    return queryset
+
+
 def shelter_animals_page(request):
     breed = request.GET.get("breed", "").strip()
     region = request.GET.get("region", "").strip()
@@ -54,6 +66,10 @@ def shelter_animals_page(request):
 
     animals = []
     animal_count = 0
+    total_animal_count = 0
+    protecting_count = 0
+    adopted_count = 0
+    other_status_count = 0
     page_obj = None
     page_range = []
     query_string = ""
@@ -67,12 +83,13 @@ def shelter_animals_page(request):
         region_options = _option_values("org_nm")
         status_options = _option_values("process_state")
 
-        queryset = ShelterAnimal.objects.all()
+        base_queryset = _filtered_base_queryset(breed, region)
+        total_animal_count = base_queryset.count()
+        protecting_count = base_queryset.filter(process_state=DEFAULT_STATUS).count()
+        adopted_count = base_queryset.filter(process_state=ADOPTED_STATUS).count()
+        other_status_count = total_animal_count - protecting_count - adopted_count
 
-        if breed:
-            queryset = queryset.filter(kind_nm=breed)
-        if region:
-            queryset = queryset.filter(org_nm=region)
+        queryset = base_queryset
         if status:
             queryset = queryset.filter(process_state=status)
 
@@ -108,26 +125,47 @@ def shelter_animals_page(request):
     if request.user.is_authenticated:
         favorited_ids = set(request.user.shelter_favorites.values_list("shelter_animal_id", flat=True))
 
+    context = {
+        "breed": breed,
+        "region": region,
+        "status": status,
+        "animals": animals,
+        "animal_count": animal_count,
+        "total_animal_count": total_animal_count,
+        "protecting_count": protecting_count,
+        "adopted_count": adopted_count,
+        "other_status_count": other_status_count,
+        "visible_count": len(animals),
+        "page_size": PAGE_SIZE,
+        "page_obj": page_obj,
+        "page_range": page_range,
+        "query_string": query_string,
+        "error_message": error_message,
+        "breed_options": breed_options,
+        "region_options": region_options,
+        "status_options": status_options,
+        "favorited_ids": favorited_ids,
+    }
+
+    if request.GET.get("ajax") == "true":
+        from django.template.loader import render_to_string
+        html = render_to_string("shelter/_animal_list.html", context, request=request)
+        return JsonResponse({
+            "status": "success",
+            "html": html,
+            "animal_count": animal_count,
+            "total_animal_count": total_animal_count,
+            "protecting_count": protecting_count,
+            "adopted_count": adopted_count,
+            "other_status_count": other_status_count,
+            "visible_count": len(animals),
+            "breed": breed,
+        })
+
     return render(
         request,
         "shelter/list.html",
-        {
-            "breed": breed,
-            "region": region,
-            "status": status,
-            "animals": animals,
-            "animal_count": animal_count,
-            "visible_count": len(animals),
-            "page_size": PAGE_SIZE,
-            "page_obj": page_obj,
-            "page_range": page_range,
-            "query_string": query_string,
-            "error_message": error_message,
-            "breed_options": breed_options,
-            "region_options": region_options,
-            "status_options": status_options,
-            "favorited_ids": favorited_ids,
-        },
+        context,
     )
 
 

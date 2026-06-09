@@ -161,23 +161,12 @@
 
 {% csrf_token %}
 {{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" hidden></div>
 <script>
 (() => {
     const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
-    const storageKey = "petmate.favoriteBreeds";
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
     const buttons = document.querySelectorAll(".favorite-button[data-favorite-id]");
-
-    const getFavorites = () => {
-        try {
-            return new Set(JSON.parse(localStorage.getItem(storageKey) || "[]"));
-        } catch {
-            return new Set();
-        }
-    };
-
-    const saveFavorites = (favorites) => {
-        localStorage.setItem(storageKey, JSON.stringify([...favorites]));
-    };
 
     const renderButton = (button, isActive) => {
         button.classList.toggle("is-active", isActive);
@@ -185,46 +174,31 @@
         button.textContent = isActive ? "★" : "☆";
     };
 
-    // Initialize state
-    // We would need the initial states from the server if logged in, but for now we just use localStorage as fallback or wait for server click response.
-    // Ideally, the server should render the initial state for logged-in users.
-    const favorites = getFavorites();
     buttons.forEach((button) => {
         const breedId = button.dataset.favoriteId;
-        // If the button already has is-active class from server rendering, use that
         if (button.classList.contains('is-active')) {
             renderButton(button, true);
-        } else if (!isAuthenticated) {
-            renderButton(button, favorites.has(breedId));
         }
 
         button.addEventListener("click", () => {
-            if (isAuthenticated) {
-                // Call API
-                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
-                fetch(`/dog/breeds/${breedId}/favorite/`, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRFToken': csrfToken,
-                    }
-                }).then(res => res.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        renderButton(button, data.is_favorited);
-                    }
-                });
-            } else {
-                // LocalStorage
-                const nextFavorites = getFavorites();
-                const nextActive = !nextFavorites.has(breedId);
-                if (nextActive) {
-                    nextFavorites.add(breedId);
-                } else {
-                    nextFavorites.delete(breedId);
-                }
-                saveFavorites(nextFavorites);
-                renderButton(button, nextActive);
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
             }
+
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+            fetch(`/dog/breeds/${breedId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            }).then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    renderButton(button, data.is_favorited);
+                }
+            });
         });
     });
 })();
