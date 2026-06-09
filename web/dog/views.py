@@ -8,14 +8,24 @@ from user.models import DogFavorite
 from .services import search_breeds
 
 
+def _should_rotate_breed_image(breed):
+    return (
+        breed.breed_name_ko in {"시추", "시츄"}
+        or breed.breed_name_en == "Shih Tzu"
+    )
+
+
 def search(request):
     context = search_breeds(request.GET)
     paginator = Paginator(context["breeds"], 8)
     page_obj = paginator.get_page(request.GET.get("page"))
+    breeds = list(page_obj.object_list)
+    for breed in breeds:
+        breed.rotate_image_90 = _should_rotate_breed_image(breed)
     query_params = request.GET.copy()
     query_params.pop("page", None)
 
-    context["breeds"] = page_obj.object_list
+    context["breeds"] = breeds
     context["page_obj"] = page_obj
     context["paginator"] = paginator
     context["page_range"] = paginator.get_elided_page_range(
@@ -35,6 +45,7 @@ def search(request):
 
 def detail(request, pk):
     breed = get_object_or_404(DogBreedDictionaryKo, pk=pk)
+    breed.rotate_image_90 = _should_rotate_breed_image(breed)
     
     is_favorited = False
     if request.user.is_authenticated:
