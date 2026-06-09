@@ -9,6 +9,7 @@ from backend.schemas.analysis import UserAnalysisResult
 class ChatRequest:
     message: str
     conversation_id: str | None = None
+    memory_context: dict[str, Any] | None = None
 
 
 @dataclass(slots=True)
@@ -23,4 +24,3 @@ class ChatResponse:
             "sources": [source.to_dict() for source in self.sources],
             "analysis": self.analysis.to_dict() if self.analysis else None,
         }
-

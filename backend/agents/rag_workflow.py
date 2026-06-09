@@ -36,6 +36,8 @@ def create_rag_workflow(rag_client: RAGClient | None = None):
 
 def run_rag_workflow(
     question: str,
+    conversation_id: str | None = None,
+    memory_context: dict | None = None,
     rag_client: RAGClient | None = None,
 ) -> ChatResponse:
     """Run the LangGraph RAG workflow and convert the final state to ChatResponse."""
@@ -44,6 +46,8 @@ def run_rag_workflow(
     final_state = app.invoke(
         {
             "question": question,
+            "conversation_id": conversation_id,
+            "memory_context": memory_context,
             "analysis": None,
             "retrieved_docs": [],
             "relevant_docs": [],
@@ -136,6 +140,7 @@ def generate(state: RAGState) -> RAGState:
         user_message=question,
         documents=relevant_docs,
         analysis=analysis,
+        memory_context=state.get("memory_context"),
         validation_feedback=state.get("relevance_issues") or None,
     )
     validation_result = validate_answer(
