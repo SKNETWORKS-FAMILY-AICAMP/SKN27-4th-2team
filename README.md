@@ -51,15 +51,15 @@
     <td align="center">팀원</td>
     <td align="center">팀원</td>
   </tr>
+    <tr>
+    <td align="center">데이터 수집 및 전처리, 발표</td>
+    <td align="center">데이터 전처리 및 감독</td>
+    <td align="center">데이터 수집 및 전처리</td>
+    <td align="center">Django 구현, README 작성</td>
+    <td align="center">데이터 수집 및 RAG, 발표</td>
+  </tr>
 </table>
 
-| 팀원 | 담당 |
-|---|---|
-| 김주영 | 데이터 수집 및 전처리, 발표 |
-| 문재경 | 데이터 전처리 및 감독 |
-| 박준희 | 데이터 수집 및 전처리, 에이전트, 시퀀스다이어그램 |
-| 신동혁 | Django 구현, README 작성 |
-| 오주희 | 데이터 수집 및 RAG, 발표 |
 
 ---
 
