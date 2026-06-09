@@ -5,55 +5,87 @@
 
 {% block content %}
 <main class="shelter-layout">
-    <aside class="shelter-aside glass-card">
-        <h1>유기견 입양</h1>
-        <p>국가동물보호정보시스템 데이터를 기준으로 보호자를 기다리는 아이들을 확인합니다.</p>
+    <aside class="shelter-aside">
+        <section class="shelter-filter-card glass-card">
+            <h1>유기견 입양</h1>
+            <p>국가동물보호정보시스템 데이터를 기준으로 보호자를 기다리는 아이들을 확인합니다.</p>
 
-        <form class="shelter-filter" method="get">
-            <label for="breed">견종</label>
-            <select id="breed" name="breed">
-                <option value="">전체</option>
-                {% for option in breed_options %}
-                    <option value="{{ option }}" {% if breed == option %}selected{% endif %}>{{ option }}</option>
-                {% endfor %}
-            </select>
+            <form class="shelter-filter" method="get">
+                <label for="breed">견종</label>
+                <select id="breed" name="breed">
+                    <option value="">전체</option>
+                    {% for option in breed_options %}
+                        <option value="{{ option }}" {% if breed == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
 
-            <label for="region">지역</label>
-            <select id="region" name="region">
-                <option value="">전체</option>
-                {% for option in region_options %}
-                    <option value="{{ option }}" {% if region == option %}selected{% endif %}>{{ option }}</option>
-                {% endfor %}
-            </select>
+                <label for="region">지역</label>
+                <select id="region" name="region">
+                    <option value="">전체</option>
+                    {% for option in region_options %}
+                        <option value="{{ option }}" {% if region == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
 
-            <label for="status">상태</label>
-            <select id="status" name="status">
-                <option value="">전체</option>
-                {% for option in status_options %}
-                    <option value="{{ option }}" {% if status == option %}selected{% endif %}>{{ option }}</option>
-                {% endfor %}
-            </select>
+                <label for="status">상태</label>
+                <select id="status" name="status">
+                    <option value="">전체</option>
+                    {% for option in status_options %}
+                        <option value="{{ option }}" {% if status == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
 
-            <button class="primary-button full-width" type="submit">조회하기</button>
-        </form>
+                <button class="primary-button full-width" type="submit">조회하기</button>
+            </form>
+        </section>
+
     </aside>
 
-    <section class="shelter-panel glass-card">
-        <div class="shelter-panel-head">
-            <div>
-                {% if breed %}
-                    <h2>현재 보호자를 기다리는 {{ breed }} 아이들이 있어요</h2>
-                {% else %}
-                    <h2>현재 보호자를 기다리는 아이들이 있어요</h2>
-                {% endif %}
-                <p class="shelter-subcopy">총 {{ animal_count }}건 중 {{ visible_count }}건을 보여주고 있습니다.</p>
+    <div class="shelter-content">
+        <section class="shelter-stats-card glass-card">
+            <div class="shelter-stats-head">
+                <div>
+                    <h2>유기견 현황</h2>
+                    <p>현재 선택한 조건 기준의 상태별 건수입니다.</p>
+                </div>
             </div>
-            <span class="shelter-count">{{ animal_count }}건</span>
-        </div>
-        <div id="animal-list-container">
-            {% include "shelter/_animal_list.html" %}
-        </div>
-    </section>
+            <table class="shelter-stats-table" aria-label="유기견 상태별 건수">
+                <thead>
+                    <tr>
+                        <th scope="col">전체</th>
+                        <th scope="col">보호중</th>
+                        <th scope="col">입양 완료</th>
+                        <th scope="col">기타 상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ total_animal_count }}건</td>
+                        <td>{{ protecting_count }}건</td>
+                        <td>{{ adopted_count }}건</td>
+                        <td>{{ other_status_count }}건</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="shelter-panel glass-card">
+            <div class="shelter-panel-head">
+                <div>
+                    {% if breed %}
+                        <h2>현재 보호자를 기다리는 {{ breed }} 아이들이 있어요</h2>
+                    {% else %}
+                        <h2>현재 보호자를 기다리는 아이들이 있어요</h2>
+                    {% endif %}
+                    <p class="shelter-subcopy">총 {{ animal_count }}건 중 {{ visible_count }}건을 보여주고 있습니다.</p>
+                </div>
+                <span class="shelter-count">{{ animal_count }}건</span>
+            </div>
+            <div id="animal-list-container">
+                {% include "shelter/_animal_list.html" %}
+            </div>
+        </section>
+    </div>
 
     <!-- Modal for Shelter Animal Details (Same Glassmorphism design as profile page) -->
     <div id="shelter-detail-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
@@ -148,6 +180,18 @@
                     const subcopyEl = document.querySelector('.shelter-subcopy');
                     if (subcopyEl) {
                         subcopyEl.textContent = `총 ${data.animal_count}건 중 ${data.visible_count}건을 보여주고 있습니다.`;
+                    }
+
+                    const statsEl = document.querySelector('.shelter-stats-table tbody');
+                    if (statsEl) {
+                        statsEl.innerHTML = `
+                            <tr>
+                                <td>${data.total_animal_count}건</td>
+                                <td>${data.protecting_count}건</td>
+                                <td>${data.adopted_count}건</td>
+                                <td>${data.other_status_count}건</td>
+                            </tr>
+                        `;
                     }
 
                     const headerH2 = document.querySelector('.shelter-panel-head h2');
