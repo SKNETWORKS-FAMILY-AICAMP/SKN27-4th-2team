@@ -4,8 +4,8 @@
 
 ## Contents
 
-1. [프로젝트 소개](#1-프로젝트-소개)
-2. [팀 소개](#2-팀-소개)
+1. [팀 소개](#1-팀-소개)
+2. [프로젝트 소개](#2-프로젝트-소개)
 3. [기술 스택](#3-기술-스택)
 4. [시스템 아키텍처](#4-시스템-아키텍처)
 5. [주요 기능](#6-주요-기능)
@@ -15,12 +15,55 @@
 9. [실행 방법](#10-실행-방법)
 10. [시연 화면](#11-시연-화면)
 11. [기대 효과 및 결론](#12-기대-효과-및-결론)
-12. [팀원 회고](#13-팀원-회고)
-13. [참고 자료](#14-참고-자료)
+12. [참고 자료](#14-참고-자료)
+13. [팀원 회고](#13-팀원-회고)
+
 
 ---
 
-## 1. 프로젝트 소개
+## 1. 팀 소개
+
+### 팀명
+
+**뉴진스(NewJeans)**
+
+### 팀원 소개
+
+<table align="center" width="100%">
+  <tr>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTk3/MDAxNzgwOTg3NzA4NTE1.jArqE2CKKQN-d2tdVpssrd8F1g64dWmI3k7LSppzL7Mg.J07ASomAPh6TzCAr7MBT1xcMbUEqpwmYJRhKlj074Lgg.PNG/%EC%A3%BC%EC%98%81.png?type=w966" width="120" height="120" alt="김주영" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTc3/MDAxNzgwOTg3NzA4NTEy.1VneL8J-6Epqh2neG8bz0zM2wjfXNdie3B3lOujcmkcg.15FPyFOhyA2WZrNM8Edlr9EO4Anmp_mXv0o-Evq06Nsg.PNG/%EC%9E%AC%EA%B2%BD.png?type=w966" width="120" height="120" alt="문재경" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNzcg/MDAxNzgwOTg3NzYyOTU3.Fy8Aah8ioa3BlUrXs8kUYsTNmyvBV3WhKGso2bBHsRgg.O_ArPGjIIQ2ILrXlN-9sEqbOge5Y5c6_1wiY5Fk9vHIg.PNG/%EC%A4%80%ED%9D%AC.png?type=w966" width="120" height="120" alt="박준희" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMjQw/MDAxNzgwOTg3NzA4NTIy.2bCCMI-7N0r2YrV97IaQ-NnR5MN-Lc9pXSr58E3uprMg.8uGM2iLfZjKuEP7qjBBhqBgQCb5ZdgUCCANT37PWIhcg.PNG/%EB%8F%99%ED%98%81.png?type=w966" width="120" height="120" alt="신동혁" /></td>
+    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNDkg/MDAxNzgwOTg3NzA4NTIy.tUmhBTl0HIbIZjK-MqmmXIdHH0yAmHLRuf_kcWh5vtAg.Xu7utC824enN6OJZ19RW67kxzvuKEMrFLyWmLUnUoU4g.PNG/%EC%A3%BC%ED%9D%AC.png?type=w966" width="120" height="120" alt="오주희" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>김주영</b></td>
+    <td align="center"><b>문재경</b></td>
+    <td align="center"><b>박준희</b></td>
+    <td align="center"><b>신동혁</b></td>
+    <td align="center"><b>오주희</b></td>
+  </tr>
+  <tr>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+    <td align="center">팀원</td>
+  </tr>
+</table>
+
+| 팀원 | 담당 |
+|---|---|
+| 김주영 | 데이터 수집 및 전처리, 발표 |
+| 문재경 | 데이터 전처리 및 감독 |
+| 박준희 | 데이터 수집 및 전처리, 에이전트, 시퀀스다이어그램 |
+| 신동혁 | Django 구현, README 작성 |
+| 오주희 | 데이터 수집 및 RAG, 발표 |
+
+---
+
+## 2. 프로젝트 소개
 
 ### 프로젝트명
 
@@ -52,48 +95,6 @@
 - 동물보호 공공데이터 기반 보호 동물 목록 및 상세 정보 제공
 - 초보 보호자를 위한 가이드와 입양 준비도 확인 기능 제공
 - 로그인 사용자의 채팅 내역, 관심 견종, 관심 유기견, 테스트 결과 관리
-
----
-
-## 2. 팀 소개
-
-### 팀명
-
-**뉴진스**
-
-### 팀원 소개
-
-<table align="center" width="100%">
-  <tr>
-    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTc3/MDAxNzgwOTg3NzA4NTEy.1VneL8J-6Epqh2neG8bz0zM2wjfXNdie3B3lOujcmkcg.15FPyFOhyA2WZrNM8Edlr9EO4Anmp_mXv0o-Evq06Nsg.PNG/%EC%9E%AC%EA%B2%BD.png?type=w966" width="120" height="120" alt="문재경" /></td>
-    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNzcg/MDAxNzgwOTg3NzYyOTU3.Fy8Aah8ioa3BlUrXs8kUYsTNmyvBV3WhKGso2bBHsRgg.O_ArPGjIIQ2ILrXlN-9sEqbOge5Y5c6_1wiY5Fk9vHIg.PNG/%EC%A4%80%ED%9D%AC.png?type=w966" width="120" height="120" alt="박준희" /></td>
-    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfNDkg/MDAxNzgwOTg3NzA4NTIy.tUmhBTl0HIbIZjK-MqmmXIdHH0yAmHLRuf_kcWh5vtAg.Xu7utC824enN6OJZ19RW67kxzvuKEMrFLyWmLUnUoU4g.PNG/%EC%A3%BC%ED%9D%AC.png?type=w966" width="120" height="120" alt="오주희" /></td>
-    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMjQw/MDAxNzgwOTg3NzA4NTIy.2bCCMI-7N0r2YrV97IaQ-NnR5MN-Lc9pXSr58E3uprMg.8uGM2iLfZjKuEP7qjBBhqBgQCb5ZdgUCCANT37PWIhcg.PNG/%EB%8F%99%ED%98%81.png?type=w966" width="120" height="120" alt="신동혁" /></td>
-    <td align="center" width="20%"><img src="https://postfiles.pstatic.net/MjAyNjA2MDlfMTk3/MDAxNzgwOTg3NzA4NTE1.jArqE2CKKQN-d2tdVpssrd8F1g64dWmI3k7LSppzL7Mg.J07ASomAPh6TzCAr7MBT1xcMbUEqpwmYJRhKlj074Lgg.PNG/%EC%A3%BC%EC%98%81.png?type=w966" width="120" height="120" alt="김주영" /></td>
-  </tr>
-  <tr>
-    <td align="center"><b>문재경</b></td>
-    <td align="center"><b>박준희</b></td>
-    <td align="center"><b>오주희</b></td>
-    <td align="center"><b>신동혁</b></td>
-    <td align="center"><b>김주영</b></td>
-  </tr>
-  <tr>
-    <td align="center">팀원</td>
-    <td align="center">팀원</td>
-    <td align="center">팀원</td>
-    <td align="center">팀원</td>
-    <td align="center">팀원</td>
-  </tr>
-</table>
-
-| 팀원 | 담당 |
-|---|---|
-| 문재경 |  |
-| 박준희 |  |
-| 오주희 |  |
-| 신동혁 |  |
-| 김주영 |  |
 
 ---
 
@@ -180,7 +181,6 @@ SKN27-4th-2team/
 ```
 
 ---
-
 
 
 ## 5. 주요 기능
@@ -379,7 +379,7 @@ Pet Mate는 반려견을 처음 맞이하는 사용자가 정보 탐색, 견종 
 
 ---
 
-## 13. 참고 자료
+## 12. 참고 자료
 
 - AKC Dog Breeds: https://www.akc.org/dog-breeds/
 - 한국애견연맹: https://www.thekkf.or.kr/
@@ -389,3 +389,15 @@ Pet Mate는 반려견을 처음 맞이하는 사용자가 정보 탐색, 견종 
 - Merck Veterinary Manual: https://www.merckvetmanual.com/
 - LangChain: https://www.langchain.com/
 - PGVector: https://github.com/pgvector/pgvector
+
+---
+
+## 13. 팀원 회고
+
+| 팀원 | 회고 |
+|---|---|
+| 문재경 |  |
+| 박준희 |  |
+| 오주희 |  |
+| 신동혁 |  |
+| 김주영 |  |
