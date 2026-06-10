@@ -643,7 +643,7 @@ style: |
       <li class="toc-item"><div class="toc-num">03</div><div><div class="toc-main">데이터</div></div></li>
       <li class="toc-item"><div class="toc-num">04</div><div><div class="toc-main">요구사항 정의서</div></div></li>
       <li class="toc-item"><div class="toc-num">05</div><div><div class="toc-main">화면설계서</div></div></li>
-      <li class="toc-item"><div class="toc-num">06</div><div><div class="toc-main">ERD</div></div></li>
+      <li class="toc-item"><div class="toc-num">06</div><div><div class="toc-main">ERD 및 시퀀스 다이어그램</div></div></li>
     </ul>
   </div>
 </div>
@@ -891,7 +891,7 @@ style: |
 ---
 
 <!-- class: banded -->
-# 7. 시퀀스 다이어그램
+# 6. 시퀀스 다이어그램
 
 <div class="sequence-image-frame">
   <img src="presentation_assets/sequence_chatbot_flow.png" alt="챗봇 질문 처리 전체 흐름 시퀀스 다이어그램" />
@@ -900,7 +900,7 @@ style: |
 ---
 
 <!-- class: banded -->
-# 7. 시퀀스 다이어그램
+# 6. 시퀀스 다이어그램
 
 <div class="sequence-image-frame">
   <img src="presentation_assets/sequence_rag_flow.png" alt="RAG 기반 답변 생성 흐름 시퀀스 다이어그램" />
