@@ -566,6 +566,7 @@ sequenceDiagram
 
 ## **6. 화면 설계서**
 
+![Pet Mate 화면 설계서](docs/assets/screen-design/petmate_screen_design.png)
 
 ## **7. 시연 화면**
 
