@@ -32,7 +32,7 @@
 **Pet Mate**
 
 ## **1.2 팀 소개**
-### **팀명**: 뉴진스(NewJeans)
+### **팀명**: 뉴독쓰(NewDogs)
 
 ### **팀원 소개**
 <table align="center" width="100%">
