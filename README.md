@@ -566,6 +566,7 @@ sequenceDiagram
 
 ## **6. 화면 설계서**
 
+![화면 설계서](https://postfiles.pstatic.net/MjAyNjA2MTBfMjc2/MDAxNzgxMDUwOTM0Mzkw.UHOPIZXPdmzc2shAe_nJmcCFwDA5xRYmcv9aj65zt10g.9UQArZOl3ff26IVN1nGOA--3-FAulFlTH05ny3Zgc8og.PNG/petmate_screen_design.png?type=w966)
 
 ## **7. 시연 화면**
 
