@@ -1,0 +1,24 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Glanders (Farcy) in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/glanders-farcy-in-dogs",
+  "category": "Disorders Affecting Multiple Body Systems of Dogs",
+  "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "John F. Timoney , MVB, PhD , Department of Veterinary Science, College of Agriculture, Food and Environment, University of Kentucky",
+  "language": "en",
+  "content": "## Overview\nGlanders is a contagious, short or longterm, usually fatal disease of horses caused by the bacterium Burkholderia mallei . The disease is characterized by the development of a series of ulcerating nodules. The nodules are most commonly found in the upper respiratory tract, lungs, and skin. People, dogs, cats, and other species are susceptible, but infections in dogs are uncommon. Infections in people are often fatal.\nPrevention and control depend on early detection and elimination of affected animals. Complete quarantine and rigorous disinfection is required for all housing and objects that have been in contact with the infected animal. Euthanasia is usually recommended for infected animals.\nAlso see professional content regarding glanders .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Glanders is a contagious, short or longterm, usually fatal disease of horses caused by the bacterium Burkholderia mallei . The disease is characterized by the development of a series of ulcerating nodules. The nodules are most commonly found in the upper respiratory tract, lungs, and skin. People, dogs, cats, and other species are susceptible, but infections in dogs are uncommon. Infections in people are often fatal.",
+        "Prevention and control depend on early detection and elimination of affected animals. Complete quarantine and rigorous disinfection is required for all housing and objects that have been in contact with the infected animal. Euthanasia is usually recommended for infected animals.",
+        "Also see professional content regarding glanders ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:40:40.618363+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

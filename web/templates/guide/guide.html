@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}가이드 | Pet Mate{% endblock %}
+{% block body_class %}guide-page{% endblock %}
+
+{% block content %}
+<main class="guide-layout">
+    <aside class="guide-sidebar glass-card" aria-label="가이드 주제">
+        <h1>가이드</h1>
+        <p>처음 반려견을 맞이하는 보호자를 위한 핵심 내용을 주제별로 정리했습니다.</p>
+
+        <nav class="guide-topic-list">
+            {% for guide in guides %}
+                <a class="guide-topic-link {% if guide.slug == selected_guide.slug %}is-active{% endif %}" href="?topic={{ guide.slug }}">
+                    <span>{{ forloop.counter|stringformat:"02d" }}</span>
+                    {{ guide.title }}
+                </a>
+            {% endfor %}
+        </nav>
+    </aside>
+
+    <section class="guide-content glass-card">
+        <div class="guide-content-head">
+            <div>
+                <h2>{{ selected_guide.title }}</h2>
+                <p>{{ selected_guide.summary }}</p>
+            </div>
+        </div>
+
+        <div class="guide-intro">
+            <p>{{ selected_guide.intro }}</p>
+        </div>
+
+        <section class="guide-section-block" aria-labelledby="guide-checklist-title">
+            <h3 id="guide-checklist-title">체크리스트</h3>
+            <ul class="guide-checklist">
+                {% for item in selected_guide.checklist %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="guide-section-block" aria-label="상세 가이드">
+            <div class="guide-detail-grid">
+                {% for section in selected_guide.sections %}
+                    <article class="guide-detail-card">
+                        <h3>{{ section.heading }}</h3>
+                        <p>{{ section.body }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <footer class="guide-sources">
+            <strong>출처</strong>
+            <ul>
+                {% for source in selected_guide.sources %}
+                    <li>
+                        {% if source.pdf_url %}
+                            <a href="{{ source.pdf_url }}" download>{{ source.label }} PDF 다운로드</a>
+                        {% else %}
+                            {{ source.label }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </footer>
+    </section>
+</main>
+
+{% endblock %}

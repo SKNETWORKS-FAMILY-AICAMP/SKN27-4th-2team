@@ -1,0 +1,210 @@
+{
+  "source": {
+    "breed_mapping": "database\\animal_protection\\breed_mapping.json",
+    "dog_kind_response": "database\\animal_protection\\responses\\latest_dog_kind_response.json"
+  },
+  "matched_count": 20,
+  "unmatched_count": 0,
+  "breeds": {
+    "말티즈": {
+      "kind_code": "000072",
+      "matched_public_name": "말티즈",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "말티즈"
+      ]
+    },
+    "푸들": {
+      "kind_code": "000107",
+      "matched_public_name": "토이 푸들",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "푸들",
+        "토이 푸들",
+        "미니어처 푸들"
+      ]
+    },
+    "비숑 프리제": {
+      "kind_code": "000018",
+      "matched_public_name": "비숑 프리제",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "비숑",
+        "비숑 프리제"
+      ]
+    },
+    "포메라니안": {
+      "kind_code": "000089",
+      "matched_public_name": "포메라니안",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "포메라니안"
+      ]
+    },
+    "시바 이누": {
+      "kind_code": "000100",
+      "matched_public_name": "시바",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "시바",
+        "시바견",
+        "시바 이누"
+      ]
+    },
+    "믹스견": {
+      "kind_code": "000114",
+      "matched_public_name": "믹스견",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "믹스견"
+      ]
+    },
+    "골든 리트리버": {
+      "kind_code": "000054",
+      "matched_public_name": "골든 리트리버",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "골든 리트리버",
+        "골든리트리버"
+      ]
+    },
+    "래브라도 리트리버": {
+      "kind_code": "000069",
+      "matched_public_name": "라브라도 리트리버",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "래브라도 리트리버",
+        "라브라도 리트리버",
+        "래브라도리트리버"
+      ]
+    },
+    "치와와": {
+      "kind_code": "000032",
+      "matched_public_name": "치와와",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "치와와"
+      ]
+    },
+    "닥스훈트": {
+      "kind_code": "000093",
+      "matched_public_name": "래빗 닥스훈트",
+      "match_type": "fuzzy",
+      "score": 0.8,
+      "public_names": [
+        "닥스훈트"
+      ]
+    },
+    "요크셔 테리어": {
+      "kind_code": "000113",
+      "matched_public_name": "요크셔 테리어",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "요크셔 테리어",
+        "요크셔테리어"
+      ]
+    },
+    "시츄": {
+      "kind_code": "000101",
+      "matched_public_name": "시츄",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "시츄",
+        "시추"
+      ]
+    },
+    "웰시 코기": {
+      "kind_code": "000205",
+      "matched_public_name": "웰시 코기 카디건",
+      "match_type": "fuzzy",
+      "score": 0.7273,
+      "public_names": [
+        "웰시 코기",
+        "웰시코기",
+        "펨브로크 웰시 코기"
+      ]
+    },
+    "프렌치 불독": {
+      "kind_code": "000050",
+      "matched_public_name": "프렌치 불독",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "프렌치 불독",
+        "프렌치불독"
+      ]
+    },
+    "보더 콜리": {
+      "kind_code": "000020",
+      "matched_public_name": "보더 콜리",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "보더 콜리",
+        "보더콜리"
+      ]
+    },
+    "진돗개": {
+      "kind_code": "000067",
+      "matched_public_name": "진도견",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "진돗개",
+        "진도견"
+      ]
+    },
+    "스피츠": {
+      "kind_code": "000124",
+      "matched_public_name": "스피츠",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "스피츠",
+        "재패니즈 스피츠"
+      ]
+    },
+    "말라뮤트": {
+      "kind_code": "000146",
+      "matched_public_name": "말라뮤트",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "알래스칸 말라뮤트",
+        "말라뮤트"
+      ]
+    },
+    "허스키": {
+      "kind_code": "000103",
+      "matched_public_name": "시베리안 허스키",
+      "match_type": "exact",
+      "score": 1.0,
+      "public_names": [
+        "시베리안 허스키",
+        "허스키"
+      ]
+    },
+    "슈나우저": {
+      "kind_code": "000079",
+      "matched_public_name": "미니어쳐 슈나우저",
+      "match_type": "fuzzy",
+      "score": 0.875,
+      "public_names": [
+        "슈나우저",
+        "미니어처 슈나우저"
+      ]
+    }
+  },
+  "unmatched": {}
+}

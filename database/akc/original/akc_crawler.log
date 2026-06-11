@@ -1,0 +1,166 @@
+2026-06-01 20:46:47,056 [INFO] ====== WebDriver manager ======
+2026-06-01 20:46:48,772 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-01 20:46:49,110 [INFO] There is no [win64] chromedriver "148.0.7778.178" for browser google-chrome "148.0.7778" in cache
+2026-06-01 20:46:49,935 [INFO] There is no [win64] chromedriver "148.0.7778.178" for browser google-chrome "148.0.7778" in cache
+2026-06-01 20:46:49,935 [INFO] Get LATEST chromedriver version for google-chrome
+2026-06-01 20:46:50,471 [INFO] WebDriver version 148.0.7778.178 selected
+2026-06-01 20:46:50,478 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.178/win64/chromedriver-win64.zip
+2026-06-01 20:46:50,484 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.178/win64/chromedriver-win64.zip
+2026-06-01 20:46:50,866 [INFO] Driver downloading response is 200
+2026-06-01 20:46:51,179 [INFO] Driver has been saved in cache [C:\Users\Playdata\.wdm\drivers\chromedriver\win64\148.0.7778.178]
+2026-06-01 20:46:52,136 [INFO] Fetching breed list from https://www.akc.org/dog-breeds/
+2026-06-01 20:46:55,027 [INFO] Found 0 breeds
+2026-06-01 20:46:57,397 [INFO] Saved 0 records → akc_breeds.csv
+2026-06-01 20:46:57,397 [INFO] Done. Total breeds collected: 0
+2026-06-01 20:53:45,015 [INFO] ====== WebDriver manager ======
+2026-06-01 20:53:45,867 [INFO] Driver [C:\Users\Playdata\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-06-01 20:53:46,451 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=A
+2026-06-01 20:53:49,406 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=B
+2026-06-01 20:53:52,097 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=C
+2026-06-01 20:53:54,734 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=D
+2026-06-01 20:53:57,377 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=E
+2026-06-01 20:54:00,208 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=F
+2026-06-01 20:54:02,976 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=G
+2026-06-01 20:54:05,625 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=H
+2026-06-01 20:54:08,378 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=I
+2026-06-01 20:54:11,052 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=J
+2026-06-01 20:54:13,842 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=K
+2026-06-01 20:54:16,527 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=L
+2026-06-01 20:54:19,291 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=M
+2026-06-01 20:54:21,997 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=N
+2026-06-01 20:54:24,660 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=O
+2026-06-01 20:54:27,933 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=P
+2026-06-01 20:54:30,607 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Q
+2026-06-01 20:54:34,836 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=R
+2026-06-01 20:54:37,719 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=S
+2026-06-01 20:54:40,371 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=T
+2026-06-01 20:54:43,087 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=U
+2026-06-01 20:54:45,819 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=V
+2026-06-01 20:54:48,531 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=W
+2026-06-01 20:54:51,253 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=X
+2026-06-01 20:54:53,952 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Y
+2026-06-01 20:54:56,607 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Z
+2026-06-01 20:55:04,539 [INFO] Total breeds found: 54
+2026-06-01 20:55:04,539 [INFO] Scraping: Australian Cattle Dog
+2026-06-01 20:55:21,555 [ERROR] Failed [Australian Cattle Dog]: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff67b217de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff67b217e50+14900]
+	chromedriver!(No symbol) [0x7ff67af7d5ad]
+	chromedriver!(No symbol) [0x7ff67afd7822]
+	chromedriver!(No symbol) [0x7ff67afd7b2c]
+	chromedriver!(No symbol) [0x7ff67b027d17]
+	chromedriver!(No symbol) [0x7ff67b02486f]
+	chromedriver!(No symbol) [0x7ff67afc9df8]
+	chromedriver!(No symbol) [0x7ff67afcace3]
+	chromedriver!GetHandleVerifier [0x7ff67b52cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff67b527375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff67b54bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff67b236045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff67b23ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff67b221bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff67b221d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff67b2060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffee2e3e957+17]
+	ntdll!RtlUserThreadStart [0x7ffee46c427c+2c]
+
+2026-06-01 20:55:21,556 [INFO] Scraping: Affenpinscher
+2026-06-01 20:55:38,627 [ERROR] Failed [Affenpinscher]: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff67b217de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff67b217e50+14900]
+	chromedriver!(No symbol) [0x7ff67af7d5ad]
+	chromedriver!(No symbol) [0x7ff67afd7822]
+	chromedriver!(No symbol) [0x7ff67afd7b2c]
+	chromedriver!(No symbol) [0x7ff67b027d17]
+	chromedriver!(No symbol) [0x7ff67b02486f]
+	chromedriver!(No symbol) [0x7ff67afc9df8]
+	chromedriver!(No symbol) [0x7ff67afcace3]
+	chromedriver!GetHandleVerifier [0x7ff67b52cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff67b527375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff67b54bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff67b236045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff67b23ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff67b221bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff67b221d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff67b2060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffee2e3e957+17]
+	ntdll!RtlUserThreadStart [0x7ffee46c427c+2c]
+
+2026-06-01 20:55:38,627 [INFO] Scraping: Afghan Hound
+2026-06-01 20:55:55,029 [ERROR] Failed [Afghan Hound]: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff67b217de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff67b217e50+14900]
+	chromedriver!(No symbol) [0x7ff67af7d5ad]
+	chromedriver!(No symbol) [0x7ff67afd7822]
+	chromedriver!(No symbol) [0x7ff67afd7b2c]
+	chromedriver!(No symbol) [0x7ff67b027d17]
+	chromedriver!(No symbol) [0x7ff67b02486f]
+	chromedriver!(No symbol) [0x7ff67afc9df8]
+	chromedriver!(No symbol) [0x7ff67afcace3]
+	chromedriver!GetHandleVerifier [0x7ff67b52cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff67b527375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff67b54bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff67b236045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff67b23ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff67b221bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff67b221d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff67b2060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffee2e3e957+17]
+	ntdll!RtlUserThreadStart [0x7ffee46c427c+2c]
+
+2026-06-01 20:55:57,648 [INFO] Saved 3 records → akc_breeds.csv
+2026-06-01 20:55:57,649 [INFO] Complete. Total: 3 breeds
+2026-06-01 20:57:07,137 [INFO] ====== WebDriver manager ======
+2026-06-01 20:57:08,016 [INFO] Driver [C:\Users\Playdata\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-06-01 20:57:08,599 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=A
+2026-06-01 20:57:14,795 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=B
+2026-06-01 20:57:21,340 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=C
+2026-06-01 20:57:28,172 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=D
+2026-06-01 20:57:34,389 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=E
+2026-06-01 20:57:40,817 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=F
+2026-06-01 20:57:46,997 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=G
+2026-06-01 20:57:53,277 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=H
+2026-06-01 20:57:59,581 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=I
+2026-06-01 20:58:05,799 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=J
+2026-06-01 20:58:12,467 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=K
+2026-06-01 20:58:19,211 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=L
+2026-06-01 20:58:25,287 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=M
+2026-06-01 20:58:32,100 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=N
+2026-06-01 20:58:38,688 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=O
+2026-06-01 20:58:45,362 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=P
+2026-06-01 20:58:51,621 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Q
+2026-06-01 20:58:57,831 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=R
+2026-06-01 20:59:04,108 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=S
+2026-06-01 20:59:10,238 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=T
+2026-06-01 20:59:15,768 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=U
+2026-06-01 20:59:21,325 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=V
+2026-06-01 20:59:26,748 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=W
+2026-06-01 20:59:32,231 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=X
+2026-06-01 20:59:37,639 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Y
+2026-06-01 20:59:43,017 [INFO] Fetching breed list: https://www.akc.org/dog-breeds/?letter=Z
+2026-06-01 20:59:48,369 [INFO] Total breeds found: 54
+2026-06-01 20:59:48,369 [INFO] Scraping: Australian Cattle Dog
+2026-06-01 20:59:56,866 [INFO] Scraping: Affenpinscher
+2026-06-01 21:00:03,820 [INFO] Scraping: Afghan Hound
+2026-06-01 21:00:13,133 [INFO] Saved 3 records → akc_breeds.csv
+2026-06-01 21:00:13,134 [INFO] Complete. Total: 3 breeds
+2026-06-01 21:14:27,302 [INFO] ====== WebDriver manager ======
+2026-06-01 21:14:28,186 [INFO] Driver [C:\Users\Playdata\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-06-01 21:14:28,877 [INFO] Fetching breed list from sitemap: https://www.akc.org/breed-sitemap.xml
+2026-06-01 21:14:29,156 [INFO] Total breeds found: 292
+2026-06-01 21:14:29,157 [INFO] Scraping: Eurasier
+2026-06-01 21:14:38,458 [INFO] Scraping: Hovawart
+2026-06-01 21:14:45,327 [INFO] Scraping: Slovensky Kopov
+2026-06-01 21:14:54,226 [INFO] Saved 3 records → akc_breeds.csv
+2026-06-01 21:14:54,227 [INFO] Complete. Total: 3 breeds
+2026-06-02 09:02:08,643 [INFO] ====== WebDriver manager ======
+2026-06-02 09:02:09,102 [INFO] Driver [C:\Users\Playdata\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-06-02 09:02:09,781 [INFO] Fetching breed list from sitemap: https://www.akc.org/breed-sitemap.xml
+2026-06-02 09:02:12,240 [INFO] Total breeds found: 292
+2026-06-02 09:02:12,242 [INFO] Scraping: Eurasier
+2026-06-02 09:02:24,692 [INFO] Scraping: Hovawart
+2026-06-02 09:02:31,360 [INFO] Scraping: Slovensky Kopov
+2026-06-02 09:02:40,680 [INFO] Saved 3 records → akc_breeds.csv
+2026-06-02 09:02:40,685 [INFO] Complete. Total: 3 breeds

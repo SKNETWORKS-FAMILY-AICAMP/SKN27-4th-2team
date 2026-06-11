@@ -1,0 +1,32 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Neosporosis in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/neosporosis-in-dogs",
+  "category": "Disorders Affecting Multiple Body Systems of Dogs",
+  "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Manuals Staff",
+  "language": "en",
+  "content": "## Overview\nMultimedia |\nNeosporosis is caused by the protozoan parasite Neospora caninum . Neosporosis has been recognized in dogs, cattle, horses, and other animals, but the dog is the definitive host. (A definitive host is an animal that a parasite requires in order to mature normally.) Infection is uncommon but can be acquired by ingesting contaminated food and water, or ingesting infected tissues. It may also be transferred from a mother to a fetus still in the womb (transplacentally). The disease is best known for causing loss of pregnancy in cows, especially on farms with dogs.\n\n## Neosporosis, dog\nNeosporosis, dog\nDogs typically do not show signs of infections. However, signs may be seen in some puppies and adult dogs. Most severe infections occur in young puppies, which typically develop partial paralysis of the legs, particularly the hind legs. The paralysis is often progressive and results in rigid contracture of the muscles. The outlook for these puppies is poor. In adult dogs, neurologic signs (such as inflammation of the brain and spinal cord), skin inflammation with sores, inflammation of the liver, pneumonia, and inflammation of the heart may occur. The outlook worsens in dogs with severe signs or those that are not treated promptly.\nYour veterinarian will recommend proper antibiotic treatment. There is currently no vaccine.\nAlso see professional content regarding neosporosis .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Multimedia |",
+        "Neosporosis is caused by the protozoan parasite Neospora caninum . Neosporosis has been recognized in dogs, cattle, horses, and other animals, but the dog is the definitive host. (A definitive host is an animal that a parasite requires in order to mature normally.) Infection is uncommon but can be acquired by ingesting contaminated food and water, or ingesting infected tissues. It may also be transferred from a mother to a fetus still in the womb (transplacentally). The disease is best known for causing loss of pregnancy in cows, especially on farms with dogs."
+      ]
+    },
+    {
+      "heading": "Neosporosis, dog",
+      "paragraphs": [
+        "Neosporosis, dog",
+        "Dogs typically do not show signs of infections. However, signs may be seen in some puppies and adult dogs. Most severe infections occur in young puppies, which typically develop partial paralysis of the legs, particularly the hind legs. The paralysis is often progressive and results in rigid contracture of the muscles. The outlook for these puppies is poor. In adult dogs, neurologic signs (such as inflammation of the brain and spinal cord), skin inflammation with sores, inflammation of the liver, pneumonia, and inflammation of the heart may occur. The outlook worsens in dogs with severe signs or those that are not treated promptly.",
+        "Your veterinarian will recommend proper antibiotic treatment. There is currently no vaccine.",
+        "Also see professional content regarding neosporosis ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:42:06.914709+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

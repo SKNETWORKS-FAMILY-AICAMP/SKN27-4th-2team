@@ -1,0 +1,72 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Introduction to Blood Disorders of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/introduction-to-blood-disorders-of-dogs",
+  "category": "Blood Disorders of Dogs",
+  "section_slug": "blood-disorders-of-dogs",
+  "reviewed_date": "Dec 2017",
+  "author": "Susan M. Cotter , DVM, DACVIM , Cummings School of Veterinary Medicine, Tufts University",
+  "language": "en",
+  "content": "## Overview\nFor More Information |\nMultimedia |\nBlood cells form and develop mostly in the bone marrow, that is, the tissue located in the cavities of bones. Blood performs a variety of important functions as it circulates throughout the body. It delivers oxygen and vital nutrients (such as vitamins, minerals, fats, and sugars) to the tissues. It carries carbon dioxide to the lungs to be exhaled and waste products to the kidneys and liver to be eliminated from the body. It transports hormones, which are chemical messengers, to various parts of the body, allowing those parts to communicate with each other. Blood also includes cells that fight infection and control bleeding.\nThere are 3 cellular elements of blood: red blood cells, white blood cells, and platelets. Basically, red blood cells supply the body with oxygen, white blood cells protect against infection, and platelets start the formation of blood clots.\n\n## Types of Blood Cells\nTypes of Blood Cells\n\n## Blood components\nBlood components\nBlood disorders are quite diverse. They can occur as normal responses to abnormal situations; for example, a significant increase in the number of white blood cells in response to an infection or disease. They may also occur as primary abnormalities of the blood; for example, a deficiency of all cellular elements of the blood due to bone marrow failure. Furthermore, abnormalities may be quantitative (too many or too few cells) or qualitative (abnormalities in the way cells function). It is helpful to understand what the names of some blood disorders mean, as they often provide a description of the disorder itself (see table: Suffixes Used in Names of Blood Disorders ).\n\n## Suffixes Used in Names of Blood Disorders\nSuffixes Used in Names of Blood Disorders\nSuffix\nDefinition\nExample\n“philia”\nIncrease in blood levels of that type of cell\nNeutrophilia\n“osis”\nAn abnormal increase in blood levels of that type of cell; can also refer to a disease process\nLymphocytosis\n“penia”\nDecrease in blood levels of that type of cell\nNeutropenia\n“lysis”\nDestruction of that type of cell\nHemolysis\n“emia”\nDenotes the presence of a substance in the blood\nPolycythemia\n“stasis”\nTo stop or stabilize\nHemostasis\nJust as there are various blood types in humans, there are multiple blood types in dogs, cats, horses, and other animals. A few blood banks for animals have been established. Like human blood banks, they depend on donated blood and can provide type-matched blood for use in emergencies or surgeries.\n\n## For More Information\nAlso see professional content regarding blood .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "For More Information |",
+        "Multimedia |",
+        "Blood cells form and develop mostly in the bone marrow, that is, the tissue located in the cavities of bones. Blood performs a variety of important functions as it circulates throughout the body. It delivers oxygen and vital nutrients (such as vitamins, minerals, fats, and sugars) to the tissues. It carries carbon dioxide to the lungs to be exhaled and waste products to the kidneys and liver to be eliminated from the body. It transports hormones, which are chemical messengers, to various parts of the body, allowing those parts to communicate with each other. Blood also includes cells that fight infection and control bleeding.",
+        "There are 3 cellular elements of blood: red blood cells, white blood cells, and platelets. Basically, red blood cells supply the body with oxygen, white blood cells protect against infection, and platelets start the formation of blood clots."
+      ]
+    },
+    {
+      "heading": "Types of Blood Cells",
+      "paragraphs": [
+        "Types of Blood Cells"
+      ]
+    },
+    {
+      "heading": "Blood components",
+      "paragraphs": [
+        "Blood components",
+        "Blood disorders are quite diverse. They can occur as normal responses to abnormal situations; for example, a significant increase in the number of white blood cells in response to an infection or disease. They may also occur as primary abnormalities of the blood; for example, a deficiency of all cellular elements of the blood due to bone marrow failure. Furthermore, abnormalities may be quantitative (too many or too few cells) or qualitative (abnormalities in the way cells function). It is helpful to understand what the names of some blood disorders mean, as they often provide a description of the disorder itself (see table: Suffixes Used in Names of Blood Disorders )."
+      ]
+    },
+    {
+      "heading": "Suffixes Used in Names of Blood Disorders",
+      "paragraphs": [
+        "Suffixes Used in Names of Blood Disorders",
+        "Suffix",
+        "Definition",
+        "Example",
+        "“philia”",
+        "Increase in blood levels of that type of cell",
+        "Neutrophilia",
+        "“osis”",
+        "An abnormal increase in blood levels of that type of cell; can also refer to a disease process",
+        "Lymphocytosis",
+        "“penia”",
+        "Decrease in blood levels of that type of cell",
+        "Neutropenia",
+        "“lysis”",
+        "Destruction of that type of cell",
+        "Hemolysis",
+        "“emia”",
+        "Denotes the presence of a substance in the blood",
+        "Polycythemia",
+        "“stasis”",
+        "To stop or stabilize",
+        "Hemostasis",
+        "Just as there are various blood types in humans, there are multiple blood types in dogs, cats, horses, and other animals. A few blood banks for animals have been established. Like human blood banks, they depend on donated blood and can provide type-matched blood for use in emergencies or surgeries."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding blood ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T06:23:28.123618+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

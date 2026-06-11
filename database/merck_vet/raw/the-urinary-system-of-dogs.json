@@ -1,0 +1,36 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "The Urinary System of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/the-urinary-system-of-dogs",
+  "category": "Kidney and Urinary Tract Disorders of Dogs",
+  "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Sherry Lynn Sanderson , DVM, PhD, DACVIM-SAIM, DACVIM-Nutrition , Department of Biomedical Sciences, College of Veterinary Medicine, University of Georgia",
+  "language": "en",
+  "content": "## Overview\nMultimedia |\n\n## Urinary system in male dogs\nUrinary system in male dogs\n\n## Urinary system in female dogs\nUrinary system in female dogs\nThe urinary system or tract includes the kidneys, the ureters (tubes that connect the kidneys to the bladder), the bladder, and the urethra (the tube through which urine exits the body). The urinary system has several important functions. It gets rid of the waste products that are created when food is transformed into energy. It also maintains the correct balance of water and electrolytes (salts) within the body’s cells. Another key function is the production of hormones called erythropoietin and renin, which are important in maintaining healthy blood pressure, producing blood cells, and absorbing salt correctly. Finally, the urinary system processes vitamin D.\nAlso see professional content regarding the urinary system .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Multimedia |"
+      ]
+    },
+    {
+      "heading": "Urinary system in male dogs",
+      "paragraphs": [
+        "Urinary system in male dogs"
+      ]
+    },
+    {
+      "heading": "Urinary system in female dogs",
+      "paragraphs": [
+        "Urinary system in female dogs",
+        "The urinary system or tract includes the kidneys, the ureters (tubes that connect the kidneys to the bladder), the bladder, and the urethra (the tube through which urine exits the body). The urinary system has several important functions. It gets rid of the waste products that are created when food is transformed into energy. It also maintains the correct balance of water and electrolytes (salts) within the body’s cells. Another key function is the production of hormones called erythropoietin and renin, which are important in maintaining healthy blood pressure, producing blood cells, and absorbing salt correctly. Finally, the urinary system processes vitamin D.",
+        "Also see professional content regarding the urinary system ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:54:47.674603+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Introduction to Reproductive Disorders of Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/introduction-to-reproductive-disorders-of-dogs",
+  "category": "Reproductive Disorders of Dogs",
+  "section_slug": "reproductive-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Harry W. Momont , DVM, PhD, DACT , Department of Medical Sciences, School of Veterinary Medicine, University of Wisconsin-Madison",
+  "language": "en",
+  "content": "## Overview\nThe reproductive system is the group of organs that produce offspring. In both males and females, the reproductive system is composed of primary sex organs and primary regulatory centers. The primary sex organs are the testes and genital tract in males and the ovaries, fallopian tubes, and uterus in females. The primary regulatory centers are in the brain (the pituitary gland and hypothalamus). They control the production of hormones that in turn influence the function of the primary sex organs.\nAlso see professional content regarding an introduction to reproductive disorders .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The reproductive system is the group of organs that produce offspring. In both males and females, the reproductive system is composed of primary sex organs and primary regulatory centers. The primary sex organs are the testes and genital tract in males and the ovaries, fallopian tubes, and uterus in females. The primary regulatory centers are in the brain (the pituitary gland and hypothalamus). They control the production of hormones that in turn influence the function of the primary sex organs.",
+        "Also see professional content regarding an introduction to reproductive disorders ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:11:24.918895+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

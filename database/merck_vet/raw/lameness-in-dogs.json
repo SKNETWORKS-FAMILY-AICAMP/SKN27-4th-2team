@@ -1,0 +1,42 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Lameness in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/lameness-in-dogs",
+  "category": "Bone, Joint, and Muscle Disorders of Dogs",
+  "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+  "reviewed_date": "Mar 2018",
+  "author": "Joseph Harari , MS, DVM, DACVS , Veterinary Surgical Specialists, Spokane, WA",
+  "language": "en",
+  "content": "## Overview\nThe Lameness Examination |\nPain Management |\nLameness is a sign of illness, not a specific disease. It may indicate a disorder in the musculoskeletal system. Signs of musculoskeletal disorders include weakness, lameness, limb swelling, and joint dysfunction. Nerve and muscle function may be impaired as a result of changes to neuromuscular tissues. Problems with the muscles and skeleton may also affect other organ systems, including the urinary, digestive, and circulatory systems.\n\n## The Lameness Examination\nIn order to diagnose the problem, your veterinarian will examine your dog and review any previous injuries and current overall health. A veterinarian performs a lameness examination in order to identify changes to musculoskeletal tissues. The veterinarian observes the animal resting, getting up, and walking. He or she watches to see if the injury affects one limb or several limbs and how the degree of reaction varies with each type of activity. If a forelimb is lame, the animal generally raises its head when putting weight on that limb. The stride is also shortened on the affected side. If a hindlimb is lame, the animal generally drops its head when putting weight on that limb. The veterinarian will feel the animal’s bones, joints, and soft tissue for abnormalities such as swelling, pain, instability, a grating or crackling sound, reduced range of motion, and wasting away of muscle. More than one examination, sometimes with exercise in between, may be necessary. For irritable animals or certain tests, sedation may be required.\n\n## Imaging Techniques\nVeterinarians may use imaging procedures to diagnose lameness. These include x-rays and ultrasonography, as well as less common techniques such as nuclear scintigraphy, computed tomography (CT), and magnetic resonance imaging (MRI). During these procedures, the veterinarian will probably use a heavy sedative or anesthesia to reduce your pet’s pain and stress.\n\n## Pain Management\nRelieving pain is an important component of treatment for lame animals, and may allow faster recovery. Nonsteroidal anti‑inflammatory drugs and other pain-relieving drugs are used to control pain in lame animals. Other methods of pain relief that may be suggested in addition to (or instead of) drugs, include acupuncture, massage, and changes in diet. Your veterinarian is best able to prescribe the appropriate treatment for your pet. It is very important that you follow all directions exactly as prescribed.",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The Lameness Examination |",
+        "Pain Management |",
+        "Lameness is a sign of illness, not a specific disease. It may indicate a disorder in the musculoskeletal system. Signs of musculoskeletal disorders include weakness, lameness, limb swelling, and joint dysfunction. Nerve and muscle function may be impaired as a result of changes to neuromuscular tissues. Problems with the muscles and skeleton may also affect other organ systems, including the urinary, digestive, and circulatory systems."
+      ]
+    },
+    {
+      "heading": "The Lameness Examination",
+      "paragraphs": [
+        "In order to diagnose the problem, your veterinarian will examine your dog and review any previous injuries and current overall health. A veterinarian performs a lameness examination in order to identify changes to musculoskeletal tissues. The veterinarian observes the animal resting, getting up, and walking. He or she watches to see if the injury affects one limb or several limbs and how the degree of reaction varies with each type of activity. If a forelimb is lame, the animal generally raises its head when putting weight on that limb. The stride is also shortened on the affected side. If a hindlimb is lame, the animal generally drops its head when putting weight on that limb. The veterinarian will feel the animal’s bones, joints, and soft tissue for abnormalities such as swelling, pain, instability, a grating or crackling sound, reduced range of motion, and wasting away of muscle. More than one examination, sometimes with exercise in between, may be necessary. For irritable animals or certain tests, sedation may be required."
+      ]
+    },
+    {
+      "heading": "Imaging Techniques",
+      "paragraphs": [
+        "Veterinarians may use imaging procedures to diagnose lameness. These include x-rays and ultrasonography, as well as less common techniques such as nuclear scintigraphy, computed tomography (CT), and magnetic resonance imaging (MRI). During these procedures, the veterinarian will probably use a heavy sedative or anesthesia to reduce your pet’s pain and stress."
+      ]
+    },
+    {
+      "heading": "Pain Management",
+      "paragraphs": [
+        "Relieving pain is an important component of treatment for lame animals, and may allow faster recovery. Nonsteroidal anti‑inflammatory drugs and other pain-relieving drugs are used to control pain in lame animals. Other methods of pain relief that may be suggested in addition to (or instead of) drugs, include acupuncture, massage, and changes in diet. Your veterinarian is best able to prescribe the appropriate treatment for your pet. It is very important that you follow all directions exactly as prescribed."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:30:55.973770+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

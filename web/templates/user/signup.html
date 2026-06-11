@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}회원가입 | Pet Mate{% endblock %}
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+<main class="auth-layout photo-auth-layout">
+    <section class="auth-card glass-card signup-card">
+        <div class="card-heading">
+            <p class="eyebrow">Create Account</p>
+            <h2>회원가입</h2>
+        </div>
+
+        <form class="auth-form" method="post">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <p class="form-alert">{{ form.non_field_errors|striptags }}</p>
+            {% endif %}
+
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <p class="field-help">{{ field.help_text|striptags }}</p>
+                {% endif %}
+                {% if field.errors %}
+                    <p class="field-error">{{ field.errors|striptags }}</p>
+                {% endif %}
+            {% endfor %}
+
+            <button class="primary-button full-width" type="submit">가입하기</button>
+        </form>
+
+        <p class="helper-text">
+            이미 계정이 있다면 <a href="{% url 'user:login' %}">로그인</a>으로 이동하세요.
+        </p>
+    </section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const p1 = document.getElementById("id_password1");
+    const p2 = document.getElementById("id_password2");
+    const form = document.querySelector(".auth-form");
+
+    if (p1 && p2) {
+        // Create live error message container
+        const matchError = document.createElement("p");
+        matchError.className = "field-error live-error";
+        matchError.style.display = "none";
+        p2.parentNode.insertBefore(matchError, p2.nextSibling);
+
+        const validatePasswords = () => {
+            if (p2.value && p1.value !== p2.value) {
+                matchError.textContent = "비밀번호가 일치하지 않습니다.";
+                matchError.style.display = "block";
+                p2.classList.add("is-invalid");
+                return false;
+            } else {
+                matchError.style.display = "none";
+                p2.classList.remove("is-invalid");
+                return true;
+            }
+        };
+
+        p1.addEventListener("input", validatePasswords);
+        p2.addEventListener("input", validatePasswords);
+
+        form.addEventListener("submit", (e) => {
+            if (!validatePasswords()) {
+                e.preventDefault();
+                alert("비밀번호가 서로 일치하는지 확인해 주세요.");
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

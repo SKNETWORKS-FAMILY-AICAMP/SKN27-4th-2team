@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Bronchitis in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/bronchitis-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ned F. Kuehn , DVM, MS, DACVIM , Michigan Veterinary Specialists",
+  "language": "en",
+  "content": "## Overview\nBronchitis is an inflammation of the bronchial airways that may extend into the lungs. It is discussed in this chapter as part of tracheobronchitis .\nAlso see professional content regarding tracheobronchitis .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Bronchitis is an inflammation of the bronchial airways that may extend into the lungs. It is discussed in this chapter as part of tracheobronchitis .",
+        "Also see professional content regarding tracheobronchitis ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:55:25.139814+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

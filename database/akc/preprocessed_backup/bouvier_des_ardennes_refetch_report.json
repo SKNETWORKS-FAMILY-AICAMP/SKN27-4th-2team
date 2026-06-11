@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-06-02T20:59:07",
+  "source_url": "https://www.akc.org/dog-breeds/bouvier-de-ardennes/",
+  "breed_name": "Bouvier des Ardennes",
+  "updated_files": [
+    {
+      "file": "original/akc_breed_info.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step1_original_copy.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step2_basic_cleaned.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step3_ranges_parsed.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step4_traits_normalized.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step5_colors_markings_normalized.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step5_completed.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_vector_documents.json",
+      "row_replaced": true
+    }
+  ],
+  "raw_row": {
+    "source_file": "akc_breedpage_props_refetch_2026-06-02",
+    "breed_name": "Bouvier des Ardennes",
+    "breed_url": "https://www.akc.org/dog-breeds/bouvier-de-ardennes/",
+    "height": "Male 22 - 24.5 inches Female 20.5 - 22 inches",
+    "weight": "Male 61.5 - 77.5 lbs Female 48.5 - 62 lbs",
+    "life_expectancy": "12-16 years",
+    "affectionate_with_family": "5/5",
+    "good_with_young_children": "3/5",
+    "good_with_other_dogs": "3/5",
+    "shedding_level": "3/5",
+    "coat_grooming_frequency": "1/5",
+    "drooling_level": "1/5",
+    "coat_type": "Not specified",
+    "coat_length": "Not specified",
+    "openness_to_strangers": "3/5",
+    "playfulness_level": "3/5",
+    "watchdog_protective_nature": "Not specified",
+    "adaptability_level": "5/5",
+    "trainability_level": "5/5",
+    "energy_level": "5/5",
+    "barking_level": "5/5",
+    "mental_stimulation_needs": "5/5",
+    "colors": "Black (code: 007, standard: yes); Black & Fawn (code: 011, standard: yes); Cream (code: 076, standard: yes); Gray (code: 100, standard: yes); Red (code: 140, standard: yes)",
+    "markings": "Black Mask (code: 004, standard: yes); Brindle Markings (code: 007, standard: yes); Sable (code: 026, standard: yes)",
+    "about_the_breed": "While the Bouvier des Ardennes is a handsome dog, they do not exist to be beautiful, but to be accomplished. They are passionate about working livestock and are a consistent helper to farmers. A high energy dog with intensity and enthusiasm, they require a home that makes effective use of such dedication. Bouvier des Ardennes can be incredibly patient and stubborn, which means they are willing to commit to a task, whether the task is their idea or their master's. Because of this, it is important to impress upon them good discipline early and without cruelty. The most effective working dog is medium in size, hardy and well-muscled, and fast on his feet. He has a medium length rough, tousled coat that does not require unnecessary fuss; it exists to sufficiently protect farm dogs that may work long days outdoors from harsh weather conditions. The Bouvier des Ardennes are born in a wide range of colors, most often shades of fawn, grey, red, with black top hairs or markings. Their coats may be solid, sable, or brindle. Like many other Belgian herders, these dogs have the aptitude to protect their property, livestock, and master so it is important to provide positive social conditioning to define appropriate relationship with those that do not reside on the family's land. Bouvier Des Ardennes Club of America www.bdaclubofamerica.com Email: bdaclubofamerica@outlook.com",
+    "health": "Like most other dogs their size and stature, it is important for breeders to test for hip and elbow dysplasia. While there is little research on the matter, a DNA test for Spinocerebellar Ataxia should also be considered.",
+    "grooming": "The Bouvier des Ardennes is a low-maintenance, no-fuss kind of dog. As he is designed to work long days outdoors in various weather conditions, their coat is resilient. The occasional bath and weekly brushing to prevent matting and to remove excess dirt is sufficient. Like some other rough-coated dogs, when their top coat reaches its fullest length, the dead roots are apparent and may shed itself. Because the dog is to be left rustically natural, the coat is not to be hand-stripped.",
+    "exercise": "The Bouvier des Ardennes is born to hustle about the farm for various purposes throughout the day, never tiring, but is happy to retire for the evening when his master says his work is done. These dogs are generally not satiated with a walk around the neighborhood, free roam in a backyard, or a daily game of fetch. The Bouvier des Ardennes is a busy-body who can make trouble for his owner if he is not gainfully employed. If not living and working on a farm, a Bouvier des Ardennes can be just as happy in a rural home with regular free runs about the landscape, daily training, and regular sporting events.",
+    "training": "Unlike some herders, the Bouvier des Ardennes does not beg to be micromanaged by his handler. While he is happy to engage with his handler and do as asked, he may question the necessity of performing a certain task if he feels it is under-stimulating, unnecessarily repetitive, or lacks reinforcement. They are intelligent problem solvers who can think for themselves, which might be problematic for a novice handler. These dogs require firm but fair training from a young age. With proper effective motivation, the Bouvier des Ardennes is an impressive competitor with sharp handler focus and precision execution. Social skills with other dogs, animals, and non-household people from a young age is also incredibly important. While the Bouvier des Ardennes does not have to be everybody's best friend, they do need to understand when it's appropriate to make friends, when to show neutrality, and when to protect.",
+    "nutrition": "To support these dogs energy and strong muscle, a balanced raw diet or high quality commercial food is recommended. Whatever you choose should account for the \"needs of your dog's age\". Focus on steady growth for puppies, maintenance for adults, and longevity care for seniors. As with any diet, clean, fresh water should be available at all times.",
+    "history": "Bouvier des Ardennes directly translates to \"cow herder of the Ardennes\" in French. It gets its name from the practice of guarding and driving cattle in the Ardennes region of Belgium. The harsh climate, the hard specific work, the difficult terrain, and the poverty of the region in the breed's early development have all contributed to shaping the breed type. Only the most hardy and the most hardworking of a deliberately select population were retained to drive the herds, usually consisting of milking cows and sheep. This also included pigs and horses in the 19th century. From the 19th century, they were used to track deer and wild boar, and then during the two World Wars they became poachers dogs. At the end of the 19th century, the drover's dog looked like a sheep dog with a harsh coat, but stronger, bigger and more biting. In early Belgian shows, classes were opened to drover's dogs as an experiment to try to establish similarities of type. In 1903, at the Liege Show, Professor Reul discovered Tom, the first example of the ideal type of drover's dog. In 1913, The Society of Liege for the Improvement of the Drovers Dog from the Province of Liege and the Ardennes was founded and drew up a proposed standard. The definitive text was adopted by Belgium in 1923 and published by the FCI in 1963. Industrialization followed by the reduction in number of farms in the Ardennes thus reduced milking cattle herds considerably. This ultimately diminished the need for working dogs. Around 1985, the collection of colostrum from milking herds led dog fanciers to discover a few survivors of the Bouvier des Ardennes that looked similar to proper type. Around 1990, dedicated enthusiasts set out to produce dogs that best embodied the type outlined in the standard."
+  },
+  "completed_row": {
+    "breed_name": "Bouvier des Ardennes",
+    "height_min": "20.5",
+    "height_max": "24.5",
+    "weight_min": "48.5",
+    "weight_max": "77.5",
+    "life_expectancy_min": "12",
+    "life_expectancy_max": "16",
+    "affectionate_with_family_score": "5",
+    "good_with_young_children_score": "3",
+    "good_with_other_dogs_score": "3",
+    "shedding_level_score": "3",
+    "coat_grooming_frequency_score": "1",
+    "drooling_level_score": "1",
+    "openness_to_strangers_score": "3",
+    "playfulness_level_score": "3",
+    "watchdog_protective_nature_score": "null",
+    "adaptability_level_score": "5",
+    "trainability_level_score": "5",
+    "energy_level_score": "5",
+    "barking_level_score": "5",
+    "mental_stimulation_needs_score": "5",
+    "coat_type_array": "[]",
+    "coat_length_array": "[]",
+    "colors_array": "[\"Black\", \"Black & Fawn\", \"Cream\", \"Gray\", \"Red\"]",
+    "markings_array": "[\"Black Mask\", \"Brindle Markings\", \"Sable\"]",
+    "about_the_breed": "While the Bouvier des Ardennes is a handsome dog, they do not exist to be beautiful, but to be accomplished. They are passionate about working livestock and are a consistent helper to farmers. A high energy dog with intensity and enthusiasm, they require a home that makes effective use of such dedication. Bouvier des Ardennes can be incredibly patient and stubborn, which means they are willing to commit to a task, whether the task is their idea or their master's. Because of this, it is important to impress upon them good discipline early and without cruelty. The most effective working dog is medium in size, hardy and well-muscled, and fast on his feet. He has a medium length rough, tousled coat that does not require unnecessary fuss; it exists to sufficiently protect farm dogs that may work long days outdoors from harsh weather conditions. The Bouvier des Ardennes are born in a wide range of colors, most often shades of fawn, grey, red, with black top hairs or markings. Their coats may be solid, sable, or brindle. Like many other Belgian herders, these dogs have the aptitude to protect their property, livestock, and master so it is important to provide positive social conditioning to define appropriate relationship with those that do not reside on the family's land. Bouvier Des Ardennes Club of America www.bdaclubofamerica.com Email: bdaclubofamerica@outlook.com",
+    "health": "Like most other dogs their size and stature, it is important for breeders to test for hip and elbow dysplasia. While there is little research on the matter, a DNA test for Spinocerebellar Ataxia should also be considered.",
+    "grooming": "The Bouvier des Ardennes is a low-maintenance, no-fuss kind of dog. As he is designed to work long days outdoors in various weather conditions, their coat is resilient. The occasional bath and weekly brushing to prevent matting and to remove excess dirt is sufficient. Like some other rough-coated dogs, when their top coat reaches its fullest length, the dead roots are apparent and may shed itself. Because the dog is to be left rustically natural, the coat is not to be hand-stripped.",
+    "exercise": "The Bouvier des Ardennes is born to hustle about the farm for various purposes throughout the day, never tiring, but is happy to retire for the evening when his master says his work is done. These dogs are generally not satiated with a walk around the neighborhood, free roam in a backyard, or a daily game of fetch. The Bouvier des Ardennes is a busy-body who can make trouble for his owner if he is not gainfully employed. If not living and working on a farm, a Bouvier des Ardennes can be just as happy in a rural home with regular free runs about the landscape, daily training, and regular sporting events.",
+    "training": "Unlike some herders, the Bouvier des Ardennes does not beg to be micromanaged by his handler. While he is happy to engage with his handler and do as asked, he may question the necessity of performing a certain task if he feels it is under-stimulating, unnecessarily repetitive, or lacks reinforcement. They are intelligent problem solvers who can think for themselves, which might be problematic for a novice handler. These dogs require firm but fair training from a young age. With proper effective motivation, the Bouvier des Ardennes is an impressive competitor with sharp handler focus and precision execution. Social skills with other dogs, animals, and non-household people from a young age is also incredibly important. While the Bouvier des Ardennes does not have to be everybody's best friend, they do need to understand when it's appropriate to make friends, when to show neutrality, and when to protect.",
+    "nutrition": "To support these dogs energy and strong muscle, a balanced raw diet or high quality commercial food is recommended. Whatever you choose should account for the \"needs of your dog's age\". Focus on steady growth for puppies, maintenance for adults, and longevity care for seniors. As with any diet, clean, fresh water should be available at all times.",
+    "history": "Bouvier des Ardennes directly translates to \"cow herder of the Ardennes\" in French. It gets its name from the practice of guarding and driving cattle in the Ardennes region of Belgium. The harsh climate, the hard specific work, the difficult terrain, and the poverty of the region in the breed's early development have all contributed to shaping the breed type. Only the most hardy and the most hardworking of a deliberately select population were retained to drive the herds, usually consisting of milking cows and sheep. This also included pigs and horses in the 19th century. From the 19th century, they were used to track deer and wild boar, and then during the two World Wars they became poachers dogs. At the end of the 19th century, the drover's dog looked like a sheep dog with a harsh coat, but stronger, bigger and more biting. In early Belgian shows, classes were opened to drover's dogs as an experiment to try to establish similarities of type. In 1903, at the Liege Show, Professor Reul discovered Tom, the first example of the ideal type of drover's dog. In 1913, The Society of Liege for the Improvement of the Drovers Dog from the Province of Liege and the Ardennes was founded and drew up a proposed standard. The definitive text was adopted by Belgium in 1923 and published by the FCI in 1963. Industrialization followed by the reduction in number of farms in the Ardennes thus reduced milking cattle herds considerably. This ultimately diminished the need for working dogs. Around 1985, the collection of colostrum from milking herds led dog fanciers to discover a few survivors of the Bouvier des Ardennes that looked similar to proper type. Around 1990, dedicated enthusiasts set out to produce dogs that best embodied the type outlined in the standard."
+  },
+  "vector_docs_for_breed": 10,
+  "watchdog_protective_nature_alias_fix": {
+    "timestamp": "2026-06-02T20:59:59",
+    "source_key": "watchdogprotective_nature",
+    "score": 5,
+    "raw_value": "5/5",
+    "completed_value": "5"
+  }
+}

@@ -1,0 +1,211 @@
+﻿{% extends "base.html" %}
+
+{% block title %}견종도감 | Pet Mate{% endblock %}
+{% block body_class %}breed-page{% endblock %}
+
+{% block content %}
+<main class="breed-search-page">
+    <section class="breed-search-hero" aria-labelledby="breed-search-title">
+        <p class="eyebrow">Dog Breeds</p>
+        <h1 id="breed-search-title">견종도감</h1>
+        <p>다양한 강아지들의 성격, 특징, 필요 사항을 알아보고 당신에게 맞는 반려견을 찾아보세요.</p>
+    </section>
+
+    <form class="breed-filter" method="get">
+        <input
+            type="search"
+            name="q"
+            value="{{ keyword }}"
+            placeholder="견종명 검색 (예: 리트리버)"
+            aria-label="견종명 검색"
+        >
+        <select name="group" aria-label="그룹 선택">
+            <option value="">전체 그룹</option>
+            {% for group in groups %}
+                <option value="{{ group }}" {% if group == selected_group %}selected{% endif %}>{{ group }}</option>
+            {% endfor %}
+        </select>
+        <select name="origin" aria-label="출신 선택">
+            <option value="">전체 출신</option>
+            {% for origin in origins %}
+                <option value="{{ origin }}" {% if origin == selected_origin %}selected{% endif %}>{{ origin }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="primary-button">검색</button>
+        <a href="{% url 'dog:search' %}" class="secondary-button">초기화</a>
+    </form>
+
+    <div class="breed-result-count">
+        <span>검색 결과: {{ total_count }}개</span>
+        {% if total_count %}
+            <strong>{{ visible_start }}-{{ visible_end }}개 표시</strong>
+        {% endif %}
+    </div>
+
+    <div class="breed-grid">
+        {% for breed in breeds %}
+            <article class="breed-card" data-breed-id="{{ breed.id }}">
+                <a href="{% url 'dog:detail' breed.id %}" class="breed-img-box">
+                    {% if breed.image_url %}
+                        <img
+                            src="{{ breed.image_url }}"
+                            alt="{{ breed.breed_name_ko }}"
+                            class="{% if breed.rotate_image_90 %}is-rotated-90{% endif %}"
+                            {% if breed.rotate_image_90 %}style="transform: rotate(90deg) scale(0.75);"{% endif %}
+                        >
+                    {% else %}
+                        <div class="no-image">이미지 준비 중</div>
+                    {% endif %}
+                </a>
+                <div class="breed-info">
+                    <div class="breed-title-row">
+                        <div class="breed-name-row">
+                            <h3>
+                                <a href="{% url 'dog:detail' breed.id %}">{{ breed.breed_name_ko }}</a>
+                            </h3>
+                            <span class="breed-size-badge">{{ breed.size_category }}</span>
+                        </div>
+                        <button
+                            type="button"
+                            class="favorite-button{% if breed.id in favorited_ids %} is-active{% endif %}"
+                            data-favorite-id="{{ breed.id }}"
+                            aria-label="{{ breed.breed_name_ko }} 즐겨찾기"
+                            aria-pressed="{% if breed.id in favorited_ids %}true{% else %}false{% endif %}"
+                        >
+                            {% if breed.id in favorited_ids %}★{% else %}☆{% endif %}
+                        </button>
+                    </div>
+                    <p class="en-name">{{ breed.breed_name_en }}</p>
+                    <div class="breed-facts" aria-label="견종 기본 정보">
+                        {% if breed.temperament %}
+                            <div class="breed-fact breed-fact-temperament">
+                                <span>성향</span>
+                                <strong>{{ breed.temperament }}</strong>
+                            </div>
+                        {% endif %}
+                        <div class="breed-fact-list">
+                            {% if breed.height_min_cm and breed.height_max_cm %}
+                                <div class="breed-fact">
+                                    <span>체고</span>
+                                    <strong>{{ breed.height_min_cm|floatformat:"-1" }}-{{ breed.height_max_cm|floatformat:"-1" }}cm</strong>
+                                </div>
+                            {% endif %}
+                            {% if breed.weight_min_kg and breed.weight_max_kg %}
+                                <div class="breed-fact">
+                                    <span>중량</span>
+                                    <strong>{{ breed.weight_min_kg|floatformat:"-1" }}-{{ breed.weight_max_kg|floatformat:"-1" }}kg</strong>
+                                </div>
+                            {% endif %}
+                            {% if breed.life_expectancy_min and breed.life_expectancy_max %}
+                                <div class="breed-fact">
+                                    <span>수명</span>
+                                    <strong>{{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</strong>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="breed-score-list" aria-label="견종 척도 정보">
+                        {% if breed.affectionate_with_family_score %}
+                            <div class="breed-score-row">
+                                <span>가족 친화</span>
+                                <i style="--score: {{ breed.affectionate_with_family_score }};"></i>
+                                <b>{{ breed.affectionate_with_family_score }}/5</b>
+                            </div>
+                        {% endif %}
+                        {% if breed.trainability_score %}
+                            <div class="breed-score-row">
+                                <span>훈련성</span>
+                                <i style="--score: {{ breed.trainability_score }};"></i>
+                                <b>{{ breed.trainability_score }}/5</b>
+                            </div>
+                        {% endif %}
+                        {% if breed.energy_level_score %}
+                            <div class="breed-score-row">
+                                <span>활동량</span>
+                                <i style="--score: {{ breed.energy_level_score }};"></i>
+                                <b>{{ breed.energy_level_score }}/5</b>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+        {% empty %}
+            <div class="breed-empty">
+                <p>검색 결과가 없습니다. 다른 검색어나 필터를 시도해보세요.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if page_obj and page_obj.paginator.num_pages > 1 %}
+        <nav class="breed-pagination" aria-label="견종도감 페이지">
+            {% if page_obj.has_previous %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}">이전</a>
+            {% else %}
+                <span class="is-disabled">이전</span>
+            {% endif %}
+
+            {% for page_number in page_range %}
+                {% if page_number == page_obj.paginator.ELLIPSIS %}
+                    <span class="pagination-gap">{{ page_number }}</span>
+                {% elif page_number == page_obj.number %}
+                    <span class="is-current">{{ page_number }}</span>
+                {% else %}
+                    <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_number }}">{{ page_number }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}">다음</a>
+            {% else %}
+                <span class="is-disabled">다음</span>
+            {% endif %}
+        </nav>
+    {% endif %}
+</main>
+
+
+{% csrf_token %}
+{{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" hidden></div>
+<script>
+(() => {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
+    const buttons = document.querySelectorAll(".favorite-button[data-favorite-id]");
+
+    const renderButton = (button, isActive) => {
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+        button.textContent = isActive ? "★" : "☆";
+    };
+
+    buttons.forEach((button) => {
+        const breedId = button.dataset.favoriteId;
+        if (button.classList.contains('is-active')) {
+            renderButton(button, true);
+        }
+
+        button.addEventListener("click", () => {
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
+            }
+
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+            fetch(`/dog/breeds/${breedId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            }).then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    renderButton(button, data.is_favorited);
+                }
+            });
+        });
+    });
+})();
+</script>
+{% endblock %}

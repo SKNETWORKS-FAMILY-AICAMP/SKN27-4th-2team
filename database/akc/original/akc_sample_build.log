@@ -1,0 +1,29 @@
+2026-06-02 11:40:04,111 [INFO] Starting AKC sample dataset build
+2026-06-02 11:40:04,111 [INFO] Target breeds: Affenpinscher, Eurasier, Hovawart, Slovensky Kopov, Afghan Hound, Airedale Terrier, Akita, Alaskan Klee Kai, Alaskan Malamute, American Bulldog
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Affenpinscher
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Eurasier
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Hovawart
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Slovensky Kopov
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Afghan Hound
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Airedale Terrier
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Akita
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Alaskan Klee Kai
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: Alaskan Malamute
+2026-06-02 11:40:04,169 [INFO] Loaded existing sample row: American Bulldog
+2026-06-02 11:40:04,169 [INFO] Loaded legacy local row: Eurasier
+2026-06-02 11:40:04,169 [INFO] Loaded legacy local row: Hovawart
+2026-06-02 11:40:04,170 [INFO] Loaded legacy local row: Slovensky Kopov
+2026-06-02 11:40:04,259 [INFO] Applied breedPage props: Affenpinscher
+2026-06-02 11:40:04,361 [INFO] Applied breedPage props: Eurasier
+2026-06-02 11:40:04,417 [INFO] Applied breedPage props: Hovawart
+2026-06-02 11:40:04,563 [INFO] Applied breedPage props: Slovensky Kopov
+2026-06-02 11:40:04,661 [INFO] Applied breedPage props: Afghan Hound
+2026-06-02 11:40:04,747 [INFO] Applied breedPage props: Airedale Terrier
+2026-06-02 11:40:04,874 [INFO] Applied breedPage props: Akita
+2026-06-02 11:40:04,955 [INFO] Applied breedPage props: Alaskan Klee Kai
+2026-06-02 11:40:05,157 [INFO] Applied breedPage props: Alaskan Malamute
+2026-06-02 11:40:05,259 [INFO] Applied breedPage props: American Bulldog
+2026-06-02 11:40:05,260 [INFO] Wrote CSV: C:\dev\project\project4\database\akc\affenpinscher_sample.csv (10 rows)
+2026-06-02 11:40:05,261 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 11:40:05,282 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 11:40:05,282 [INFO] Completed AKC sample dataset build with 10 rows

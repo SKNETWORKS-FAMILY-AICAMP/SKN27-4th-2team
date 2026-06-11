@@ -1,0 +1,38 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Principles of Therapy of the Nervous System in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/principles-of-therapy-of-the-nervous-system-in-dogs",
+  "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+  "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+  "reviewed_date": "Feb 2018",
+  "author": "Thomas Schubert , DVM, DACVIM, DABVP , Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida",
+  "language": "en",
+  "content": "## Overview\nNursing Care |\nFor More Information |\nOnce a diagnosis is made, appropriate therapy can be considered. There are several groups of drugs that are used to treat disorders of the nervous system. Drugs used to treat epileptic seizures are known as anticonvulsants. Anti-inflammatory medications, including corticosteroids, are used to reduce swelling and inflammation in many types of injuries. These medications may be given intravenously in some cases (such as spinal cord injury) and by mouth in others. Other medications may be needed to relieve muscle spasms caused by neurologic disorders or to treat infections of the nervous system.\nSurgery is necessary to treat certain types of neurologic disorders. In the case of severe spinal cord injuries, surgery may need to be performed within 24 hours of the injury.\nAfter cranial surgery, and in animals with brain tumors or head injuries, there is a risk of swelling caused by an accumulation of fluid in the brain. Mannitol can be given intravenously to reduce the swelling. (For a more detailed discussion, see .)\n\n## Nursing Care\nParaplegic or quadriplegic animals need intensive nursing care. The dog should be kept on padding and turned every 4 to 6 hours to help prevent sores from developing on the skin. The skin must be kept clean and free of urine and feces. In animals that cannot urinate properly, the urinary bladder may need to be expressed (manually emptied), or a urinary catheter may be necessary. Urinalyses must be done every 2 to 4 weeks to monitor for bladder infection. Quadriplegic animals need to be hand fed and given plenty of water. Manually flexing and massaging the dog’s joints and muscles can delay muscle wasting in paralyzed limbs.\n\n## For More Information\nAlso see professional content regarding principles of therapy of the nervous system .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Nursing Care |",
+        "For More Information |",
+        "Once a diagnosis is made, appropriate therapy can be considered. There are several groups of drugs that are used to treat disorders of the nervous system. Drugs used to treat epileptic seizures are known as anticonvulsants. Anti-inflammatory medications, including corticosteroids, are used to reduce swelling and inflammation in many types of injuries. These medications may be given intravenously in some cases (such as spinal cord injury) and by mouth in others. Other medications may be needed to relieve muscle spasms caused by neurologic disorders or to treat infections of the nervous system.",
+        "Surgery is necessary to treat certain types of neurologic disorders. In the case of severe spinal cord injuries, surgery may need to be performed within 24 hours of the injury.",
+        "After cranial surgery, and in animals with brain tumors or head injuries, there is a risk of swelling caused by an accumulation of fluid in the brain. Mannitol can be given intravenously to reduce the swelling. (For a more detailed discussion, see .)"
+      ]
+    },
+    {
+      "heading": "Nursing Care",
+      "paragraphs": [
+        "Paraplegic or quadriplegic animals need intensive nursing care. The dog should be kept on padding and turned every 4 to 6 hours to help prevent sores from developing on the skin. The skin must be kept clean and free of urine and feces. In animals that cannot urinate properly, the urinary bladder may need to be expressed (manually emptied), or a urinary catheter may be necessary. Urinalyses must be done every 2 to 4 weeks to monitor for bladder infection. Quadriplegic animals need to be hand fed and given plenty of water. Manually flexing and massaging the dog’s joints and muscles can delay muscle wasting in paralyzed limbs."
+      ]
+    },
+    {
+      "heading": "For More Information",
+      "paragraphs": [
+        "Also see professional content regarding principles of therapy of the nervous system ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:34:26.585206+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

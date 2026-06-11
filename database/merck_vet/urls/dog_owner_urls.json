@@ -1,0 +1,1592 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "source_url": "https://www.merckvetmanual.com/dog-owners",
+  "crawled_at": "2026-06-08T07:30:25.453826+00:00",
+  "robots_note": "robots.txt declares Crawl-delay: 5. Keep requests at least 5 seconds apart.",
+  "count": 226,
+  "items": [
+    {
+      "title": "Behavior of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Behavior Modification in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/behavior-modification-in-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Behavior Problems in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/behavior-problems-in-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Diagnosing Behavior Problems in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/diagnosing-behavior-problems-in-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Behavior of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/introduction-to-behavior-of-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Normal Social Behavior in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/normal-social-behavior-in-dogs",
+      "category": "Behavior of Dogs",
+      "section_slug": "behavior-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Blood Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Anemia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/anemia-in-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Bleeding Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/bleeding-disorders-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Blood Groups and Blood Transfusions in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/blood-groups-and-blood-transfusions-in-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Blood Parasites of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/blood-parasites-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Erythrocytosis and Polycythemia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/erythrocytosis-and-polycythemia-in-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Blood Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/introduction-to-blood-disorders-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Malignant Lymphoma in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/malignant-lymphoma-in-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Platelets of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/platelets-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Red Blood Cells of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/red-blood-cells-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "White Blood Cell Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cell-disorders-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "White Blood Cells of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/blood-disorders-of-dogs/white-blood-cells-of-dogs",
+      "category": "Blood Disorders of Dogs",
+      "section_slug": "blood-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Bone, Joint, and Muscle Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Bone Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/bone-disorders-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Components of the Musculoskeletal System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/components-of-the-musculoskeletal-system-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Congenital and Inherited Disorders of Bones, Joints, and Muscles in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/congenital-and-inherited-disorders-of-bones-joints-and-muscles-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Associated with Calcium, Phosphorus, and Vitamin D in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/disorders-associated-with-calcium-phosphorus-and-vitamin-d-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hip Dysplasia",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/hip-dysplasia",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Bone, Joint, and Muscle Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/introduction-to-bone-joint-and-muscle-disorders-of-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lameness in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/lameness-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Muscle Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/muscle-disorders-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Osteoarthritis (Degenerative Joint Disease)",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/osteoarthritis-degenerative-joint-disease",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Other Joint Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/other-joint-disorders-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Overview of Musculoskeletal Disorders and Diseases in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/overview-of-musculoskeletal-disorders-and-diseases-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Sarcocystosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/bone-joint-and-muscle-disorders-of-dogs/sarcocystosis-in-dogs",
+      "category": "Bone, Joint, and Muscle Disorders of Dogs",
+      "section_slug": "bone-joint-and-muscle-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Central Nervous System Disorders Caused by Parasites in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/central-nervous-system-disorders-caused-by-parasites-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Congenital and Inherited Disorders of the Nervous System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/congenital-and-inherited-disorders-of-the-nervous-system-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Peripheral Nerves and Neuromuscular Junction in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/disorders-of-the-peripheral-nerves-and-neuromuscular-junction-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Spinal Column and Cord in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/disorders-of-the-spinal-column-and-cord-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Dysautonomia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/dysautonomia-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Facial Paralysis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/facial-paralysis-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Leg Paralysis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/leg-paralysis-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Meningitis and Encephalitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/meningitis-and-encephalitis-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Motion Sickness in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/motion-sickness-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Nervous System Disorders and Effects of Injuries in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/nervous-system-disorders-and-effects-of-injuries-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Parts of the Nervous System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/parts-of-the-nervous-system-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Principles of Therapy of the Nervous System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/principles-of-therapy-of-the-nervous-system-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Rabies in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "The Nervous System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/the-nervous-system-of-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "The Neurologic Evaluation of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/the-neurologic-evaluation-of-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tick Paralysis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/tick-paralysis-in-dogs",
+      "category": "Brain, Spinal Cord, and Nerve Disorders of Dogs",
+      "section_slug": "brain-spinal-cord-and-nerve-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Digestive Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Congenital and Inherited Disorders of the Digestive System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/congenital-and-inherited-disorders-of-the-digestive-system-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Dental Development of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-development-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Dental Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-disorders-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Caused by Bacteria in the Digestive System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-bacteria-in-the-digestive-system-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Caused by Protozoa in the Digestive System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-caused-by-protozoa-in-the-digestive-system-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Esophagus in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-esophagus-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Liver and Gallbladder in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-liver-and-gallbladder-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Mouth in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-mouth-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Pharynx (Throat) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-pharynx-throat-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Rectum and Anus in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-rectum-and-anus-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Stomach and Intestines in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-stomach-and-intestines-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Gastrointestinal Parasites of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/gastrointestinal-parasites-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Digestive Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/introduction-to-digestive-disorders-of-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pancreatitis and Other Disorders of the Pancreas in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/pancreatitis-and-other-disorders-of-the-pancreas-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Vomiting in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/vomiting-in-dogs",
+      "category": "Digestive Disorders of Dogs",
+      "section_slug": "digestive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Affecting Multiple Body Systems of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Actinobacillosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/actinobacillosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Actinomycosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/actinomycosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Amyloidosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/amyloidosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Anthrax in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/anthrax-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Botulism in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/botulism-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Canine Distemper (Hardpad Disease)",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/canine-distemper-hardpad-disease",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Canine Herpesvirus",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/canine-herpesvirus",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Congenital and Inherited Disorders Affecting Multiple Body Systems of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/congenital-and-inherited-disorders-affecting-multiple-body-systems-of-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ehrlichiosis and Related Infections in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/ehrlichiosis-and-related-infections-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Enterotoxemia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/enterotoxemia-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Fungal Infections in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/fungal-infections-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Glanders (Farcy) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/glanders-farcy-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Infectious Canine Hepatitis",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/infectious-canine-hepatitis",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Disorders Affecting Multiple Body Systems of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/introduction-to-disorders-affecting-multiple-body-systems-of-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Leishmaniosis (Visceral Leishmaniasis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/leishmaniosis-visceral-leishmaniasis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Leptospirosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/leptospirosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lyme Disease (Lyme Borreliosis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/lyme-disease-lyme-borreliosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Melioidosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/melioidosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Neosporosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/neosporosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Nocardiosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/nocardiosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Peritonitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/peritonitis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Plague in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/plague-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Rocky Mountain Spotted Fever (Tick Fever) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/rocky-mountain-spotted-fever-tick-fever-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Salmon Poisoning Disease and Elokomin Fluke Fever in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/salmon-poisoning-disease-and-elokomin-fluke-fever-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tetanus in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/tetanus-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Toxoplasmosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/toxoplasmosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Trichinellosis (Trichinosis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/trichinellosis-trichinosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tuberculosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/tuberculosis-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tularemia (Rabbit Fever) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/tularemia-rabbit-fever-in-dogs",
+      "category": "Disorders Affecting Multiple Body Systems of Dogs",
+      "section_slug": "disorders-affecting-multiple-body-systems-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ear Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Deafness in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/deafness-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Outer Ear in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/disorders-of-the-outer-ear-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ear Infections and Otitis Externa in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/ear-infections-and-otitis-externa-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ear Structure and Function in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/ear-structure-and-function-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Otitis Media and Interna (Middle and Inner Ear Infections) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/otitis-media-and-interna-middle-and-inner-ear-infections-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tumors of the Ear Canal in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/tumors-of-the-ear-canal-in-dogs",
+      "category": "Ear Disorders of Dogs",
+      "section_slug": "ear-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Eye Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Cancers and Tumors of the Eye in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/cancers-and-tumors-of-the-eye-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Anterior Uvea in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-anterior-uvea-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Conjunctiva in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-conjunctiva-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Cornea in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-cornea-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Eyelids in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-eyelids-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Lens in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-lens-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Nasal Cavity and Tear Ducts in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-nasal-cavity-and-tear-ducts-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Optic Nerve in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-optic-nerve-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Orbit in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-orbit-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Retina, Choroid, and Optic Disk (Ocular Fundus) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-retina-choroid-and-optic-disk-ocular-fundus-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Eye Disorders Resulting from Generalized Diseases",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/eye-disorders-resulting-from-generalized-diseases",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Eye Structure and Function in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/eye-structure-and-function-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Eyeworm Disease (Thelaziasis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/eyeworm-disease-thelaziasis-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Glaucoma in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/glaucoma-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Prolapse of the Eye in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/prolapse-of-the-eye-in-dogs",
+      "category": "Eye Disorders of Dogs",
+      "section_slug": "eye-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Heart and Blood Vessel Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Acquired Heart and Blood Vessel Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/acquired-heart-and-blood-vessel-disorders-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Blood Clots and Aneurysms in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/blood-clots-and-aneurysms-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Congenital and Inherited Disorders of the Cardiovascular System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/congenital-and-inherited-disorders-of-the-cardiovascular-system-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Diagnosis of Cardiovascular Disease in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/diagnosis-of-cardiovascular-disease-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Heart Disease in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/heart-disease-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Heart Failure in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/heart-failure-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Heartworm Disease in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/heartworm-disease-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Heart and Blood Vessel Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/introduction-to-heart-and-blood-vessel-disorders-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Treatment of Cardiovascular Disease in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/heart-and-blood-vessel-disorders-of-dogs/treatment-of-cardiovascular-disease-in-dogs",
+      "category": "Heart and Blood Vessel Disorders of Dogs",
+      "section_slug": "heart-and-blood-vessel-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hormonal Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Disorders of the Adrenal Glands in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-adrenal-glands-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Pancreas in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-pancreas-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Parathyroid Glands and of Calcium Metabolism in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-parathyroid-glands-and-of-calcium-metabolism-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Pituitary Gland in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-pituitary-gland-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of the Thyroid Gland in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/disorders-of-the-thyroid-gland-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Hormonal Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/introduction-to-hormonal-disorders-of-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Neuroendocrine Tissue Tumors in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/hormonal-disorders-of-dogs/neuroendocrine-tissue-tumors-in-dogs",
+      "category": "Hormonal Disorders of Dogs",
+      "section_slug": "hormonal-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Immune Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Disorders Involving Anaphylactic Reactions (Type I Reactions, Atopy) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-anaphylactic-reactions-type-i-reactions-atopy-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Involving Cell-mediated Immunity (Type IV Reactions) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cell-mediated-immunity-type-iv-reactions-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Involving Cytotoxic Antibodies (Type II Reactions) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-cytotoxic-antibodies-type-ii-reactions-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders Involving Immune Complexes (Type III Reactions) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/disorders-involving-immune-complexes-type-iii-reactions-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Gammopathies in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/gammopathies-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Immune System Responses in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-responses-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Immune System Tumors in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-system-tumors-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Immune-deficiency Diseases in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/immune-deficiency-diseases-in-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "The Immune System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/immune-disorders-of-dogs/the-immune-system-of-dogs",
+      "category": "Immune Disorders of Dogs",
+      "section_slug": "immune-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/introduction-to-dogs/description-of-dogs",
+      "category": "Dog Owners",
+      "section_slug": "introduction-to-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Kidney and Urinary Tract Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Congenital and Inherited Disorders of the Urinary System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/congenital-and-inherited-disorders-of-the-urinary-system-in-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Detecting Disorders of the Kidneys and Urinary Tract in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/detecting-disorders-of-the-kidneys-and-urinary-tract-in-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Infectious Diseases of the Urinary System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/infectious-diseases-of-the-urinary-system-in-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Noninfectious Diseases of the Urinary System in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/noninfectious-diseases-of-the-urinary-system-in-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "The Urinary System of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/kidney-and-urinary-tract-disorders-of-dogs/the-urinary-system-of-dogs",
+      "category": "Kidney and Urinary Tract Disorders of Dogs",
+      "section_slug": "kidney-and-urinary-tract-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lung and Airway Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Accumulation of Fluid or Air in the Chest Cavity in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/accumulation-of-fluid-or-air-in-the-chest-cavity-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Allergic Pneumonitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/allergic-pneumonitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Bronchitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/bronchitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Cancers and Tumors of the Lung and Airway in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/cancers-and-tumors-of-the-lung-and-airway-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Canine Influenza (Flu)",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/canine-influenza-flu",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Canine Nasal Mites",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/canine-nasal-mites",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Diaphragmatic Hernia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/diaphragmatic-hernia-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Emphysema in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/emphysema-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Lung and Airway Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/introduction-to-lung-and-airway-disorders-of-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Kennel Cough (Infectious Tracheobronchitis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/kennel-cough-infectious-tracheobronchitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Laryngitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/laryngitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lung Flukes in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lung-flukes-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lungworm Infection in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lungworm-infection-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Paralysis of the Larynx in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/paralysis-of-the-larynx-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pharyngitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pharyngitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pneumonia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pneumonia-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pulmonary Edema in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pulmonary-edema-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pulmonary Thromboembolism in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/pulmonary-thromboembolism-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Rhinitis and Sinusitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/rhinitis-and-sinusitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tonsillitis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tonsillitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tracheal Collapse in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tracheal-collapse-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tracheobronchitis (Bronchitis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tracheobronchitis-bronchitis-in-dogs",
+      "category": "Lung and Airway Disorders of Dogs",
+      "section_slug": "lung-and-airway-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Metabolic Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Disorders of Calcium Metabolism in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/disorders-of-calcium-metabolism-in-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Disorders of Magnesium Metabolism in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/disorders-of-magnesium-metabolism-in-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Fatigue and Exercise in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/fatigue-and-exercise-in-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Fever of Unknown Origin in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/fever-of-unknown-origin-in-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Metabolic Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/introduction-to-metabolic-disorders-of-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Malignant Hyperthermia in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/metabolic-disorders-of-dogs/malignant-hyperthermia-in-dogs",
+      "category": "Metabolic Disorders of Dogs",
+      "section_slug": "metabolic-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Reproductive Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Brucellosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/brucellosis-in-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Infertility in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/infertility-in-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Introduction to Reproductive Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/introduction-to-reproductive-disorders-of-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Mammary (Breast) Tumors in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/mammary-breast-tumors-in-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Management of Reproduction in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/management-of-reproduction-in-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Reproductive Disorders of Female Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/reproductive-disorders-of-female-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Reproductive Disorders of Male Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/reproductive-disorders-of-male-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "The Gonads and Genital Tract of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/the-gonads-and-genital-tract-of-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Transmissible Venereal Tumor in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/transmissible-venereal-tumor-in-dogs",
+      "category": "Reproductive Disorders of Dogs",
+      "section_slug": "reproductive-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Routine Care of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/routine-care-of-dogs",
+      "category": "Routine Care of Dogs",
+      "section_slug": "routine-care-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Puppy Care",
+      "url": "https://www.merckvetmanual.com/dog-owners/routine-care-of-dogs/puppy-care",
+      "category": "Routine Care of Dogs",
+      "section_slug": "routine-care-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Routine Health Care of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/routine-care-of-dogs/routine-health-care-of-dogs",
+      "category": "Routine Care of Dogs",
+      "section_slug": "routine-care-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Selecting and Providing a Home for a Dog",
+      "url": "https://www.merckvetmanual.com/dog-owners/selecting-and-providing-a-home-for-a-dog",
+      "category": "Selecting and Providing a Home for a Dog",
+      "section_slug": "selecting-and-providing-a-home-for-a-dog",
+      "depth": "section"
+    },
+    {
+      "title": "Providing a Home for a Dog",
+      "url": "https://www.merckvetmanual.com/dog-owners/selecting-and-providing-a-home-for-a-dog/providing-a-home-for-a-dog",
+      "category": "Selecting and Providing a Home for a Dog",
+      "section_slug": "selecting-and-providing-a-home-for-a-dog",
+      "depth": "topic"
+    },
+    {
+      "title": "Selecting a Dog",
+      "url": "https://www.merckvetmanual.com/dog-owners/selecting-and-providing-a-home-for-a-dog/selecting-a-dog",
+      "category": "Selecting and Providing a Home for a Dog",
+      "section_slug": "selecting-and-providing-a-home-for-a-dog",
+      "depth": "topic"
+    },
+    {
+      "title": "Skin Disorders of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "section"
+    },
+    {
+      "title": "Abscesses Between the Toes (Interdigital Furunculosis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/abscesses-between-the-toes-interdigital-furunculosis-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Allergies in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/allergies-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Congenital and Inherited Skin Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/congenital-and-inherited-skin-disorders-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Dermatitis and Dermatologic Problems in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/dermatitis-and-dermatologic-problems-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Dermatophilosis in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/dermatophilosis-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Diagnosis of Skin Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/diagnosis-of-skin-disorders-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Eosinophilic Granuloma Complex in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/eosinophilic-granuloma-complex-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Fleas of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/fleas-of-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Flies and Mosquitoes of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/flies-and-mosquitoes-of-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hair Loss (Alopecia) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hair-loss-alopecia-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hives and Rashes (Urticaria) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hives-and-rashes-urticaria-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hygromas in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hygromas-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Hyperpigmentation (Acanthosis Nigricans) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/hyperpigmentation-acanthosis-nigricans-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Itching (Pruritus) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/itching-pruritus-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Lice of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/lice-of-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Mite Infestation (Mange, Acariasis, Scabies) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/mite-infestation-mange-acariasis-scabies-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Nasal Dermatoses in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/nasal-dermatoses-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Parasitic Worms of the Skin in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/parasitic-worms-of-the-skin-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Photosensitization in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/photosensitization-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Pyoderma in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/pyoderma-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ringworm (Dermatophytosis) in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/ringworm-dermatophytosis-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Seborrhea in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/seborrhea-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Structure of the Skin in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/structure-of-the-skin-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Ticks of Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/ticks-of-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Treatment of Skin Disorders in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/treatment-of-skin-disorders-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Tumors of the Skin in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/tumors-of-the-skin-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    },
+    {
+      "title": "Whole-body Disorders that Affect the Skin in Dogs",
+      "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/whole-body-disorders-that-affect-the-skin-in-dogs",
+      "category": "Skin Disorders of Dogs",
+      "section_slug": "skin-disorders-of-dogs",
+      "depth": "topic"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Lung Flukes in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/lung-flukes-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ned F. Kuehn , DVM, MS, DACVIM , Michigan Veterinary Specialists",
+  "language": "en",
+  "content": "## Overview\nThe adult flukes Paragonimus kellicotti and Paragonimus westermani usually live in cysts or bulla, primarily in the lungs of dogs. They also have been found rarely in other organs or the brain. Infection is most common in China, Southeast Asia, and North America. The eggs from the adult flukes pass through the cyst wall, are coughed up, swallowed, and passed in the feces. The life cycle includes several snails as the first intermediate host and crayfish or crabs as the second. Dogs become infected by eating raw crayfish or crabs that contain the encysted parasite. The young flukes eventually migrate to the lungs where they become established.\nInfected animals may have a chronic, deep, intermittent cough and eventually become weak and lethargic, although many infections pass unnoticed. A diagnosis is based on finding the characteristic eggs in feces or coughed-up material. The location of the flukes in the lungs is determined by x-rays. Several drugs provide effective treatment for lung fluke infections.\nAlso see professional content regarding lung flukes .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "The adult flukes Paragonimus kellicotti and Paragonimus westermani usually live in cysts or bulla, primarily in the lungs of dogs. They also have been found rarely in other organs or the brain. Infection is most common in China, Southeast Asia, and North America. The eggs from the adult flukes pass through the cyst wall, are coughed up, swallowed, and passed in the feces. The life cycle includes several snails as the first intermediate host and crayfish or crabs as the second. Dogs become infected by eating raw crayfish or crabs that contain the encysted parasite. The young flukes eventually migrate to the lungs where they become established.",
+        "Infected animals may have a chronic, deep, intermittent cough and eventually become weak and lethargic, although many infections pass unnoticed. A diagnosis is based on finding the characteristic eggs in feces or coughed-up material. The location of the flukes in the lungs is determined by x-rays. Several drugs provide effective treatment for lung fluke infections.",
+        "Also see professional content regarding lung flukes ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:57:14.932630+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

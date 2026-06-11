@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}{{ breed.breed_name_ko }} - 견종도감 | Pet Mate{% endblock %}
+{% block body_class %}breed-page{% endblock %}
+
+{% block content %}
+<main class="breed-detail-page">
+    <a class="back-link" href="{% url 'dog:search' %}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        목록으로 돌아가기
+    </a>
+
+    <div class="breed-detail-layout">
+        <div class="breed-detail-img">
+            {% if breed.image_url %}
+                <img
+                    src="{{ breed.image_url }}"
+                    alt="{{ breed.breed_name_ko }}"
+                    class="{% if breed.rotate_image_90 %}is-rotated-90{% endif %}"
+                    {% if breed.rotate_image_90 %}style="transform: rotate(90deg) scale(0.75);"{% endif %}
+                >
+            {% else %}
+                <div class="breed-detail-image-placeholder">
+                    이미지 준비 중
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="breed-detail-content">
+            <div class="breed-detail-header">
+                <div>
+                    <h1>{{ breed.breed_name_ko }}</h1>
+                    <p>{{ breed.breed_name_en }}</p>
+                </div>
+                <button
+                    type="button"
+                    class="favorite-button{% if is_favorited %} is-active{% endif %}"
+                    data-favorite-id="{{ breed.id }}"
+                    aria-label="{{ breed.breed_name_ko }} 즐겨찾기"
+                    aria-pressed="{{ is_favorited|yesno:'true,false' }}"
+                >
+                    {% if is_favorited %}★{% else %}☆{% endif %}
+                </button>
+            </div>
+
+            <div class="breed-stat-grid">
+                <div class="breed-stat-item breed-group-stat">
+                    <span class="breed-stat-label">한국 애견 연맹 국제 공인 견종</span>
+                    <span class="breed-stat-value">{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}{% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">출신</span>
+                    <span class="breed-stat-value">{{ breed.origin|default:"-" }}</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">수명</span>
+                    <span class="breed-stat-value">{{ breed.life_expectancy_min }}-{{ breed.life_expectancy_max }}년</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">체중</span>
+                    <span class="breed-stat-value">{{ breed.weight_min_kg }}-{{ breed.weight_max_kg }}kg</span>
+                </div>
+                <div class="breed-stat-item">
+                    <span class="breed-stat-label">키</span>
+                    <span class="breed-stat-value">{{ breed.height_min_cm }}-{{ breed.height_max_cm }}cm</span>
+                </div>
+            </div>
+
+            {% if breed.about %}
+                <div class="breed-section breed-section-first">
+                    <h2>견종 소개</h2>
+                    <p>{{ breed.about }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.temperament %}
+                <div class="breed-section">
+                    <h2>성격</h2>
+                    <p>{{ breed.temperament }}</p>
+                </div>
+            {% endif %}
+
+
+            {% if breed.health %}
+                <div class="breed-section">
+                    <h2>건강</h2>
+                    <p>{{ breed.health }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.grooming %}
+                <div class="breed-section">
+                    <h2>미용</h2>
+                    <p>{{ breed.grooming }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.exercise %}
+                <div class="breed-section">
+                    <h2>운동</h2>
+                    <p>{{ breed.exercise }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.training %}
+                <div class="breed-section">
+                    <h2>훈련</h2>
+                    <p>{{ breed.training }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.nutrition %}
+                <div class="breed-section">
+                    <h2>영양</h2>
+                    <p>{{ breed.nutrition }}</p>
+                </div>
+            {% endif %}
+
+            {% if breed.history %}
+                <div class="breed-section">
+                    <h2>역사</h2>
+                    <p>{{ breed.history }}</p>
+                </div>
+            {% endif %}
+            {% if breed.breed_group_description %}
+                <div class="breed-section breed-group-section">
+                    <h2>한국 애견 연맹 국제 공인 견종</h2>
+                    <h3>{% if breed.breed_group_number %}{{ breed.breed_group_number }}그룹{% endif %}{% if breed.breed_group %} · {{ breed.breed_group }}{% endif %}</h3>
+                    <p>{{ breed.breed_group_description }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+{% csrf_token %}
+{{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" hidden></div>
+<script>
+(() => {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
+    const favoriteBtn = document.querySelector('.favorite-button');
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', () => {
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
+            }
+
+            const breedId = favoriteBtn.dataset.favoriteId;
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+            fetch(`/dog/breeds/${breedId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            }).then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    favoriteBtn.setAttribute("aria-pressed", String(data.is_favorited));
+                    favoriteBtn.textContent = data.is_favorited ? "★" : "☆";
+                    favoriteBtn.classList.toggle("is-active", data.is_favorited);
+                }
+            });
+        });
+    }
+})();
+</script>
+{% endblock %}

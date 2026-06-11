@@ -1,0 +1,385 @@
+{% extends "base.html" %}
+
+{% block title %}마이페이지 | Pet Mate{% endblock %}
+{% block body_class %}profile-page{% endblock %}
+
+{% block content %}
+<main class="profile-layout pet-profile-layout">
+    <!-- Left Column: User Summary & Registered Pets -->
+    <div class="profile-column">
+        <section class="profile-summary glass-card">
+            <p class="eyebrow">My Page</p>
+            <h1>내 정보</h1>
+            <div class="profile-avatar">{{ user.username|first|upper }}</div>
+            <dl class="profile-meta">
+                <div>
+                    <dt>아이디</dt>
+                    <dd>{{ user.username }}</dd>
+                </div>
+                <div>
+                    <dt>이메일</dt>
+                    <dd>{{ user.email|default:"등록된 이메일이 없습니다." }}</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="pet-list-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">My Pets</p>
+                <h2>등록한 반려동물</h2>
+            </div>
+
+            <div class="pet-list">
+                {% for pet in pets %}
+                    <article class="pet-card">
+                        <div>
+                            <h3>{{ pet.name }}</h3>
+                            <p>
+                                {{ pet.get_species_display }}
+                                {% if pet.breed %} · {{ pet.breed }}{% endif %}
+                                {% if pet.age %} · {{ pet.age }}살{% endif %}
+                                · {{ pet.get_gender_display }}
+                            </p>
+                            {% if pet.memo %}
+                                <p class="pet-memo">{{ pet.memo }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="pet-actions">
+                            <a class="text-button" href="{% url 'user:pet_update' pet.id %}">수정</a>
+                            <form method="post" action="{% url 'user:pet_delete' pet.id %}">
+                                {% csrf_token %}
+                                <button class="text-button" type="submit">삭제</button>
+                            </form>
+                        </div>
+                    </article>
+                {% empty %}
+                    <p class="empty-history">아직 등록된 반려동물이 없습니다.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Right Column: Account Settings & Add Pet Form -->
+    <div class="profile-column">
+        <section class="profile-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">Account</p>
+                <h2>회원 정보 수정</h2>
+            </div>
+
+            <form class="auth-form" method="post">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <p class="field-error">{{ field.errors|striptags }}</p>
+                    {% endif %}
+                {% endfor %}
+
+                <button class="primary-button full-width" type="submit">저장하기</button>
+            </form>
+
+            <p class="helper-text">아이디는 로그인 식별자로 사용하므로 이 화면에서는 변경하지 않습니다.</p>
+        </section>
+
+        <section class="pet-form-card glass-card">
+            <div class="card-heading">
+                <p class="eyebrow">Add Pet</p>
+                <h2>반려동물 등록</h2>
+            </div>
+
+            <form class="auth-form" method="post" action="{% url 'user:pet_create' %}">
+                {% csrf_token %}
+                {% for field in pet_form %}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <p class="field-error">{{ field.errors|striptags }}</p>
+                    {% endif %}
+                {% endfor %}
+                <button class="primary-button full-width" type="submit">등록하기</button>
+            </form>
+        </section>
+    </div>
+
+    <section class="favorite-dogs-card glass-card profile-wide-card">
+        <div class="card-heading profile-section-heading">
+            <p class="eyebrow profile-section-eyebrow">Favorites</p>
+            <h2>관심 견종</h2>
+        </div>
+
+        <div class="profile-mini-grid">
+            {% for fav in dog_favorites %}
+                <article class="pet-card profile-mini-card">
+                    {% if fav.dog.image_url %}
+                        <img class="profile-mini-thumb" src="{{ fav.dog.image_url }}" alt="{{ fav.dog.breed_name_ko }}">
+                    {% else %}
+                        <div class="profile-mini-thumb profile-mini-thumb-empty">No Image</div>
+                    {% endif %}
+                    <a href="{% url 'dog:detail' fav.dog.id %}" class="profile-mini-link">
+                        <h3>{{ fav.dog.breed_name_ko }}</h3>
+                        <p>{{ fav.dog.breed_group|default:"그룹 미상" }}</p>
+                    </a>
+                    <div class="pet-actions">
+                        <button type="button" class="text-button danger-button remove-dog-fav" data-dog-id="{{ fav.dog.id }}">제거</button>
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-history">아직 즐겨찾기한 견종이 없습니다.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="favorite-shelters-card glass-card profile-wide-card">
+        <div class="card-heading profile-section-heading">
+            <p class="eyebrow profile-section-eyebrow">Favorites</p>
+            <h2>관심 유기견</h2>
+        </div>
+
+        <div class="profile-mini-grid">
+            {% for fav in shelter_favorites %}
+                <article class="pet-card profile-mini-card shelter-fav-card"
+                         data-id="{{ fav.shelter_animal.id }}"
+                         data-breed="{{ fav.shelter_animal.kind_nm|default:'품종 미상' }}"
+                         data-sex="{{ fav.shelter_animal.sex_label }}"
+                         data-age="{{ fav.shelter_animal.age|default:'나이 미상' }}"
+                         data-neutered="{{ fav.shelter_animal.neuter_label }}"
+                         data-status="{{ fav.shelter_animal.process_state|default:'상태 미상' }}"
+                         data-image="{{ fav.shelter_animal.popfile1|default:'' }}"
+                         data-shelter-name="{{ fav.shelter_animal.care_nm|default:'보호소 정보 없음' }}"
+                         data-shelter-tel="{{ fav.shelter_animal.care_tel|default:'' }}"
+                         data-shelter-addr="{{ fav.shelter_animal.care_addr|default:'' }}"
+                         data-happen-place="{{ fav.shelter_animal.happen_place|default:'-' }}"
+                         data-special-mark="{{ fav.shelter_animal.special_mark|default:'-' }}"
+                         data-notice-start="{{ fav.shelter_animal.notice_sdt|date:'Y.m.d'|default:'' }}"
+                         data-notice-end="{{ fav.shelter_animal.notice_edt|date:'Y.m.d'|default:'' }}">
+                    {% if fav.shelter_animal.popfile1 %}
+                        <div class="profile-mini-thumb-container">
+                            <img class="profile-mini-thumb" src="{{ fav.shelter_animal.popfile1 }}" alt="{{ fav.shelter_animal.kind_nm }}">
+                            <span class="status-badge-mini">{{ fav.shelter_animal.process_state|default:"상태 미상" }}</span>
+                        </div>
+                    {% else %}
+                        <div class="profile-mini-thumb profile-mini-thumb-empty">No Image</div>
+                    {% endif %}
+                    <div class="profile-mini-link">
+                        <h3>{{ fav.shelter_animal.kind_nm|default:"품종 미상" }}</h3>
+                        <p class="shelter-info-text">{{ fav.shelter_animal.care_nm|default:"보호소 정보 없음" }}</p>
+                        <p class="shelter-meta-text">{{ fav.shelter_animal.sex_label }} · {{ fav.shelter_animal.age|default:"나이 미상" }}</p>
+                    </div>
+                    <div class="pet-actions">
+                        <button type="button" class="text-button danger-button remove-shelter-fav" data-shelter-id="{{ fav.shelter_animal.id }}">제거</button>
+                    </div>
+                </article>
+            {% empty %}
+                <p class="empty-history">아직 즐겨찾기한 유기견이 없습니다.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="test-result-card glass-card profile-wide-card">
+        <div class="card-heading profile-section-heading">
+            <p class="eyebrow profile-section-eyebrow">Test Results</p>
+            <h2>나의 반려견 양육 지식 테스트 결과</h2>
+        </div>
+
+        <div class="profile-result-grid">
+            {% for result in test_results %}
+                <a href="{% url 'test:view_saved_result' result.id %}" class="pet-card profile-result-card">
+                    <div>
+                        <h3>{{ result.earned_score }} / {{ result.total_score }} 점</h3>
+                        <p>{{ result.created_at|date:"Y년 m월 d일 H:i" }}</p>
+                    </div>
+                    <div class="pet-actions">
+                        <span class="text-button">결과 보기</span>
+                    </div>
+                </a>
+            {% empty %}
+                <p class="empty-history">아직 응시한 테스트 내역이 없습니다.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Modal for Shelter Animal Details -->
+    <div id="shelter-detail-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
+        <div class="modal-card glass-card">
+            <button type="button" class="modal-close-button" id="modal-close-btn" aria-label="닫기">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-animal-img" src="" alt="동물 이미지">
+                    <span id="modal-animal-status" class="status-badge">보호중</span>
+                </div>
+                <div class="modal-info-container">
+                    <div class="modal-header-row">
+                        <h2 id="modal-animal-breed">품종 미상</h2>
+                    </div>
+                    <div class="modal-badge-row">
+                        <span id="modal-animal-sex" class="info-badge sex">성별</span>
+                        <span id="modal-animal-age" class="info-badge age">나이</span>
+                        <span id="modal-animal-neutered" class="info-badge neutered">중성화</span>
+                    </div>
+                    <dl class="modal-detail-list">
+                        <div>
+                            <dt>발견 장소</dt>
+                            <dd id="modal-animal-happen-place">-</dd>
+                        </div>
+                        <div>
+                            <dt>특징</dt>
+                            <dd id="modal-animal-special-mark">-</dd>
+                        </div>
+                        <div>
+                            <dt>공고 기간</dt>
+                            <dd id="modal-animal-notice-period">-</dd>
+                        </div>
+                        <div>
+                            <dt>보호소</dt>
+                            <dd id="modal-animal-shelter-name">보호소 정보 없음</dd>
+                        </div>
+                        <div>
+                            <dt>보호소 주소</dt>
+                            <dd id="modal-animal-shelter-addr">-</dd>
+                        </div>
+                    </dl>
+                    <div class="modal-actions-row">
+                        <a id="modal-animal-call-btn" class="primary-button call-action-btn" href="">
+                            보호소 연락하기 <span id="modal-animal-tel"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+(function() {
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+
+    // Dog favorite remove
+    document.querySelectorAll(".remove-dog-fav").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const dogId = button.dataset.dogId;
+            fetch(`/dog/breeds/${dogId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove card from list
+                    button.closest("article").remove();
+                }
+            });
+        });
+    });
+
+    // Shelter favorite remove
+    document.querySelectorAll(".remove-shelter-fav").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const shelterId = button.dataset.shelterId;
+            fetch(`/shelter/${shelterId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove card from list
+                    button.closest("article").remove();
+                }
+            });
+        });
+    });
+
+    // Modal open logic
+    const modal = document.getElementById("shelter-detail-modal");
+    const closeBtn = document.getElementById("modal-close-btn");
+
+    function openModal(data) {
+        document.getElementById("modal-animal-img").src = data.image || '/static/images/placeholder.jpg';
+        document.getElementById("modal-animal-status").textContent = data.status;
+        document.getElementById("modal-animal-breed").textContent = data.breed;
+        document.getElementById("modal-animal-sex").textContent = "성별: " + data.sex;
+        document.getElementById("modal-animal-age").textContent = "나이: " + data.age;
+        document.getElementById("modal-animal-neutered").textContent = "중성화: " + data.neutered;
+        document.getElementById("modal-animal-happen-place").textContent = data.happenPlace;
+        document.getElementById("modal-animal-special-mark").textContent = data.specialMark;
+        
+        let period = "-";
+        if (data.noticeStart || data.noticeEnd) {
+            period = `${data.noticeStart || ''} ~ ${data.noticeEnd || ''}`;
+        }
+        document.getElementById("modal-animal-notice-period").textContent = period;
+        document.getElementById("modal-animal-shelter-name").textContent = data.shelterName;
+        document.getElementById("modal-animal-shelter-addr").textContent = data.shelterAddr || "-";
+        
+        const callBtn = document.getElementById("modal-animal-call-btn");
+        const telSpan = document.getElementById("modal-animal-tel");
+        if (data.shelterTel) {
+            callBtn.href = "tel:" + data.shelterTel;
+            callBtn.style.display = "inline-flex";
+            telSpan.textContent = `(${data.shelterTel})`;
+        } else {
+            callBtn.removeAttribute("href");
+            callBtn.style.display = "none";
+        }
+
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // block background scroll
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".shelter-fav-card").forEach(card => {
+        card.addEventListener("click", (e) => {
+            // If the user clicked the remove button, do not open the modal
+            if (e.target.closest(".remove-shelter-fav")) {
+                return;
+            }
+            const data = {
+                image: card.dataset.image,
+                status: card.dataset.status,
+                breed: card.dataset.breed,
+                sex: card.dataset.sex,
+                age: card.dataset.age,
+                neutered: card.dataset.neutered,
+                happenPlace: card.dataset.happenPlace,
+                specialMark: card.dataset.specialMark,
+                noticeStart: card.dataset.noticeStart,
+                noticeEnd: card.dataset.noticeEnd,
+                shelterName: card.dataset.shelterName,
+                shelterAddr: card.dataset.shelterAddr,
+                shelterTel: card.dataset.shelterTel
+            };
+            openModal(data);
+        });
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+            closeModal();
+        }
+    });
+})();
+</script>
+{% endblock %}

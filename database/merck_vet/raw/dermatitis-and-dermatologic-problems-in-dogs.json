@@ -1,0 +1,26 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Dermatitis and Dermatologic Problems in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/dermatitis-and-dermatologic-problems-in-dogs",
+  "category": "Skin Disorders of Dogs",
+  "section_slug": "skin-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Karen A. Moriello , DVM, DACVD , Department of Medical Sciences, School of Veterinary Medicine, University of Wisconsin-Madison",
+  "language": "en",
+  "content": "## Overview\nDermatitis is a general word for any type of inflammation of the skin. It is the word usually used to describe a skin condition until a specific diagnosis is reached. There are many causes of skin inflammation, including external irritants, burns, allergens, trauma, and infection (bacterial, viral, parasitic, or fungal). Dermatitis can also be associated with internal or body-wide disease.\nThe skin’s response to insult is generically called dermatitis and manifests as any combination of itching, scaling, abnormal redness, thickening of the skin, excessive coloring (pigmentation), abnormal odor, excessive oil, and hair loss. The usual progression of a skin disease involves an underlying trigger that causes boils, scabs, scales, or blisters.\nAbnormal itching, called pruritus , occurs in many skin diseases and is often present because of secondary infections. As the inflammation progresses, crusting and scaling develop. If the problem reaches from the upper layer of skin (the epidermis) to the deeper layer (the dermis), fluid discharge, pain, and sloughing or shedding of the skin may occur. Secondary bacterial and yeast infections commonly develop as a result of skin inflammation. As dermatitis persists, short-term signs of inflammation (such as redness) become obscured by signs of longterm inflammation (thickening of the skin, color changes, scaling, fluid discharge). Often the skin becomes drier and, if itching is not already a sign, it frequently develops at this stage.\nResolving dermatitis requires that your veterinarian identify the underlying cause and treat secondary infections or other complications. A review of your pet’s history and a physical examination can more precisely define the problem.\nAlso see professional content regarding skin and skin problems .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Dermatitis is a general word for any type of inflammation of the skin. It is the word usually used to describe a skin condition until a specific diagnosis is reached. There are many causes of skin inflammation, including external irritants, burns, allergens, trauma, and infection (bacterial, viral, parasitic, or fungal). Dermatitis can also be associated with internal or body-wide disease.",
+        "The skin’s response to insult is generically called dermatitis and manifests as any combination of itching, scaling, abnormal redness, thickening of the skin, excessive coloring (pigmentation), abnormal odor, excessive oil, and hair loss. The usual progression of a skin disease involves an underlying trigger that causes boils, scabs, scales, or blisters.",
+        "Abnormal itching, called pruritus , occurs in many skin diseases and is often present because of secondary infections. As the inflammation progresses, crusting and scaling develop. If the problem reaches from the upper layer of skin (the epidermis) to the deeper layer (the dermis), fluid discharge, pain, and sloughing or shedding of the skin may occur. Secondary bacterial and yeast infections commonly develop as a result of skin inflammation. As dermatitis persists, short-term signs of inflammation (such as redness) become obscured by signs of longterm inflammation (thickening of the skin, color changes, scaling, fluid discharge). Often the skin becomes drier and, if itching is not already a sign, it frequently develops at this stage.",
+        "Resolving dermatitis requires that your veterinarian identify the underlying cause and treat secondary infections or other complications. A review of your pet’s history and a physical examination can more precisely define the problem.",
+        "Also see professional content regarding skin and skin problems ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:14:17.575749+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

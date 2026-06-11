@@ -1,0 +1,25 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Eosinophilic Granuloma Complex in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/eosinophilic-granuloma-complex-in-dogs",
+  "category": "Skin Disorders of Dogs",
+  "section_slug": "skin-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Stephen D. White , DVM, DACVD , University of California, Davis",
+  "language": "en",
+  "content": "## Overview\nEosinophilic granuloma complex is rare in dogs. It is recognized more commonly in cats and horses. When seen in the dog, this disorder is associated with unusual reactions to insect bites or other hypersensitivity reactions. They will often appear as bumps or nodules, in the mouth, on the lips, or anywhere on the body. Over time, these may become ulcerated or crusted. Any breed may be affected, but Siberian Huskies and Cavalier King Charles Spaniels may be at greater risk.\nSome cases can be treated with corticosteroids. Insect control may be of some value. If the disorder returns, low-dose, corticosteroid treatment may be prescribed.\nCanine eosinophilic furunculosis is a closely related disease. It has been reported in many breeds but typically is seen in long-nosed large breeds or curious small breeds (eg, terriers) with potential access to wasps, bees, ants, spiders, etc. The disease is thought to be caused by insect bites or stings. The disease may develop rapidly and can be painful. Large, swollen, red bumps develop most commonly on the muzzle but may also be seen on the head and around the eyes and ears. Diagnosis is typically made based on the appearance of the bumps, but biopsies may be done. Treatment consists of insect control, management of any associated allergies, antibiotics, and corticosteroids.\nAlso see professional content regarding eosinophilic granuloma complex .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Eosinophilic granuloma complex is rare in dogs. It is recognized more commonly in cats and horses. When seen in the dog, this disorder is associated with unusual reactions to insect bites or other hypersensitivity reactions. They will often appear as bumps or nodules, in the mouth, on the lips, or anywhere on the body. Over time, these may become ulcerated or crusted. Any breed may be affected, but Siberian Huskies and Cavalier King Charles Spaniels may be at greater risk.",
+        "Some cases can be treated with corticosteroids. Insect control may be of some value. If the disorder returns, low-dose, corticosteroid treatment may be prescribed.",
+        "Canine eosinophilic furunculosis is a closely related disease. It has been reported in many breeds but typically is seen in long-nosed large breeds or curious small breeds (eg, terriers) with potential access to wasps, bees, ants, spiders, etc. The disease is thought to be caused by insect bites or stings. The disease may develop rapidly and can be painful. Large, swollen, red bumps develop most commonly on the muzzle but may also be seen on the head and around the eyes and ears. Diagnosis is typically made based on the appearance of the bumps, but biopsies may be done. Treatment consists of insect control, management of any associated allergies, antibiotics, and corticosteroids.",
+        "Also see professional content regarding eosinophilic granuloma complex ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:14:54.278620+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

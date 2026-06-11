@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block title %}유기견 입양 | Pet Mate{% endblock %}
+{% block body_class %}shelter-page{% endblock %}
+
+{% block content %}
+<main class="shelter-layout">
+    <aside class="shelter-aside">
+        <section class="shelter-filter-card glass-card">
+            <h1>유기견 입양</h1>
+            <p>국가동물보호정보시스템 데이터를 기준으로 보호자를 기다리는 아이들을 확인합니다.</p>
+
+            <form class="shelter-filter" method="get">
+                <label for="breed">견종</label>
+                <select id="breed" name="breed">
+                    <option value="">전체</option>
+                    {% for option in breed_options %}
+                        <option value="{{ option }}" {% if breed == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="region">보호소 지역</label>
+                <select id="region" name="region">
+                    <option value="">전체</option>
+                    {% for option in region_options %}
+                        <option value="{{ option }}" {% if region == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="status">상태</label>
+                <select id="status" name="status">
+                    <option value="">전체</option>
+                    {% for option in status_options %}
+                        <option value="{{ option }}" {% if status == option %}selected{% endif %}>{{ option }}</option>
+                    {% endfor %}
+                </select>
+
+                <button class="primary-button full-width" type="submit">조회하기</button>
+            </form>
+        </section>
+
+    </aside>
+
+    <div class="shelter-content">
+        <section class="shelter-stats-card glass-card">
+            <div class="shelter-stats-head">
+                <div>
+                    <h2>유기견 현황</h2>
+                    <p>현재 선택한 조건 기준의 상태별 건수입니다.</p>
+                </div>
+            </div>
+            <table class="shelter-stats-table" aria-label="유기견 상태별 건수">
+                <thead>
+                    <tr>
+                        <th scope="col">전체</th>
+                        <th scope="col">보호중</th>
+                        <th scope="col">입양 완료</th>
+                        <th scope="col">기타 상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ total_animal_count }}건</td>
+                        <td>{{ protecting_count }}건</td>
+                        <td>{{ adopted_count }}건</td>
+                        <td>{{ other_status_count }}건</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="shelter-panel glass-card">
+            <div class="shelter-panel-head">
+                <div>
+                    {% if breed %}
+                        <h2>현재 보호자를 기다리는 {{ breed }} 아이들이 있어요</h2>
+                    {% else %}
+                        <h2>현재 보호자를 기다리는 아이들이 있어요</h2>
+                    {% endif %}
+                    <p class="shelter-subcopy">총 {{ animal_count }}건 중 {{ visible_count }}건을 보여주고 있습니다.</p>
+                </div>
+                <span class="shelter-count">{{ animal_count }}건</span>
+            </div>
+            <div id="animal-list-container">
+                {% include "shelter/_animal_list.html" %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Shelter Animal Details (Same Glassmorphism design as profile page) -->
+    <div id="shelter-detail-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
+        <div class="modal-card glass-card">
+            <button type="button" class="modal-close-button" id="modal-close-btn" aria-label="닫기">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-animal-img" src="" alt="동물 이미지">
+                    <span id="modal-animal-status" class="status-badge">보호중</span>
+                </div>
+                <div class="modal-info-container">
+                    <div class="modal-header-row">
+                        <h2 id="modal-animal-breed">품종 미상</h2>
+                    </div>
+                    <div class="modal-badge-row">
+                        <span id="modal-animal-sex" class="info-badge sex">성별</span>
+                        <span id="modal-animal-age" class="info-badge age">나이</span>
+                        <span id="modal-animal-neutered" class="info-badge neutered">중성화</span>
+                    </div>
+                    <dl class="modal-detail-list">
+                        <div>
+                            <dt>발견 장소</dt>
+                            <dd id="modal-animal-happen-place">-</dd>
+                        </div>
+                        <div>
+                            <dt>특징</dt>
+                            <dd id="modal-animal-special-mark">-</dd>
+                        </div>
+                        <div>
+                            <dt>공고 기간</dt>
+                            <dd id="modal-animal-notice-period">-</dd>
+                        </div>
+                        <div>
+                            <dt>보호소</dt>
+                            <dd id="modal-animal-shelter-name">보호소 정보 없음</dd>
+                        </div>
+                        <div>
+                            <dt>보호소 주소</dt>
+                            <dd id="modal-animal-shelter-addr">-</dd>
+                        </div>
+                    </dl>
+                    <div class="modal-actions-row">
+                        <a id="modal-animal-call-btn" class="primary-button call-action-btn" href="">
+                            보호소 연락하기 <span id="modal-animal-tel"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% csrf_token %}
+{{ user.is_authenticated|json_script:"user-auth-state" }}
+<div id="login-url-config" data-url="{% url 'user:login' %}" hidden></div>
+<script>
+(function() {
+    const isAuthenticated = JSON.parse(document.getElementById('user-auth-state').textContent);
+    const loginUrl = document.getElementById('login-url-config').dataset.url;
+    const filterForm = document.querySelector(".shelter-filter");
+    const listContainer = document.getElementById("animal-list-container");
+
+    // Fetch and render animals via AJAX
+    function fetchAnimals(urlOrPage, shouldPushState = true) {
+        let url = window.location.pathname;
+        const params = new URLSearchParams(new FormData(filterForm));
+        params.set('ajax', 'true');
+
+        if (typeof urlOrPage === 'string') {
+            const parsedUrl = new URL(urlOrPage, window.location.origin);
+            parsedUrl.searchParams.forEach((value, key) => {
+                if (key !== 'ajax') {
+                    params.set(key, value);
+                }
+            });
+        } else if (typeof urlOrPage === 'number') {
+            params.set('page', urlOrPage);
+        }
+
+        const fetchUrl = `${url}?${params.toString()}`;
+
+        fetch(fetchUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    listContainer.innerHTML = data.html;
+
+                    // Update counts
+                    const countElements = document.querySelectorAll('.shelter-count');
+                    countElements.forEach(el => el.textContent = `${data.animal_count}건`);
+
+                    const subcopyEl = document.querySelector('.shelter-subcopy');
+                    if (subcopyEl) {
+                        subcopyEl.textContent = `총 ${data.animal_count}건 중 ${data.visible_count}건을 보여주고 있습니다.`;
+                    }
+
+                    const statsEl = document.querySelector('.shelter-stats-table tbody');
+                    if (statsEl) {
+                        statsEl.innerHTML = `
+                            <tr>
+                                <td>${data.total_animal_count}건</td>
+                                <td>${data.protecting_count}건</td>
+                                <td>${data.adopted_count}건</td>
+                                <td>${data.other_status_count}건</td>
+                            </tr>
+                        `;
+                    }
+
+                    const headerH2 = document.querySelector('.shelter-panel-head h2');
+                    if (headerH2) {
+                        if (data.breed) {
+                            headerH2.textContent = `현재 보호자를 기다리는 ${data.breed} 아이들이 있어요`;
+                        } else {
+                            headerH2.textContent = `현재 보호자를 기다리는 아이들이 있어요`;
+                        }
+                    }
+
+                    // Update URL bar without reloading
+                    if (shouldPushState) {
+                        params.delete('ajax');
+                        const newUrl = `${window.location.pathname}?${params.toString()}`;
+                        window.history.pushState({ path: newUrl }, '', newUrl);
+                    }
+                }
+            })
+            .catch(err => console.error(err));
+    }
+
+    // Auto submit filters on change
+    filterForm.querySelectorAll("select").forEach(select => {
+        select.addEventListener("change", () => {
+            fetchAnimals(1);
+        });
+    });
+
+    filterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetchAnimals(1);
+    });
+
+    // Browser history popstate handler
+    window.addEventListener("popstate", () => {
+        const params = new URLSearchParams(window.location.search);
+        const breedSelect = document.getElementById("breed");
+        const regionSelect = document.getElementById("region");
+        const statusSelect = document.getElementById("status");
+
+        if (breedSelect) breedSelect.value = params.get("breed") || "";
+        if (regionSelect) regionSelect.value = params.get("region") || "";
+        if (statusSelect) statusSelect.value = params.get("status") || "보호중";
+
+        fetchAnimals(window.location.href, false);
+    });
+
+    // Intercept pagination clicks
+    listContainer.addEventListener("click", (e) => {
+        const paginationLink = e.target.closest('.shelter-pagination a');
+        if (paginationLink) {
+            e.preventDefault();
+            fetchAnimals(paginationLink.getAttribute('href'));
+        }
+    });
+
+    // Favorite toggle (Delegated)
+    listContainer.addEventListener("click", (e) => {
+        const button = e.target.closest(".favorite-button");
+        if (button) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!isAuthenticated) {
+                alert("즐겨찾기 기능을 사용하려면 로그인이 필요합니다.");
+                window.location.href = loginUrl + "?next=" + encodeURIComponent(window.location.pathname + window.location.search);
+                return;
+            }
+
+            const animalId = button.dataset.favoriteId;
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+            fetch(`/shelter/${animalId}/favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken,
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const isActive = data.is_favorited;
+                    button.setAttribute("aria-pressed", String(isActive));
+                    button.textContent = isActive ? "★" : "☆";
+                    button.classList.toggle("is-active", isActive);
+                }
+            })
+            .catch(err => console.error(err));
+        }
+    });
+
+    // Detail Modal logic
+    const modal = document.getElementById("shelter-detail-modal");
+    const closeBtn = document.getElementById("modal-close-btn");
+
+    function openModal(data) {
+        document.getElementById("modal-animal-img").src = data.image || '/static/images/placeholder.jpg';
+        document.getElementById("modal-animal-status").textContent = data.status;
+        document.getElementById("modal-animal-breed").textContent = data.breed;
+        document.getElementById("modal-animal-sex").textContent = "성별: " + data.sex;
+        document.getElementById("modal-animal-age").textContent = "나이: " + data.age;
+        document.getElementById("modal-animal-neutered").textContent = "중성화: " + data.neutered;
+        document.getElementById("modal-animal-happen-place").textContent = data.happenPlace;
+        document.getElementById("modal-animal-special-mark").textContent = data.specialMark;
+        
+        let period = "-";
+        if (data.noticeStart || data.noticeEnd) {
+            period = `${data.noticeStart || ''} ~ ${data.noticeEnd || ''}`;
+        }
+        document.getElementById("modal-animal-notice-period").textContent = period;
+        document.getElementById("modal-animal-shelter-name").textContent = data.shelterName;
+        document.getElementById("modal-animal-shelter-addr").textContent = data.shelterAddr || "-";
+        
+        const callBtn = document.getElementById("modal-animal-call-btn");
+        const telSpan = document.getElementById("modal-animal-tel");
+        if (data.shelterTel) {
+            callBtn.href = "tel:" + data.shelterTel;
+            callBtn.style.display = "inline-flex";
+            telSpan.textContent = `(${data.shelterTel})`;
+        } else {
+            callBtn.removeAttribute("href");
+            callBtn.style.display = "none";
+        }
+
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // block background scroll
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    // Modal click (Delegated)
+    listContainer.addEventListener("click", (e) => {
+        const card = e.target.closest(".shelter-card");
+        if (card) {
+            // Prevent modal if user clicked favorite star or phone links
+            if (e.target.closest(".favorite-button") || e.target.closest(".shelter-call-link")) {
+                return;
+            }
+            const data = {
+                image: card.dataset.image,
+                status: card.dataset.status,
+                breed: card.dataset.breed,
+                sex: card.dataset.sex,
+                age: card.dataset.age,
+                neutered: card.dataset.neutered,
+                happenPlace: card.dataset.happenPlace,
+                specialMark: card.dataset.specialMark,
+                noticeStart: card.dataset.noticeStart,
+                noticeEnd: card.dataset.noticeEnd,
+                shelterName: card.dataset.shelterName,
+                shelterAddr: card.dataset.shelterAddr,
+                shelterTel: card.dataset.shelterTel
+            };
+            openModal(data);
+        }
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+            closeModal();
+        }
+    });
+})();
+</script>
+{% endblock %}

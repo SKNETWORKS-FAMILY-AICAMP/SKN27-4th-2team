@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-06-02T19:21:28",
+  "source": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step4_traits_normalized.csv",
+  "outputs": {
+    "csv": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_colors_markings_normalized.csv",
+    "json": "C:\\dev\\project\\SKN27-4th-2team\\database\\akc\\preprocessed\\akc_breed_info_step5_colors_markings_normalized.json"
+  },
+  "rows": 292,
+  "columns": 67,
+  "unparsed_colors_count": 0,
+  "unparsed_markings_count": 0,
+  "uses_corrected_step4_trait_values": true
+}

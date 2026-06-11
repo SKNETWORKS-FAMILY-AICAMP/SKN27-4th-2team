@@ -1,0 +1,23 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Transmissible Venereal Tumor in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/reproductive-disorders-of-dogs/transmissible-venereal-tumor-in-dogs",
+  "category": "Reproductive Disorders of Dogs",
+  "section_slug": "reproductive-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Michelle Kutzler , DVM, PhD, DACT , Department of Animal and Rangeland Sciences, College of Agricultural Sciences, Oregon State University",
+  "language": "en",
+  "content": "## Overview\nTransmissible venereal tumors are cancerous tumors of the genitalia in dogs. The tumor cells are passed from dog to dog during breeding. They form cauliflower-like masses that range in size from small (less than 5 millimeters wide) to large (more than 10 centimeters wide). The surface is often ulcerated and inflamed and bleeds easily. The tumors may be single or multiple. Although they are almost always located directly on the genitalia, they may be passed on to the adjacent skin or the mucous membranes of the mouth, nose, or eyes. Diagnosis is made by examining tumor cells under a microscope. Transmissible venereal tumors are usually progressive and are treated with a combination of surgical removal, chemotherapy, and radiation treatment. Of these, chemotherapy is generally considered the treatment of choice. The outlook for successful treatment is good, except in the rare cases in which the tumors have already spread within the body before treatment begins.\nAlso see professional content regarding canine transmissible venereal tumor .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Transmissible venereal tumors are cancerous tumors of the genitalia in dogs. The tumor cells are passed from dog to dog during breeding. They form cauliflower-like masses that range in size from small (less than 5 millimeters wide) to large (more than 10 centimeters wide). The surface is often ulcerated and inflamed and bleeds easily. The tumors may be single or multiple. Although they are almost always located directly on the genitalia, they may be passed on to the adjacent skin or the mucous membranes of the mouth, nose, or eyes. Diagnosis is made by examining tumor cells under a microscope. Transmissible venereal tumors are usually progressive and are treated with a combination of surgical removal, chemotherapy, and radiation treatment. Of these, chemotherapy is generally considered the treatment of choice. The outlook for successful treatment is good, except in the rare cases in which the tumors have already spread within the body before treatment begins.",
+        "Also see professional content regarding canine transmissible venereal tumor ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T08:12:38.432633+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

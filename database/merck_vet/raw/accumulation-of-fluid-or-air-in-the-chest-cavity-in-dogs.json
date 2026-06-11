@@ -1,0 +1,24 @@
+{
+  "source": "merck_vet_manual",
+  "scope": "dog-owners",
+  "title": "Accumulation of Fluid or Air in the Chest Cavity in Dogs",
+  "url": "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/accumulation-of-fluid-or-air-in-the-chest-cavity-in-dogs",
+  "category": "Lung and Airway Disorders of Dogs",
+  "section_slug": "lung-and-airway-disorders-of-dogs",
+  "reviewed_date": "Jun 2018",
+  "author": "Ned F. Kuehn , DVM, MS, DACVIM , Michigan Veterinary Specialists",
+  "language": "en",
+  "content": "## Overview\nHemothorax , the accumulation of blood in the pleural (chest) cavity, is usually caused by trauma to the chest, blood clotting disorders, or tumors in the chest. Hydrothorax , the accumulation of clear fluid in the pleural cavity, is usually due to interference with blood flow or lymph drainage. Chylothorax , the accumulation of a high-triglyceride lymphatic fluid in the pleural cavity, is relatively rare in dogs. It may be caused by rupture of the chest duct but often the cause is unknown. The signs of all 3 conditions include respiratory difficulty, such as rapid shallow breathing with labored inhalation, and weakness. Drainage of the fluid may be necessary to relieve these signs and can be helpful in diagnosing the underlying problem. However, the outlook for many disorders that cause accumulation of fluid in the chest is guarded to poor.\nAir in the pleural cavity, called pneumothorax , may be caused by trauma or occur spontaneously. The lung collapses if a large volume of air enters the pleural cavity, causing difficulty inhaling or rapid, shallow breathing. This condition should be considered an emergency that requires immediate veterinary attention.\nAlso see professional content regarding causes of respiratory malfunction .",
+  "sections": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        "Hemothorax , the accumulation of blood in the pleural (chest) cavity, is usually caused by trauma to the chest, blood clotting disorders, or tumors in the chest. Hydrothorax , the accumulation of clear fluid in the pleural cavity, is usually due to interference with blood flow or lymph drainage. Chylothorax , the accumulation of a high-triglyceride lymphatic fluid in the pleural cavity, is relatively rare in dogs. It may be caused by rupture of the chest duct but often the cause is unknown. The signs of all 3 conditions include respiratory difficulty, such as rapid shallow breathing with labored inhalation, and weakness. Drainage of the fluid may be necessary to relieve these signs and can be helpful in diagnosing the underlying problem. However, the outlook for many disorders that cause accumulation of fluid in the chest is guarded to poor.",
+        "Air in the pleural cavity, called pneumothorax , may be caused by trauma or occur spontaneously. The lung collapses if a large volume of air enters the pleural cavity, causing difficulty inhaling or rapid, shallow breathing. This condition should be considered an emergency that requires immediate veterinary attention.",
+        "Also see professional content regarding causes of respiratory malfunction ."
+      ]
+    }
+  ],
+  "crawled_at": "2026-06-08T07:54:59.859369+00:00",
+  "usage_note": "Use for retrieval-grounded summaries with source attribution; do not republish full article text in the UI."
+}

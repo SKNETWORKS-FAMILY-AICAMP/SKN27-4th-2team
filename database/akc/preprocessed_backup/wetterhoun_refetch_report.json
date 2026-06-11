@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-06-02T21:16:59",
+  "source_url": "https://www.akc.org/dog-breeds/wetterhoun/",
+  "breed_name": "Wetterhoun",
+  "updated_files": [
+    {
+      "file": "original/akc_breed_info.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step1_original_copy.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step2_basic_cleaned.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step3_ranges_parsed.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step4_traits_normalized.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step5_colors_markings_normalized.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_step5_completed.csv",
+      "row_replaced": true
+    },
+    {
+      "file": "preprocessed/akc_breed_info_vector_documents.json",
+      "row_replaced": true
+    }
+  ],
+  "raw_row": {
+    "source_file": "akc_breedpage_props_refetch_2026-06-02",
+    "breed_name": "Wetterhoun",
+    "breed_url": "https://www.akc.org/dog-breeds/wetterhoun/",
+    "height": "23 inches (male), 21.5 inches (female)",
+    "weight": "50-75 pounds",
+    "life_expectancy": "13 years",
+    "affectionate_with_family": "Not specified",
+    "good_with_young_children": "Not specified",
+    "good_with_other_dogs": "Not specified",
+    "shedding_level": "Not specified",
+    "coat_grooming_frequency": "Not specified",
+    "drooling_level": "Not specified",
+    "coat_type": "Curly",
+    "coat_length": "Medium",
+    "openness_to_strangers": "Not specified",
+    "playfulness_level": "Not specified",
+    "watchdog_protective_nature": "Not specified",
+    "adaptability_level": "Not specified",
+    "trainability_level": "Not specified",
+    "energy_level": "Not specified",
+    "barking_level": "Not specified",
+    "mental_stimulation_needs": "Not specified",
+    "colors": "Black (code: 007, standard: yes); Brown (code: 061, standard: yes); Brown & White (code: 063, standard: yes); Black & White (code: 019, standard: yes)",
+    "markings": "None listed",
+    "about_the_breed": "The Wetterhoun, although originally bred for hunting otters, now make excellent companions, watchdogs, and can excel in a variety of sports due to their perseverant nature. The Wetterhoun is almost never seen apart from its owner; they enjoy their company as much as the owner enjoys theirs.",
+    "health": "The Wetterhoun is a pretty healthy breed, even with its small population. The NVSW currently has introduced an outcross program to help introduce more genetic variety into the breed. There are recommended health tests from the parent club to reduce occurrences of health issues.",
+    "grooming": "The Wetterhoun requires minimal grooming. The coat is naturally oily and waterproof, therefore, frequent bathing is not necessary.",
+    "exercise": "Daily exercise is good for the physical and mental well being of the Wetterhoun.",
+    "training": "The Wetterhoun can be strong willed however they are never willfully disobedient. The breed can be sensitive therefore should not be harshly trained.",
+    "nutrition": "The Wetterhoun should do well on a high-quality dog food, whether commercially manufactured or home-prepared with your veterinarians supervision and approval.",
+    "history": "The Wetterhoun was originally bred to hunt otters and is native to Friesland, Netherlands. The breed is considered rare, and most reside in the Netherlands today. The Dutch Kennel Club recognized the breed in 1943. The Nederlandse Vereniging voor Stabiij en Wetterhounen, the breeds club in the Netherlands, is also the club for the Wetterhouns close relative, the Stabyhoun."
+  },
+  "completed_row": {
+    "breed_name": "Wetterhoun",
+    "height_min": "21.5",
+    "height_max": "23",
+    "weight_min": "50",
+    "weight_max": "75",
+    "life_expectancy_min": "13",
+    "life_expectancy_max": "13",
+    "affectionate_with_family_score": "null",
+    "good_with_young_children_score": "null",
+    "good_with_other_dogs_score": "null",
+    "shedding_level_score": "null",
+    "coat_grooming_frequency_score": "null",
+    "drooling_level_score": "null",
+    "openness_to_strangers_score": "null",
+    "playfulness_level_score": "null",
+    "watchdog_protective_nature_score": "null",
+    "adaptability_level_score": "null",
+    "trainability_level_score": "null",
+    "energy_level_score": "null",
+    "barking_level_score": "null",
+    "mental_stimulation_needs_score": "null",
+    "coat_type_array": "[\"Curly\"]",
+    "coat_length_array": "[\"Medium\"]",
+    "colors_array": "[\"Black\", \"Brown\", \"Brown & White\", \"Black & White\"]",
+    "markings_array": "[]",
+    "about_the_breed": "The Wetterhoun, although originally bred for hunting otters, now make excellent companions, watchdogs, and can excel in a variety of sports due to their perseverant nature. The Wetterhoun is almost never seen apart from its owner; they enjoy their company as much as the owner enjoys theirs.",
+    "health": "The Wetterhoun is a pretty healthy breed, even with its small population. The NVSW currently has introduced an outcross program to help introduce more genetic variety into the breed. There are recommended health tests from the parent club to reduce occurrences of health issues.",
+    "grooming": "The Wetterhoun requires minimal grooming. The coat is naturally oily and waterproof, therefore, frequent bathing is not necessary.",
+    "exercise": "Daily exercise is good for the physical and mental well being of the Wetterhoun.",
+    "training": "The Wetterhoun can be strong willed however they are never willfully disobedient. The breed can be sensitive therefore should not be harshly trained.",
+    "nutrition": "The Wetterhoun should do well on a high-quality dog food, whether commercially manufactured or home-prepared with your veterinarians supervision and approval.",
+    "history": "The Wetterhoun was originally bred to hunt otters and is native to Friesland, Netherlands. The breed is considered rare, and most reside in the Netherlands today. The Dutch Kennel Club recognized the breed in 1943. The Nederlandse Vereniging voor Stabiij en Wetterhounen, the breeds club in the Netherlands, is also the club for the Wetterhouns close relative, the Stabyhoun."
+  },
+  "vector_docs_for_breed": 10,
+  "about_strategy": "Used akc_org_blurb because akc_org_about contains pronunciation only."
+}

@@ -1,0 +1,123 @@
+﻿{% extends "base.html" %}
+
+{% block title %}반려견 퀴즈 | Pet Mate{% endblock %}
+{% block body_class %}quiz-page{% endblock %}
+
+{% block content %}
+<main class="quiz-layout">
+    <section class="quiz-aside glass-card">
+        <p class="eyebrow">QnA Quiz</p>
+        <h1>반려견 지식 퀴즈</h1>
+        <p>
+            설채현 수의사와 강형욱 훈련사의 QnA 데이터를 바탕으로 만든 문제를 풀어보세요.
+            새로고침할 때마다 저장된 문제 은행에서 10문제가 랜덤으로 출제됩니다.
+        </p>
+        <div class="quiz-stats">
+            <span>문제 은행 {{ quiz_bank_count|default:0 }}개</span>
+            <span>랜덤 {{ question_count|default:0 }}문제</span>
+        </div>
+    </section>
+
+    {% if mode == "result" %}
+        <section class="quiz-panel glass-card">
+            <div class="quiz-panel-head">
+                <div>
+                    <p class="eyebrow">Result</p>
+                    <h2>채점 결과</h2>
+                </div>
+                <a class="secondary-button" href="/test/">다시 풀기</a>
+            </div>
+
+            <div class="score-summary">
+                <div class="score-ring">
+                    <strong>{{ earned_score }}</strong>
+                    <span>/ {{ total_score }}점</span>
+                </div>
+                <div class="score-details">
+                    <p>총 {{ total_count }}문제 중 {{ correct_count }}문제를 맞혔어요.</p>
+                    <span>오답 {{ wrong_count }}개</span>
+                </div>
+            </div>
+
+            <div class="review-list">
+                {% for item in result_items %}
+                    <article class="review-card {% if item.is_correct %}is-correct{% else %}is-wrong{% endif %}">
+                        <div class="review-head">
+                            <span class="quiz-type">{% if item.type == "ox" %}O/X{% else %}사지선다{% endif %}</span>
+                            <strong>{% if item.is_correct %}정답{% else %}오답{% endif %}</strong>
+                        </div>
+                        <h3>{{ forloop.counter }}. {{ item.question }}</h3>
+                        <dl class="answer-pair">
+                            <div>
+                                <dt>내 답</dt>
+                                <dd>{{ item.user_answer|default:"미선택" }}</dd>
+                            </div>
+                            <div>
+                                <dt>정답</dt>
+                                <dd>{{ item.answer }}</dd>
+                            </div>
+                        </dl>
+                        <div class="explanation-box">
+                            <strong>해설</strong>
+                            <p>{{ item.explanation }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    {% else %}
+        <section class="quiz-panel glass-card">
+            <div class="quiz-panel-head">
+                <div>
+                    <p class="eyebrow">Start</p>
+                    <h2>오늘의 랜덤 10문제</h2>
+                </div>
+                <a class="secondary-button" href="/test/">새 문제</a>
+            </div>
+
+            {% if not quiz_bank_exists %}
+                <div class="empty-quiz-state">
+                    <h3>퀴즈 데이터가 아직 없어요.</h3>
+                    <p>{{ quiz_bank_path }}</p>
+                    <p>먼저 <code>python database\tools\build_qna_quiz_bank.py --limit 100</code> 명령으로 문제 은행을 생성해 주세요.</p>
+                </div>
+            {% elif not quizzes %}
+                <div class="empty-quiz-state">
+                    <h3>출제 가능한 문제가 없어요.</h3>
+                    <p>퀴즈 JSON의 question, answer 값을 확인해 주세요.</p>
+                </div>
+            {% else %}
+                <form class="quiz-form" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quiz_ids" value="{{ quiz_ids }}">
+
+                    {% for quiz in quizzes %}
+                        <article class="quiz-card">
+                            <div class="quiz-card-head">
+                                <span class="quiz-index">{{ forloop.counter }}</span>
+                                <span class="quiz-type">{% if quiz.type == "ox" %}O/X{% else %}사지선다{% endif %}</span>
+                                <span class="quiz-score">{{ quiz.score }}점</span>
+                            </div>
+                            <h3>{{ quiz.question }}</h3>
+                            <div class="choice-list">
+                                {% for choice in quiz.choices %}
+                                    <label class="choice-item">
+                                        <input type="radio" name="answer_{{ quiz.id }}" value="{{ choice }}" required>
+                                        <span>{{ choice }}</span>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </article>
+                    {% endfor %}
+
+                    <div class="quiz-submit-row">
+                        <button class="primary-button" type="submit">제출하고 점수 확인</button>
+                    </div>
+                </form>
+            {% endif %}
+        </section>
+    {% endif %}
+</main>
+{% endblock %}
+
+

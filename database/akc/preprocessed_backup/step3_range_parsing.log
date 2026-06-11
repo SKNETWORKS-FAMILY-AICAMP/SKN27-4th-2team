@@ -1,0 +1,6 @@
+[2026-06-02T19:07:01] Step 3 range parsing completed.
+Source: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step2_basic_cleaned.csv
+Output: C:\dev\project\SKN27-4th-2team\database\akc\preprocessed\akc_breed_info_step3_ranges_parsed.csv
+Rows: 292
+Columns: 37
+Parsed counts: {'height': 290, 'weight': 288, 'life_expectancy': 289}

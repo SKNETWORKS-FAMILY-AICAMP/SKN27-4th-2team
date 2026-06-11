@@ -1,0 +1,20 @@
+﻿services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: pet_dog
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: pet_dog
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin1234
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - pet_dog_postgres_data:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  pet_dog_postgres_data:

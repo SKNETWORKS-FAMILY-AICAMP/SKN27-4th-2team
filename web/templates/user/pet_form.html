@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}반려동물 수정 | Pet Mate{% endblock %}
+{% block body_class %}profile-page{% endblock %}
+
+{% block content %}
+<main class="profile-layout pet-edit-layout">
+    <section class="profile-summary glass-card">
+        <p class="eyebrow">Edit Pet</p>
+        <h1>{{ pet.name }}</h1>
+        <dl class="profile-meta">
+            <div>
+                <dt>현재 품종</dt>
+                <dd>{{ pet.breed|default:"미입력" }}</dd>
+            </div>
+            <div>
+                <dt>동물 종류</dt>
+                <dd>{{ pet.get_species_display }}</dd>
+            </div>
+        </dl>
+    </section>
+
+    <section class="profile-card glass-card">
+        <div class="card-heading">
+            <p class="eyebrow">Pet Profile</p>
+            <h2>반려동물 정보 수정</h2>
+        </div>
+
+        <form class="auth-form" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="field-error">{{ field.errors|striptags }}</p>
+                {% endif %}
+            {% endfor %}
+            <button class="primary-button full-width" type="submit">저장하기</button>
+        </form>
+
+        <p class="helper-text">
+            <a href="{% url 'user:profile' %}">마이페이지로 돌아가기</a>
+        </p>
+    </section>
+</main>
+{% endblock %}

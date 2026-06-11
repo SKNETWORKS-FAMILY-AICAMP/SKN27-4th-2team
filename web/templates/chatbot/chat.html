@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+
+{% block title %}챗봇 | Pet Mate{% endblock %}
+{% block body_class %}chat-page{% endblock %}
+
+{% block content %}
+<main class="chat-layout history-chat-layout">
+    <aside class="chat-history glass-card">
+        <div class="history-head">
+            <div>
+                <p class="eyebrow">History</p>
+                <h2>채팅 내역</h2>
+            </div>
+            <a class="icon-link" href="{% url 'chatbot:chat' %}" aria-label="새 대화">+</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="history-list">
+                {% if pinned_sessions or unpinned_sessions %}
+                    {% if pinned_sessions %}
+                        <p class="history-group-title history-group-title-first">고정된 채팅</p>
+                        {% for session in pinned_sessions %}
+                            <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
+                                <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                                    <strong>{{ session.title }}</strong>
+                                    <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                                </a>
+                                <div class="history-actions">
+                                    <form method="post" action="{% url 'chatbot:toggle_pin' session.id %}{% if active_session %}?active_session={{ active_session.id }}{% endif %}" class="inline-form">
+                                        {% csrf_token %}
+                                        <button type="submit" class="pin-history-btn is-pinned" aria-label="고정/해제" title="고정/해제">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M16 4v6l4 2v2H13v7l-1 1-1-1v-7H4v-2l4-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2z"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
+                                        {% csrf_token %}
+                                        <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6"></polyline>
+                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if unpinned_sessions %}
+                        <p class="history-group-title {% if not pinned_sessions %}history-group-title-first{% endif %}">최근 채팅</p>
+                        {% for session in unpinned_sessions %}
+                            <div class="history-item {% if active_session and active_session.id == session.id %}is-active{% endif %}">
+                                <a class="history-link" href="{% url 'chatbot:chat' %}?session={{ session.id }}">
+                                    <strong>{{ session.title }}</strong>
+                                    <span>{{ session.updated_at|date:"Y.m.d H:i" }}</span>
+                                </a>
+                                <div class="history-actions">
+                                    <form method="post" action="{% url 'chatbot:toggle_pin' session.id %}{% if active_session %}?active_session={{ active_session.id }}{% endif %}" class="inline-form">
+                                        {% csrf_token %}
+                                        <button type="submit" class="pin-history-btn" aria-label="고정/해제" title="고정/해제">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M16 4v6l4 2v2H13v7l-1 1-1-1v-7H4v-2l4-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2z"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    <form class="history-delete-form" method="post" action="{% url 'chatbot:delete_session' session.id %}" onsubmit="return confirm('이 대화를 삭제하시겠습니까?');">
+                                        {% csrf_token %}
+                                        <button type="submit" class="delete-history-btn" aria-label="대화 삭제" title="대화 삭제">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="3 6 5 6 21 6"></polyline>
+                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    <p class="empty-history">아직 저장된 대화가 없습니다.</p>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="history-login">
+                <p>현재 대화는 이 브라우저 세션에 임시로 이어집니다. 로그인하면 채팅 내역을 저장하고 다시 볼 수 있습니다.</p>
+                <a class="secondary-button full-width" href="{% url 'user:login' %}">로그인하기</a>
+            </div>
+        {% endif %}
+    </aside>
+
+    <section class="chat-panel glass-card">
+        <div class="chat-panel-head">
+            <div>
+                <p class="eyebrow">Pet Mate Assistant</p>
+                <h2>반려견 Q&A</h2>
+            </div>
+            <div class="chat-panel-actions">
+                <span class="mode-badge">Q&A</span>
+                {% if not user.is_authenticated %}
+                <form method="post" action="{% url 'chatbot:clear_anonymous_chat' %}" onsubmit="return confirm('대화 내역을 모두 지우시겠습니까?');" class="inline-form">
+                    {% csrf_token %}
+                    <button type="submit" class="text-button compact-button">대화 초기화</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="chat-window" aria-live="polite">
+            {% for message in messages %}
+                <article class="chat-message {{ message.role }}">
+                    <div class="message-bubble">
+                        {% if message.intent %}
+                            <span class="intent-label">{{ message.intent }}</span>
+                        {% endif %}
+                        <p>{{ message.content|urlize|linebreaksbr }}</p>
+
+                        {% if message.sources %}
+                            <div class="message-sources">
+                                <strong>참고한 정보</strong>
+                                <ul>
+                                    {% for source in message.sources %}
+                                        <li>
+                                            {% if source.url %}
+                                                <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">
+                                                    {{ source.display_title|default:source.title|default:source.source }}
+                                                </a>
+                                            {% else %}
+                                                <span>{{ source.display_title|default:source.title|default:source.source }}</span>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+        {% if messages|length <= 1 %}
+            <div class="chat-chips-container">
+                <button type="button" class="chat-chip" data-question="아파트에서 키우기 쉬운 견종 추천해줘">아파트에 맞는 견종 🏠</button>
+                <button type="button" class="chat-chip" data-question="강아지 훈련할 때 가장 중요한 게 뭐야?">강아지 기본 훈련 🦮</button>
+                <button type="button" class="chat-chip" data-question="강아지 사료 급여량은 어떻게 계산해?">사료 급여량 계산 🍖</button>
+                <button type="button" class="chat-chip" data-question="유기견 입양 절차를 알고 싶어">유기견 입양 절차 📋</button>
+            </div>
+        {% endif %}
+
+        <form class="chat-form" method="post">
+            {% csrf_token %}
+            {% if active_session %}
+                <input type="hidden" name="session_id" value="{{ active_session.id }}">
+            {% endif %}
+            <label for="message">질문</label>
+            <div class="chat-input-row">
+                <input id="message" name="message" type="text" placeholder="예: 아파트에서 키우기 쉬운 견종 추천해줘" required>
+                <button class="primary-button" type="submit">전송</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const chatWindow = document.querySelector('.chat-window');
+        const chatForm = document.querySelector('.chat-form');
+        const chatInput = document.getElementById('message');
+        const chipsContainer = document.querySelector('.chat-chips-container');
+        
+        // Scroll to bottom initially
+        if (chatWindow) {
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        // Handle Chip Clicks
+        document.querySelectorAll(".chat-chip").forEach(chip => {
+            chip.addEventListener("click", () => {
+                chatInput.value = chip.dataset.question;
+                chatForm.dispatchEvent(new Event("submit"));
+            });
+        });
+
+        // Form Submit
+        if (chatForm) {
+            chatForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const question = chatInput.value.trim();
+                if (!question) return;
+
+                // Hide recommended chips if visible
+                if (chipsContainer) {
+                    chipsContainer.style.display = 'none';
+                }
+
+                // Add User Message Bubble
+                const userMsg = document.createElement("article");
+                userMsg.className = "chat-message user";
+                userMsg.innerHTML = `
+                    <div class="message-bubble">
+                        <p>${escapeHtml(question)}</p>
+                    </div>
+                `;
+                chatWindow.appendChild(userMsg);
+                chatInput.value = "";
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                // Add Loading/Typing Bubble
+                const typingMsg = document.createElement("article");
+                typingMsg.className = "chat-message assistant typing-message";
+                typingMsg.innerHTML = `
+                    <div class="message-bubble">
+                        <div class="typing-indicator">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                `;
+                chatWindow.appendChild(typingMsg);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                // Submit to API
+                const formData = new FormData(chatForm);
+                formData.set("message", question);
+                
+                // If there's an existing session ID in URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const activeSessionId = urlParams.get("session");
+                if (activeSessionId) {
+                    formData.set("session_id", activeSessionId);
+                }
+
+                fetch("{% url 'chatbot:api_chat' %}", {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]")?.value || ""
+                    },
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    // Remove Typing Bubble
+                    typingMsg.remove();
+
+                    if (data.status === "success") {
+                        // Create Assistant Bubble
+                        const assistantMsg = document.createElement("article");
+                        assistantMsg.className = "chat-message assistant";
+                        
+                        let intentHtml = data.intent ? `<span class="intent-label">${escapeHtml(data.intent)}</span>` : '';
+                        let sourcesHtml = '';
+                        if (data.sources && data.sources.length > 0) {
+                            sourcesHtml = `
+                                <div class="message-sources">
+                                    <strong>참고한 정보</strong>
+                                    <ul>
+                                        ${data.sources.map(src => `
+                                            <li>
+                                                ${src.url ? `<a href="${escapeHtml(src.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(src.display_title || src.title || src.source)}</a>` : `<span>${escapeHtml(src.display_title || src.title || src.source)}</span>`}
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            `;
+                        }
+
+                        assistantMsg.innerHTML = `
+                            <div class="message-bubble">
+                                ${intentHtml}
+                                <p>${urlize(escapeHtml(data.answer)).replace(/\n/g, "<br>")}</p>
+                                ${sourcesHtml}
+                            </div>
+                        `;
+                        chatWindow.appendChild(assistantMsg);
+                        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                        // If user is logged in and it was a new session, update URL & reload sidebar or redirect to session
+                        if (data.session_id && !activeSessionId) {
+                            window.location.href = "?session=" + data.session_id;
+                        }
+                    } else {
+                        addErrorBubble(data.message || "답변을 가져오는 중 오류가 발생했습니다.");
+                    }
+                })
+                .catch(err => {
+                    typingMsg.remove();
+                    addErrorBubble("서버 연결에 실패했습니다.");
+                    console.error(err);
+                });
+            });
+        }
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function urlize(text) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, function(url) {
+                return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
+            });
+        }
+
+        function addErrorBubble(errorText) {
+            const errorMsg = document.createElement("article");
+            errorMsg.className = "chat-message assistant";
+            errorMsg.innerHTML = `
+                <div class="message-bubble">
+                    <span class="intent-label">오류</span>
+                    <p style="color: #7a2820;">${escapeHtml(errorText)}</p>
+                </div>
+            `;
+            chatWindow.appendChild(errorMsg);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    });
+</script>
+{% endblock %}

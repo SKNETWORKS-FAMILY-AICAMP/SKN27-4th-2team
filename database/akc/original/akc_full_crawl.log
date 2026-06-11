@@ -1,0 +1,356 @@
+2026-06-02 12:09:16,382 [INFO] Starting batch index=0 size=50 range=0:50 total=292
+2026-06-02 12:09:16,382 [INFO] Fetching Affenpinscher
+2026-06-02 12:09:17,504 [INFO] Fetching Afghan Hound
+2026-06-02 12:09:18,583 [INFO] Fetching Airedale Terrier
+2026-06-02 12:09:19,651 [INFO] Fetching Akita
+2026-06-02 12:09:20,735 [INFO] Fetching Alaskan Klee Kai
+2026-06-02 12:09:21,807 [INFO] Fetching Alaskan Malamute
+2026-06-02 12:09:22,885 [INFO] Fetching American Bulldog
+2026-06-02 12:09:23,973 [INFO] Fetching American English Coonhound
+2026-06-02 12:09:25,260 [INFO] Fetching American Eskimo Dog
+2026-06-02 12:09:27,595 [INFO] Fetching American Foxhound
+2026-06-02 12:09:29,798 [INFO] Fetching American Hairless Terrier
+2026-06-02 12:09:32,097 [INFO] Fetching American Leopard Hound
+2026-06-02 12:09:33,574 [INFO] Fetching American Staffordshire Terrier
+2026-06-02 12:09:34,914 [INFO] Fetching American Water Spaniel
+2026-06-02 12:09:36,329 [INFO] Fetching Anatolian Shepherd Dog
+2026-06-02 12:09:37,608 [INFO] Fetching Appenzeller Sennenhund
+2026-06-02 12:09:39,032 [INFO] Fetching Australian Cattle Dog
+2026-06-02 12:09:40,384 [INFO] Fetching Australian Kelpie
+2026-06-02 12:09:41,835 [INFO] Fetching Australian Shepherd
+2026-06-02 12:09:43,282 [INFO] Fetching Australian Stumpy Tail Cattle Dog
+2026-06-02 12:09:44,609 [INFO] Fetching Australian Terrier
+2026-06-02 12:09:46,886 [INFO] Fetching Azawakh
+2026-06-02 12:09:48,183 [INFO] Fetching Barbado da Terceira
+2026-06-02 12:09:49,656 [INFO] Fetching Barbet
+2026-06-02 12:09:50,946 [INFO] Fetching Basenji
+2026-06-02 12:09:52,246 [INFO] Fetching Basset Fauve de Bretagne
+2026-06-02 12:09:53,528 [INFO] Fetching Basset Hound
+2026-06-02 12:09:54,821 [INFO] Fetching Bavarian Mountain Scent Hound
+2026-06-02 12:09:56,153 [INFO] Fetching Beagle
+2026-06-02 12:09:57,471 [INFO] Fetching Bearded Collie
+2026-06-02 12:09:58,768 [INFO] Fetching Beauceron
+2026-06-02 12:10:00,113 [INFO] Fetching Bedlington Terrier
+2026-06-02 12:10:01,540 [INFO] Fetching Belgian Laekenois
+2026-06-02 12:10:02,901 [INFO] Fetching Belgian Malinois
+2026-06-02 12:10:04,174 [INFO] Fetching Belgian Sheepdog
+2026-06-02 12:10:05,544 [INFO] Fetching Belgian Tervuren
+2026-06-02 12:10:06,837 [INFO] Fetching Bergamasco Sheepdog
+2026-06-02 12:10:08,156 [INFO] Fetching Berger Picard
+2026-06-02 12:10:09,621 [INFO] Fetching Bernese Mountain Dog
+2026-06-02 12:10:11,280 [INFO] Fetching Bichon Frise
+2026-06-02 12:10:12,624 [INFO] Fetching Biewer Terrier
+2026-06-02 12:10:13,889 [INFO] Fetching Black and Tan Coonhound
+2026-06-02 12:10:15,136 [INFO] Fetching Black Russian Terrier
+2026-06-02 12:10:16,557 [INFO] Fetching Bloodhound
+2026-06-02 12:10:18,097 [INFO] Fetching Blue Picardy Spaniel
+2026-06-02 12:10:19,455 [INFO] Fetching Bluetick Coonhound
+2026-06-02 12:10:20,803 [INFO] Fetching Boerboel
+2026-06-02 12:10:22,098 [INFO] Fetching Bohemian Shepherd
+2026-06-02 12:10:23,375 [INFO] Fetching Bolognese
+2026-06-02 12:10:24,684 [INFO] Fetching Border Collie
+2026-06-02 12:10:24,954 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:10:25,132 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:10:25,132 [INFO] Completed batch index=0; merged rows=53
+2026-06-02 12:10:25,132 [INFO] Processed breeds: Affenpinscher, Afghan Hound, Airedale Terrier, Akita, Alaskan Klee Kai, Alaskan Malamute, American Bulldog, American English Coonhound, American Eskimo Dog, American Foxhound, American Hairless Terrier, American Leopard Hound, American Staffordshire Terrier, American Water Spaniel, Anatolian Shepherd Dog, Appenzeller Sennenhund, Australian Cattle Dog, Australian Kelpie, Australian Shepherd, Australian Stumpy Tail Cattle Dog, Australian Terrier, Azawakh, Barbado da Terceira, Barbet, Basenji, Basset Fauve de Bretagne, Basset Hound, Bavarian Mountain Scent Hound, Beagle, Bearded Collie, Beauceron, Bedlington Terrier, Belgian Laekenois, Belgian Malinois, Belgian Sheepdog, Belgian Tervuren, Bergamasco Sheepdog, Berger Picard, Bernese Mountain Dog, Bichon Frise, Biewer Terrier, Black and Tan Coonhound, Black Russian Terrier, Bloodhound, Blue Picardy Spaniel, Bluetick Coonhound, Boerboel, Bohemian Shepherd, Bolognese, Border Collie
+2026-06-02 12:10:49,269 [INFO] Starting batch index=1 size=50 range=50:100 total=292
+2026-06-02 12:10:49,270 [INFO] Fetching Border Terrier
+2026-06-02 12:10:50,840 [INFO] Fetching Borzoi
+2026-06-02 12:10:52,515 [INFO] Fetching Boston Terrier
+2026-06-02 12:10:53,840 [INFO] Fetching Bouvier des Ardennes
+2026-06-02 12:10:55,146 [INFO] Fetching Bouvier des Flandres
+2026-06-02 12:10:57,401 [INFO] Fetching Boxer
+2026-06-02 12:10:58,878 [INFO] Fetching Boykin Spaniel
+2026-06-02 12:11:00,531 [INFO] Fetching Bracco Italiano
+2026-06-02 12:11:02,199 [INFO] Fetching Braque du Bourbonnais
+2026-06-02 12:11:03,480 [INFO] Fetching Braque Francais Pyrenean
+2026-06-02 12:11:04,732 [INFO] Fetching Braque Saint-Germain
+2026-06-02 12:11:05,983 [INFO] Fetching Brazilian Terrier
+2026-06-02 12:11:07,311 [INFO] Fetching Briard
+2026-06-02 12:11:08,566 [INFO] Fetching Brittany
+2026-06-02 12:11:09,896 [INFO] Fetching Broholmer
+2026-06-02 12:11:11,187 [INFO] Fetching Brussels Griffon
+2026-06-02 12:11:12,498 [INFO] Fetching Bull Terrier
+2026-06-02 12:11:13,822 [INFO] Fetching Bulldog
+2026-06-02 12:11:15,166 [INFO] Fetching Bullmastiff
+2026-06-02 12:11:16,517 [INFO] Fetching Cairn Terrier
+2026-06-02 12:11:18,355 [INFO] Fetching Calupoh
+2026-06-02 12:11:20,095 [INFO] Fetching Canaan Dog
+2026-06-02 12:11:22,127 [INFO] Fetching Canadian Eskimo Dog
+2026-06-02 12:11:23,612 [INFO] Fetching Cane Corso
+2026-06-02 12:11:25,098 [INFO] Fetching Cardigan Welsh Corgi
+2026-06-02 12:11:27,249 [INFO] Fetching Carolina Dog
+2026-06-02 12:11:29,306 [INFO] Fetching Catahoula Leopard Dog
+2026-06-02 12:11:30,773 [INFO] Fetching Caucasian Shepherd Dog
+2026-06-02 12:11:32,291 [INFO] Fetching Cavalier King Charles Spaniel
+2026-06-02 12:11:33,643 [INFO] Fetching Central Asian Shepherd Dog
+2026-06-02 12:11:34,960 [INFO] Fetching Cesky Terrier
+2026-06-02 12:11:36,277 [INFO] Fetching Chesapeake Bay Retriever
+2026-06-02 12:11:37,609 [INFO] Fetching Chihuahua
+2026-06-02 12:11:39,271 [INFO] Fetching Chinese Crested
+2026-06-02 12:11:41,303 [INFO] Fetching Chinese Shar-Pei
+2026-06-02 12:11:42,983 [INFO] Fetching Chinook
+2026-06-02 12:11:44,265 [INFO] Fetching Chow Chow
+2026-06-02 12:11:45,716 [INFO] Fetching Cirneco dell’Etna
+2026-06-02 12:11:47,017 [INFO] Fetching Clumber Spaniel
+2026-06-02 12:11:48,730 [INFO] Fetching Cocker Spaniel
+2026-06-02 12:11:50,063 [INFO] Fetching Collie
+2026-06-02 12:11:51,545 [INFO] Fetching Coton de Tulear
+2026-06-02 12:11:52,933 [INFO] Fetching Croatian Sheepdog
+2026-06-02 12:11:54,240 [INFO] Fetching Curly-Coated Retriever
+2026-06-02 12:11:55,510 [INFO] Fetching Czechoslovakian Vlciak
+2026-06-02 12:11:56,801 [INFO] Fetching Dachshund
+2026-06-02 12:11:58,132 [INFO] Fetching Dalmatian
+2026-06-02 12:11:59,377 [INFO] Fetching Dandie Dinmont Terrier
+2026-06-02 12:12:00,682 [INFO] Fetching Danish-Swedish Farmdog
+2026-06-02 12:12:01,950 [INFO] Fetching Deutscher Wachtelhund
+2026-06-02 12:12:02,337 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:12:02,599 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:12:02,599 [INFO] Completed batch index=1; merged rows=103
+2026-06-02 12:12:02,599 [INFO] Processed breeds: Border Terrier, Borzoi, Boston Terrier, Bouvier des Ardennes, Bouvier des Flandres, Boxer, Boykin Spaniel, Bracco Italiano, Braque du Bourbonnais, Braque Francais Pyrenean, Braque Saint-Germain, Brazilian Terrier, Briard, Brittany, Broholmer, Brussels Griffon, Bull Terrier, Bulldog, Bullmastiff, Cairn Terrier, Calupoh, Canaan Dog, Canadian Eskimo Dog, Cane Corso, Cardigan Welsh Corgi, Carolina Dog, Catahoula Leopard Dog, Caucasian Shepherd Dog, Cavalier King Charles Spaniel, Central Asian Shepherd Dog, Cesky Terrier, Chesapeake Bay Retriever, Chihuahua, Chinese Crested, Chinese Shar-Pei, Chinook, Chow Chow, Cirneco dell'Etna, Clumber Spaniel, Cocker Spaniel, Collie, Coton de Tulear, Croatian Sheepdog, Curly-Coated Retriever, Czechoslovakian Vlciak, Dachshund, Dalmatian, Dandie Dinmont Terrier, Danish-Swedish Farmdog, Deutscher Wachtelhund
+2026-06-02 12:12:50,167 [INFO] Starting batch index=2 size=50 range=100:150 total=292
+2026-06-02 12:12:50,177 [INFO] Fetching Doberman Pinscher
+2026-06-02 12:12:51,526 [INFO] Fetching Dogo Argentino
+2026-06-02 12:12:52,972 [INFO] Fetching Dogue de Bordeaux
+2026-06-02 12:12:54,395 [INFO] Fetching Drentsche Patrijshond
+2026-06-02 12:12:55,690 [INFO] Fetching Drever
+2026-06-02 12:12:57,484 [INFO] Fetching Dutch Shepherd
+2026-06-02 12:12:58,823 [INFO] Fetching English Cocker Spaniel
+2026-06-02 12:13:00,157 [INFO] Fetching English Foxhound
+2026-06-02 12:13:01,501 [INFO] Fetching English Setter
+2026-06-02 12:13:02,777 [INFO] Fetching English Springer Spaniel
+2026-06-02 12:13:04,137 [INFO] Fetching English Toy Spaniel
+2026-06-02 12:13:05,478 [INFO] Fetching Entlebucher Mountain Dog
+2026-06-02 12:13:06,937 [INFO] Fetching Estrela Mountain Dog
+2026-06-02 12:13:08,217 [INFO] Fetching Eurasier
+2026-06-02 12:13:09,295 [INFO] Fetching Field Spaniel
+2026-06-02 12:13:10,603 [INFO] Fetching Finnish Lapphund
+2026-06-02 12:13:11,977 [INFO] Fetching Finnish Spitz
+2026-06-02 12:13:13,267 [INFO] Fetching Flat-Coated Retriever
+2026-06-02 12:13:14,559 [INFO] Fetching French Bulldog
+2026-06-02 12:13:16,270 [INFO] Fetching French Spaniel
+2026-06-02 12:13:17,538 [INFO] Fetching German Longhaired Pointer
+2026-06-02 12:13:18,997 [INFO] Fetching German Pinscher
+2026-06-02 12:13:20,248 [INFO] Fetching German Shepherd Dog
+2026-06-02 12:13:21,732 [INFO] Fetching German Shorthaired Pointer
+2026-06-02 12:13:23,074 [INFO] Fetching German Spitz
+2026-06-02 12:13:24,488 [INFO] Fetching German Wirehaired Pointer
+2026-06-02 12:13:25,986 [INFO] Fetching Giant Schnauzer
+2026-06-02 12:13:27,279 [INFO] Fetching Glen of Imaal Terrier
+2026-06-02 12:13:28,830 [INFO] Fetching Golden Retriever
+2026-06-02 12:13:30,156 [INFO] Fetching Gordon Setter
+2026-06-02 12:14:10,635 [INFO] Starting batch index=2 size=50 range=100:150 total=292
+2026-06-02 12:14:10,635 [INFO] Fetching Doberman Pinscher
+2026-06-02 12:14:11,753 [INFO] Fetching Dogo Argentino
+2026-06-02 12:14:12,805 [INFO] Fetching Dogue de Bordeaux
+2026-06-02 12:14:13,863 [INFO] Fetching Drentsche Patrijshond
+2026-06-02 12:14:14,970 [INFO] Fetching Drever
+2026-06-02 12:14:16,058 [INFO] Fetching Dutch Shepherd
+2026-06-02 12:14:17,143 [INFO] Fetching English Cocker Spaniel
+2026-06-02 12:14:18,263 [INFO] Fetching English Foxhound
+2026-06-02 12:14:19,333 [INFO] Fetching English Setter
+2026-06-02 12:14:20,504 [INFO] Fetching English Springer Spaniel
+2026-06-02 12:14:21,586 [INFO] Fetching English Toy Spaniel
+2026-06-02 12:14:22,674 [INFO] Fetching Entlebucher Mountain Dog
+2026-06-02 12:14:23,803 [INFO] Fetching Estrela Mountain Dog
+2026-06-02 12:14:24,920 [INFO] Fetching Eurasier
+2026-06-02 12:14:25,974 [INFO] Fetching Field Spaniel
+2026-06-02 12:14:27,056 [INFO] Fetching Finnish Lapphund
+2026-06-02 12:14:28,127 [INFO] Fetching Finnish Spitz
+2026-06-02 12:14:29,276 [INFO] Fetching Flat-Coated Retriever
+2026-06-02 12:14:30,341 [INFO] Fetching French Bulldog
+2026-06-02 12:14:31,422 [INFO] Fetching French Spaniel
+2026-06-02 12:14:32,497 [INFO] Fetching German Longhaired Pointer
+2026-06-02 12:14:33,611 [INFO] Fetching German Pinscher
+2026-06-02 12:14:34,688 [INFO] Fetching German Shepherd Dog
+2026-06-02 12:14:35,785 [INFO] Fetching German Shorthaired Pointer
+2026-06-02 12:14:36,848 [INFO] Fetching German Spitz
+2026-06-02 12:14:37,972 [INFO] Fetching German Wirehaired Pointer
+2026-06-02 12:14:39,046 [INFO] Fetching Giant Schnauzer
+2026-06-02 12:14:40,187 [INFO] Fetching Glen of Imaal Terrier
+2026-06-02 12:14:41,286 [INFO] Fetching Golden Retriever
+2026-06-02 12:14:42,356 [INFO] Fetching Gordon Setter
+2026-06-02 12:14:43,458 [INFO] Fetching Grand Basset Griffon Vendéen
+2026-06-02 12:14:44,773 [INFO] Fetching Great Dane
+2026-06-02 12:14:46,051 [INFO] Fetching Great Pyrenees
+2026-06-02 12:14:47,331 [INFO] Fetching Greater Swiss Mountain Dog
+2026-06-02 12:14:48,645 [INFO] Fetching Greyhound
+2026-06-02 12:14:50,164 [INFO] Fetching Hamiltonstovare
+2026-06-02 12:14:52,309 [INFO] Fetching Hanoverian Scenthound
+2026-06-02 12:14:53,623 [INFO] Fetching Harrier
+2026-06-02 12:14:55,191 [INFO] Fetching Havanese
+2026-06-02 12:14:56,459 [INFO] Fetching Hokkaido
+2026-06-02 12:14:57,791 [INFO] Fetching Hovawart
+2026-06-02 12:14:58,887 [INFO] Fetching Ibizan Hound
+2026-06-02 12:15:00,894 [INFO] Fetching Icelandic Sheepdog
+2026-06-02 12:15:02,604 [INFO] Fetching Irish Red and White Setter
+2026-06-02 12:15:03,963 [INFO] Fetching Irish Setter
+2026-06-02 12:15:05,385 [INFO] Fetching Irish Terrier
+2026-06-02 12:15:06,657 [INFO] Fetching Irish Water Spaniel
+2026-06-02 12:15:08,275 [INFO] Fetching Irish Wolfhound
+2026-06-02 12:15:09,707 [INFO] Fetching Italian Greyhound
+2026-06-02 12:15:11,026 [INFO] Fetching Jagdterrier
+2026-06-02 12:15:11,519 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:15:11,698 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:15:11,698 [INFO] Completed batch index=2; merged rows=151
+2026-06-02 12:15:11,698 [INFO] Processed breeds: Doberman Pinscher, Dogo Argentino, Dogue de Bordeaux, Drentsche Patrijshond, Drever, Dutch Shepherd, English Cocker Spaniel, English Foxhound, English Setter, English Springer Spaniel, English Toy Spaniel, Entlebucher Mountain Dog, Estrela Mountain Dog, Eurasier, Field Spaniel, Finnish Lapphund, Finnish Spitz, Flat-Coated Retriever, French Bulldog, French Spaniel, German Longhaired Pointer, German Pinscher, German Shepherd Dog, German Shorthaired Pointer, German Spitz, German Wirehaired Pointer, Giant Schnauzer, Glen of Imaal Terrier, Golden Retriever, Gordon Setter, Grand Basset Griffon Vendéen, Great Dane, Great Pyrenees, Greater Swiss Mountain Dog, Greyhound, Hamiltonstovare, Hanoverian Scenthound, Harrier, Havanese, Hokkaido, Hovawart, Ibizan Hound, Icelandic Sheepdog, Irish Red and White Setter, Irish Setter, Irish Terrier, Irish Water Spaniel, Irish Wolfhound, Italian Greyhound, Jagdterrier
+2026-06-02 12:15:48,908 [INFO] Starting batch index=3 size=50 range=150:200 total=292
+2026-06-02 12:15:48,908 [INFO] Fetching Japanese Akitainu
+2026-06-02 12:15:50,494 [INFO] Fetching Japanese Chin
+2026-06-02 12:15:51,883 [INFO] Fetching Japanese Spitz
+2026-06-02 12:15:53,497 [INFO] Fetching Japanese Terrier
+2026-06-02 12:15:55,328 [INFO] Fetching Kai Ken
+2026-06-02 12:15:56,711 [INFO] Fetching Karelian Bear Dog
+2026-06-02 12:15:58,197 [INFO] Fetching Keeshond
+2026-06-02 12:15:59,560 [INFO] Fetching Kerry Blue Terrier
+2026-06-02 12:16:01,211 [INFO] Fetching Kishu Ken
+2026-06-02 12:16:04,070 [INFO] Fetching Komondor
+2026-06-02 12:16:05,406 [INFO] Fetching Korean Jindo Dog
+2026-06-02 12:16:13,266 [INFO] Fetching Kromfohrlander
+2026-06-02 12:16:14,739 [INFO] Fetching Kuvasz
+2026-06-02 12:16:16,028 [INFO] Fetching Labrador Retriever
+2026-06-02 12:16:17,358 [INFO] Fetching Lagotto Romagnolo
+2026-06-02 12:16:18,627 [INFO] Fetching Lakeland Terrier
+2026-06-02 12:16:20,126 [INFO] Fetching Lancashire Heeler
+2026-06-02 12:16:21,440 [INFO] Fetching Lapponian Herder
+2026-06-02 12:16:22,779 [INFO] Fetching Large Munsterlander
+2026-06-02 12:16:24,354 [INFO] Fetching Leonberger
+2026-06-02 12:16:25,755 [INFO] Fetching Lhasa Apso
+2026-06-02 12:16:27,241 [INFO] Fetching Löwchen
+2026-06-02 12:16:28,491 [INFO] Fetching Maltese
+2026-06-02 12:16:29,779 [INFO] Fetching Manchester Terrier (Standard)
+2026-06-02 12:16:31,108 [INFO] Fetching Manchester Terrier (Toy)
+2026-06-02 12:16:32,390 [INFO] Fetching Mastiff
+2026-06-02 12:16:33,669 [INFO] Fetching Miniature American Shepherd
+2026-06-02 12:16:35,139 [INFO] Fetching Miniature Bull Terrier
+2026-06-02 12:16:36,477 [INFO] Fetching Miniature Pinscher
+2026-06-02 12:16:37,917 [INFO] Fetching Miniature Schnauzer
+2026-06-02 12:16:39,232 [INFO] Fetching Mountain Cur
+2026-06-02 12:16:40,770 [INFO] Fetching Mudi
+2026-06-02 12:16:42,070 [INFO] Fetching Neapolitan Mastiff
+2026-06-02 12:16:43,413 [INFO] Fetching Nederlandse Kooikerhondje
+2026-06-02 12:16:44,876 [INFO] Fetching Newfoundland
+2026-06-02 12:16:46,151 [INFO] Fetching Norfolk Terrier
+2026-06-02 12:16:47,585 [INFO] Fetching Norrbottenspets
+2026-06-02 12:16:48,896 [INFO] Fetching Norwegian Buhund
+2026-06-02 12:16:50,780 [INFO] Fetching Norwegian Elkhound
+2026-06-02 12:16:52,086 [INFO] Fetching Norwegian Lundehund
+2026-06-02 12:16:53,414 [INFO] Fetching Norwich Terrier
+2026-06-02 12:16:54,766 [INFO] Fetching Nova Scotia Duck Tolling Retriever
+2026-06-02 12:16:56,036 [INFO] Fetching Old English Sheepdog
+2026-06-02 12:16:57,403 [INFO] Fetching Otterhound
+2026-06-02 12:16:58,680 [INFO] Fetching Papillon
+2026-06-02 12:17:00,021 [INFO] Fetching Parson Russell Terrier
+2026-06-02 12:17:01,378 [INFO] Fetching Pekingese
+2026-06-02 12:17:03,082 [INFO] Fetching Pembroke Welsh Corgi
+2026-06-02 12:17:04,392 [INFO] Fetching Peruvian Inca Orchid
+2026-06-02 12:17:05,681 [INFO] Fetching Petit Basset Griffon Vendéen
+2026-06-02 12:17:06,555 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:17:06,820 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:17:06,820 [INFO] Completed batch index=3; merged rows=201
+2026-06-02 12:17:06,828 [INFO] Processed breeds: Japanese Akitainu, Japanese Chin, Japanese Spitz, Japanese Terrier, Kai Ken, Karelian Bear Dog, Keeshond, Kerry Blue Terrier, Kishu Ken, Komondor, Korean Jindo Dog, Kromfohrlander, Kuvasz, Labrador Retriever, Lagotto Romagnolo, Lakeland Terrier, Lancashire Heeler, Lapponian Herder, Large Munsterlander, Leonberger, Lhasa Apso, Löwchen, Maltese, Manchester Terrier (Standard), Manchester Terrier (Toy), Mastiff, Miniature American Shepherd, Miniature Bull Terrier, Miniature Pinscher, Miniature Schnauzer, Mountain Cur, Mudi, Neapolitan Mastiff, Nederlandse Kooikerhondje, Newfoundland, Norfolk Terrier, Norrbottenspets, Norwegian Buhund, Norwegian Elkhound, Norwegian Lundehund, Norwich Terrier, Nova Scotia Duck Tolling Retriever, Old English Sheepdog, Otterhound, Papillon, Parson Russell Terrier, Pekingese, Pembroke Welsh Corgi, Peruvian Inca Orchid, Petit Basset Griffon Vendéen
+2026-06-02 12:17:20,695 [INFO] Starting batch index=4 size=50 range=200:250 total=292
+2026-06-02 12:17:20,695 [INFO] Fetching Pharaoh Hound
+2026-06-02 12:17:21,957 [INFO] Fetching Plott Hound
+2026-06-02 12:17:23,384 [INFO] Fetching Pointer
+2026-06-02 12:17:24,917 [INFO] Fetching Polish Lowland Sheepdog
+2026-06-02 12:17:26,233 [INFO] Fetching Pomeranian
+2026-06-02 12:17:28,033 [INFO] Fetching Pont-Audemer Spaniel
+2026-06-02 12:17:29,651 [INFO] Fetching Poodle (Miniature)
+2026-06-02 12:17:30,958 [INFO] Fetching Poodle (Standard)
+2026-06-02 12:17:32,243 [INFO] Fetching Poodle (Toy)
+2026-06-02 12:17:33,639 [INFO] Fetching Porcelaine
+2026-06-02 12:17:34,891 [INFO] Fetching Portuguese Podengo
+2026-06-02 12:17:36,503 [INFO] Fetching Portuguese Podengo Pequeno
+2026-06-02 12:17:37,860 [INFO] Fetching Portuguese Pointer
+2026-06-02 12:17:39,326 [INFO] Fetching Portuguese Sheepdog
+2026-06-02 12:17:40,794 [INFO] Fetching Portuguese Water Dog
+2026-06-02 12:17:42,074 [INFO] Fetching Presa Canario
+2026-06-02 12:17:43,327 [INFO] Fetching Pudelpointer
+2026-06-02 12:17:44,842 [INFO] Fetching Pug
+2026-06-02 12:17:46,111 [INFO] Fetching Puli
+2026-06-02 12:17:47,358 [INFO] Fetching Pumi
+2026-06-02 12:17:48,666 [INFO] Fetching Pyrenean Mastiff
+2026-06-02 12:17:50,339 [INFO] Fetching Pyrenean Shepherd
+2026-06-02 12:17:51,705 [INFO] Fetching Rafeiro do Alentejo
+2026-06-02 12:17:53,196 [INFO] Fetching Rat Terrier
+2026-06-02 12:17:54,511 [INFO] Fetching Redbone Coonhound
+2026-06-02 12:17:55,808 [INFO] Fetching Rhodesian Ridgeback
+2026-06-02 12:17:57,150 [INFO] Fetching Romanian Carpathian Shepherd
+2026-06-02 12:17:58,430 [INFO] Fetching Romanian Mioritic Shepherd Dog
+2026-06-02 12:18:00,081 [INFO] Fetching Rottweiler
+2026-06-02 12:18:01,687 [INFO] Fetching Russell Terrier
+2026-06-02 12:18:03,026 [INFO] Fetching Russian Toy
+2026-06-02 12:18:04,297 [INFO] Fetching Russian Tsvetnaya Bolonka
+2026-06-02 12:18:05,757 [INFO] Fetching Saint Bernard
+2026-06-02 12:18:07,057 [INFO] Fetching Saluki
+2026-06-02 12:18:08,569 [INFO] Fetching Samoyed
+2026-06-02 12:18:09,890 [INFO] Fetching Schapendoes
+2026-06-02 12:18:11,243 [INFO] Fetching Schipperke
+2026-06-02 12:18:12,974 [INFO] Fetching Scottish Deerhound
+2026-06-02 12:18:14,344 [INFO] Fetching Scottish Terrier
+2026-06-02 12:18:15,839 [INFO] Fetching Sealyham Terrier
+2026-06-02 12:18:17,316 [INFO] Fetching Segugio Italiano
+2026-06-02 12:18:18,618 [INFO] Fetching Shetland Sheepdog
+2026-06-02 12:18:20,073 [INFO] Fetching Shiba Inu
+2026-06-02 12:18:21,370 [INFO] Fetching Shih Tzu
+2026-06-02 12:18:22,665 [INFO] Fetching Shikoku Ken
+2026-06-02 12:18:23,976 [INFO] Fetching Siberian Husky
+2026-06-02 12:18:25,224 [INFO] Fetching Silky Terrier
+2026-06-02 12:18:26,521 [INFO] Fetching Skye Terrier
+2026-06-02 12:18:27,917 [INFO] Fetching Sloughi
+2026-06-02 12:18:29,272 [INFO] Fetching Slovakian Wirehaired Pointer
+2026-06-02 12:18:29,892 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:18:30,186 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:18:30,186 [INFO] Completed batch index=4; merged rows=251
+2026-06-02 12:18:30,186 [INFO] Processed breeds: Pharaoh Hound, Plott Hound, Pointer, Polish Lowland Sheepdog, Pomeranian, Pont-Audemer Spaniel, Poodle (Miniature), Poodle (Standard), Poodle (Toy), Porcelaine, Portuguese Podengo, Portuguese Podengo Pequeno, Portuguese Pointer, Portuguese Sheepdog, Portuguese Water Dog, Presa Canario, Pudelpointer, Pug, Puli, Pumi, Pyrenean Mastiff, Pyrenean Shepherd, Rafeiro do Alentejo, Rat Terrier, Redbone Coonhound, Rhodesian Ridgeback, Romanian Carpathian Shepherd, Romanian Mioritic Shepherd Dog, Rottweiler, Russell Terrier, Russian Toy, Russian Tsvetnaya Bolonka, Saint Bernard, Saluki, Samoyed, Schapendoes, Schipperke, Scottish Deerhound, Scottish Terrier, Sealyham Terrier, Segugio Italiano, Shetland Sheepdog, Shiba Inu, Shih Tzu, Shikoku Ken, Siberian Husky, Silky Terrier, Skye Terrier, Sloughi, Slovakian Wirehaired Pointer
+2026-06-02 12:18:47,932 [INFO] Starting batch index=5 size=50 range=250:292 total=292
+2026-06-02 12:18:47,932 [INFO] Fetching Slovensky Cuvac
+2026-06-02 12:18:49,179 [INFO] Fetching Slovensky Kopov
+2026-06-02 12:18:50,296 [INFO] Fetching Small Munsterlander
+2026-06-02 12:18:51,585 [INFO] Fetching Smooth Fox Terrier
+2026-06-02 12:18:53,035 [INFO] Fetching Soft Coated Wheaten Terrier
+2026-06-02 12:18:54,416 [INFO] Fetching Spanish Mastiff
+2026-06-02 12:18:55,856 [INFO] Fetching Spanish Water Dog
+2026-06-02 12:18:57,158 [INFO] Fetching Spinone Italiano
+2026-06-02 12:18:58,457 [INFO] Fetching Stabyhoun
+2026-06-02 12:18:59,761 [INFO] Fetching Staffordshire Bull Terrier
+2026-06-02 12:19:01,014 [INFO] Fetching Standard Schnauzer
+2026-06-02 12:19:02,452 [INFO] Fetching Sussex Spaniel
+2026-06-02 12:19:03,767 [INFO] Fetching Swedish Lapphund
+2026-06-02 12:19:05,467 [INFO] Fetching Swedish Vallhund
+2026-06-02 12:19:06,930 [INFO] Fetching Taiwan Dog
+2026-06-02 12:19:08,283 [INFO] Fetching Teddy Roosevelt Terrier
+2026-06-02 12:19:09,605 [INFO] Fetching Thai Bangkaew
+2026-06-02 12:19:10,926 [INFO] Fetching Thai Ridgeback
+2026-06-02 12:19:12,482 [INFO] Fetching Tibetan Mastiff
+2026-06-02 12:19:13,732 [INFO] Fetching Tibetan Spaniel
+2026-06-02 12:19:15,029 [INFO] Fetching Tibetan Terrier
+2026-06-02 12:19:16,349 [INFO] Fetching Tornjak
+2026-06-02 12:19:17,664 [INFO] Fetching Tosa
+2026-06-02 12:19:19,234 [INFO] Fetching Toy Fox Terrier
+2026-06-02 12:19:20,711 [INFO] Fetching Transylvanian Hound
+2026-06-02 12:19:22,002 [INFO] Fetching Treeing Tennessee Brindle
+2026-06-02 12:19:23,513 [INFO] Fetching Treeing Walker Coonhound
+2026-06-02 12:19:25,194 [INFO] Fetching Vizsla
+2026-06-02 12:19:26,634 [INFO] Fetching Volpino Italiano
+2026-06-02 12:19:27,953 [INFO] Fetching Weimaraner
+2026-06-02 12:19:29,324 [INFO] Fetching Welsh Springer Spaniel
+2026-06-02 12:19:30,668 [INFO] Fetching Welsh Terrier
+2026-06-02 12:19:32,837 [INFO] Fetching West Highland White Terrier
+2026-06-02 12:19:34,460 [INFO] Fetching Wetterhoun
+2026-06-02 12:19:36,032 [INFO] Fetching Whippet
+2026-06-02 12:19:37,463 [INFO] Fetching Wire Fox Terrier
+2026-06-02 12:19:38,789 [INFO] Fetching Wirehaired Pointing Griffon
+2026-06-02 12:19:40,100 [INFO] Fetching Wirehaired Vizsla
+2026-06-02 12:19:42,738 [INFO] Fetching Working Kelpie
+2026-06-02 12:19:44,013 [INFO] Fetching Xoloitzcuintli
+2026-06-02 12:19:45,430 [INFO] Fetching Yakutian Laika
+2026-06-02 12:19:47,243 [INFO] Fetching Yorkshire Terrier
+2026-06-02 12:19:47,592 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:19:47,939 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:19:47,939 [INFO] Completed batch index=5; merged rows=292
+2026-06-02 12:19:47,939 [INFO] Processed breeds: Slovensky Cuvac, Slovensky Kopov, Small Munsterlander, Smooth Fox Terrier, Soft Coated Wheaten Terrier, Spanish Mastiff, Spanish Water Dog, Spinone Italiano, Stabyhoun, Staffordshire Bull Terrier, Standard Schnauzer, Sussex Spaniel, Swedish Lapphund, Swedish Vallhund, Taiwan Dog, Teddy Roosevelt Terrier, Thai Bangkaew, Thai Ridgeback, Tibetan Mastiff, Tibetan Spaniel, Tibetan Terrier, Tornjak, Tosa, Toy Fox Terrier, Transylvanian Hound, Treeing Tennessee Brindle, Treeing Walker Coonhound, Vizsla, Volpino Italiano, Weimaraner, Welsh Springer Spaniel, Welsh Terrier, West Highland White Terrier, Wetterhoun, Whippet, Wire Fox Terrier, Wirehaired Pointing Griffon, Wirehaired Vizsla, Working Kelpie, Xoloitzcuintli, Yakutian Laika, Yorkshire Terrier
+2026-06-02 12:20:51,065 [INFO] Wrote HTML preview: C:\dev\project\project4\database\akc\affenpinscher_sample_table.html
+2026-06-02 12:20:51,426 [INFO] Wrote XLSX: C:\dev\project\project4\database\akc\affenpinscher_sample.xlsx
+2026-06-02 12:20:51,426 [INFO] Normalized existing outputs only; rows=292
